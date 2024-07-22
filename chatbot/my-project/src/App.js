@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import LangflowClient from './LangflowClient'; // Ensure this path is correct based on your project structure
+import './App.css';
 
 function App() {
   const chatRef = useRef(null);
@@ -9,7 +10,7 @@ function App() {
   const [chatbotData, setChatbotData] = useState(null);
 
   useEffect(() => {
-    // Fetch Chatbot_cohere.json data abc
+    // Fetch Chatbot_cohere.json data
     async function fetchChatbotData() {
       try {
         const response = await fetch('/Chatbot_cohere.json'); // Path relative to public folder
@@ -29,24 +30,9 @@ function App() {
   // Reposition chat window
   useEffect(() => {
     const repositionChatWindow = () => {
-      const chatWindow = chatRef.current.querySelector('.cl-window');
+      const chatWindow = chatRef.current.querySelector('div.cl-chat-window.origin-top-left.cl-scale-100');
       if (chatWindow) {
-        chatWindow.style.position = 'fixed';
-        chatWindow.style.top = '53px';
-        chatWindow.style.left = '20px';
-        chatWindow.style.bottom = 'auto';
-        chatWindow.style.right = 'auto';
-        chatWindow.style.transform = 'none';
-        chatWindow.style.maxHeight = 'calc(100vh - 40px)';
-
-        chatWindow.style.removeProperty('left');
-        chatWindow.style.removeProperty('right');
-
-        chatWindow.style.transitionProperty = 'all';
-        chatWindow.style.transitionDuration = '300ms';
-        chatWindow.style.transitionTimingFunction = 'cubic-bezier(0.4, 0, 0.2, 1)';
-        chatWindow.style.transformOrigin = 'top left';
-        chatWindow.style.zIndex = '9999';
+        chatWindow.style.border = '200px solid red';
       }
     };
 
@@ -98,13 +84,17 @@ function App() {
   return (
     <div className="App">
       <h1 className="text-3xl font-bold text-center my-8">Your Main App Content</h1>
-      <div className="chat-container" ref={chatRef}>
-        <langflow-chat
+      <div className="chat-container" ref={chatRef} >
+      <langflow-chat
           window_title="Chatbot_cohere"
           flow_id={flowIdOrName}
           host_url="http://localhost:7860"
+          chat_position="top-left"
+          height={500}
+          width={300}
         ></langflow-chat>
-      </div>
+</div>
+
       <div>
         {messages.map((msg, index) => (
           <div key={index}>{msg}</div>

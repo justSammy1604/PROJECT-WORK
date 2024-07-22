@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Send } from 'lucide-react';
 import LangflowClient from './LangflowClient'; // Ensure LangflowClient.js is in the same directory or update the import path
+import './App.css'
 
 const ChatInterface = () => {
   const [isOpen, setIsOpen] = useState(false);

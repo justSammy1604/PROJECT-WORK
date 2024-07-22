@@ -1,3 +1,5 @@
+import './App.css'
+
 class LangflowClient {
   constructor(baseURL, apiKey) {
       this.baseURL = baseURL;
