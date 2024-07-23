@@ -2,6 +2,6 @@ langflow-chat{
   position: fixed;
   bottom: 0;
   right: 0;
-  margin: 20px; /* Optional: Add some margin for spacing */
-  z-index: 1000; /* Optional: Ensure it stays on top of other elements */
+  margin: 20px; 
+  z-index: 1000; 
 }
