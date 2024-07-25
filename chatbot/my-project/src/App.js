@@ -66,10 +66,11 @@ function App() {
           window_title="Chatbot_cohere"
           flow_id={flowIdOrName}
           host_url="http://localhost:7860"
-          chat_position="top-left"
-          
+          chat_position="top-left"          
           height={500}
           width={400}
+          chat_trigger_style='{"background-image": "url(https://i.postimg.cc/wvFPHqXt/6056254-200.png)", "background-size": "cover", "background-position": "center","backgroundColor":"yellow", "color":"transparent"}'
+          chat_window_style='{"border": "2px solid black" }'  
         ></langflow-chat>
 {/* </div> */}
 
