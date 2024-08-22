@@ -7,8 +7,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-#file_path = "C:/Users/TERREL BRAGANCA/chatbot/Script_thingamajig/session.csv"
-
+#function to write the logs in a JSON file
 def write_logs(data,file_path):
     if os.path.exists(file_path):
         with open(file_path, 'r') as file:
@@ -33,12 +32,13 @@ def write_logs(data,file_path):
             
             
 @app.route('/log_click', methods=['POST'])
+#function to record the clicks
 def log_click():
     data = request.json  # Get the JSON data from the request
     if not data or 'timestamp' not in data or 'element' not in data:
         return jsonify({'status': 'error', 'message': 'Invalid data'}), 400
 
-    file_path = "C:/Users/TERREL BRAGANCA/chatbot/intern-project-stuff/chatbot/demo_website/smartschoolmis/Session.JSON"
+    file_path = "C:/Users/TERREL BRAGANCA/chatbot/intern-project-stuff/demo_website/smartschoolmis/Session1.JSON" #Enter the path of the JSON file where the logs need to be stored
     write_logs(data,file_path)
     
     processed_data = {
