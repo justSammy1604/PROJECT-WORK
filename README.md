@@ -8,7 +8,7 @@ Now we have to discuss stuff regarding system design and other architectures. Al
 - Flowcharts and diagrams are ready. Since we not using a DB, no ER diagrams and all. Another addition of the flowchart is there below. Check for any additions or issues in them.
 #### NEXT WEEK
 - Have to explain project idea in detail, will do this with Merwyn sir. Do the same for the next review. Everyone explains their part properly. 
--  Explain each concept properly and clearly to sir and at the review.
+-  Explain each concept clearly to sir and at the review.
 
 
 `If there is anything else to be added, add it here.`
