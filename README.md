@@ -15,3 +15,4 @@ Now we have to discuss stuff regarding system design and other architectures. Al
 
 ![Tentative Flow of Project](project-flowchart.jpg)  
 ![Detailed Flow of Project](design_2.jpg) 
+ 
