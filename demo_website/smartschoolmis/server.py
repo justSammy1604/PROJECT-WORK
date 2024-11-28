@@ -31,7 +31,7 @@ def write_logs(data,file_path):
         json.dump(existing_data, file, indent=4)
             
             
-@app.route('/log_click', methods=['POST'])
+@app.route('/log_click', methods=['POST']) 
 #function to record the clicks
 def log_click():
     data = request.json  # Get the JSON data from the request
