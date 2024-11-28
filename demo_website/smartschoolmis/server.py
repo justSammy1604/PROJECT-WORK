@@ -5,7 +5,7 @@ import json
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app) 
 
 #function to write the logs in a JSON file
 def write_logs(data,file_path):
