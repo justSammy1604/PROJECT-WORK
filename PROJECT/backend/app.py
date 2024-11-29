@@ -8,6 +8,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 
+#Have to discuss which vectorDB and model y'all would prefer.
+
 load_dotenv()
 api_key = os.getenv('GOOGLE_API_MODEL')
 
