@@ -6,7 +6,7 @@ from langchain import PromptTemplate
 from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
-from langchain.chains import RetrievalQA
+from langchain.chains import RetrievalQA 
 
 #Have to discuss which vectorDB and model y'all would prefer.
 
