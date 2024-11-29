@@ -8,6 +8,6 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 
-
-
+load_dotenv()
+api_key = os.getenv('')
 
