@@ -11,7 +11,7 @@ Now we have to discuss stuff regarding system design and other architectures. Al
 -  Explain each concept clearly to sir and at the review.
 
 
-`If there is anything else to be added, add it here.`
+`If there is anything else to be added, add it here.` 
 
 ![Tentative Flow of Project](project-flowchart.jpg)  
 ![Detailed Flow of Project](design_2.jpg) 
