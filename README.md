@@ -12,7 +12,5 @@ Now we have to discuss stuff regarding system design and other architectures. Al
 
 
 `If there is anything else to be added, add it here.` 
-
-![Tentative Flow of Project](project-flowchart.jpg)  
-![Detailed Flow of Project](design_2.jpg) 
+IMPLEMENTATION OF PROJECT 
  
