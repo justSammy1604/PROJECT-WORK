@@ -7,4 +7,8 @@ For now, we'll create a RAG chatbot with a few additional features of our own th
 - Use a web crawler for data, that is done by Terrence.
 
 I have already created the respective files to work on, so fork the repos and work on that folder.
-`Christie` and `Mathias` y'all can work on the frontend. Lemme know which technology y'all will be using for the frontend.
+- `Christie` and `Mathias` y'all can work on the frontend. Lemme know which technology y'all will be using for the frontend.
+- `Joseph`, `Terrence` and I will work on backend. Y'all lemme know which model, vector db and embedding y'all would prefer.
+- I may alternate `Terrence` on both sides if y'all need any help.
+
+I will add a flowchart here today. 
