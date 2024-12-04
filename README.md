@@ -6,7 +6,7 @@ For now, we'll create a RAG chatbot with a few additional features of our own th
 - Joseph's method of using NLP to extract keywords and based on that generate the possible output.
 - Use a web crawler for data, that is done by Terrence.
 
-I have already created the respective files to work on, so fork the repos and work on that folder.
+I have already created the respective files to work on, so fork the repos and work on the respective folders assigned to you.
 - `Christie` and `Mathias` y'all can work on the frontend. Lemme know which technology y'all will be using for the frontend.
 - `Joseph`, `Terrence` and I will work on backend. Y'all lemme know which model, vector db and embedding y'all would prefer.
 - I may alternate `Terrence` on both sides if frontend peeps need any help.
