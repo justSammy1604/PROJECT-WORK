@@ -1,0 +1,21 @@
+from flask import Flask, request
+from flask_socketio import SocketIO, emit
+import time
+
+app = Flask(__name__)
+socketio = SocketIO(app, cors_allowed_origins="*")
+
+@socketio.on('message')
+def handle_message(message):
+    # This is where you would integrate with your AI mode;
+    words = message.split()
+    for word in words:
+        time.sleep(0.5)  # Simulate processing time
+        emit('message', word)
+    
+    # Send a final response
+    time.sleep(1)
+    emit('message', "This is the AI's response to: " + message)
+
+if __name__ == '__main__':
+    socketio.run(app, debug=True)
