@@ -20,7 +20,7 @@ def preprocessing(): # Joseph, perform stopword removal on Terrence's data from 
 
 
 
-def Rag_model():  #Will add the required functions and definition to create the RAG model.
+def rag_model():  #Will add the required functions and definition to create the RAG model.
   pass
 
 
