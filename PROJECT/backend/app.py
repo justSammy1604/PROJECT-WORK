@@ -12,7 +12,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA 
 load_dotenv() 
 api_key = os.getenv('GOOGLE_API_MODEL') 
-model = ChatGoogleGenerativeAI(model='',google_api_key=api_key, temperature=0.4, convert_system_message_to_human=True) 
+model = ChatGoogleGenerativeAI(model='gemini-1.5-pro',google_api_key=api_key, temperature=0.4, convert_system_message_to_human=True) 
 embedding_model = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
@@ -30,12 +30,12 @@ def preprocessing(docs): # Joseph, perform stopword removal on Terrence's data f
   return clean_data
 
 
-def split_text():  #Will add the required functions and definition to create the RAG model.
+def split_text(documents):  #Will add the required functions and definition to create the RAG model.
   text_split = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
   docs = text_split.split_documents(documents)
   return docs
 
-def vectordb_information():
+def vectordb_information(docs):
   vectorstore = Milvus.from_documents(  # or Zilliz.from_documents
     documents=docs,
     embedding=embeddings,
@@ -44,6 +44,25 @@ def vectordb_information():
     },
     drop_old=True,  # Drop the old Milvus collection if it exists
 )
+    return vectorstore
+
+def rag_model(vectorstore):
+    qa_chain = RetrievalQA.from_chain_type(
+        llm=model,
+        chain_type="stuff",
+        retriever=vectorstore.as_retriever(
+            search_kwargs={"k": 2}  
+        )
+    )
+    return qa_chain
+
+def response(query, rag_chain):
+    try:
+        response = rag_chain.invoke({"query": query})
+        return response['result']
+    except Exception as e:
+        return f"An error occurred: {str(e)}"
+
 
   
 
