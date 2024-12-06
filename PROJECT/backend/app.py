@@ -1,7 +1,5 @@
 #To add main Langchain code here.
 import os 
-import flask
-from flask import Flask, requests, 
 from dotenv import load_dotenv 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain import PromptTemplate
