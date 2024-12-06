@@ -21,6 +21,3 @@ And create PRs and report them on the group.
 
 
 
-- For the 20 % implementation, we doing normal RAG but with a few additions.
-- [ ] The first is we removing stopwords from the main data before chunking, and
-- [ ] We using a web crawler to gather data using Crawl4AI 
