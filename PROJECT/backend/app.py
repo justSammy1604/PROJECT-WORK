@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain import PromptTemplate
+from langchain.chains.question_answering import load_qa_chain
 from langchain.document_loaders import PyPDFLoader, WebBaseLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
