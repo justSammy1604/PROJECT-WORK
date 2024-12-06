@@ -3,9 +3,11 @@ import os
 from dotenv import load_dotenv 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain import PromptTemplate
-from langchain.document_loaders import PyPDFLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.document_loaders import PyPDFLoader, WebBaseLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
+from langchain_milvus import Milvus
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA 
 
 #Have to discuss which vectorDB and model y'all would prefer.
