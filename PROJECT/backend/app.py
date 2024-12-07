@@ -62,10 +62,17 @@ def load_and_process(doc_source):
 
     documents=loader.load()
     preprocess_docs = 1 #Joseph, preprocess the docs here via stopword removal and NLP techniques to clean the data
-  
+
+    return split_text(all_docs)
 
 
-def response(): #Adding the response part seperately to be called via the API to the frontend
-  pass
+def rag_pipeline(document_sources):
+    processed_docs = load_and_process(document_sources)
+
+    vector_store = vectordb_information(processed_docs)
+
+    rag_chain = rag_model(vector_store)
+
+    return rag_chain
 
 
