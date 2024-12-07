@@ -29,7 +29,7 @@ def split_text(documents):  #Will add the required functions and definition to c
 def vectordb_information(docs):
   vectorstore = Milvus.from_documents(  # or Zilliz.from_documents
     documents=docs,
-    embedding=embeddings,
+    embedding=embedding_model,
     connection_args={
         "uri": "./milvus_demo.db",
     },
