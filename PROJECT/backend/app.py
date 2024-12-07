@@ -48,7 +48,9 @@ def rag_model(vectorstore):
         chain_type="stuff",
         retriever=vectorstore.as_retriever(
             search_kwargs={"k": 2}  
-        )
+        ),
+        return_source_documents=True,
+        chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}
     )
     return qa_chain
 
