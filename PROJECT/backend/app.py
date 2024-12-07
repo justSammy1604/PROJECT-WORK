@@ -20,15 +20,6 @@ embedding_model = HuggingFaceEmbeddings(
 data = 1 # Terrence, you place your Crawler and the text it extracts here in this var.
 loader = 1 #This is an instance of the document loader
 
-def load_raw_data(data):
-  raw_data = 1
-  return raw_data
-
-
-def preprocessing(docs): # Joseph, perform stopword removal on Terrence's data from the crawler here.
-  clean_data = load_raw_data(data)
-  return clean_data
-
 
 def split_text(documents):  #Will add the required functions and definition to create the RAG model.
   text_split = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
@@ -64,6 +55,13 @@ def response(query, rag_chain):
         return f"An error occurred: {str(e)}"
 
 
+def load_and_process(doc_source):
+    all_docs=[]
+    for source in doc_source:
+        loader=1 #Use the doc loader methods mentioned by Langchain
+
+    documents=loader.load()
+    preprocess_docs = 1 #Joseph, preprocess the docs here via stopword removal and NLP techniques to clean the data
   
 
 
