@@ -17,8 +17,7 @@ embedding_model = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
-data = 1 # Terrence, you place your Crawler and the text it extracts here in this var.
-loader = 1 #This is an instance of the document loader
+
 
 
 def split_text(documents):  #Will add the required functions and definition to create the RAG model.
@@ -63,6 +62,7 @@ def response(query, rag_chain):
 
 
 def load_and_process(doc_source):
+    data = 1 # Terrence, you place your Crawler and the text it extracts here in this var.
     all_docs=[]
     for source in doc_source:
         loader=1 #Use the doc loader methods mentioned by Langchain
