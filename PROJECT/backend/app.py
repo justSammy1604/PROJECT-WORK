@@ -25,13 +25,13 @@ def split_text(documents):  #Will add the required functions and definition to c
   docs = text_split.split_documents(documents)
   return docs
 
-def vectordb_information(docs):
-  vectorstore = Milvus.from_documents(  # or Zilliz.from_documents
-    documents=docs,
-    embedding=embedding_model,
-    connection_args={
+def vectordb_information(docs): 
+      vectorstore = Milvus.from_documents(  # or Zilliz.from_documents
+        documents=docs,
+        embedding=embedding_model,
+        connection_args={
         "uri": "./milvus_demo.db",
-    },
+        },
     drop_old=True,  # Drop the old Milvus collection if it exists
 )
     return vectorstore
