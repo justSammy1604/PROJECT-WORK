@@ -62,7 +62,6 @@ def response(query, rag_chain):
 
 
 def load_and_process(doc_source):
-    data = 1 # Terrence, you place your Crawler and the text it extracts here in this var.
     all_docs=[]
     for source in doc_source:
         loader=1 #Use the doc loader methods mentioned by Langchain
