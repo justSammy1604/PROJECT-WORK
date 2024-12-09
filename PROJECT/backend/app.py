@@ -55,7 +55,7 @@ def rag_model(vectorstore):
 
 def response(query, rag_chain):
     try:
-        response = rag_chain.invoke({"query": query})
+        response = rag_chain({"query": query})
         return response['result']
     except Exception as e:
         return f"An error occurred: {str(e)}"
