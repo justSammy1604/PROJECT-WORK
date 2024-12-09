@@ -16,7 +16,7 @@ def query():
       return jsonify({'error':'Query Not Provided'}),400
     answer = response(query,rag_chain)
     return jsonify({'answer':answer})
-  except:
+  except Exception as e:
      return jsonify({"error": str(e)}), 500
 
 
