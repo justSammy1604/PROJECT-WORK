@@ -2,7 +2,7 @@
 # Maybe add all the code in one file only 
 
 from flask import Flask, request, jsonify
-from backend.app import rag_pipeline, response
+from app import rag_pipeline, response
 
 data = 1 # Terrence, you place your Crawler and the text it extracts here in this var.
 rag_chain = rag_pipeline(data)
