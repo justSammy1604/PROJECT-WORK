@@ -15,7 +15,7 @@ I will add a flowchart here today.
 
 And we'll discuss the entire codebase with everyone so that everyone knows what everyone is doing. 
 
-And create PRs and report them on the group.
+And create PRs and report them on the group. 
 
 ![SYSTEM FLOW](diagram-export-4-12-2024-11_57_55-pm.png) 
 
