@@ -10,6 +10,12 @@ from langchain.vectorstores import Chroma
 from langchain_milvus import Milvus
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA 
+
+from pypdf import PdfReader
+import sys
+from unicodedata import category
+import spacy
+
 load_dotenv() 
 api_key = os.getenv('GOOGLE_API_MODEL') 
 model = ChatGoogleGenerativeAI(model='gemini-1.5-pro',google_api_key=api_key, temperature=0.4, convert_system_message_to_human=True) 
@@ -78,4 +84,39 @@ def rag_pipeline(document_sources):
 
     return rag_chain
 
+
+
+def pdf_to_documents(pdf_path):
+    # Open the PDF file
+    # importing required modules
+
+    # creating a pdf reader object
+    reader = PdfReader(pdf_path)
+
+    # printing number of pages in pdf file
+    text =[]
+    # getting a specific page from the pdf file
+    for page in reader.pages:
+        text.append(page.extract_text())
+    documents = []
+    nlp = spacy.load("en_core_web_sm")
+    codepoints = range(sys.maxunicode + 1)
+    punctuation = {c for i in codepoints if category(c := chr(i)).startswith("P")} and {"\n"," "}
+    # Loop through each page in the PDF
+    for page_text in text:
+        doc = nlp(page_text)
+
+        filtered_tokens = [token.text for token in doc if not token.is_stop]
+
+
+        for i in punctuation:
+            for token in filtered_tokens:
+                if i in token:
+                    filtered_tokens.remove(token)
+
+        documents.append(filtered_tokens)
+
+    return documents
+
+# print(pdf_to_documents('/content/epic-v-google-amended-complaint-7456638baa1f.pdf'))
 
