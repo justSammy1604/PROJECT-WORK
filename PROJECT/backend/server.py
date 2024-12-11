@@ -2,7 +2,7 @@
 # Maybe add all the code in one file only 
 
 from flask import Flask, request, jsonify
-from app import rag_pipeline, response
+from app import rag_pipeline, query_response
 
 app = Flask(__name__)
 
@@ -16,7 +16,7 @@ def query():
     query = data.get('query')
     if not query:
       return jsonify({'error':'Query Not Provided'}),400
-    answer = response(query,rag_chain)
+    answer = query_response(query,rag_chain)
     return jsonify({'answer':answer})
   except Exception as e:
      return jsonify({"error": str(e)}), 500
