@@ -50,7 +50,7 @@ def rag_model(vectorstore):
     )
     return qa_chain
 
-def response(query, rag_chain):
+def query_response(query, rag_chain):
     try:
         response = rag_chain({"query": query})
         return response['result']
