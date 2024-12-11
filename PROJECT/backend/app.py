@@ -1,7 +1,7 @@
 #To add main Langchain code here.
 import os 
 from dotenv import load_dotenv 
-from langchain_google_genai import ChatGoogleGenerativeAI 
+from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain import PromptTemplate
 from langchain.chains.question_answering import load_qa_chain
 from langchain.document_loaders import PyPDFLoader, WebBaseLoader
