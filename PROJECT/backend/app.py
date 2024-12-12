@@ -7,7 +7,7 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.document_loaders import PyPDFLoader, WebBaseLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter 
 from langchain.vectorstores import Chroma
-from langchain_milvus import Milvus
+from langchain_milvus import Milvus 
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA 
 
