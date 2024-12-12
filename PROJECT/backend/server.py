@@ -26,15 +26,16 @@ rag_chain = rag_pipeline(data)
 @socketio.on('message')
 def handle_message(message):
     # This is where you would integrate with your AI model
-    # we'll just echo the message with a delay
-    words = message.split()
-    for word in words:
-        time.sleep(0.5)  # Simulate processing time
-        emit('message', word)
+    try:
+        data = request.json
+        query = data.get('message')
+        if not query:
+            return jsonify({'error': 'Query Not Provided'}), 400
+        answer = query_response(query, rag_chain)
+        return jsonify({'answer': answer})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-    # Send a final response
-    time.sleep(1)
-    emit('message', "This is the AI's response to: " + message)
 
 if __name__ == 'main':
     # Running both Flask and SocketIO
