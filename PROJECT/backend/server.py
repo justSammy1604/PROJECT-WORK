@@ -10,7 +10,7 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 data = 1  # Terrence, you place your Crawler and the text it extracts here in this var.
 rag_chain = rag_pipeline(data)
 
-@app.route('/query', methods=['POST'])
+"""@app.route('/query', methods=['POST'])
 def query():
     try:
         data = request.json
@@ -21,6 +21,7 @@ def query():
         return jsonify({'answer': answer})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+"""
 
 @socketio.on('message')
 def handle_message(message):
