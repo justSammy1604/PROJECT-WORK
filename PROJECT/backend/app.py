@@ -23,13 +23,13 @@ embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001",goog
 
 
 
-def split_text(documents):  #Will add the required functions and definition to create the RAG model.
+def split_text(documents):  
   text_split = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
   docs = text_split.split_documents(documents)
   return docs
 
 def vectordb_information(docs):
-    vectorstore = Milvus.from_documents(  # or Zilliz.from_documents
+  vectorstore = Milvus.from_documents(  # or Zilliz.from_documents
         documents=docs,
         embedding=embedding_model,
         connection_args={
@@ -37,15 +37,15 @@ def vectordb_information(docs):
         },
     drop_old=True,  # Drop the old Milvus collection if it exists
 )
-    return vectorstore
+  return vectorstore
 
 def rag_model(vectorstore):
-    template = """Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. Keep the answer as concise as possible. Always say "thanks for asking!" at the end of the answer.
+  template = """Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. Keep the answer as concise as possible. Always say "thanks for asking!" at the end of the answer.
         {context}
         Question: {question}
         Helpful Answer:"""
-    QA_CHAIN_PROMPT = PromptTemplate.from_template(template)
-    qa_chain = RetrievalQA.from_chain_type(
+  QA_CHAIN_PROMPT = PromptTemplate.from_template(template)
+  qa_chain = RetrievalQA.from_chain_type(
         llm=model,
         chain_type="stuff",
         retriever=vectorstore.as_retriever(
@@ -54,7 +54,7 @@ def rag_model(vectorstore):
         return_source_documents=True,
         chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}
     )
-    return qa_chain
+  return qa_chain
 
 def query_response(query, rag_chain):
   try:
