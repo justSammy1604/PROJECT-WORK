@@ -7,7 +7,7 @@ app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 # data and RAG pipeline setup here
-data = 1  # Terrence, you place your Crawler and the text it extracts here in this var.
+data = 'Enter_any_pdf_file_here.pdf'  # Terrence, you place your Crawler and the text it extracts here in this var.
 rag_chain = rag_pipeline(data)
 
 # @app.route('/query', methods=['POST'])
