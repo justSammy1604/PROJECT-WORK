@@ -71,17 +71,17 @@ def load_and_process(doc_source):
     documents = loader.load()
     all_docs.extend(documents)
       
-    return split_text(all_docs)
+  return split_text(all_docs)
 
 
 def rag_pipeline(document_sources):
-    processed_docs = load_and_process(document_sources)
+  processed_docs = load_and_process(document_sources)
 
-    vector_store = vectordb_information(processed_docs)
+  vector_store = vectordb_information(processed_docs)
+  
+  rag_chain = rag_model(vector_store)
 
-    rag_chain = rag_model(vector_store)
-
-    return rag_chain
+  return rag_chain
 
 
 
