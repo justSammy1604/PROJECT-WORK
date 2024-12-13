@@ -1,14 +1,15 @@
 # Set the working directory
-FROM node:18-alpine
+#Copy the package.json and package-lock.json files
+WORKDIR /app 
+#Install the dependencies
+COPY package*.json ./  
+#Copy the app files
+RUN npm install  
+#Build the app
+COPY . .  
+#Expose the port
+RUN npm run build  
+#Run the app
+EXPOSE 3000
 
-WORKDIR /app
-
-COPY package.json .
-
-RUN npm install 
-
-COPY . .
-
-EXPOSE 5000
-
-CMD [ "npm", "start"]
+CMD ["npm", "start"]
