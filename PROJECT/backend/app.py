@@ -57,21 +57,20 @@ def rag_model(vectorstore):
     return qa_chain
 
 def query_response(query, rag_chain):
-    try:
-        response = rag_chain({"query": query})
-        return response['result']
-    except Exception as e:
-        return f"An error occurred: {str(e)}"
+  try:
+    response = rag_chain({"query": query})
+    return response['result']
+  except Exception as e:
+    return f"An error occurred: {str(e)}"
 
 
 def load_and_process(doc_source):
-    all_docs=[]
-    for source in doc_source:
-        loader=1 #Use the doc loader methods mentioned by Langchain
-
-    documents=loader.load()
-    preprocess_docs = 1 #Joseph, preprocess the docs here via stopword removal and NLP techniques to clean the data
-
+  all_docs = []
+  for source in doc_source:
+    loader = PyPDFLoader(source)  # Example: Replace with the appropriate loader
+    documents = loader.load()
+    all_docs.extend(documents)
+      
     return split_text(all_docs)
 
 
