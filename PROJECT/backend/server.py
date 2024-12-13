@@ -37,6 +37,6 @@ def handle_message(message):
         return jsonify({"error": str(e)}), 500
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     # Running both Flask and SocketIO
     socketio.run(app, host='0.0.0.0', port=4200, debug=True)
