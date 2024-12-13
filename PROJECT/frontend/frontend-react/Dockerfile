@@ -10,6 +10,6 @@ COPY . .
 #Expose the port
 RUN npm run build  
 #Run the app
-EXPOSE 3000
+EXPOSE 5000
 
 CMD ["npm", "start"]
