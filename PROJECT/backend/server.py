@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_socketio import SocketIO, emit
 import time
-from app import rag_pipeline, query_response
+from app import rag_pipeline, query_response 
 
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
