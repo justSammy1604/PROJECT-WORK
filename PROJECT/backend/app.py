@@ -35,6 +35,7 @@ def vectordb_information(docs):
         persist_directory="./chroma_db"
     drop_old=True,  # Drop the old Milvus collection if it exists
 )
+  vectorstore.persist()
   return vectorstore
 
 def rag_model(vectorstore):
