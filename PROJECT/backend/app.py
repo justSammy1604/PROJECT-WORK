@@ -29,7 +29,7 @@ def split_text(documents):
   return docs
 
 def vectordb_information(docs):
-  vectorstore = Milvus.from_documents(  # or Zilliz.from_documents
+  vectorstore = Chroma.from_documents(  # or Zilliz.from_documents
         documents=docs,
         embedding=embedding_model,
         connection_args={
