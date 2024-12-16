@@ -32,9 +32,7 @@ def vectordb_information(docs):
   vectorstore = Chroma.from_documents(  # or Zilliz.from_documents
         documents=docs,
         embedding=embedding_model,
-        connection_args={
-        "uri": "./milvus_demo.db",
-        },
+        persist_directory="./chroma_db"
     drop_old=True,  # Drop the old Milvus collection if it exists
 )
   return vectorstore
