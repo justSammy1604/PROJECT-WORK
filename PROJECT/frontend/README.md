@@ -1,4 +1,4 @@
-1. Set up a new React project using Next.js
+1. Set up a new React project using Next.js 
    
 2. Install necessary dependencies:
 npm install @radix-ui/react-avatar @radix-ui/react-scroll-area class-variance-authority clsx lucide-react socket.io-client tailwind-merge tailwindcss-animate
