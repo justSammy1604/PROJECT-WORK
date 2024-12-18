@@ -7,8 +7,8 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain_community.document_loaders import PyPDFLoader, WebBaseLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter 
 from langchain_community.vectorstores import Chroma
-from langchain_milvus import Milvus 
-from langchain_huggingface import HuggingFaceEmbeddings
+# from langchain_milvus import Milvus 
+# from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA 
 
 from pypdf import PdfReader
@@ -33,7 +33,7 @@ def vectordb_information(docs):
         documents=docs,
         embedding=embedding_model,
         persist_directory="./chroma_db"
-    drop_old=True,  # Drop the old Milvus collection if it exists
+    
 )
   vectorstore.persist()
   return vectorstore
