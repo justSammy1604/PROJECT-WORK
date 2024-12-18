@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:4200  # Backend URL
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./backend:/app  # Optional for live code reload
