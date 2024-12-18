@@ -2,11 +2,11 @@
 import os 
 from dotenv import load_dotenv 
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
-from langchain import PromptTemplate 
+from langchain_core.prompts import PromptTemplate 
 from langchain.chains.question_answering import load_qa_chain 
-from langchain.document_loaders import PyPDFLoader, WebBaseLoader
+from langchain_community.document_loaders import PyPDFLoader, WebBaseLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter 
-from langchain.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain_milvus import Milvus 
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA 
