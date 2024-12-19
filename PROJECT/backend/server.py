@@ -1,12 +1,12 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-#from app import rag_pipeline, query_response
+from app import rag_pipeline, query_response
 
 app = Flask(__name__)
 CORS(app)  # This enables CORS for all routes
 
-data = 1  # Terrence, you place your Crawler and the text it extracts here in this var.
-#rag_chain = rag_pipeline(data)
+data = 'sample.pdf'  # Terrence, you place your Crawler and the text it extracts here in this var.
+rag_chain = rag_pipeline(data)
 
 @app.route('/query', methods=['POST'])
 def query():
@@ -15,9 +15,7 @@ def query():
         query = data.get('query')
         if not query:
             return jsonify({'error': 'Query Not Provided'}), 400
-        #answer = query_response(query, rag_chain)
-        answer = "Hello , I am definetely a chatbot"
-
+        answer = query_response(query, rag_chain)
         return jsonify({'answer': answer})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
