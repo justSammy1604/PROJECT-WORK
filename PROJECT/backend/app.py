@@ -82,13 +82,6 @@ def rag_pipeline(document_sources):
 
 
 
-#from pypdf import PdfReader
-import sys
-from unicodedata import category
-import spacy
-
-
-
 def token_removal(texts):
     #note that texts is all the texts from different documents in an array
 
