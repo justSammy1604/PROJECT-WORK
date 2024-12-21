@@ -82,25 +82,34 @@ def rag_pipeline(document_sources):
 
 
 
-def pdf_to_documents(pdf_path):
+#from pypdf import PdfReader
+import sys
+from unicodedata import category
+import spacy
+
+
+
+def token_removal(texts):
+    #note that texts is all the texts from different documents in an array
+
     # Open the PDF file
     # importing required modules
 
     # creating a pdf reader object
-    reader = PdfReader(pdf_path)
+    # reader = PdfReader(pdf_path)
 
-    # printing number of pages in pdf file
-    text =[]
-    # getting a specific page from the pdf file
-    for page in reader.pages:
-        text.append(page.extract_text())
+    # # printing number of pages in pdf file
+    # text =[]
+    # # getting a specific page from the pdf file
+    # for page in reader.pages:
+    #     text.append(page.extract_text())
     documents = []
     nlp = spacy.load("en_core_web_sm")
     codepoints = range(sys.maxunicode + 1)
     punctuation = {c for i in codepoints if category(c := chr(i)).startswith("P")} and {"\n"," "}
     # Loop through each page in the PDF
-    for page_text in text:
-        doc = nlp(page_text)
+    for text in texts:
+        doc = nlp(text)
 
         filtered_tokens = [token.text for token in doc if not token.is_stop]
 
@@ -114,5 +123,29 @@ def pdf_to_documents(pdf_path):
 
     return documents
 
-# print(pdf_to_documents('/content/epic-v-google-amended-complaint-7456638baa1f.pdf'))
+
+#testing
+# content = []
+# file = open("/content/Adams_1797.txt", "r")
+# content.append(file.read())
+# #print(content)
+# file.close()
+
+# file = open("/content/Adams_1798.txt", "r")
+# content.append(file.read())
+# #print(content)
+# file.close()
+
+# file = open("/content/Adams_1799.txt", "r")
+# content.append(file.read())
+# #print(content)
+# file.close()
+
+# file = open("/content/Adams_1800.txt", "r")
+# content.append(file.read())
+# #print(content)
+# file.close()
+# answer = pdf_to_documents(content)
+# for a in answer:
+#   print(a)
 
