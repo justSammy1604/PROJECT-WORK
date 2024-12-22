@@ -81,7 +81,6 @@ def rag_pipeline(document_sources):
   return rag_chain
 
 
-
 def token_removal(texts):
     #note that texts is all the texts from different documents in an array
 
