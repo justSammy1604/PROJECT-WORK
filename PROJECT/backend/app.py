@@ -82,38 +82,38 @@ def rag_pipeline(document_sources):
 
 
 def token_removal(texts):
-    #note that texts is all the texts from different documents in an array
+  #note that texts is all the texts from different documents in an array
 
-    # Open the PDF file
-    # importing required modules
+  # Open the PDF file
+  # importing required modules
 
-    # creating a pdf reader object
-    # reader = PdfReader(pdf_path)
+  # creating a pdf reader object
+  # reader = PdfReader(pdf_path)
 
-    # # printing number of pages in pdf file
-    # text =[]
-    # # getting a specific page from the pdf file
-    # for page in reader.pages:
-    #     text.append(page.extract_text())
-    documents = []
-    nlp = spacy.load("en_core_web_sm")
-    codepoints = range(sys.maxunicode + 1)
-    punctuation = {c for i in codepoints if category(c := chr(i)).startswith("P")} and {"\n"," "}
-    # Loop through each page in the PDF
-    for text in texts:
-        doc = nlp(text)
+  # # printing number of pages in pdf file
+  # text =[]
+  # # getting a specific page from the pdf file
+  # for page in reader.pages:
+  #     text.append(page.extract_text())
+  documents = []
+  nlp = spacy.load("en_core_web_sm")
+  codepoints = range(sys.maxunicode + 1)
+  punctuation = {c for i in codepoints if category(c := chr(i)).startswith("P")} and {"\n"," "}
+  # Loop through each page in the PDF
+  for text in texts:
+    doc = nlp(text)
 
-        filtered_tokens = [token.text for token in doc if not token.is_stop]
+    filtered_tokens = [token.text for token in doc if not token.is_stop]
 
 
-        for i in punctuation:
-            for token in filtered_tokens:
-                if i in token:
-                    filtered_tokens.remove(token)
+    for i in punctuation:
+      for token in filtered_tokens:
+        if i in token:
+          filtered_tokens.remove(token)
 
-        documents.append(filtered_tokens)
+      documents.append(filtered_tokens)
 
-    return documents
+  return documents
 
 
 #testing
