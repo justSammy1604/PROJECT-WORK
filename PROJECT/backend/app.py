@@ -9,7 +9,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma 
 from langchain.chains import RetrievalQA 
 
-from pypdf import PdfReader
+from pypdf import PdfReader 
 import sys
 from unicodedata import category
 import spacy 
