@@ -12,7 +12,7 @@ from langchain.chains import RetrievalQA
 from pypdf import PdfReader
 import sys
 from unicodedata import category
-import spacy
+import spacy 
 
 load_dotenv() 
 api_key = os.getenv('GOOGLE_API_MODEL') 
