@@ -26,7 +26,7 @@ def split_text(documents):
   docs = text_split.split_documents(documents)
   return docs
 
-def vectordb_information(docs):
+def vectordb_information(docs): 
   vectorstore = Chroma.from_documents( 
         documents=docs,
         embedding=embedding_model,
