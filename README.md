@@ -13,7 +13,7 @@ I have already created the respective files to work on, so fork the repos and wo
 
 I will add a flowchart here today. 
 
-And we'll discuss the entire codebase with everyone so that everyone knows what everyone is doing. 
+And we'll discuss the entire codebase with everyone so that everyone knows what everyone is doing.  
 
 And create PRs and report them on the group.  
 
