@@ -11,7 +11,7 @@ I have already created the respective files to work on, so fork the repos and wo
 - `Joseph`, `Terrence` and I will work on backend. Y'all lemme know which model, vector db and embedding y'all would prefer. 
 - I may alternate `Terrence` on both sides if frontend peeps need any help.
 
-I will add a flowchart here today. 
+I will add a flowchart here today.  
 
 And we'll discuss the entire codebase with everyone so that everyone knows what everyone is doing.  
 
