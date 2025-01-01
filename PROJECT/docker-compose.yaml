@@ -19,6 +19,6 @@ services:
     ports:
       - "4200:4200"
     environment:
-      - FLASK_ENV=development
+      - FLASK_ENV=development 
     volumes:
       - ./backend:/app  # Optional for live code reload
