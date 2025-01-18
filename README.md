@@ -11,7 +11,13 @@ I have already created the respective files to work on, so fork the repos and wo
 - `Joseph`, `Terrence` and I will work on backend. Y'all lemme know which model, vector db and embedding y'all would prefer. 
 - I may alternate `Terrence` on both sides if frontend peeps need any help.
 
-
+### NEXT PHASE OF PROJECT
+- `Terrence` has to fix the structure of data extracted from the crawler
+- `Joseph` has to add the stop word removal feature
+- `Mathias` thought of some graphs, have to look into that.
+- For the cache, thought of using Redis as the external cache, if y'all find any other ones, lemme know.
+- Once the app done, we have to test it thoroughly
+- Writing of research paper, ig this will be told by Sir on Monday.
  
 ![SYSTEM FLOW](diagram-export-4-12-2024-11_57_55-pm.png) 
 
