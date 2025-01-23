@@ -98,8 +98,18 @@ def rag_model(vectorstore):
 
 def query_response(query, rag_chain):
   try:
-    response = rag_chain({"query": query})
-    return response['result']
+    query_embedding = embedding_model.embed_query(query)
+    cached_response = cache.get_similar(query_embedding)
+    if cached_response:
+        print('Cache Hit!!')
+        return cached_response
+    
+    print('Cache Miss!!')
+    result = rag_chain({"query": query})
+    response = result['result']
+
+    cache.add_entry(query_embedding,response)
+    return response
   except Exception as e:
     return f"An error occurred: {str(e)}"
 
