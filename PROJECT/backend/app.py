@@ -20,6 +20,49 @@ model = ChatGoogleGenerativeAI(model='gemini-1.5-pro',google_api_key=api_key, te
 embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001",google_api_key=api_key) 
 
 class RedisSemanticCache:
+  def __init__(self,host='localhost',port=6379,db=0,similarity_threshold=0.82,max_entries=20):
+        self.client=redis.Redis(host=host,port=port,db=db)
+        self.similarity_threshold=similarity_threshold
+        self.max_entries=max_entries
+        self.access_zset='cache_access'
+        self.data_hash='cache_data'
+
+    def cosine_similarity(self,vec_1,vec_2):
+        a=np.array(vec_1)
+        b=np.array(vec_2)
+        return np.dot(a,b)/(np.linalg.norm(a)*np.linalg.norm(b))
+    
+    def current_time(self):
+        return int(datetime.now().timestamp()*1000)
+    
+    def get_similar(self,embedding):
+        all_entries = self.client.hgetall(self.data_hash)
+        best_match=None
+        high_similarity=-1
+
+        for key, value in all_entries.items():
+            entry=json.loads(value)
+            similarity=self.cosine_similarity(embedding,entry['embedding'])
+            if similarity>high_similarity and similarity>self.similarity_threshold:
+                high_similarity=similarity
+                best_match=entry['response']
+
+                self.client.zadd(self.access_zset,{key:self.current_time()})
+
+        return best_match
+    
+    def add_entry(self,embedding,response):
+        entry_id=f'entry_{self.client.incr('cache_counter')}'
+
+        self.client.hset(self.data_hash,entry_id,json.dumps({'embedding':embedding,'response':response}))
+
+        self.client.zadd(self.access_zset,{entry_id:self.current_time()})
+
+        if self.client.zcard(self.access_zset)>self.max_entries:
+            oldest=self.client.zrange(self.access_zset,0,0)
+            self.client.zrem(self.access_zset,*oldest)
+            self.client.hdel(self.data_hash,*oldest)
+
 
 def split_text(documents):  
   text_split = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
