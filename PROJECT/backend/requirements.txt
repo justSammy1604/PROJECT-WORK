@@ -12,3 +12,4 @@ Flask-SocketIO==5.4.1
 spacy==3.8.0
 pypdf==5.1.0
 chromadb==0.5.23
+redis==3.5.3
