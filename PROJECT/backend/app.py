@@ -24,7 +24,7 @@ model = ChatGoogleGenerativeAI(model='gemini-1.5-pro',google_api_key=api_key, te
 embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001",google_api_key=api_key) 
 
 class RedisSemanticCache:
-  def __init__(self,host='localhost',port=6379,db=0,similarity_threshold=0.82,max_entries=20):
+  def __init__(self,host='localhost',port=6379,db=0,similarity_threshold=0.62,max_entries=20):
         self.client=redis.Redis(host=host,port=port,db=db)
         self.similarity_threshold=similarity_threshold
         self.max_entries=max_entries
@@ -67,6 +67,7 @@ class RedisSemanticCache:
             self.client.zrem(self.access_zset,*oldest)
             self.client.hdel(self.data_hash,*oldest)
 
+cache = RedisSemanticCache(similarity_threshold=0.62,max_entries=20)
 
 def split_text(documents):  
   text_split = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
