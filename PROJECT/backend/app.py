@@ -125,7 +125,8 @@ def load_and_process(doc_source):
     documents = loader.load()
     all_docs.extend(documents)
       
-  return split_text(all_docs)
+  
+  return split_text(sw_rem_main(all_docs))
 
 
 def rag_pipeline(document_sources):
@@ -137,65 +138,45 @@ def rag_pipeline(document_sources):
 
   return rag_chain
 
+def conver(temp):
+  temp2 = ''
+  for text in temp:
+    temp2 += text + ' '
+  return temp2
 
-##Failed function. Edit and fix for next phase.
-def token_removal(texts):
-  #note that texts is all the texts from different documents in an array
-
-  # Open the PDF file
-  # importing required modules
-
-  # creating a pdf reader object
-  # reader = PdfReader(pdf_path)
-
-  # # printing number of pages in pdf file
-  # text =[]
-  # # getting a specific page from the pdf file
-  # for page in reader.pages:
-  #     text.append(page.extract_text())
-  documents = []
-  nlp = spacy.load("en_core_web_sm")
-  codepoints = range(sys.maxunicode + 1)
-  punctuation = {c for i in codepoints if category(c := chr(i)).startswith("P")} and {"\n"," "}
-  # Loop through each page in the PDF
-  for text in texts:
-    doc = nlp(text)
-
-    filtered_tokens = [token.text for token in doc if not token.is_stop]
+def sw_rem_main(all_docs):
+  temp = []
+  for doc in all_docs:
+      temp.append(doc.page_content)
+  
+  swrem = stopword_removal(temp)
+  
+  for doc in all_docs:
+    doc.page_content = conver(swrem.pop(0))
+  return all_docs
 
 
-    for i in punctuation:
-      for token in filtered_tokens:
-        if i in token:
-          filtered_tokens.remove(token)
+def stopword_removal(texts):
+    #note that texts is all the texts from different documents in an array
 
-      documents.append(filtered_tokens)
+    documents = []
+    
+    nlp = spacy.load("en_core_web_sm")
+    codepoints = range(sys.maxunicode + 1)
+    punctuation = {c for i in codepoints if category(c := chr(i)).startswith("P")} and {"\n"," "}
+    
+    for text in texts:
+        doc = nlp(text)
 
-  return documents
+        filtered_tokens = [token.text for token in doc if not token.is_stop]
 
 
-#testing
-# content = []
-# file = open("/content/Adams_1797.txt", "r")
-# content.append(file.read())
-# #print(content)
-# file.close()
+        for i in punctuation:
+            for token in filtered_tokens:
+                if i in token:
+                    filtered_tokens.remove(token)
 
-# file = open("/content/Adams_1798.txt", "r")
-# content.append(file.read())
-# #print(content)
-# file.close()
+        documents.append(filtered_tokens)
 
-# file = open("/content/Adams_1799.txt", "r")
-# content.append(file.read())
-# #print(content)
-# file.close()
-
-# file = open("/content/Adams_1800.txt", "r")
-# content.append(file.read())
-# #print(content)
-# file.close()
-# answer = pdf_to_documents(content)
-# for a in answer:
-#   print(a)
+    return documents
 
