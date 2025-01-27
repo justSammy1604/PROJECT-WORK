@@ -2,7 +2,7 @@
 import os 
 import json
 import numpy as np
-from datetime import datetime
+from datetime import datetime 
 import redis
 from dotenv import load_dotenv 
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
