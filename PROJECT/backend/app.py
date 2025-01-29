@@ -5,7 +5,7 @@ import numpy as np
 from datetime import datetime 
 import redis
 from dotenv import load_dotenv 
-from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
+from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings 
 from langchain_core.prompts import PromptTemplate 
 from langchain.chains.question_answering import load_qa_chain 
 from langchain_community.document_loaders import PyPDFLoader, WebBaseLoader, DirectoryLoader
