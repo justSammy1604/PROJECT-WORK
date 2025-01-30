@@ -18,10 +18,24 @@ import sys
 from unicodedata import category
 import spacy
 
+from langchain_cohere import ChatCohere, CohereEmbeddings
 load_dotenv() 
-api_key = os.getenv('GOOGLE_API_MODEL') 
-model = ChatGoogleGenerativeAI(model='gemini-1.5-pro',google_api_key=api_key, temperature=0.4, convert_system_message_to_human=True) 
-embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001",google_api_key=api_key) 
+# api_key = os.getenv('GOOGLE_API_MODEL') 
+# model = ChatGoogleGenerativeAI(model='gemini-1.5-pro',google_api_key=api_key, temperature=0.4, convert_system_message_to_human=True) 
+# embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001",google_api_key=api_key) 
+
+api_key = os.getenv('COHERE_API_KEY')
+
+model = ChatCohere(
+    cohere_api_key=api_key,
+    model="command",  # change the model
+    temperature=0.4
+)
+
+embedding_model = CohereEmbeddings(
+    cohere_api_key=api_key,
+    model_name="large" # Or "small", "multilingual-22-12", etc. - choose your Cohere embedding model
+)
 
 class RedisSemanticCache:
   def __init__(self,host='localhost',port=6379,db=0,similarity_threshold=0.62,max_entries=20):
