@@ -110,7 +110,7 @@ def rag_model(vectorstore):
   qa_chain = RetrievalQA.from_chain_type(
         llm=model,
         chain_type="stuff",
-        retriever=vectorstore.as_retriever(
+        retriever=vectorstore.similarity_search_with_score(
             search_kwargs={"k": 2}  
         ),
         return_source_documents=True,
