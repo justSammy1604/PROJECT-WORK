@@ -14,7 +14,7 @@ from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA 
 
 from pypdf import PdfReader
-import sys
+import sys 
 from unicodedata import category
 import spacy
 
