@@ -3,7 +3,7 @@ import os
 import json
 import numpy as np
 from datetime import datetime 
-import redis
+import redis 
 from dotenv import load_dotenv 
 from langchain_cohere import ChatCohere, CohereEmbeddings
 from langchain_core.prompts import PromptTemplate 
