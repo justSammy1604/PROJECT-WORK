@@ -55,7 +55,7 @@ class RedisSemanticCache:
     def get_similar(self,embedding):
         all_entries = self.client.hgetall(self.data_hash)
         best_match=None
-        high_similarity=-1
+        high_similarity=-1 
 
         for key, value in all_entries.items():
             entry=json.loads(value)
