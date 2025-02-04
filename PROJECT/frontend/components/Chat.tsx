@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { Send } from 'lucide-react'
+import { useState, useRef, useEffect } from "react"
+import { Send, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "./ui/input"
 
@@ -14,6 +14,33 @@ export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [showScrollButton, setShowScrollButton] = useState(false)
+  const messagesEndRef = useRef<HTMLDivElement>(null)
+  const chatContainerRef = useRef<HTMLDivElement>(null)
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  useEffect(() => {
+  scrollToBottom()
+  }, [messages])
+
+  useEffect(() => {
+  const container = chatContainerRef.current
+  if (!container) return
+
+  const handleScroll = () => {
+  const { scrollTop, scrollHeight, clientHeight } = chatContainerRef.current
+  const atBottom = scrollHeight - scrollTop - clientHeight <= 5 
+  setShowScrollButton(!atBottom)
+  }
+
+  container.addEventListener("scroll", handleScroll)
+  handleScroll() // Ensure button is correctly set on first render
+
+  return () => container.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -45,13 +72,13 @@ export default function Chat() {
       const errorMessage: Message = { role: 'assistant', content: 'Sorry, I encountered an error. Please try again.' }
       setMessages(prev => [...prev, errorMessage])
     } finally {
-      setIsLoading(false)
+      const [isLoading, setIsLoading] = useState(false)
     }
   }
 
   return (
     <div className="flex flex-col h-[600px] max-w-2xl mx-auto">
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.map((message, index) => (
           <div key={index} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
             <div className={`max-w-sm p-2 rounded-lg ${message.role === 'user' ? 'bg-blue-500 text-white' : 'bg-gray-500'}`}>
@@ -59,7 +86,13 @@ export default function Chat() {
             </div>
           </div>
         ))}
+        <div ref={messagesEndRef} />
       </div>
+      {showScrollButton && (
+        <Button className="absolute bottom-20 right-4 rounded-full" size="icon" onClick={scrollToBottom}>
+          <ChevronDown className="h-4 w-4" />
+        </Button>
+      )}
       <form onSubmit={handleSubmit} className="p-4 border-t flex">
         <Input
           type="text"
@@ -75,4 +108,3 @@ export default function Chat() {
     </div>
   )
 }
-
