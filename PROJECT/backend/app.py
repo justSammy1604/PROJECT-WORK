@@ -27,8 +27,9 @@ api_key = os.getenv('COHERE_API_KEY')
 
 model = ChatCohere(
     cohere_api_key=api_key,
-    model="command",  # change the model
-    temperature=0.4
+    model="command-r-plus",  # change the model
+    temperature=0.4,
+    convert_system_message_to_human=True
 )
 
 embedding_model = CohereEmbeddings(
