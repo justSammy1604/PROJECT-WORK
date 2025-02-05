@@ -38,7 +38,7 @@ embedding_model = CohereEmbeddings(
 )
 
 redis_vectorstore = Redis.from_documents(
-    docs,
+    #docs,
     embedding=embedding_model,
     redis_url="redis://localhost:6379",
     index_name="finance_cache",  # Unique index name for Redis
