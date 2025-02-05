@@ -47,7 +47,6 @@ redis_vectorstore = Redis.from_documents(
 redis_client = redis.Redis(host="localhost", port=6379, db=0)
 cache_ttl = 3600
 
-cache = RedisSemanticCache(similarity_threshold=0.62,max_entries=20,ttl=7200)
 
 def split_text(documents):  
   text_split = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
