@@ -10,7 +10,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain.chains.question_answering import load_qa_chain 
 from langchain_community.document_loaders import PyPDFLoader, WebBaseLoader, DirectoryLoader, JSONLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter 
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma, Redis
 from langchain.chains import RetrievalQA 
 
 from pypdf import PdfReader
