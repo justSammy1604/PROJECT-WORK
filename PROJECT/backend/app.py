@@ -33,7 +33,7 @@ model = ChatCohere(
 
 embedding_model = CohereEmbeddings(
     cohere_api_key=api_key,
-    model_name="large" # Or "small", "multilingual-22-12", etc. - choose your Cohere embedding model
+    model="embed-multilingual-v2.0" # Or "small", "multilingual-22-12", etc. - choose your Cohere embedding model
 )
 
 redis_vectorstore = Redis.from_documents(
