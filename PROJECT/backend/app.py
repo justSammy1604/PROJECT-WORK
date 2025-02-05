@@ -105,8 +105,7 @@ def query_response(query, rag_chain):
 
 
 def load_and_process(doc_source):
-  all_docs = []
-  for source in doc_source:
+    all_docs = []
     loader = DirectoryLoader(data,glob="*.pdf",show_progress=True,loader_cls=PyPDFLoader)  # Example: Replace with the appropriate loader
     documents = loader.load()
     all_docs.extend(documents)
