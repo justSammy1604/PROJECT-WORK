@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { Brain, FileText, Zap, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -46,8 +47,8 @@ const AnimatedText = ({ texts, className = "" }: { texts: string[], className?: 
 
 // HeroSection Component
 const HeroSection = () => {
-  const navigate = useNavigate();
-  
+  // const navigate = useNavigate('/');
+
   return (
     <div className="min-h-[80vh] flex flex-col items-center justify-center px-4 bg-gradient-to-b from-[#F1F1F1] to-[#F5F5DC]">
       <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6 text-center">
@@ -64,7 +65,7 @@ const HeroSection = () => {
         />
       </div>
       <Button 
-        onClick={() => navigate('/')}
+        // onClick={() => navigate('/')}
         className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full transform transition-all hover:scale-105 shadow-lg hover:shadow-xl"
       >
         Start Chatting Now
