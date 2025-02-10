@@ -31,7 +31,7 @@ export default function Chat() {
   if (!container) return
 
   const handleScroll = () => {
-  const { scrollTop, scrollHeight, clientHeight } = chatContainerRef.current
+  const { scrollTop, scrollHeight, clientHeight } = container
   const atBottom = scrollHeight - scrollTop - clientHeight <= 5 
   setShowScrollButton(!atBottom)
   }
@@ -108,3 +108,4 @@ export default function Chat() {
     </div>
   )
 }
+
