@@ -2,7 +2,7 @@
 import React from 'react';
 import { Brain, FileText, Zap, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
 // AnimatedText Component
 const AnimatedText = ({ texts, className = "" }: { texts: string[], className?: string }) => {
