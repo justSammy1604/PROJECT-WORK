@@ -27,4 +27,5 @@ I have already created the respective files to work on, so fork the repos and wo
 ![ROUGE](https://huggingface.co/spaces/evaluate-metric/rouge)
 ![METEOR](https://huggingface.co/spaces/evaluate-metric/meteor)
 ![NDCG & MRR](https://blog.stackademic.com/ndcg-vs-mrr-ranking-metrics-for-information-retrieval-in-rags-2061b04298a6)
+![BLEU](https://huggingface.co/spaces/evaluate-metric/bleu)
 
