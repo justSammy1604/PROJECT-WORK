@@ -24,4 +24,7 @@ I have already created the respective files to work on, so fork the repos and wo
 ![SYSTEM FLOW](diagram-export-4-12-2024-11_57_55-pm.png) 
 
 
+![ROUGE](https://huggingface.co/spaces/evaluate-metric/rouge)
+![METEOR](https://huggingface.co/spaces/evaluate-metric/meteor)
+![NDCG & MRR](https://blog.stackademic.com/ndcg-vs-mrr-ranking-metrics-for-information-retrieval-in-rags-2061b04298a6)
 
