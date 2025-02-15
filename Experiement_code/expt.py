@@ -1,8 +1,8 @@
 import os 
 import time
 import numpy as np
-from dotenv import load_dotenv 
-from langchain_cohere import ChatCohere, CohereEmbeddings
+from dotenv import load_dotenv  
+from langchain_cohere import ChatCohere, CohereEmbeddings 
 from langchain_core.prompts import PromptTemplate 
 from langchain.chains.question_answering import load_qa_chain 
 from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader, JSONLoader
