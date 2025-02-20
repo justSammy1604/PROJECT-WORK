@@ -37,16 +37,6 @@ embedding_model = CohereEmbeddings(
     model="embed-multilingual-v2.0" # Or "small", "multilingual-22-12", etc. - choose your Cohere embedding model
 )
 
-redis_vectorstore = Redis.from_documents(
-    #docs,
-    embedding=embedding_model,
-    redis_url="redis://localhost:6379",
-    index_name="finance_cache",  # Unique index name for Redis
-)
-
-redis_client = redis.Redis(host="localhost", port=6379, db=0)
-cache_ttl = 3600
-
 
 def split_text(documents):  
   text_split = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
