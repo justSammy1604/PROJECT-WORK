@@ -76,20 +76,10 @@ def rag_model(vectorstore):
 
 def query_response(query, rag_chain):
   try:
-    query_embedding = embedding_model.embed_query(query)
-    redis_docs = redis_vectorstore.similarity_search_by_vector(query_embedding, k=1)
-    if redis_docs:
-        print("Cache Hit!!")
-        return redis_docs[0].page_content
-    
-    print('Cache Miss!!')
     result = rag_chain({"query": query})
     response = result['result']
-
-    redis_vectorstore.add_texts([query], [response])
-
+    return response
     #for quick lookup
-    redis_client.setex(f"response:{query}", cache_ttl, response)
   except Exception as e:
     return f"An error occurred: {str(e)}"
 
