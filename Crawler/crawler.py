@@ -2,8 +2,29 @@ import json
 import asyncio
 from datetime import datetime
 from pathlib import Path
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode 
+from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 from crawl4ai.extraction_strategy import JsonCssExtractionStrategy
+import textwrap
+
+#Code to format the data in a readable format
+def format_content(content):
+    """Format content by ensuring proper line breaks and indentation."""
+    if isinstance(content, list):  # If content is a list, format each dictionary inside it
+        return [format_content(item) for item in content]
+
+    if isinstance(content, dict):  # If content is a dictionary, format key-value pairs
+        formatted_content = {}
+        for key, value in content.items():
+            if isinstance(value, list):  # Ensure lists are formatted nicely
+                formatted_content[key] = value
+            elif isinstance(value, str):
+                formatted_content[key] = textwrap.wrap(value, width=80)  # Wrap long text
+            else:
+                formatted_content[key] = value  # Keep other types unchanged
+        return formatted_content
+    
+    return content  # Return as-is if not a dict or list
+
 
 async def extract_website_content(url):
     # Create output directory if it doesn't exist
@@ -20,80 +41,56 @@ async def extract_website_content(url):
 
     # schema code to extract the text from the website
     schema = {
-    "name": "Complete Website Content",
-    "baseSelector": "body",
+    "name": "Main Content",
+    "baseSelector": "body",  # Start from body
     "fields": [
         {
-            "name": "meta_description",
-            "selector": "meta[name='description']",
-            "type": "attribute",
-            "attribute": "content"
-        },
-        {
-            "name": "title",
-            "selector": "h1, .article-heading, .page-title",
-            "type": "text",
-            "multiple": True
-        },
-        {
-            "name": "all_text_content",
-            "selector": "body",
-            "type": "text",
-            "excludeSelectors": ["script", "style", "noscript", "iframe"]
-        },
-        {
             "name": "main_content",
-            "selector": "article, .article-body, .main-content, .content, main, #main, .post-content",
+            "selector": "article, .article-body, .main-content, .content, main, #main, .post-content, .entry-content",
+            "type": "text",
+            "excludeSelectors": [
+                "script", "style", "noscript", "iframe",
+                "header", "footer", "nav",
+                ".advertisement", ".ads", ".social-share",
+                ".related-articles", ".sidebar", 
+                ".comments", "#comments",
+                ".navigation", ".pagination",
+                ".breadcrumb", ".breadcrumbs",
+                ".checkbox","#checkbox"
+            ]
+            
+        },
+        {
+            "name": "article_title",
+            "selector": "article h1, .article-title, .post-title, .entry-title",
             "type": "text"
         },
         {
-            "name": "paragraphs",
-            "selector": "p, .paragraph, article p, main p",
+            "name": "article_text",
+            "selector": "article p, .article-body p, .main-content p, .post-content p",
+            "type": "text",
+            "multiple": True,
+            "excludeSelectors": [
+                ".advertisement", ".ads",
+                ".author-bio", ".copyright",
+                ".social-share", ".tags"
+            ]
+        },
+        {
+            "name": "article_headings",
+            "selector": "article h2, article h3, .main-content h2, .main-content h3",
             "type": "text",
             "multiple": True
         },
         {
-            "name": "headings",
-            "selector": "h1, h2, h3, h4, h5, h6",
+            "name": "important_lists",
+            "selector": "article ul, article ol, .main-content ul, .main-content ol",
             "type": "text",
-            "multiple": True
-        },
-        {
-            "name": "lists",
-            "selector": "ul li, ol li, dl dt, dl dd",
-            "type": "text",
-            "multiple": True
-        },
-        {
-            "name": "tables",
-            "selector": "table",
-            "type": "html",
-            "multiple": True
-        },
-        {
-            "name": "links",
-            "selector": "a",
-            "type": "text",
-            "multiple": True
-        },
-        {
-            "name": "images_alt_text",
-            "selector": "img",
-            "type": "attribute",
-            "attribute": "alt",
-            "multiple": True
-        },
-        {
-            "name": "blockquotes",
-            "selector": "blockquote, q, cite",
-            "type": "text",
-            "multiple": True
-        },
-        {
-            "name": "sidebar_content",
-            "selector": "aside, .sidebar, .widget",
-            "type": "text",
-            "multiple": True
+            "multiple": True,
+            "excludeSelectors": [
+                ".social-links", ".menu", 
+                ".navigation", ".share-buttons"
+            ]
         }
     ]
 }
@@ -105,6 +102,11 @@ async def extract_website_content(url):
     config = CrawlerRunConfig(
         cache_mode=CacheMode.BYPASS,
         extraction_strategy=extraction_strategy,
+        excluded_tags=['form', 'header', 'footer', 'nav'],
+        exclude_social_media_links=True,
+        exclude_external_links=True,
+        word_count_threshold=5,
+        exclude_external_images=True
     )
 
     async with AsyncWebCrawler(verbose=True) as crawler:
@@ -119,12 +121,13 @@ async def extract_website_content(url):
 
         # 5. Parse the extracted content
         data = json.loads(result.extracted_content)
+        formatted_data = format_content(data)
         
         # Add metadata to the crawled content
         crawl_entry = {
             "url": url,
             "timestamp": datetime.now().isoformat(),
-            "content": data
+            "content": formatted_data
         }
         
         # Append new data to existing entries
@@ -136,13 +139,16 @@ async def extract_website_content(url):
         
         print(f"Data successfully saved to {output_file}")
 
-# Example usage with multiple URLs
+#urls of website to be crawled
 urls = [
-    "https://www.investopedia.com/terms/i/investment.asp",
-    "https://en.wikipedia.org/wiki/Market_economy",
-    "https://www.moneycontrol.com/stocksmarketsindia/",
-    "https://coinmarketcap.com/",
-    # Add more URLs as needed
+    "https://economictimes.indiatimes.com/markets",
+    "https://economictimes.indiatimes.com/markets/stocks",
+    "https://economictimes.indiatimes.com/markets/candlestick-screener",
+    "https://economictimes.indiatimes.com/markets/stocks/stock-watch/articlelist/81776766.cms",
+    "https://economictimes.indiatimes.com/markets/ipo",
+    "https://economictimes.indiatimes.com/stocks/marketstats/top-gainers",
+    "https://economictimes.indiatimes.com/stocks/marketstats/top-losers",
+    "https://economictimes.indiatimes.com/stocks/marketstats/most-active-value"
 ]
 
 async def main():
