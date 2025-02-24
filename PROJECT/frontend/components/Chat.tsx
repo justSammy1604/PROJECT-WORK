@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import { Send, ChevronDown } from "lucide-react"
+import ReactMarkdown from 'react-markdown';
 import { Button } from "@/components/ui/button"
 import { Input } from "./ui/input"
 
@@ -49,7 +50,7 @@ export default function Chat() {
     const userMessage: Message = { role: 'user', content: input }
     setMessages(prev => [...prev, userMessage])
     setInput('')
-    setIsLoading(true)
+    // setIsLoading(true)
 
     try {
       const response = await fetch('http://localhost:4200/query', {
@@ -59,32 +60,41 @@ export default function Chat() {
         },
         body: JSON.stringify({ query: input }),
       })
-
+    
       if (!response.ok) {
-        throw new Error('Failed to get response')
+        throw new Error(`HTTP Error: ${response.status} - ${response.statusText}`)
       }
-
+    
       const data = await response.json()
+    
+      if (!data || !data.answer) {
+        throw new Error('Invalid response format')
+      }
+    
       const assistantMessage: Message = { role: 'assistant', content: data.answer }
       setMessages(prev => [...prev, assistantMessage])
+    
     } catch (error) {
-      console.error('Error:', error)
-      const errorMessage: Message = { role: 'assistant', content: 'Sorry, I encountered an error. Please try again.' }
+      console.error('Error fetching response:', error)
+    
+      const errorMessage: Message = { 
+        role: 'assistant', 
+        content: 'Sorry, something went wrong. Please try again later.' 
+      }
       setMessages(prev => [...prev, errorMessage])
-    } finally {
-      const [isLoading, setIsLoading] = useState(false)
     }
   }
+    
 
   return (
-    <div className="flex flex-col h-[600px] max-w-2xl mx-auto">
+    <div className="flex flex-col h-[500px] max-w-2xl mx-auto">
       <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-4 space-y-4">
-        {messages.map((message, index) => (
-          <div key={index} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-            <div className={`max-w-sm p-2 rounded-lg ${message.role === 'user' ? 'bg-blue-500 text-white' : 'bg-gray-500'}`}>
-              {message.content}
-            </div>
-          </div>
+      {messages.map((message, index) => (
+           <div key={index} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+           <div className={`max-w-sm p-2 rounded-lg ${message.role === 'user' ? 'bg-blue-500 text-white' : 'bg-gray-500 text-white'}`}>
+             <ReactMarkdown>{message.content}</ReactMarkdown>
+           </div>
+         </div>
         ))}
         <div ref={messagesEndRef} />
       </div>
@@ -102,10 +112,11 @@ export default function Chat() {
           className="flex-1 mr-2"
         />
         <Button type="submit" disabled={isLoading}>
-          {isLoading ? 'Sending...' : <Send className="h-4 w-4" />}
+          {/* {isLoading ? 'Sending...' : <Send className="h-4 w-4" />} */}
         </Button>
       </form>
     </div>
   )
 }
+
 

@@ -5,7 +5,8 @@ import numpy as np
 from datetime import datetime 
 import redis 
 from dotenv import load_dotenv 
-from langchain_cohere import ChatCohere, CohereEmbeddings
+# from langchain_cohere import ChatCohere, CohereEmbeddings
+from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_core.prompts import PromptTemplate 
 from langchain.chains.question_answering import load_qa_chain 
 from langchain_community.document_loaders import PyPDFLoader, WebBaseLoader, DirectoryLoader, JSONLoader
@@ -19,23 +20,23 @@ from unicodedata import category
 import spacy
 
 load_dotenv() 
-# api_key = os.getenv('GOOGLE_API_MODEL') 
-# model = ChatGoogleGenerativeAI(model='gemini-1.5-pro',google_api_key=api_key, temperature=0.4, convert_system_message_to_human=True) 
-# embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001",google_api_key=api_key) 
+api_key = os.getenv('GOOGLE_API_MODEL') 
+model = ChatGoogleGenerativeAI(model="gemini-2.0-flash",google_api_key=api_key, temperature=0.4, convert_system_message_to_human=True) 
+embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001",google_api_key=api_key) 
 
-api_key = os.getenv('COHERE_API_KEY')
+# api_key = os.getenv('COHERE_API_KEY')
 
-model = ChatCohere(
-    cohere_api_key=api_key,
-    model="command-r-plus",  # change the model
-    temperature=0.4,
-    convert_system_message_to_human=True
-)
+# model = ChatCohere(
+#     cohere_api_key=api_key,
+#     model="command-r-plus",  # change the model
+#     temperature=0.4,
+#     convert_system_message_to_human=True
+# )
 
-embedding_model = CohereEmbeddings(
-    cohere_api_key=api_key,
-    model="embed-multilingual-v2.0" # Or "small", "multilingual-22-12", etc. - choose your Cohere embedding model
-)
+# embedding_model = CohereEmbeddings(
+#     cohere_api_key=api_key,
+#     model="embed-multilingual-v2.0" # Or "small", "multilingual-22-12", etc. - choose your Cohere embedding model
+# )
 
 
 def split_text(documents):  
