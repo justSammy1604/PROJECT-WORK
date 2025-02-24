@@ -191,8 +191,6 @@ const Index = () => {
         <Features />
         <HowItWorks />
         {/* Powerful Sun Rays and Luminance Effect at Bottom */}
-<<<<<<< HEAD
-=======
         <footer className="relative py-20 bg-gradient-to-t from-transparent dark:from-transparent dark:to-black overflow-hidden">
 {/*           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[150%] h-96 bg-gradient-radial from-yellow-400/60 via-yellow-300/30 to-transparent opacity-70 pointer-events-none animate-pulse">
             {/* Enhanced Sun Rays */}
@@ -202,14 +200,13 @@ const Index = () => {
             <div className="absolute bottom-0 w-full h-40 bg-gradient-to-t from-yellow-200/60 dark:from-yellow-900/60 to-transparent"></div>
           </div> */}
         </footer>
->>>>>>> 956c3065929004e5d2a65a0b0eb4abdf77a06fd8
       </div>
     </div>
   );
 };
-<<<<<<< HEAD
+
 
 export default Index;
-=======
+
 export default Index;
->>>>>>> 956c3065929004e5d2a65a0b0eb4abdf77a06fd8
+
