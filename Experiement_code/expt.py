@@ -71,7 +71,7 @@ meteor_metric = evaluate.load("meteor")
 
 # Perform evaluation with respect to LLM
 predictions = [generated_answer]
-references = [doc.page_content for doc in retrieved_docs]  # Using LLM's own response for reference
+references = [[doc.page_content for doc in retrieved_docs]]  # Using LLM's own response for reference
 
 # Compute BLEU, ROUGE, METEOR scores
 bleu_score = bleu_metric.compute(predictions=predictions, references=references)
