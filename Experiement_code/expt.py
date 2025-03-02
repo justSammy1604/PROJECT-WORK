@@ -12,7 +12,7 @@ import evaluate
 
 # Load environment variables
 load_dotenv()
-api_key = os.getenv('COHERE_API_KEY')
+api_key = os.getenv('COHERE_API_KEY') 
 
 # Initialize model and embedding
 model = ChatCohere(model='command-r-plus', cohere_api_key=api_key, temperature=0.4, convert_system_message_to_human=True)
