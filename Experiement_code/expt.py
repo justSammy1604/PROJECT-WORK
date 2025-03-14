@@ -8,7 +8,7 @@ from langchain.chains import RetrievalQA
 from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter 
 from langchain_community.vectorstores import Chroma
-import evaluate
+import evaluate 
 
 # Load environment variables
 load_dotenv()
