@@ -64,7 +64,7 @@ squad_large = load_squad("/content/datasets/squad/train-v1.1.json")
 
 print(squad_large[0])
 
-''' import json
+import json
 def load_hotpotqa(filename):
     with open(filename, "r") as f:
         hotpot_data = json.load(f)
@@ -87,18 +87,16 @@ def load_hotpotqa(filename):
 
 # Load preprocessed HotpotQA datasets
 hotpotqa_small = load_hotpotqa("/content/datasets/hotpotqa/hotpot_dev_distractor_v1.json")
-# hotpotqa_medium = load_hotpotqa("/content/datasets/hotpotqa/hotpot_test_fullwiki_v1.json")
-# hotpotqa_large = load_hotpotqa("/content/datasets/hotpotqa/hotpot_train_v1.1.json")
- '''
+hotpotqa_medium = load_hotpotqa("/content/datasets/hotpotqa/hotpot_test_fullwiki_v1.json")
+hotpotqa_large = load_hotpotqa("/content/datasets/hotpotqa/hotpot_train_v1.1.json")
+ 
 
 from langchain.vectorstores import Chroma
-# from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain_cohere import CohereEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain.schema import Document
 import time
 
-# embedding_model = CohereEmbeddings(model="embed-multilingual-v2.0", cohere_api_key='sApb7nP6OfEYkQHNUpqprz5Srck5c7ZOtETachC0')
 
 embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001",google_api_key='')
 
@@ -111,13 +109,10 @@ def build_vectorstore(dataset):
 
     return Chroma.from_documents(docs, embedding_model), retrieval_time
 
-# vectorstore_squad_small = build_vectorstore(squad_small)
+vectorstore_squad_small = build_vectorstore(squad_small)
 vectorstore_squad_large, retrieval_time = build_vectorstore(squad_large)
 print(retrieval_time)
 
-
-
-# from langchain.chat_models import ChatOpenAI
 
 # Load LLM (change to your custom model if needed)
 llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash",google_api_key='AIzaSyAct6QgpgCudTb30HF4gf_9y700mtOEfIw', temperature=0.4, convert_system_message_to_human=True)
