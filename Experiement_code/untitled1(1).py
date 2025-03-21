@@ -100,7 +100,7 @@ import time
 
 # embedding_model = CohereEmbeddings(model="embed-multilingual-v2.0", cohere_api_key='sApb7nP6OfEYkQHNUpqprz5Srck5c7ZOtETachC0')
 
-embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001",google_api_key='AIzaSyD_teIs1irlSn0l4ymdbCeQV89Coj7g52U')
+embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001",google_api_key='')
 
 
 def build_vectorstore(dataset):
