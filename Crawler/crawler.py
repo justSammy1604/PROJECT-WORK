@@ -1,33 +1,21 @@
 import json
 import asyncio
-import cohere  # Cohere API instead of OpenAI
+import cohere 
 from datetime import datetime
 from pathlib import Path
 from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 from crawl4ai.extraction_strategy import JsonCssExtractionStrategy
 import textwrap
 
-# Cohere API Key (replace with your actual API key)
 cohere_client = cohere.Client("wWwu0mw2feW52WWfvWDXVAQZV5LkuDzFB8cIsJYX")
 
-# Function to send content to AI for cleaning
+# Function to send content to AI for cleaning and formatting
 def clean_text_with_ai(text):
     """Uses Cohere API to clean unwanted text intelligently."""
     if not text or not isinstance(text, str):
         return text  # Skip non-string content
     
     # Using Cohere's chat endpoint
-    # response = cohere_client.chat(
-    #     message=f"""
-    #     Clean this website content by removing navigation menus, advertisements, social media links, and non-informational text.
-    #     Keep only the main article, financial data, and useful market insights.
-    #     Here is the extracted content:
-    #     {text}
-    #     """,
-    #     model="command",  # Using Cohere's command model
-    #     preamble="You are a financial data cleaner.",
-    #     temperature=0.2  # Lower temperature for consistency
-    # )
     response = cohere_client.chat(
         message=f"""
         You are an AI that extracts **only the most important financial data** from a webpage.
@@ -47,13 +35,31 @@ def clean_text_with_ai(text):
         {text}
         ```
         """,
-        model="command",  # Using Cohere's Command Model
+        model="command-a-03-2025",  # Using Cohere's Command Model
         preamble="You are a financial data cleaner that extracts only valuable insights.",
         temperature=0.1,  # Lower temperature for consistency
     )
 
     cleaned_text = response.text
-    return cleaned_text
+    
+    structured_response = cohere_client.chat(
+        message=f"""
+        You are an AI language model that takes extracted financial data and converts it into well-structured, meaningful sentences.
+        Given the raw financial text, refine it into grammatically correct and coherent sentences while preserving key financial insights.
+
+        Here is the cleaned text:
+        ```
+        {cleaned_text}
+        ```
+
+        **Reformat it into readable, concise sentences.**
+        """,
+        model="command-a-03-2025",
+        preamble="You are a text refinement AI that converts extracted financial data into meaningful sentences.",
+        temperature=0.2,
+    )
+
+    return structured_response.text  # Return properly formatted sentences
 
 def format_content(content):
     """Format content by ensuring proper line breaks and indentation."""
@@ -79,7 +85,9 @@ async def extract_website_content(url):
     output_dir = Path("crawled_data")
     output_dir.mkdir(exist_ok=True)
     
-    output_file = output_dir / "crawled_content.json"
+    #output_file = output_dir / "crawled_content1.json" 
+    safe_filename = url.replace("https://", "").replace("http://", "").replace("/", "_").replace(".", "_")
+    output_file = output_dir / f"{safe_filename}.json"
     try:
         with open(output_file, "r", encoding="utf-8") as f:
             existing_data = json.load(f)
