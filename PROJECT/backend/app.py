@@ -71,7 +71,12 @@ def query_response(query, rag_chain):
 
 def load_and_process(doc_source):
     all_docs = []
-    loader = DirectoryLoader(doc_source,glob="*.pdf",show_progress=True,loader_cls=PyPDFLoader)  # Example: Replace with the appropriate loader
+    if doc_source == 'data':
+      loader = DirectoryLoader(doc_source,glob="*.pdf",show_progress=True,loader_cls=PyPDFLoader)
+    elif doc_source == 'crawled_data':
+      loader = DirectoryLoader(doc_source, glob="**/*.json", loader_cls=JSONLoader, loader_kwargs = {'jq_schema':'.[].content[].main_content', 'text_content':False})
+    else:
+       raise ValueError("Invalid document source")
     documents = loader.load()
     all_docs.extend(documents)
   
