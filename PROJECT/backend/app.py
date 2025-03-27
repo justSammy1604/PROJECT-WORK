@@ -11,6 +11,7 @@ from langchain_community.document_loaders import PyPDFLoader, WebBaseLoader, Dir
 from langchain_text_splitters import RecursiveCharacterTextSplitter 
 from langchain_community.vectorstores import Chroma, Redis
 from langchain.chains import RetrievalQA 
+from langchain.memory import ConversationBufferMemory
 from pypdf import PdfReader
 import sys 
 from unicodedata import category
