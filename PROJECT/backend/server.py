@@ -5,7 +5,7 @@ from app import rag_pipeline, query_response
 app = Flask(__name__)
 CORS(app)  # This enables CORS for all routes
 
-data = 'data'  # Terrence, you place your Crawler and the text it extracts here in this var.
+data = 'data'  # We can also add crawled_data file as input here. 
 rag_chain = rag_pipeline(data)
 
 @app.route('/query', methods=['POST'])
