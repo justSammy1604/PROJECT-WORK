@@ -11,7 +11,6 @@ from langchain_community.document_loaders import PyPDFLoader, WebBaseLoader, Dir
 from langchain_text_splitters import RecursiveCharacterTextSplitter 
 from langchain_community.vectorstores import Chroma, Redis
 from langchain.chains import RetrievalQA 
-
 from pypdf import PdfReader
 import sys 
 from unicodedata import category
@@ -48,6 +47,11 @@ def rag_model(vectorstore):
         Question: {question}
         Helpful Answer:"""
   QA_CHAIN_PROMPT = PromptTemplate.from_template(template)
+  memory = ConversationBufferMemory(
+        memory_key="chat_history",
+        output_key='result',
+        return_messages=True
+  )
   qa_chain = RetrievalQA.from_chain_type(
         llm=model,
         chain_type="stuff",
@@ -55,6 +59,7 @@ def rag_model(vectorstore):
             search_kwargs={"k": 2}  
         ),
         return_source_documents=True,
+        memory=memory,
         chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}
     )
   return qa_chain
