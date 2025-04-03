@@ -17,7 +17,7 @@ def get_top_links(search):
     params = {
     "api_key": os.getenv("SCRAP_KEY"),
     "query": search,
-    "results": 20,
+    "results": 50,
     "country": "us",
     "page": 0,
     "advance_search": "false"
@@ -27,25 +27,10 @@ def get_top_links(search):
         data = response.json()
     
     links = []
-    if "organic_results" in data:
-        for result in data["organic_results"]:
-            if "link" in result:
-                links.append(result["link"])
-
     if "menu_items" in data:
         for item in data["menu_items"]:
             if "link" in item:
                 links.append(item["link"])
-
-    if "peopleAlsoAskedFor" in data:
-        for question in data["peopleAlsoAskedFor"]:
-          if "link" in question:
-            links.append(question["link"])
-
-    if "relatedSearches" in data:
-        for related in data['relatedSearches']:
-            if "link" in related:
-                links.append(related["link"])
 
     return links
 
