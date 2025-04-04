@@ -33,6 +33,7 @@ def get_top_links(search):
             if "link" in result:
                 links.append(result["link"])
     return links
+    
 @app.route('/links', methods=['GET'])
 def get_search_query():
     try:
