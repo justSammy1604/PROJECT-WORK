@@ -12,11 +12,8 @@ data = 'crawled_data'  # We can also add crawled_data file as input here.
 rag_chain = rag_pipeline(data)
 cache = SemanticCache()
 
-@app.route('/links', methods=['GET'])
 def get_top_links(search):
-    search = request.args.get('search')
-    if not search:
-        return jsonify({'error': 'Search query not provided'}), 400
+    """Function to get the top links from Google search results using ScrapingDog API."""
     url = "https://api.scrapingdog.com/google"
     params = {
     "api_key": os.getenv("SCRAP_KEY"),
@@ -36,6 +33,16 @@ def get_top_links(search):
             if "link" in result:
                 links.append(result["link"])
     return links
+@app.route('/links', methods=['GET'])
+def get_search_query():
+    try:
+        search = request.args.get('search')
+        if not search:
+            return jsonify({'error': 'Search Term Not Provided'}), 400
+        links = get_top_links(search)
+        return jsonify({'message':'Search Query was entered successfully','links': links}) , 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/query', methods=['POST'])
 def query():
