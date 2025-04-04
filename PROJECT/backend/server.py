@@ -11,8 +11,9 @@ CORS(app)  # This enables CORS for all routes
 data = 'crawled_data'  # We can also add crawled_data file as input here. 
 rag_chain = rag_pipeline(data)
 cache = SemanticCache()
+
 @app.route('/links', methods=['GET'])
-def get_top_links():
+def get_top_links(search):
     search = request.args.get('search')
     if not search:
         return jsonify({'error': 'Search query not provided'}), 400
