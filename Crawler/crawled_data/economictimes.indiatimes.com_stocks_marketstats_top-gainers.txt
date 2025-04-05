@@ -1,0 +1,512 @@
+* Markets
+    * Dashboard
+    * Stocks
+    * Technical Signals
+    * Sectors
+    * Indices
+    * ET Learn
+    * FII DII
+    * Earnings
+    * Corporate Actions
+    * Announcements
+    * Technical Chart
+    * Live Stream
+  * My Watchlist
+  * News
+  * Stock Recos
+  * Screeners
+
+
+### ETPrime
+  * Upside Radar
+  * BigBull Portfolio
+  * Stock Reports Plus
+  * Market Mood
+  * Investment Ideas
+  * ePaper
+  * Stock Talk
+
+
+ET Markets
+Switch To ET
+Stock
+Learn Value InvestingSubscribe
+# Top Gainers Today
+As on 04 Apr, 2025 16:00 IST
+Top Gainers Today NSE, BSE - View the stock market Top Gainers Live data for BSE & NSE in the duration of 1 day, 1 week, 1 month, 3 months, 6 months and 1 year on The Economic Times. NSE/BSE Top Gainers
+Multiply the power of your investment decisions with
+Stock ScorePotential UpsideInvestment IdeasStock Recommendations
+Subscribe to ETPrime
+Financials
+  * Current Ratio Annual
+  * Net Profit QoQ Growth %
+  * Net Profit Qtr Growth YoY %
+  * EBIT Margin
+  * Net Sales QoQ chng
+  * Qtr Net Sales YoY chng
+  * RoA Annual %
+  * ROCE Annual %
+  * ROE Annual %
+
+
+Relative Returns
+  * Relative Outperformers to Sector
+  * Relative Underperformers to Sector
+  * Relative Outperformers to Industry
+  * Relative Underperformers to Industry
+  * Relative Outperformers to Nifty50
+  * Relative Underperformers to Nifty50
+  * Relative Outperformers to Sensex
+  * Relative Underperformers to Sensex
+
+
+Shareholding
+  * Promoter Shareholding-Bought by Promoter
+  * Promoter Shareholding-Sold by Promoter
+  * Promoter Shareholding-Highest Promoter Pledges
+  * Promoter Shareholding-Increase in Pledges
+  * Promoter Shareholding-Decrease in Pledges
+  * FII Shareholding- Bought By FII
+  * FII Shareholding- Sold By FII
+  * FII Shareholding- Highest FII Holdings
+  * MF Shareholding- Bought by MF
+  * MF Shareholding- Sold by MF
+  * MF Shareholding- Highest MF Holdings
+
+
+Intraday
+  * Top Gainers
+  * Top Losers
+  * Hourly Gainers
+  * Hourly Losers
+  * Most Active - Volume
+  * Most Active - Value
+  * Only Buyers
+  * Only Sellers
+  * New 52 Week High
+  * New 52 Week Low
+  * Near 52 Week High
+  * Near 52 Week Low
+  * Fall From Intraday High
+  * Recovery from Intraday Low
+  * Volume Shockers
+
+
+Moving Averages
+  * Golden Cross
+  * Death Cross
+  * SMA-SMA Crossovers
+  * EMA-EMA Crossovers
+  * Above SMA-20
+  * Above SMA-50
+  * Below SMA-20
+  * Below SMA-50
+  * Crossed Above SMA-20
+  * Crossed Above SMA-50
+  * Crossed Below SMA-20
+  * Crossed Below SMA-50
+  * Crossed Above SMA-20
+  * Crossed Above SMA-50
+  * Above EMA-20
+  * Above EMA-50
+  * Below EMA-20
+  * Below EMA-50
+  * Crossed Above EMA-20
+  * Crossed Above EMA-50
+  * Crossed Below EMA-20
+  * Crossed Below EMA-50
+
+
+RSI
+  * Below 20
+  * Above 80
+  * Crossed Below 20
+  * Crossed Above 20
+  * Crossed Below 30
+  * Crossed Above 30
+  * Crossed Below 70
+  * Crossed Above 70
+  * Crossed Below 80
+  * Crossed Above 80
+
+
+MACD
+  * MACD Crossed above Signal
+  * MACD Crossed below Signal
+
+
+Bollinger Band
+  * Above Upper BB
+  * Crossed Above Upper BB
+  * Crossed Above Lower BB
+  * Below Lower BB
+  * Crossed Below Upper BB
+  * Crossed Below Lower BB
+
+
+Stochastic
+  * Fast Stochastic Above 80
+  * Fast Stochastic Below 20
+  * Fast Stochastic Crossed Above Slow Stochastic
+  * Fast Stochastic Crossed Below Slow Stochastic
+
+
+Price and Pivots
+  * Positive Breakout First Resistance
+  * Positive Breakout Second Resistance
+  * Positive Breakout Third Resistance
+  * Negative Breakout First Support
+  * Negative Breakout Second Support
+  * Negative Breakout Third Support
+
+
+  * Overview
+  * Premium Analysis
+  * More
+    * Technicals
+    * Valuation
+    * Shareholding
+    * Financials
+    * Margins & Growth
+
+
+nse
+bse
+Nifty 500
+1 Day
+PersonaliseExport
+Company Name| Current Price (Rs)| Price Change  
+---|---|---  
+Emami| 592.80| 17.00  
+Rainbow Childrens| 1,410| 35.90  
+Marico| 677.30| 16.40  
+InterGlobe| 5,099| 95.30  
+Sundaram Finance| 4,579| 72.50  
+Tata Consumer| 1,088| 16.90  
+Max Financial| 1,165| 17.30  
+Max Healthcare| 1,138| 16.40  
+Bajaj Finance| 8,719| 124.00  
+PNB Housing| 949.45| 12.10  
+HDFC Bank| 1,817| 22.50  
+Torrent Pharma| 3,287| 38.80  
+Castrol India| 203.28| 2.35  
+Pidilite Ind| 2,892| 30.50  
+Mankind Pharma| 2,451| 23.50  
+Karur Vysya Bank| 216.90| 1.93  
+Narayana Hruday| 1,677| 14.00  
+JSW Holdings| 25,980| 207.00  
+Bharti Hexacom| 1,466| 11.60  
+Nestle India| 2,262| 16.50  
+Indus Towers| 360.50| 2.50  
+Adani Power| 532.55| 3.70  
+Apollo Hospital| 6,715| 43.20  
+Colgate-Palmolive| 2,423| 13.50  
+Chola Inv Finance| 1,453| 7.85  
+Federal Bank| 195.00| 0.87  
+ICICI Bank| 1,335| 5.75  
+United Breweries| 1,989| 6.30  
+Asian Paints| 2,356| 6.66  
+RBL Bank| 175.68| 0.31  
+Berger Paints| 512.05| 0.75  
+Axis Bank| 1,091| 1.46  
+SBFC Finance| 92.95| 0.10  
+ITC| 409.70| 0.31  
+Bajaj Holdings| 11,507| 7.05  
+Dr Lal Pathlabs| 2,516| 0.85  
+Ramco Cements| 941.55| 0.15  
+% Change| Stock Score| Potential Upside| Volume| Total Asset Turnover| Market Cap (Rs Cr)| 1W Returns| 1M Returns| 3M Returns| 6M Returns| 1Y Returns| 3Y Returns| YTD Returns  
+---|---|---|---|---|---|---|---|---|---|---|---|---  
+2.96%| Upgrade to Prime| Upgrade to Prime| 16,34,745| 1.12| 25,876| 2.22%| 12.80%| -3.52%| -15.61%| 32.74%| 27.80%| 1.30%  
+2.61%| Upgrade to Prime| Upgrade to Prime| 19,06,792| 0.66| 14,314| 0.56%| 5.78%| -9.52%| 23.74%| 4.46%| -| 3.67%  
+2.48%| Upgrade to Prime| Upgrade to Prime| 40,41,611| 1.34| 87,727| 3.94%| 14.96%| 2.47%| 3.79%| 32.93%| 24.53%| 0.70%  
+1.91%| Upgrade to Prime| Upgrade to Prime| 14,13,600| 0.97| 1,97,017| -0.32%| 8.53%| 14.17%| 8.85%| 45.70%| 156.69%| 0.91%  
+1.61%| Upgrade to Prime| Upgrade to Prime| 75,497| 0.12| 50,872| 0.09%| 0.96%| -2.31%| -11.63%| 6.58%| 125.58%| -1.35%  
+1.58%| Upgrade to Prime| Upgrade to Prime| 40,89,261| 0.60| 1,07,638| 8.58%| 13.70%| 15.80%| -15.92%| -2.48%| 34.86%| 0.61%  
+1.51%| Upgrade to Prime| Upgrade to Prime| 9,04,913| 0.32| 40,208| 1.51%| 14.83%| 4.98%| 10.73%| 14.83%| 49.39%| -1.02%  
+1.46%| Upgrade to Prime| Upgrade to Prime| 32,80,000| 0.49| 1,10,595| 3.71%| 11.33%| -3.45%| 19.23%| 41.34%| 207.97%| 1.01%  
+1.45%| Upgrade to Prime| Upgrade to Prime| 18,49,658| 0.17| 5,39,694| -2.53%| 5.06%| 17.71%| -4.69%| 21.51%| 18.01%| 1.65%  
+1.29%| Upgrade to Prime| Upgrade to Prime| 42,90,106| 0.10| 24,672| 7.71%| 17.94%| 2.46%| 13.48%| 22.94%| 131.91%| 3.46%  
+1.26%| Upgrade to Prime| Upgrade to Prime| 1,67,70,227| -| 13,89,928| -0.60%| 7.53%| 3.89%| 4.55%| 17.28%| 13.00%| 0.56%  
+1.20%| Upgrade to Prime| Upgrade to Prime| 5,13,622| 0.71| 1,11,230| 1.81%| 10.33%| -3.42%| 22.92%| 27.53%| 135.91%| 1.74%  
+1.17%| Upgrade to Prime| Upgrade to Prime| 2,36,67,233| 1.52| 20,107| 0.16%| -8.57%| 0.55%| -6.11%| -2.81%| 94.99%| 3.19%  
+1.07%| Upgrade to Prime| Upgrade to Prime| 4,46,499| 1.09| 1,47,100| 1.50%| 7.39%| -1.38%| -8.26%| -3.63%| 15.33%| -1.40%  
+0.97%| Upgrade to Prime| Upgrade to Prime| 3,93,371| 0.95| 1,01,128| 1.09%| 7.13%| -16.56%| 33.33%| 4.54%| -| 0.02%  
+0.90%| Upgrade to Prime| Upgrade to Prime| 41,43,578| -| -| 3.66%| 8.67%| -2.57%| 8.97%| 11.32%| 332.50%| 3.91%  
+0.85%| Upgrade to Prime| Upgrade to Prime| 6,16,718| 1.03| 34,281| -0.86%| 4.54%| 28.01%| 7.93%| 30.41%| 124.65%| 3.12%  
+0.81%| Upgrade to Prime| Upgrade to Prime| 17,009| 0.01| 28,837| 13.02%| 42.46%| 46.24%| 116.86%| 262.41%| 501.22%| 5.00%  
+0.80%| Upgrade to Prime| Upgrade to Prime| 1,93,289| 0.39| 73,298| 0.15%| 6.13%| -1.92%| 14.15%| -| -| -12.39%  
+0.74%| Upgrade to Prime| Upgrade to Prime| 5,91,735| 2.50| 2,18,107| 0.51%| 2.97%| 1.32%| -15.53%| -10.86%| 25.51%| -0.04%  
+0.70%| Upgrade to Prime| Upgrade to Prime| 1,61,45,235| 0.56| 95,106| 7.84%| 7.04%| 4.80%| -11.73%| 14.81%| 63.57%| 0.63%  
+0.70%| Upgrade to Prime| Upgrade to Prime| 89,41,177| 0.57| 2,05,401| 4.57%| 5.34%| 2.32%| -26.59%| -15.02%| 128.46%| -0.53%  
+0.65%| Upgrade to Prime| Upgrade to Prime| 2,79,897| 1.22| 96,545| 1.49%| 8.05%| -8.00%| 20.02%| 4.95%| 47.43%| 1.00%  
+0.57%| Upgrade to Prime| Upgrade to Prime| 3,49,346| 1.87| 65,912| 1.40%| 0.57%| -14.10%| -5.58%| -11.21%| 52.73%| 0.79%  
+0.55%| Upgrade to Prime| Upgrade to Prime| 13,03,321| 0.14| 1,22,191| -4.39%| 0.44%| 10.08%| -17.44%| 19.35%| 106.26%| -0.13%  
+0.45%| Upgrade to Prime| Upgrade to Prime| 1,01,70,845| -| 47,863| 1.18%| 7.43%| -4.99%| 12.81%| 26.17%| 98.47%| 0.24%  
+0.44%| Upgrade to Prime| Upgrade to Prime| 86,48,542| -| 9,42,654| -0.97%| 9.84%| 5.55%| 5.92%| 23.25%| 80.01%| 0.16%  
+0.32%| Upgrade to Prime| Upgrade to Prime| 1,36,763| 1.22| 52,599| -0.50%| 5.20%| -6.52%| 4.12%| 10.10%| 27.58%| 2.72%  
+0.29%| Upgrade to Prime| Upgrade to Prime| 11,63,188| 1.27| 2,25,992| 0.66%| 8.87%| 0.86%| -21.28%| -18.29%| 1.37%| 1.02%  
+0.18%| Upgrade to Prime| Upgrade to Prime| 90,62,957| -| 10,677| 1.24%| 11.04%| 7.92%| -40.36%| -30.98%| 24.20%| -0.13%  
+0.15%| Upgrade to Prime| Upgrade to Prime| 15,88,941| 1.37| 59,696| 2.37%| 5.80%| 11.84%| -9.68%| -8.91%| -13.31%| 2.14%  
+0.14%| Upgrade to Prime| Upgrade to Prime| 60,59,991| -| 3,37,776| -0.97%| 7.58%| 0.59%| -15.06%| 3.04%| 39.36%| 0.67%  
+0.10%| Upgrade to Prime| Upgrade to Prime| 16,59,191| 0.16| 10,064| 5.34%| 7.27%| 3.57%| 7.02%| 11.38%| -| -1.03%  
+0.08%| Upgrade to Prime| Upgrade to Prime| 1,86,27,592| 0.80| 5,12,605| -0.01%| 1.15%| -14.93%| 12.80%| -4.17%| 57.91%| 0.06%  
+0.07%| Upgrade to Prime| Upgrade to Prime| 63,954| 0.03| 1,28,064| -7.75%| -0.46%| -0.87%| 35.25%| 40.40%| 87.31%| -0.37%  
+0.04%| Upgrade to Prime| Upgrade to Prime| 1,01,673| 0.92| 21,028| 1.49%| 3.64%| -14.57%| 8.13%| 10.13%| 0.83%| 1.75%  
+0.02%| Upgrade to Prime| Upgrade to Prime| 8,99,957| 0.61| 22,248| 5.00%| 9.38%| -4.48%| 12.69%| 12.15%| 17.38%| 0.04%  
+←→
+#### Trending in markets:
+Sensex Nifty 50 Crash Today
+Nifty Today Live Updates
+Vodafone Idea News
+BSE Stock Price
+NCC Stock Price
+Stocks to Buy
+Polycab Stock Price
+Garden Reach Shipbuilders Share Price
+MobiKwik Share Price
+IndusInd Bank Shares
+Why IndusInd Bank Share is Falling?
+Pi Coin Price Prediction
+Hexaware Technologies Share Price
+Nykaa Q3 Results
+VA Tech Wabag Share
+LIC Q3 Results
+SBI share price
+Bharti Airtel Share Price
+Reliance Power Stock Price
+Swiggy Stock Price
+Swiggy Results 2025
+Gold Price Today
+Vishal Mega Mart Share Price
+ONGC Share Price
+ITC Shares Price
+Budget day trading strategy
+Adani Enterprises Q3 Results 2025
+Adani Ports Share Price
+Bajaj Finserv Share Price
+Whirlpool India Share Price
+NSE
+Nifty Pharma
+BSE
+Axis Bank Share Price
+PNB Share Price
+Crude Oil
+ICICI Bank Share Price
+Stocks in News
+Forex
+Infosys Share Price
+Copper Rate
+  * Home
+  * Markets Live
+  * Top Gainers
+  * Nifty 500
+
+
+The Economic Times
+BROWSE COMPANIES:
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+1
+2
+3
+4
+5
+6
+7
+8
+9
+### Trending in Markets
+MORE 
+Sensex Nifty 50 Crash Today
+Nifty Today Live Updates
+Vodafone Idea News
+BSE Stock Price
+NCC Stock Price
+Stocks to Buy
+Polycab Stock Price
+Garden Reach Shipbuilders Share Price
+MobiKwik Share Price
+IndusInd Bank Shares
+Why IndusInd Bank Share is Falling?
+Pi Coin Price Prediction
+Hexaware Technologies Share Price
+Nykaa Q3 Results
+VA Tech Wabag Share
+LIC Q3 Results
+SBI share price
+Bharti Airtel Share Price
+Reliance Power Stock Price
+Swiggy Stock Price
+### Popular Stock Categories
+MORE 
+BSE Hourly Losers Stocks - Sensex
+NSE Hourly Losers Stocks - Nifty50
+All Hourly Losers Stocks
+BSE Hourly Gainers Stocks - Sensex
+NSE Hourly Gainers Stocks - Nifty 50
+All Hourly Gainers Stocks
+BSE Top Losers - Sensex
+NSE Top Losers - Nifty 50
+BSE Top Gainers - Sensex
+NSE Top Gainers - Nifty 50
+### Top Gainers NSE Indices
+MORE 
+NSE Top Gainers - Nifty 500
+NSE Top Gainers - Nifty 200
+NSE Top Gainers - Nifty 100
+NSE Top Gainers - Nifty NEXT 50
+NSE Top Gainers - Nifty Midcap 100
+NSE Top Gainers - Nifty Bank
+NSE Top Gainers - Nifty 50
+### Top Gainers BSE Indices
+MORE 
+BSE Top Gainers - BSE PSU
+BSE Top Gainers - BSE SENSEX NEXT 50
+BSE Top Gainers - BSE LARGECAP
+BSE Top Gainers - BSE SMALLCAP
+BSE Top Gainers - BSE MIDCAP
+BSE Top Gainers - BSE 500
+BSE Top Gainers - BSE 200
+BSE Top Gainers - BSE 100
+BSE Top Gainers - Sensex
+### Top Searched Companies
+MORE 
+IRFC share price
+Suzlon share price
+IREDA share price
+TATA Motors share price
+Yes bank share price
+HDFC Bank share price
+NHPC share price
+RVNL share price
+SBI share price
+Tata power share price
+Tata steel share price
+Adani power share price
+Paytm share price
+PNB share price
+Zomato share price
+BEL share price
+BHEL share price
+Infosys share price
+IRCTC share price
+ITC share price
+JIO finance share price
+LIC share price
+Reliance share price
+HAL share price
+JP Power share price
+NBCC share price
+TCS share price
+Vedanta share price
+Wipro share price
+IOC share price
+Ircon share price
+SAIL share price
+SJVN share price
+GAIL share price
+HUDCO share price
+REC share price
+Reliance Power share price
+Tata Technologies share price
+Vodafone idea share price
+Adani Enterprises share price
+Adani Green share price
+Adani Port share price
+Ashok Leyland share price
+Bank of Baroda share price
+BSE share price
+Canara Bank share price
+CDSL share price
+Coal India share price
+HFCL share price
+IDFC First Bank share price
+### Top Losers NSE Indices
+MORE 
+NSE Top Losers - Nifty 500
+NSE Top Losers - Nifty 200
+NSE Top Losers - Nifty 100
+NSE Top Losers - Nifty NEXT 50
+NSE Top Losers - Nifty Midcap 100
+NSE Top Losers - Nifty Bank
+NSE Top Losers - Nifty 50
+### Top Losers BSE Indices
+MORE 
+BSE Top Losers - BSE PSU
+BSE Top Losers - BSE SENSEX NEXT 50
+BSE Top Losers - BSE LARGECAP
+BSE Top Losers - BSE SMALLCAP
+BSE Top Losers - BSE MIDCAP
+BSE Top Losers - BSE 500
+BSE Top Losers - BSE 200
+BSE Top Losers - BSE 100
+BSE Top Losers - Sensex
+### Top Technical Screeners
+MORE 
+Negative Breakout First Support
+Positive Breakout First Resistance
+RSI Above 80
+RSI Below 20
+Relative Outperformers to Sensex
+Relative Outperformers to Nifty50
+Relative Outperformers to Industry
+Relative Outperformers to Sector
+EMA-EMA Crossover
+SMA-SMA Crossover
+### More from our network
+MORE 
+Pune Mirror
+Bangalore Mirror
+Ahmedabad Mirror
+ItsMyAscent
+Education Times
+Brand Capital
+Mumbai Mirror
+Times Now
+Indiatimes
+महाराष्ट्र टाइम्स
+ವಿಜಯ ಕರ್ನಾಟಕ
+Go Green
+AdAge India
+IGN India
+ Samay
+Times of India
+Samayam Tamil
+Samayam Telugu
+Miss Kyra
+Bombay Times
+Filmipop
+Games App
+MX Player
+### Follow us on:
+
+### Download ET App:
+
+### subscribe to our newsletter
+
+ET Prime
+Copyright © 2025 Bennett, Coleman & Co. Ltd. All rights reserved. For reprint rights: Times Syndication Service

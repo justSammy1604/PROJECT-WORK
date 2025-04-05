@@ -1,211 +1,169 @@
-import json
+import os
+import sys
+import psutil
 import asyncio
-import cohere 
-from datetime import datetime
+import requests
+from xml.etree import ElementTree
+import cohere
 from pathlib import Path
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
-from crawl4ai.extraction_strategy import JsonCssExtractionStrategy
-import textwrap
+
+__location__ = os.path.dirname(os.path.abspath(__file__))
+__output__ = os.path.join(__location__, "output")
+
+# Append parent directory to system path
+parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(parent_dir)
+
+from typing import List
+from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 
 cohere_client = cohere.Client("wWwu0mw2feW52WWfvWDXVAQZV5LkuDzFB8cIsJYX")
 
-# Function to send content to AI for cleaning and formatting
 def clean_text_with_ai(text):
-    """Uses Cohere API to clean unwanted text intelligently."""
+    """Uses Cohere API to remove links while preserving all other content."""
     if not text or not isinstance(text, str):
         return text  # Skip non-string content
-    
-    # Using Cohere's chat endpoint
+
     response = cohere_client.chat(
         message=f"""
-        You are an AI that extracts **only the most important financial data** from a webpage.
-        Remove **navigation menus, advertisements, social media links, copyright notices, author bios,website language options and other irrelevant text**.
-        Keep **only the core financial insights** like:
-        
-        - **Stock Market Movements** (Top Gainers, Top Losers, Active Stocks)
-        - **Company Financials** (Stock prices, market trends, earnings reports)
-        - **Macroeconomic Data** (Interest rates, inflation, GDP growth)
-        - **Cryptocurrency Data** (Bitcoin, Ethereum, etc.)
-        - **IPO Announcements & Market Predictions**
-        
-        **Ensure the output is in a clean, structured JSON format.**
-        
+        You are an AI that cleans text by **removing all hyperlinks (URLs)** while keeping all other text unchanged.
+        Ensure that the content remains fully intact except for any links.
+
         Here is the extracted website content:
         ```
         {text}
         ```
-        """,
-        model="command-a-03-2025",  # Using Cohere's Command Model
-        preamble="You are a financial data cleaner that extracts only valuable insights.",
-        temperature=0.1,  # Lower temperature for consistency
-    )
-
-    cleaned_text = response.text
-    
-    structured_response = cohere_client.chat(
-        message=f"""
-        You are an AI language model that takes extracted financial data and converts it into well-structured, meaningful sentences.
-        Given the raw financial text, refine it into grammatically correct and coherent sentences while preserving key financial insights.
-
-        Here is the cleaned text:
-        ```
-        {cleaned_text}
-        ```
-
-        **Reformat it into readable, concise sentences.**
+        
+        **Return the text with only the links removed. Do not modify any other text.**
         """,
         model="command-a-03-2025",
-        preamble="You are a text refinement AI that converts extracted financial data into meaningful sentences.",
-        temperature=0.2,
+        preamble="You are a text cleaner that removes links while preserving all other content.",
+        temperature=0.1,  # Ensures consistency
     )
 
-    return structured_response.text  # Return properly formatted sentences
+    return response.text  # Return cleaned text without links
 
-def format_content(content):
-    """Format content by ensuring proper line breaks and indentation."""
-    if isinstance(content, list):  # If content is a list, format each dictionary inside it
-        return [format_content(item) for item in content]
+async def crawl_parallel(urls: List[str], max_concurrent: int = 3):
+    print("\n=== Parallel Crawling with Browser Reuse + Memory Check ===")
 
-    if isinstance(content, dict):  # If content is a dictionary, format key-value pairs
-        formatted_content = {}
-        for key, value in content.items():
-            if isinstance(value, list):  # Ensure lists are formatted nicely
-                formatted_content[key] = value
-            elif isinstance(value, str):
-                formatted_content[key] = textwrap.wrap(value, width=80)  # Wrap long text
-            else:
-                formatted_content[key] = value  # Keep other types unchanged
-        return formatted_content
-    
-    return content  # Return as-is if not a dict or list
+    # We'll keep track of peak memory usage across all tasks
+    peak_memory = 0
+    process = psutil.Process(os.getpid())
 
+    def log_memory(prefix: str = ""):
+        nonlocal peak_memory
+        current_mem = process.memory_info().rss  # in bytes
+        if current_mem > peak_memory:
+            peak_memory = current_mem
+        print(f"{prefix} Current Memory: {current_mem // (1024 * 1024)} MB, Peak: {peak_memory // (1024 * 1024)} MB")
 
-async def extract_website_content(url):
-    """Extract and process website content."""
-    output_dir = Path("crawled_data")
-    output_dir.mkdir(exist_ok=True)
-    
-    #output_file = output_dir / "crawled_content1.json" 
-    safe_filename = url.replace("https://", "").replace("http://", "").replace("/", "_").replace(".", "_")
-    output_file = output_dir / f"{safe_filename}.json"
-    try:
-        with open(output_file, "r", encoding="utf-8") as f:
-            existing_data = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        existing_data = []
-
-    # Define the extraction schema
-    schema = {
-        "name": "Main Content",
-        "baseSelector": "body",  # Start from body
-        "fields": [
-            {
-                "name": "main_content",
-                "selector": "article, .article-body, .main-content, .content, main, #main, .post-content, .entry-content",
-                "type": "text",
-                "excludeSelectors": [
-                    "script", "style", "noscript", "iframe",
-                    "header", "footer", "nav",
-                    ".advertisement", ".ads", ".social-share",
-                    ".related-articles", ".sidebar", 
-                    ".comments", "#comments",
-                    ".navigation", ".pagination",
-                    ".breadcrumb", ".breadcrumbs",
-                    ".checkbox","#checkbox"
-                ]
-                
-            },
-            {
-                "name": "article_title",
-                "selector": "article h1, .article-title, .post-title, .entry-title",
-                "type": "text"
-            },
-            {
-                "name": "article_text",
-                "selector": "article p, .article-body p, .main-content p, .post-content p",
-                "type": "text",
-                "multiple": True,
-                "excludeSelectors": [
-                    ".advertisement", ".ads",
-                    ".author-bio", ".copyright",
-                    ".social-share", ".tags"
-                ]
-            },
-            {
-                "name": "article_headings",
-                "selector": "article h2, article h3, .main-content h2, .main-content h3",
-                "type": "text",
-                "multiple": True
-            },
-            {
-                "name": "important_lists",
-                "selector": "article ul, article ol, .main-content ul, .main-content ol",
-                "type": "text",
-                "multiple": True,
-                "excludeSelectors": [
-                    ".social-links", ".menu", 
-                    ".navigation", ".share-buttons"
-                ]
-            }
+    # Minimal browser config
+    browser_config = BrowserConfig(
+        headless=True,
+        verbose=False,   # corrected from 'verbos=False'
+        extra_args=["--disable-gpu", 
+                    "--disable-dev-shm-usage", 
+                    "--no-sandbox",
         ]
-    }
-
-    # Set up extraction strategy
-    extraction_strategy = JsonCssExtractionStrategy(schema, verbose=True)
-    config = CrawlerRunConfig(
-        cache_mode=CacheMode.BYPASS,
-        extraction_strategy=extraction_strategy,
-        excluded_tags=['form', 'header', 'footer', 'nav'],
-        exclude_social_media_links=True,
-        exclude_external_links=True,
-        word_count_threshold=5,
-        exclude_external_images=True
     )
+    crawl_config = CrawlerRunConfig(cache_mode=CacheMode.BYPASS)
 
-    async with AsyncWebCrawler(verbose=True) as crawler:
-        result = await crawler.arun(url=url, config=config)
+    # Create the crawler instance
+    crawler = AsyncWebCrawler(config=browser_config)
+    await crawler.start()
 
-        if not result.success:
-            print(f"Crawl failed for {url}: {result.error_message}")
-            return
+    try:
+        # We'll chunk the URLs in batches of 'max_concurrent'
+        success_count = 0
+        fail_count = 0
+        for i in range(0, len(urls), max_concurrent):
+            batch = urls[i : i + max_concurrent]
+            tasks = []
 
-        # Parse, clean, and format extracted content
-        data = json.loads(result.extracted_content)
-        cleaned_data = clean_text_with_ai(data)  # Use AI to clean content
-        formatted_data = format_content(cleaned_data)
+            for j, url in enumerate(batch):
+                # Unique session_id per concurrent sub-task
+                session_id = f"parallel_session_{i + j}"
+                task = crawler.arun(url=url, config=crawl_config, session_id=session_id)
+                tasks.append(task)
 
-        # Add metadata
-        crawl_entry = {
-            "url": url,
-            "timestamp": datetime.now().isoformat(),
-            "content": formatted_data
-        }
+            # Check memory usage prior to launching tasks
+            log_memory(prefix=f"Before batch {i//max_concurrent + 1}: ")
 
-        # Append new data to existing entries
-        existing_data.append(crawl_entry)
+            # Gather results
+            results = await asyncio.gather(*tasks, return_exceptions=True)
 
-        #Save updated data
-        with open(output_file, "w", encoding="utf-8") as f:
-            json.dump(existing_data, f, indent=2, ensure_ascii=False)
+            # Check memory usage after tasks complete
+            log_memory(prefix=f"After batch {i//max_concurrent + 1}: ")
 
-        print(f"✅ Data successfully saved to {output_file}")
+            # Evaluate results
+            for url, result in zip(batch, results):
+                if isinstance(result, Exception):
+                    print(f"Error crawling {url}: {result}")
+                    fail_count += 1
+                elif result.success:
+                    success_count += 1
+                    formatted_text = clean_text_with_ai(result.markdown_v2.raw_markdown)
+                    # Save the crawled content to a file
+                    # Generate a unique file name based on the URL
+                    sanitized_url = url.replace("https://", "").replace("http://", "").replace("/", "_").replace(":", "_")
+                    file_name = f"crawled_data/{sanitized_url}.txt"
+                    with open(file_name, "a", encoding="utf-8") as file:
+                        file.write(formatted_text)
+                    print(f"Saved content to: {file_name}")
+                else:
+                    fail_count += 1
 
-# Example usage with multiple URLs
-urls = [
-    "https://economictimes.indiatimes.com/markets",
-    "https://economictimes.indiatimes.com/markets/stocks",
-    "https://economictimes.indiatimes.com/markets/candlestick-screener",
-    "https://economictimes.indiatimes.com/markets/stocks/stock-watch/articlelist/81776766.cms",
-    "https://economictimes.indiatimes.com/markets/ipo",
-    "https://economictimes.indiatimes.com/stocks/marketstats/top-gainers",
-    "https://economictimes.indiatimes.com/stocks/marketstats/top-losers",
-    "https://economictimes.indiatimes.com/stocks/marketstats/most-active-value"
-]
+        print(f"\nSummary:")
+        print(f"  - Successfully crawled: {success_count}")
+        print(f"  - Failed: {fail_count}")
+
+    finally:
+        print("\nClosing crawler...")
+        await crawler.close()
+        # Final memory log
+        log_memory(prefix="Final: ")
+        print(f"\nPeak memory usage (MB): {peak_memory // (1024 * 1024)}")
+
+def get_pydantic_ai_docs_urls():
+    """
+    Fetches all URLs from the Pydantic AI documentation.
+    Uses the sitemap (https://ai.pydantic.dev/sitemap.xml) to get these URLs.
+    
+    Returns:
+        List[str]: List of URLs
+    """            
+    sitemap_url = "https://www.marketwatch.com/sitemap.xml"
+    try:
+        response = requests.get(sitemap_url)
+        response.raise_for_status()
+        
+        # Parse the XML
+        root = ElementTree.fromstring(response.content)
+        
+        # Extract all URLs from the sitemap
+        # The namespace is usually defined in the root element
+        namespace = {'ns': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+        urls = [loc.text for loc in root.findall('.//ns:loc', namespace)]
+        
+        return urls
+    except Exception as e:
+        print(f"Error fetching sitemap: {e}")
+        return []        
 
 async def main():
-    """Run the crawler for each URL in the list."""
-    for url in urls:
-        await extract_website_content(url)
+    #urls = get_pydantic_ai_docs_urls()
+    
+    urls = ["https://markets.ft.com/data",
+            "https://edition.cnn.com/markets",
+            "https://economictimes.indiatimes.com/stocks/marketstats/top-gainers",
+            "https://economictimes.indiatimes.com/stocks/marketstats/top-losers",
+            "https://economictimes.indiatimes.com/stocks/marketstats/most-active-value"
+            ]
+    if urls:
+        print(f"Found {len(urls)} URLs to crawl")
+        await crawl_parallel(urls, max_concurrent=10)
+    else:
+        print("No URLs found to crawl")    
 
 if __name__ == "__main__":
     asyncio.run(main())
