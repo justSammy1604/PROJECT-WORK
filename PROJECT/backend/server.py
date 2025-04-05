@@ -1,12 +1,49 @@
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS 
-from app import rag_pipeline, query_response 
-
+import requests
+from app import rag_pipeline, SemanticCache
+from dotenv import load_dotenv
+load_dotenv()
 app = Flask(__name__)
 CORS(app)  # This enables CORS for all routes
 
-data = 'data'  # We can also add crawled_data file as input here. 
+data = 'crawled_data'  # We can also add crawled_data file as input here. 
 rag_chain = rag_pipeline(data)
+cache = SemanticCache()
+
+def get_top_links(search):
+    """Function to get the top links from Google search results using ScrapingDog API."""
+    url = "https://api.scrapingdog.com/google"
+    params = {
+    "api_key": os.getenv("SCRAP_KEY"),
+    "query": search,
+    "results": 50,
+    "country": "us",
+    "page": 0,
+    "advance_search": "false"
+}
+    response = requests.get(url, params=params)
+    if response.status_code == 200:
+        data = response.json()
+    
+    links = []
+    if "organic_results" in data:
+        for result in data["organic_results"]:
+            if "link" in result:
+                links.append(result["link"])
+    return links
+    
+@app.route('/links', methods=['GET'])
+def get_search_query():
+    try:
+        search = request.args.get('search')
+        if not search:
+            return jsonify({'error': 'Search Term Not Provided'}), 400
+        links = get_top_links(search)
+        return jsonify({'message':'Search Query was entered successfully','links': links}) , 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/query', methods=['POST'])
 def query():
@@ -15,7 +52,7 @@ def query():
         query = data.get('query')
         if not query:
             return jsonify({'error': 'Query Not Provided'}), 400
-        answer = query_response(query, rag_chain)
+        answer = cache.ask(query, rag_chain)
         return jsonify({'answer': answer})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
