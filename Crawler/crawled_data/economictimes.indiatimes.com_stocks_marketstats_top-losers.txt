@@ -1,0 +1,341 @@
+* Markets
+    * Dashboard
+    * Stocks
+    * Technical Signals
+    * Sectors
+    * Indices
+    * ET Learn
+    * FII DII
+    * Earnings
+    * Corporate Actions
+    * Announcements
+    * Technical Chart
+    * Live Stream
+  * My Watchlist
+  * News
+  * Stock Recos
+  * Screeners
+
+
+### ETPrime
+  * Upside Radar
+  * BigBull Portfolio
+  * Stock Reports Plus
+  * Market Mood
+  * Investment Ideas
+  * ePaper
+  * Stock Talk
+
+
+[![ET Markets](https://img.etimg.com/photo/msid-114256969/et-markets-logo.jpg)]
+Switch To ET
+Industry
+Learn Value InvestingSubscribe
+Sign In
+# Top Losers Today
+CLOSEDAs on 04 Apr, 2025 16:00 IST
+Top Losers Today NSE, BSE - View the stock market Top Losers Live data for BSE & NSE in the duration of 1 day, 1 week, 1 month, 3 months, 6 months and 1 year on The Economic Times. NSE/BSE Top Losers
+Multiply the power of your investment decisions with
+Stock ScorePotential UpsideInvestment IdeasStock Recommendations
+Subscribe to ETPrime
+Financials
+  * Current Ratio Annual
+  * Net Profit QoQ Growth %
+  * Net Profit Qtr Growth YoY %
+  * EBIT Margin
+  * Net Sales QoQ chng
+  * Qtr Net Sales YoY chng
+  * RoA Annual %
+  * ROCE Annual %
+  * ROE Annual %
+
+
+Relative Returns
+  * Relative Outperformers to Sector
+  * Relative Underperformers to Sector
+  * Relative Outperformers to Industry
+  * Relative Underperformers to Industry
+  * Relative Outperformers to Nifty50
+  * Relative Underperformers to Nifty50
+  * Relative Outperformers to Sensex
+  * Relative Underperformers to Sensex
+
+
+Shareholding
+  * Promoter Shareholding-Bought by Promoter
+  * Promoter Shareholding-Sold by Promoter
+  * Promoter Shareholding-Highest Promoter Pledges
+  * Promoter Shareholding-Increase in Pledges
+  * Promoter Shareholding-Decrease in Pledges
+  * FII Shareholding- Bought By FII
+  * FII Shareholding- Sold By FII
+  * FII Shareholding- Highest FII Holdings
+  * MF Shareholding- Bought by MF
+  * MF Shareholding- Sold by MF
+  * MF Shareholding- Highest MF Holdings
+
+
+Intraday
+  * Top Gainers
+  * Top Losers
+  * Hourly Gainers
+  * Hourly Losers
+  * Most Active - Volume
+  * Most Active - Value
+  * Only Buyers
+  * Only Sellers
+  * New 52 Week High
+  * New 52 Week Low
+  * Near 52 Week High
+  * Near 52 Week Low
+  * Fall From Intraday High
+  * Recovery from Intraday Low
+  * Volume Shockers
+
+
+Moving Averages
+  * Golden Cross
+  * Death Cross
+  * SMA-SMA Crossovers
+  * EMA-EMA Crossovers
+  * Above SMA-20
+  * Above SMA-50
+  * Below SMA-20
+  * Below SMA-50
+  * Crossed Above SMA-20
+  * Crossed Above SMA-50
+  * Crossed Below SMA-20
+  * Crossed Below SMA-50
+  * Crossed Above SMA-20
+  * Crossed Above SMA-50
+  * Above EMA-20
+  * Above EMA-50
+  * Below EMA-20
+  * Below EMA-50
+  * Crossed Above EMA-20
+  * Crossed Above EMA-50
+  * Crossed Below EMA-20
+  * Crossed Below EMA-50
+
+
+RSI
+  * Below 20
+  * Above 80
+  * Crossed Below 20
+  * Crossed Above 20
+  * Crossed Below 30
+  * Crossed Above 30
+  * Crossed Below 70
+  * Crossed Above 70
+  * Crossed Below 80
+  * Crossed Above 80
+
+
+MACD
+  * MACD Crossed above Signal
+  * MACD Crossed below Signal
+
+
+Bollinger Band
+  * Above Upper BB
+  * Crossed Above Upper BB
+  * Crossed Above Lower BB
+  * Below Lower BB
+  * Crossed Below Upper BB
+  * Crossed Below Lower BB
+
+
+Stochastic
+  * Fast Stochastic Above 80
+  * Fast Stochastic Below 20
+  * Fast Stochastic Crossed Above Slow Stochastic
+  * Fast Stochastic Crossed Below Slow Stochastic
+
+
+Price and Pivots
+  * Positive Breakout First Resistance
+  * Positive Breakout Second Resistance
+  * Positive Breakout Third Resistance
+  * Negative Breakout First Support
+  * Negative Breakout Second Support
+  * Negative Breakout Third Support
+
+
+  * Overview
+  * Premium Analysis
+  * More
+    * Technicals
+    * Valuation
+    * Shareholding
+    * Financials
+    * Margins & Growth
+
+
+nse
+bse
+Nifty 500
+1 Day
+PersonaliseExport
+Company Name| Current Price (Rs)| Price Change  
+---|---|---  
+Hind Copper| 204.25| -20.51  
+NALCO| 157.70| -14.97  
+Vedanta | 401.45| -38.06  
+Tata Steel| 140.39| -13.24  
+Poly Medicure| 2,067| -192.00  
+Bharat Forge| 1,026| -91.05  
+Hindalco| 599.95| -52.70  
+Motherson Sumi| 118.93| -10.01  
+NMDC| 65.02| -5.42  
+Coforge| 6,608| -550.00  
+Laurus Labs| 574.45| -46.20  
+Oil India Ltd| 357.75| -28.31  
+Welspun India| 124.25| -9.79  
+Jindal Stainless| 551.70| -42.90  
+Angel One| 2,285| -176.00  
+Mazagon Dock Ship| 2,542| -195.00  
+ONGC| 226.01| -17.31  
+Newgen Software| 921.80| -70.46  
+Hindustan Zinc| 426.95| -32.20  
+Granules India| 456.75| -34.45  
+Union Bank India| 122.11| -9.18  
+PG Electroplast| 871.65| -65.25  
+360 One Wam| 849.35| -63.15  
+Elgi Equipments| 447.00| -33.15  
+CG Power & Ind.| 575.20| -40.75  
+Ipca Labs| 1,399| -98.35  
+KPIT Tech| 1,134| -77.10  
+Firstsource| 324.10| -21.95  
+KEI Industries| 2,645| -179.00  
+BEML| 2,955| -200.00  
+Sona BLW Precision| 421.85| -28.30  
+Sarda Energy| 495.75| -33.15  
+PVR| 899.95| -59.60  
+Cummins India| 2,845| -188.00  
+Kaynes Technology| 4,650| -306.00  
+Tata Motors| 613.85| -40.11  
+Nuvama Wealth Mgmt| 5,655| -369.00  
+Aarti Inds| 374.05| -24.40  
+Siemens| 4,928| -320.00  
+Mphasis| 2,229| -145.00  
+Lloyds Metals| 1,240| -80.66  
+JSPL| 850.10| -55.11  
+Redington| 214.39| -13.88  
+Linde India| 5,794| -373.00  
+Glenmark Life| 1,001| -64.36  
+Aurobindo Pharma| 1,105| -71.00  
+Lupin| 1,971| -125.00  
+TBO Tek| 1,115| -70.21  
+Welspun Corp| 808.40| -50.21  
+Sonata Software| 321.45| -19.75  
+Caplin Point| 1,937| -119.00  
+MCX India| 5,027| -308.00  
+Akums Drugs & Pharma| 448.85| -27.35  
+Anant Raj| 456.50| -27.86  
+Nava Bharat Vent.| 495.35| -29.61  
+Sai Life Science| 716.95| -42.80  
+Tanla Platforms| 454.30| -26.95  
+Jindal Saw| 260.95| -15.41  
+Bombay Burmah| 1,767| -104.00  
+Shyam Metalics| 858.30| -50.41  
+GIC| 405.05| -23.75  
+MMTC| 51.55| -3.02  
+Birlasoft| 366.50| -21.36  
+DOMS Industries| 2,660| -154.00  
+New India Assurance| 154.97| -8.94  
+Gland Pharma| 1,475| -84.66  
+GRSE| 1,636| -93.71  
+FACT| 621.95| -35.60  
+Swan Energy| 418.60| -23.85  
+Jubilant Ingrevia| 636.45| -36.25  
+Cipla| 1,415| -80.46  
+Guj Mineral Dev.| 272.80| -15.45  
+Syrma SGS Technology| 442.15| -24.86  
+RattanIndia Infra| 41.16| -2.32  
+Authum Investment| 1,684| -94.06  
+Chalet Hotels| 827.05| -45.81  
+Biocon| 327.80| -17.95  
+REC| 403.40| -22.06  
+Ajanta Pharma| 2,485| -136.00  
+Prestige Estate| 1,127| -61.46  
+KEC Int.| 689.40| -37.00  
+Neuland Labs| 11,439| -613.00  
+NLC India | 236.27| -12.57  
+Rashtriya Chemicals| 123.33| -6.55  
+Affle (India)| 1,522| -80.35  
+Info Edge| 6,397| -338.00  
+Schneider| 625.00| -33.00  
+SAIL| 112.60| -5.95  
+Petronet LNG| 283.90| -14.96  
+Godfrey Philips| 6,679| -352.00  
+Wockhardt| 1,348| -70.91  
+International Gemmol| 382.35| -20.10  
+Ibull Housing Fin| 110.59| -5.76  
+eClerx Services| 2,644| -138.00  
+ACME Solar Holdings| 191.82| -9.88  
+Shree Ren Sug| 27.64| -1.42  
+Himadri Speciality| 434.00| -22.31  
+HFCL| 79.16| -4.07  
+JK Tyre| 278.45| -14.25  
+Divis Labs| 5,483| -280.00  
+% Change| Stock Score| Potential Upside| Volume| Total Asset Turnover| Market Cap (Rs Cr)| 1W Returns| 1M Returns| 3M Returns| 6M Returns| 1Y Returns| 3Y Returns| YTD Returns  
+---|---|---|---|---|---|---|---|---|---|---|---|---  
+-9.13%| Upgrade to Prime| Upgrade to Prime| 1,63,08,753| 0.55| 19,751| -7.49%| -6.05%| -18.38%| -23.22%| -36.65%| 66.53%| -0.23%  
+-8.67%| Upgrade to Prime| Upgrade to Prime| 2,70,21,181| 0.71| 28,964| -10.16%| -16.69%| -24.18%| 11.92%| -11.15%| 25.56%| 1.15%  
+-8.66%| Upgrade to Prime| Upgrade to Prime| 3,22,83,095| 0.74| 1,56,983| -13.37%| -6.41%| -12.39%| -4.42%| 25.87%| 0.74%| -  
+-8.62%| Upgrade to Prime| Upgrade to Prime| 8,08,46,143| 0.82| 1,75,256| -8.98%| -3.91%| 1.47%| -21.45%| -14.06%| 4.39%| -0.95%  
+-8.49%| Upgrade to Prime| Upgrade to Prime| 1,45,006| 0.80| 20,945| -7.93%| -6.69%| -25.52%| 35.08%| 31.87%| 130.14%| 2.47%  
+-8.16%| Upgrade to Prime| Upgrade to Prime| 47,93,116| 0.83| 49,054| -12.24%| -2.94%| -20.84%| -21.97%| -10.44%| 41.07%| 0.03%  
+-8.08%| Upgrade to Prime| Upgrade to Prime| 93,93,865| 0.95| 1,34,822| -12.09%| -8.73%| 1.49%| -14.05%| 5.25%| 2.23%| -1.58%  
+-7.77%| Upgrade to Prime| Upgrade to Prime| 4,15,46,430| 1.34| 83,683| -9.19%| -4.04%| -25.71%| -21.02%| -0.39%| 63.76%| -0.46%  
+-7.69%| Upgrade to Prime| Upgrade to Prime| 3,72,05,154| 0.67| 57,164| -5.62%| -0.64%| -3.90%| -21.33%| -10.48%| 15.69%| 0.09%  
+-7.68%| Upgrade to Prime| Upgrade to Prime| 23,41,022| 1.56| 44,180| -18.51%| -15.44%| -31.66%| 74.48%| 14.27%| 44.99%| -0.36%  
+-7.45%| Upgrade to Prime| Upgrade to Prime| 72,86,175| 0.63| 30,977| -6.35%| 1.40%| -6.10%| 42.91%| 30.76%| 0.19%| 2.15%  
+-7.34%| Upgrade to Prime| Upgrade to Prime| 53,58,396| 0.39| 58,192| -7.50%| -2.84%| -25.64%| -8.15%| -14.60%| 125.57%| 1.47%  
+-7.31%| Upgrade to Prime| Upgrade to Prime| 34,25,412| 1.06| 11,917| -8.04%| 4.85%| -24.00%| 4.20%| -19.84%| 28.03%| 2.93%  
+-7.22%| Upgrade to Prime| Upgrade to Prime| 14,48,645| 1.33| 45,447| -5.14%| -10.07%| -18.58%| -14.11%| -21.50%| 178.00%| -0.34%  
+-7.16%| Upgrade to Prime| Upgrade to Prime| 19,68,968| 0.41| 20,626| -1.20%| 8.62%| -19.98%| 17.02%| -23.25%| 37.67%| 2.93%  
+-7.14%| Upgrade to Prime| Upgrade to Prime| 48,08,454| 0.32| 1,02,547| -3.84%| 13.15%| 13.65%| 2.13%| 131.05%| 1,754%| 0.72%  
+-7.12%| Upgrade to Prime| Upgrade to Prime| 3,83,36,194| 0.89| 2,84,327| -8.27%| -1.28%| -12.70%| -13.19%| -15.65%| 31.52%| -0.96%  
+-7.11%| Upgrade to Prime| Upgrade to Prime| 3,18,100| 0.82| 12,932| -7.48%| -7.09%| -45.46%| 69.13%| 15.36%| 264.64%| -0.12%  
+-7.02%| Upgrade to Prime| Upgrade to Prime| 30,61,033| 0.83| 1,80,400| -7.57%| 3.82%| -8.99%| -32.39%| 25.59%| 28.27%| 0.01%  
+-7.02%| Upgrade to Prime| Upgrade to Prime| 17,04,721| 0.86| 11,076| -6.09%| -5.57%| -24.53%| 20.77%| 0.94%| 44.68%| 0.86%  
+-7.00%| Upgrade to Prime| Upgrade to Prime| 2,98,24,780| -| 93,214| 5.70%| 5.29%| -1.57%| -9.11%| -23.78%| 181.36%| 2.23%  
+-6.97%| Upgrade to Prime| Upgrade to Prime| 24,56,393| 1.44| 24,676| -4.90%| 2.87%| -14.26%| 161.96%| 382.80%| 1,026%| 4.40%  
+-6.93%| Upgrade to Prime| Upgrade to Prime| 9,62,981| 0.19| 32,978| -9.90%| -13.64%| -34.52%| 31.21%| 18.64%| 102.07%| 1.75%  
+-6.91%| Upgrade to Prime| Upgrade to Prime| 3,16,707| 1.21| 14,166| -7.20%| 1.57%| -22.48%| -21.14%| -30.98%| 39.82%| -0.41%  
+-6.62%| Upgrade to Prime| Upgrade to Prime| 45,72,903| 1.57| 87,934| -9.91%| -6.15%| -21.93%| 0.47%| 11.81%| 193.77%| -8.39%  
+-6.57%| Upgrade to Prime| Upgrade to Prime| 9,45,827| 0.78| 35,500| -6.83%| 2.52%| -19.35%| 49.13%| 6.44%| 35.53%| -0.13%  
+-6.37%| Upgrade to Prime| Upgrade to Prime| 25,96,684| 1.29| 31,088| -13.27%| -11.53%| -21.79%| -10.21%| -24.98%| 82.11%| 1.94%  
+-6.35%| Upgrade to Prime| Upgrade to Prime| 23,26,260| 1.08| 22,589| -4.75%| -10.26%| -19.23%| 79.47%| 60.21%| 143.78%| 2.11%  
+-6.35%| Upgrade to Prime| Upgrade to Prime| 9,75,173| 1.92| 25,275| -8.56%| -19.53%| -39.39%| -0.26%| -25.99%| 114.49%| 0.74%  
+-6.34%| Upgrade to Prime| Upgrade to Prime| 3,47,518| 0.78| 12,305| -8.22%| 16.48%| -28.67%| -9.09%| -11.97%| 65.23%| 1.27%  
+-6.29%| Upgrade to Prime| Upgrade to Prime| 41,80,157| 0.92| 26,215| -8.53%| -17.13%| -28.63%| -11.64%| -36.33%| 0.60%| -0.53%  
+-6.27%| Upgrade to Prime| Upgrade to Prime| 8,64,244| 0.67| 17,469| -3.53%| 6.46%| 3.03%| 108.06%| 126.06%| 310.61%| -0.06%  
+-6.22%| Upgrade to Prime| Upgrade to Prime| 4,74,250| 0.37| 8,838| -1.38%| -5.57%| -30.89%| -12.05%| -34.59%| 31.70%| 0.95%  
+-6.20%| Upgrade to Prime| Upgrade to Prime| 5,41,390| 1.07| 78,862| -6.78%| -2.03%| -11.56%| -18.95%| -6.17%| 152.47%| -1.33%  
+-6.19%| Upgrade to Prime| Upgrade to Prime| 4,63,827| 0.77| 29,763| -2.06%| 11.49%| -38.37%| 91.18%| 75.64%| -| 2.43%  
+-6.14%| Upgrade to Prime| Upgrade to Prime| 2,66,21,179| 1.24| 2,25,966| -8.99%| -4.21%| -22.34%| -25.23%| -39.05%| 34.01%| 1.23%  
+-6.13%| Upgrade to Prime| Upgrade to Prime| 97,874| 0.19| 20,288| -6.93%| 5.61%| -19.35%| 40.65%| 14.03%| -| 0.94%  
+-6.13%| Upgrade to Prime| Upgrade to Prime| 22,90,992| 0.70| 13,560| -4.27%| -6.94%| -10.96%| -40.97%| -46.29%| 0.26%| 1.48%  
+-6.11%| Upgrade to Prime| Upgrade to Prime| 10,97,495| 0.93| 1,75,502| -6.58%| -3.10%| -25.44%| -15.71%| -12.53%| 102.21%| 1.52%  
+-6.11%| Upgrade to Prime| Upgrade to Prime| 7,05,009| 1.03| 42,279| -10.84%| -3.41%| -22.31%| 14.43%| -11.21%| 0.11%| 0.27%  
+-6.11%| Upgrade to Prime| Upgrade to Prime| 5,38,329| 2.19| 64,818| -3.69%| 20.63%| -13.98%| 72.34%| 92.80%| 5,593%| 2.53%  
+-6.09%| Upgrade to Prime| Upgrade to Prime| 28,78,135| 0.68| 86,718| -6.82%| -4.66%| -11.25%| -11.46%| -7.17%| 55.74%| 0.80%  
+-6.08%| Upgrade to Prime| Upgrade to Prime| 31,69,289| 3.75| 16,760| -11.76%| -13.20%| 6.31%| -10.33%| -3.77%| 41.61%| -0.17%  
+-6.06%| Upgrade to Prime| Upgrade to Prime| 43,017| 0.60| 49,417| -7.40%| -5.72%| -8.45%| -28.01%| -14.57%| 55.08%| 1.39%  
+-6.04%| Upgrade to Prime| Upgrade to Prime| 1,01,316| 0.82| 12,266| -7.41%| -2.25%| -2.94%| 14.75%| 22.48%| 95.96%| 3.54%  
+-6.04%| Upgrade to Prime| Upgrade to Prime| 71,51,515| 0.68| 64,199| -4.75%| 1.13%| -16.23%| 11.67%| -1.63%| 56.70%| 1.41%  
+-5.95%| Upgrade to Prime| Upgrade to Prime| 30,86,633| 0.85| 89,926| -2.81%| -1.94%| -16.79%| 46.34%| 23.25%| 153.94%| 0.39%  
+-5.93%| Upgrade to Prime| Upgrade to Prime| 98,862| 0.38| 12,110| -7.50%| -14.80%| -37.71%| -4.37%| -| -| -5.93%  
+-5.85%| Upgrade to Prime| Upgrade to Prime| 11,48,652| 1.28| 21,208| -7.06%| 6.67%| -0.73%| 26.42%| 39.36%| 331.72%| -1.56%  
+-5.79%| Upgrade to Prime| Upgrade to Prime| 8,99,384| 1.81| 9,014| -7.01%| -16.94%| -48.87%| -2.61%| -56.68%| 10.68%| 0.98%  
+-5.77%| Upgrade to Prime| Upgrade to Prime| 1,10,853| 0.69| 14,724| -3.14%| 4.95%| -23.66%| 72.98%| 51.23%| 151.22%| 0.47%  
+-5.77%| Upgrade to Prime| Upgrade to Prime| 3,37,935| 0.21| 25,636| -5.36%| 6.87%| -18.41%| 61.14%| 41.06%| 243.94%| 0.83%  
+-5.75%| Upgrade to Prime| Upgrade to Prime| 3,62,777| 1.23| 7,065| -5.15%| -12.95%| -29.19%| -| -| -| -0.86%  
+-5.75%| Upgrade to Prime| Upgrade to Prime| 18,90,634| 0.32| 15,607| -7.14%| -1.47%| -48.07%| 92.98%| 38.44%| 583.90%| 0.09%  
+-5.64%| Upgrade to Prime| Upgrade to Prime| 5,85,538| 0.37| 14,018| -4.51%| 19.26%| 1.88%| 32.59%| 92.67%| 570.52%| 1.17%  
+-5.64%| Upgrade to Prime| Upgrade to Prime| 5,04,661| 0.66| 14,912| -5.77%| -1.85%| -8.07%| -| -| -| -3.72%  
+-5.60%| Upgrade to Prime| Upgrade to Prime| 6,98,836| 1.45| 6,116| -2.77%| 0.28%| -37.07%| -22.68%| -51.00%| 2.85%| 11.62%  
+-5.58%| Upgrade to Prime| Upgrade to Prime| 12,63,121| 1.07| 16,688| -3.38%| 4.23%| -8.31%| -3.99%| 5.03%| 445.64%| -6.48%  
+-5.58%| Upgrade to Prime| Upgrade to Prime| 71,431| 1.24| 12,326| 0.13%| 1.4
