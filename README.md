@@ -11,7 +11,7 @@ I have already created the respective files to work on, so fork the repos and wo
 - `Joseph`, `Terrence` and I will work on backend. Y'all lemme know which model, vector db and embedding y'all would prefer. 
 - I may alternate `Terrence` on both sides if frontend peeps need any help. 
 
-### NEXT PHASE OF PROJECT
+### NEXT PHASE OF PROJECT 
 - `Terrence` has to fix the structure of data extracted from the crawler
 - `Joseph` has to add the stop word removal feature
 - `Mathias` thought of some graphs, have to look into that.
