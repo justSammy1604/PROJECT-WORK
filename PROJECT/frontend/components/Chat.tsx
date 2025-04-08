@@ -68,6 +68,7 @@ export default function Chat() {
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [showScrollButton, setShowScrollButton] = useState(false)
+  const [useAllData, setUseAllData] = useState(false); // <-- ADDED: State for the new button
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const chatContainerRef = useRef<HTMLDivElement>(null)
 
@@ -89,9 +90,9 @@ export default function Chat() {
       setShowScrollButton(!atBottom)
     }
     container.addEventListener("scroll", handleScroll)
-    handleScroll()
+    handleScroll() // Initial check
     return () => { if (container) { container.removeEventListener("scroll", handleScroll) } }
-  }, [])
+  }, []) // Removed container from dependency array as ref shouldn't change often
 
   const parseGraphData = (response: any): Message => {
     try {
@@ -99,12 +100,15 @@ export default function Chat() {
       if (graphInfo && graphInfo.data && graphInfo.type) {
         const validTypes = ['line', 'bar', 'pie'];
         const type = validTypes.includes(graphInfo.type) ? graphInfo.type : 'line';
-        return { role: 'assistant', content: response.answer, graphData: graphInfo.data || [], graphType: type }
+        // Basic validation for graph data structure (ensure it's an array)
+        const data = Array.isArray(graphInfo.data) ? graphInfo.data : [];
+        return { role: 'assistant', content: response.answer, graphData: data, graphType: type }
       }
       return { role: 'assistant', content: response.answer }
     } catch (error) {
       console.error('Error parsing graph data:', error)
-      return { role: 'assistant', content: response.answer }
+      // Return just the answer if parsing fails
+      return { role: 'assistant', content: response.answer || 'Error processing graph data.' }
     }
   }
 
@@ -112,10 +116,11 @@ export default function Chat() {
   const renderGraph = (message: Message) => {
     if (!message.graphData || message.graphData.length === 0 || !message.graphType) return null;
 
-    const hasRequiredKeys = message.graphData.every(item => typeof item.name !== 'undefined' && typeof item.value !== 'undefined');
+    // More robust check for required keys
+    const hasRequiredKeys = message.graphData.every(item => item && typeof item.name !== 'undefined' && typeof item.value !== 'undefined');
     if (!hasRequiredKeys) {
-      console.warn("Graph data is missing 'name' or 'value' keys.");
-      return <p className="text-red-500 text-sm">Graph data format is incorrect.</p>;
+      console.warn("Graph data is missing 'name' or 'value' keys, or item is null/undefined.");
+      return <p className="text-red-500 text-sm">Graph data format is incorrect or incomplete.</p>;
     }
 
     // Define common axis/grid/tooltip/legend props
@@ -171,21 +176,27 @@ export default function Chat() {
           </ResponsiveContainer>
         );
       case 'pie':
+        // Determine radius based on available width, ensuring it's not too large
+        const containerWidth = chatContainerRef.current?.offsetWidth ?? 400; // Estimate width
+        const maxRadius = Math.min(containerWidth * 0.8, chartHeight) / 2; // Limit radius by height too
+        const outerRad = maxRadius * 0.7;
+        const innerRad = maxRadius * 0.5;
+
         return (
           <ResponsiveContainer width="100%" height={chartHeight}>
-            <PieChart margin={{ top: 0, right: 0, left: 0, bottom: 20 }}> {/* Adjust margin for legend */}
+            <PieChart margin={{ top: 5, right: 5, left: 5, bottom: 30 }}> {/* Adjust margin for legend */}
               <Pie
                 data={message.graphData}
                 cx="50%"
-                cy="50%"
+                cy="50%" // Center vertically within the allocated space
                 labelLine={false}
                 label={renderCustomizedLabel} // Use custom label
-                outerRadius={Math.min(window.innerWidth, 400) / 2 * 0.65 } // Responsive radius
-                innerRadius={Math.min(window.innerWidth, 400) / 2 * 0.45 } // Make it a Donut chart
+                outerRadius={outerRad}
+                innerRadius={innerRad} // Make it a Donut chart
                 fill="#8884d8"
                 dataKey="value"
                 nameKey="name"
-                paddingAngle={2} // Add space between slices
+                paddingAngle={message.graphData.length > 1 ? 2 : 0} // Add space between slices if more than one
               >
                 {message.graphData.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={PIE_COLORS[index % PIE_COLORS.length]} strokeWidth={0} /* No border */ />
@@ -202,37 +213,61 @@ export default function Chat() {
     }
   }
 
-  // --- HANDLE SUBMIT (Keep as is) ---
+  // --- HANDLE SUBMIT (MODIFIED) ---
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!input.trim()) return
+    const trimmedInput = input.trim(); // Trim input once
+    if (!trimmedInput) return
 
-    const userMessage: Message = { role: 'user', content: input }
+    const userMessage: Message = { role: 'user', content: trimmedInput }
     setMessages(prev => [...prev, userMessage])
+
+    // Capture the current setting for 'useAllData' for *this* specific request
+    const currentUseAllDataSetting = useAllData;
+
+    // Reset input and the 'useAllData' flag for the *next* interaction
     setInput('')
+    setUseAllData(false); // <-- RESET useAllData STATE HERE after capturing
     setIsLoading(true)
 
     try {
       const response = await fetch('http://localhost:4200/query', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', },
-        body: JSON.stringify({ query: input, extractGraphData: true }),
+        body: JSON.stringify({
+            query: trimmedInput, // Use the trimmed input
+            extractGraphData: true,
+            useAllData: currentUseAllDataSetting // <-- ADDED: Send the captured state
+        }),
       })
 
       if (!response.ok) {
-        let errorBody = 'Unknown error'; try { errorBody = await response.text(); } catch (_) {}
-        throw new Error(`HTTP Error: ${response.status} - ${response.statusText}. Body: ${errorBody}`)
+        let errorBody = 'Unknown error';
+        try {
+             // Try to get more specific error from backend response body
+             const errorData = await response.json();
+             errorBody = errorData.detail || errorData.message || JSON.stringify(errorData);
+        } catch (_) {
+            // If response is not JSON or empty, fallback to text
+            try { errorBody = await response.text(); } catch { /* ignore further errors */ }
+        }
+        throw new Error(`HTTP Error: ${response.status} - ${response.statusText}. Details: ${errorBody}`)
       }
+
       const data = await response.json()
+      // Add more robust checking for the response structure
       if (!data || typeof data.answer === 'undefined') {
         console.error('Invalid response format received:', data);
-        throw new Error('Invalid response format from server.')
+        throw new Error('Invalid response format from server (missing "answer").')
       }
+
       const assistantMessage = parseGraphData(data)
       setMessages(prev => [...prev, assistantMessage])
+
     } catch (error) {
       console.error('Error fetching or processing response:', error)
-      const errorContent = error instanceof Error ? error.message : 'Sorry, something went wrong.';
+      // Display a more user-friendly error message
+      const errorContent = error instanceof Error ? error.message : 'Sorry, an unexpected error occurred.';
       const errorMessage: Message = { role: 'assistant', content: `Error: ${errorContent}` }
       setMessages(prev => [...prev, errorMessage])
     } finally {
@@ -241,46 +276,71 @@ export default function Chat() {
   }
 
   return (
-    <div className="flex flex-col h-[500px] max-w-6xl mx-auto border rounded-lg shadow-lg bg-white">
-      <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50/50"> 
+    // Adjusted height to better accommodate the extra button, use h-screen or flex-grow in a parent if needed
+    <div className="flex flex-col h-[550px] max-w-6xl mx-auto border rounded-lg shadow-lg bg-white">
+      <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50/50">
         {messages.map((message, index) => (
           <div key={index} className={`flex flex-col mb-3 ${message.role === 'user' ? 'items-end' : 'items-start'}`}>
+            {/* Message Bubble */}
             <div className={`max-w-[85%] p-3 rounded-2xl shadow-sm ${message.role === 'user' ? 'bg-blue-500 text-white' : 'bg-white text-gray-800 border border-gray-200'}`}>
-            <div className="prose prose-sm max-w-none dark:prose-invert">
-              <ReactMarkdown>
-                {message.content}
-              </ReactMarkdown>
-            </div>            
+              <div className="prose prose-sm max-w-none dark:prose-invert break-words"> {/* Added break-words */}
+                <ReactMarkdown>
+                  {message.content}
+                </ReactMarkdown>
+              </div>
             </div>
-            {message.graphData && message.graphType && (
-              // Container for the graph - ensures responsiveness works
+            {/* Graph Area */}
+            {message.graphData && message.graphType && message.graphData.length > 0 && ( // Added check for graphData length
                <div className="mt-3 p-3 bg-white border border-gray-200 rounded-lg shadow-sm w-full max-w-[95%] self-start overflow-hidden"> {/* Ensure width is available */}
                 {renderGraph(message)}
               </div>
             )}
           </div>
         ))}
+        {/* Loading Indicator */}
         {isLoading && (
             <div className="flex justify-start">
                 <div className="p-3 rounded-xl bg-gray-200 text-gray-600 italic text-sm">Thinking...</div>
             </div>
         )}
+        {/* Scroll Anchor */}
         <div ref={messagesEndRef} />
       </div>
+
+      {/* Scroll To Bottom Button */}
       {showScrollButton && (
-        <Button variant="outline" className="absolute bottom-20 right-4 rounded-full z-10 bg-white/80 hover:bg-white backdrop-blur-sm border-gray-300 shadow" size="icon" onClick={scrollToBottom} aria-label="Scroll to bottom">
+        <Button variant="outline" className="absolute bottom-[80px] right-4 rounded-full z-10 bg-white/80 hover:bg-white backdrop-blur-sm border-gray-300 shadow" size="icon" onClick={scrollToBottom} aria-label="Scroll to bottom"> {/* Adjusted bottom position */}
           <ChevronDown className="h-5 w-5 text-gray-600" />
         </Button>
       )}
-      <form onSubmit={handleSubmit} className="p-4 border-t border-gray-200 flex bg-gray-100/80">
-        <Input
-          type="text" value={input} onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask about data or request a graph..."
-          className="flex-1 mr-2 border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-md" // Slightly rounded input
-          disabled={isLoading}
-        />
-        <Button type="submit" disabled={isLoading || !input.trim()} aria-label="Send message" className="rounded-md"> {/* Matching rounded button */}
-          {isLoading ? ( <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div> ) : ( <Send className="h-4 w-4" /> )}
+
+      {/* FORM AREA - MODIFIED */}
+      <form onSubmit={handleSubmit} className="p-4 border-t border-gray-200 flex flex-col bg-gray-100/80 gap-2"> {/* Added gap */}
+        {/* Input and Send Button Row */}
+        <div className="flex w-full gap-2"> {/* Added gap */}
+            <Input
+              type="text" value={input} onChange={(e) => setInput(e.target.value)}
+              placeholder="Ask about data or request a graph..."
+              className="flex-1 border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-md"
+              disabled={isLoading}
+              aria-label="Chat input"
+            />
+            <Button type="submit" disabled={isLoading || !input.trim()} aria-label="Send message" className="rounded-md shrink-0"> {/* Added shrink-0 */}
+              {isLoading ? ( <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div> ) : ( <Send className="h-4 w-4" /> )}
+            </Button>
+        </div>
+
+        {/* 'Use All Data' Button - ADDED */}
+        <Button
+            type="button"
+            variant={useAllData ? "default" : "outline"} // Change variant when active
+            size="sm"
+            className="w-full sm:w-auto sm:self-start" 
+            onClick={() => setUseAllData(true)}
+            disabled={isLoading}
+            aria-pressed={useAllData} // For accessibility
+        >
+            {useAllData ? "Using All Available Data" : "Use All Data"}
         </Button>
       </form>
     </div>

@@ -9,7 +9,8 @@ app = Flask(__name__)
 CORS(app)  # This enables CORS for all routes
 
 data = 'crawled_data'  # We can also add crawled_data file as input here. 
-rag_chain = rag_pipeline(data)
+useData = request.args.get('search')
+rag_chain = rag_pipeline(data,useData)
 cache = SemanticCache()
 
 def get_top_links(search):
