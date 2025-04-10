@@ -43,7 +43,7 @@ def clean_text_with_ai(text):
 
     return response.text  # Return cleaned text without links
 
-async def crawl_parallel(urls: List[str], max_concurrent: int = 3):
+async def crawl_parallel(urls: List[str], searchText, max_concurrent: int = 3):
     print("\n=== Parallel Crawling with Browser Reuse + Memory Check ===")
 
     # We'll keep track of peak memory usage across all tasks
@@ -104,9 +104,7 @@ async def crawl_parallel(urls: List[str], max_concurrent: int = 3):
                     success_count += 1
                     formatted_text = clean_text_with_ai(result.markdown_v2.raw_markdown)
                     # Save the crawled content to a file
-                    # Generate a unique file name based on the URL
-                    sanitized_url = url.replace("https://", "").replace("http://", "").replace("/", "_").replace(":", "_")
-                    file_name = f"crawled_data/{sanitized_url}.txt"
+                    file_name = f"crawled_data/{searchText.replace(' ', '_')}.txt"
                     with open(file_name, "a", encoding="utf-8") as file:
                         file.write(formatted_text)
                     print(f"Saved content to: {file_name}")
@@ -126,13 +124,8 @@ async def crawl_parallel(urls: List[str], max_concurrent: int = 3):
 
 def get_pydantic_ai_docs_urls():
     """
-    Fetches all URLs from the Pydantic AI documentation.
-    Uses the sitemap (https://ai.pydantic.dev/sitemap.xml) to get these URLs.
-    
-    Returns:
-        List[str]: List of URLs
-    """            
-    sitemap_url = "https://www.marketwatch.com/sitemap.xml"
+    Recursively fetch all URLs from a sitemap, including nested sitemaps.
+    """
     try:
         response = requests.get(sitemap_url)
         response.raise_for_status()
@@ -140,30 +133,43 @@ def get_pydantic_ai_docs_urls():
         # Parse the XML
         root = ElementTree.fromstring(response.content)
         
-        # Extract all URLs from the sitemap
-        # The namespace is usually defined in the root element
-        namespace = {'ns': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
-        urls = [loc.text for loc in root.findall('.//ns:loc', namespace)]
+        # Namespace for sitemap XML
+        #namespace = {'ns': 'http://www.google.com/schemas/sitemap/0.84'}
+        namespace = {'ns': root.tag.split('}')[0].strip('{')} if '}' in root.tag else {}
+        
+        urls = []
+        # Check if the sitemap contains other sitemaps
+        for sitemap in root.findall('.//ns:sitemap/ns:loc', namespace):
+            nested_sitemap_url = sitemap.text
+            print(f"Found nested sitemap: {nested_sitemap_url}")
+            urls.extend(get_all_sitemap_urls(nested_sitemap_url))  # Recursive call
+        
+        # Extract actual URLs if present
+        for loc in root.findall('.//ns:url/ns:loc', namespace):
+            urls.append(loc.text)
         
         return urls
     except Exception as e:
-        print(f"Error fetching sitemap: {e}")
-        return []        
+        print(f"Error fetching sitemap: {sitemap_url} - {e}")
+        return []
+    
+
 
 async def main():
     #urls = get_pydantic_ai_docs_urls()
     
-    urls = ["https://markets.ft.com/data",
-            "https://edition.cnn.com/markets",
-            "https://economictimes.indiatimes.com/stocks/marketstats/top-gainers",
-            "https://economictimes.indiatimes.com/stocks/marketstats/top-losers",
-            "https://economictimes.indiatimes.com/stocks/marketstats/most-active-value"
-            ]
-    if urls:
-        print(f"Found {len(urls)} URLs to crawl")
-        await crawl_parallel(urls, max_concurrent=10)
-    else:
-        print("No URLs found to crawl")    
+    # urls = ["https://markets.ft.com/data",
+    #         "https://edition.cnn.com/markets",
+    #         "https://economictimes.indiatimes.com/stocks/marketstats/top-gainers",
+    #         "https://economictimes.indiatimes.com/stocks/marketstats/top-losers",
+    #         "https://economictimes.indiatimes.com/stocks/marketstats/most-active-value"
+    #         ]
+    # if urls:
+    #     print(f"Found {len(urls)} URLs to crawl")
+    #     await crawl_parallel(urls, max_concurrent=10)
+    # else:
+    #     print("No URLs found to crawl")    
+    
 
 if __name__ == "__main__":
     asyncio.run(main())
