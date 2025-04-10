@@ -4,13 +4,12 @@ from flask_cors import CORS
 import requests
 from app import rag_pipeline, SemanticCache
 from dotenv import load_dotenv
-from Crawler.crawler import  crawl_parallel
+from Crawler.crawler import crawl_parallel
 load_dotenv()
 app = Flask(__name__)
 CORS(app)  # This enables CORS for all routes
 
 data = 'crawled_data'  # We can also add crawled_data file as input here. 
-rag_chain = rag_pipeline(data)
 cache = SemanticCache()
 
 def get_top_links(search):
@@ -43,12 +42,15 @@ def get_search_query():
             return jsonify({'error': 'Search Term Not Provided'}), 400
         links = get_top_links(search)
         data = await crawl_parallel(links,search)
+
         return jsonify({'message':'Search Query was entered successfully','links': links}) , 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 @app.route('/query', methods=['POST'])
 def query():
+    useData = request.args.get('search')
+    rag_chain = rag_pipeline(data,useData)
     try:
         data = request.json
         query = data.get('query')
