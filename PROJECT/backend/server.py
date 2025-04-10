@@ -41,7 +41,7 @@ def get_search_query():
         if not search:
             return jsonify({'error': 'Search Term Not Provided'}), 400
         links = get_top_links(search)
-        data = crawl_parallel(links)
+        data = await crawl_parallel(links,search)
         return jsonify({'message':'Search Query was entered successfully','links': links}) , 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
