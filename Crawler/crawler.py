@@ -153,31 +153,7 @@ def get_pydantic_ai_docs_urls():
         print(f"Error fetching sitemap: {sitemap_url} - {e}")
         return []
     
-    
 
-def get_top_links(search):
-    """Function to get the top links from Google search results using ScrapingDog API."""
-    url = "https://api.scrapingdog.com/google"
-    params = {
-    #"api_key": os.getenv("SCRAP_KEY"),
-    "api_key": "67f35d79575437d24b434a13",
-    "query": search,
-    "results": 50,
-    "country": "us",
-    "page": 0,
-    "advance_search": "false"
-}
-    response = requests.get(url, params=params)
-    if response.status_code == 200:
-        data = response.json()
-    
-    links = []
-    if "organic_results" in data:
-        for result in data["organic_results"]:
-            if "link" in result:
-                links.append(result["link"])
-                print(f"Link: {result['link']}")
-    return links    
 
 async def main():
     #urls = get_pydantic_ai_docs_urls()
@@ -194,8 +170,6 @@ async def main():
     # else:
     #     print("No URLs found to crawl")    
     
-    links=get_top_links("Top Gainers of the Market")
-    await crawl_parallel(links, "Top Gainers of the Market")
 
 if __name__ == "__main__":
     asyncio.run(main())
