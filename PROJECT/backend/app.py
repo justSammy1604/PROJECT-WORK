@@ -142,105 +142,24 @@ def vectordb_information(docs):
 
 
 def rag_model(vectorstore):
-  if(True):  
+  if(True):
     template = """You are a highly skilled and professional financial advisor. Your role is to provide accurate, clear, 
   and concise financial advice solely based on the information provided in the given data source. 
   Do not make assumptions or include any information not explicitly stated in the source.
   If a question is beyond the scope of the data, politely respond with: "I'm sorry, but I can only provide information based on the given data source."
   Always ensure that your responses are in a professional and respectful tone, and provide actionable insights where possible based on the user's query and the available data.
-
-  *Output Format:*.
-
-1.  *answer (Required):* A string containing the textual financial advice/analysis .
-2.  *graphData (Optional):* Include this object only if a visual representation significantly clarifies trends, comparisons, or proportions in the data.
-    *   type (Required if graphData is present): String - must be 'line', 'bar', or 'pie'.
-        *   'line': Use for trends over time.
-        *   'bar': Use for comparing distinct categories/values.
-        *   'pie': Use for showing parts of a whole (proportions, allocation %).
-    *   data (Required if graphData is present): An array of objects. Each object *must* have:
-        *   name: (String) Label, category, or time point.
-        *   value: (Number) The corresponding numerical value.
-
-*Constraint:* Generate graphData only when it adds substantial value beyond the text answer. Ensure all graphData content is related to the source data.
-
-*Example Structure (Line):*
-{
-  "answer": "Analysis based on data...",
-  "graphData": {
-    "type": "line",
-    "data": [ { "name": "Year1", "value": 100 }, { "name": "Year2", "value": 120 } ]
-  }
-}
-*Example Structure (Bar):*
-{
-  "answer": "Comparison based on data...",
-  "graphData": {
-    "type": "bar",
-    "data": [ { "name": "CategoryA", "value": 50 }, { "name": "CategoryB", "value": 75 } ]
-  }
-}
-*Example Structure (Pie):*
-{
-  "answer": "Allocation breakdown...",
-  "graphData": {
-    "type": "pie",
-    "data": [ { "name": "AssetX", "value": 60 }, { "name": "AssetY", "value": 40 } ]
-  }
-}
-*Example Structure (Text Only):*
-{
-  "answer": "This query can be answered with text alone, based on the data..."
-}
-
-        context: {context} ,
-        Question: {question} ,
-        Helpful Answer:"""
+    context: {context} 
+    Question: {question}
+    Helpful Answer:"""
     
-    template = """Answer the questions to the best of your ability, you have the ability to display graphs using graphData.
-         *Output Format:*.
-1.  *answer (Required):* A string containing the textual financial advice/analysis .
-2.  *graphData (Optional):* Include this object only if a visual representation significantly clarifies trends, comparisons, or proportions in the data.
-    *   type (Required if graphData is present): String - must be 'line', 'bar', or 'pie'.
-        *   'line': Use for trends over time.
-        *   'bar': Use for comparing distinct categories/values.
-        *   'pie': Use for showing parts of a whole (proportions, allocation %).
-    *   data (Required if graphData is present): An array of objects. Each object *must* have:
-        *   name: (String) Label, category, or time point.
-        *   value: (Number) The corresponding numerical value.
-
-*Constraint:* Generate graphData only when it adds substantial value beyond the text answer.
-*Example Structure (Line):*
-{
-  "answer": "Analysis based on data...",
-  "graphData": {
-    "type": "line",
-    "data": [ { "name": "Year1", "value": 100 }, { "name": "Year2", "value": 120 } ]
-  }
-}
-*Example Structure (Bar):*
-{
-  "answer": "Comparison based on data...",
-  "graphData": {
-    "type": "bar",
-    "data": [ { "name": "CategoryA", "value": 50 }, { "name": "CategoryB", "value": 75 } ]
-  }
-}
-*Example Structure (Pie):*
-{
-  "answer": "Allocation breakdown...",
-  "graphData": {
-    "type": "pie",
-    "data": [ { "name": "AssetX", "value": 60 }, { "name": "AssetY", "value": 40 } ]
-  }
-}
-*Example Structure (Text Only):*
-{
-  "answer": "This query can be answered with text alone, based on the data..."
-}
-
-        context: {context} ,
-        Question: {question} ,
-        Helpful Answer:"""
+    template = """You are a friendly and intelligent financial advisor. Based on the user's question, provide data-driven financial advice.
+    You are allowed to reference both the provided documents and search online to gather information.
+    If the user requests a chart (bar, pie, etc.), you may describe the chart in words or provide instructions for plotting.
+    Context:
+    {context}
+    Question:
+    {question}
+    Response:"""
 
     QA_CHAIN_PROMPT = PromptTemplate.from_template(template)
     memory = ConversationBufferMemory(
@@ -276,10 +195,10 @@ def load_and_process(doc_source):
     return split_text(sw_rem_main(all_docs))
 
 
-def rag_pipeline(document_sources, useData):
+def rag_pipeline(document_sources):
     processed_docs = load_and_process(document_sources)
     vector_store = vectordb_information(processed_docs)
-    rag_chain = rag_model(vector_store, useData)
+    rag_chain = rag_model(vector_store)
     return rag_chain
 
 

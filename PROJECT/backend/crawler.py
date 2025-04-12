@@ -122,10 +122,9 @@ async def crawl_parallel(urls: List[str], searchText, max_concurrent: int = 3):
         log_memory(prefix="Final: ")
         print(f"\nPeak memory usage (MB): {peak_memory // (1024 * 1024)}")
 
-def get_pydantic_ai_docs_urls():
-    """
+""" def get_pydantic_ai_docs_urls():
     Recursively fetch all URLs from a sitemap, including nested sitemaps.
-    """
+    
     try:
         response = requests.get(sitemap_url)
         response.raise_for_status()
@@ -152,7 +151,7 @@ def get_pydantic_ai_docs_urls():
     except Exception as e:
         print(f"Error fetching sitemap: {sitemap_url} - {e}")
         return []
-    
+     """
 
 
 async def main():
@@ -171,5 +170,5 @@ async def main():
     #     print("No URLs found to crawl")    
     
 
-if __name__ == "__main__":
-    asyncio.run(main())
+    if __name__ == "__main__":
+        asyncio.run(main())
