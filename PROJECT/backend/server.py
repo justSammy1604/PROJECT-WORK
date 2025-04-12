@@ -43,7 +43,7 @@ def toggle_use_data():
     global useData
     enabled = request.args.get('enabled', 'false').lower() == 'true'
     useData = enabled
-    return jsonify({'success': True, 'useData': useData})
+    return jsonify({'success': True, 'useData': useData}) 
 
 @app.route('/links', methods=['GET'])
 async def get_search_query():
