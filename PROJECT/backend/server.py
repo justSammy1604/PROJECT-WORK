@@ -9,8 +9,7 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)  # This enables CORS for all routes
 
-# useData = request.args.get('search')
-# useData = 1
+# useData = request.args.get('search') #Mathias please see this part of yours
 data_from_files = 'crawled_data'  # We can also add crawled_data file as input here. 
 rag_chain = rag_pipeline(data_from_files)
 cache = SemanticCache()
