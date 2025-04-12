@@ -9,13 +9,13 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)  # This enables CORS for all routes
 
-# useData = request.args.get('search')
-# useData = 1
+useData = False 
 data_from_files = 'crawled_data'  # We can also add crawled_data file as input here. 
 rag_chain = rag_pipeline(data_from_files)
 cache = SemanticCache()
 
 def get_top_links(search):
+    """ Get the top links from Google search results using ScrapingDog API."""
     """Function to get the top links from Google search results using ScrapingDog API."""
     url = "https://api.scrapingdog.com/google"
     params = {
@@ -37,20 +37,30 @@ def get_top_links(search):
                 links.append(result["link"])
     return links
     
+@app.route('/toggle', methods=['GET'])
+def toggle_use_data():
+    """Mainly to toggle between the prompts"""
+    global useData
+    enabled = request.args.get('enabled', 'false').lower() == 'true'
+    useData = enabled
+    return jsonify({'success': True, 'useData': useData})
+
 @app.route('/links', methods=['GET'])
 async def get_search_query():
+    """Endpoint to get the search query from the user."""
     try:
         search = request.args.get('search')
         if not search:
             return jsonify({'error': 'Search Term Not Provided'}), 400
         links = get_top_links(search)
-        data_from_links =  await crawl_parallel(links,search)
+        await crawl_parallel(links,search)
         return jsonify({'message':'Search Query was entered successfully'}) , 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 @app.route('/query', methods=['POST'])
 def query():
+    """Endpoint to handle the query from the user."""
     try:
         data_request = request.json
         query = data_request.get('query')
