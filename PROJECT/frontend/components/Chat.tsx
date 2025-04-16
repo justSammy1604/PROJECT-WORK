@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Send, ChevronDown, Moon, Sun, Search } from 'lucide-react'; // Import Search icon
+import { Send, ChevronDown, Moon, Sun, Search } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -238,7 +238,7 @@ export default function Chat() {
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
-    setSearchClicked(false); // Reset search clicked state after submission
+
 
 
     try {
@@ -267,11 +267,12 @@ export default function Chat() {
       setMessages(prev => [...prev, { role: 'assistant', content: `Error: ${errorContent}` }]);
     } finally {
       setIsLoading(false);
+      setSearchClicked(false); // Reset searchClicked after handleSubmit completes
     }
   };
 
   const handleSearchClick = () => {
-    setSearchClicked(true);
+    setSearchClicked(!searchClicked); // Toggle the searchClicked state
   };
 
 

@@ -148,9 +148,9 @@ def rag_model(vectorstore):
 
     enable = extract_true_from_prompt(question)
     # Remove "|||TRUE|||" from the prompt
-    prompt = re.sub(r"\|\|\|true\|\|\|", "", question, flags=re.IGNORECASE).strip()
+    question = re.sub(r"\|\|\|true\|\|\|", "", question, flags=re.IGNORECASE).strip()
 
-  if enable:
+   if enable:
         template = """You are a friendly and intelligent financial advisor. Based on the user's question, provide data-driven financial advice.
         You are allowed to reference both the provided documents and search online to gather information.
         If the user requests a chart (bar, pie, etc.), you may describe the chart in words or provide instructions for plotting.
