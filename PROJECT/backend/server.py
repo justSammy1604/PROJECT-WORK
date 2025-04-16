@@ -9,7 +9,7 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)  # This enables CORS for all routes
 
-useData = False 
+
 data_from_files = 'crawled_data'  # We can also add crawled_data file as input here. 
 rag_chain = rag_pipeline(data_from_files)
 cache = SemanticCache()
@@ -36,15 +36,7 @@ def get_top_links(search):
             if "link" in result:
                 links.append(result["link"])
     return links
-    
-@app.route('/toggle', methods=['GET'])
-def toggle_use_data():
-    """Mainly to toggle between the prompts"""
-    global useData
-    enabled = request.args.get('enabled', 'false').lower() == 'true'
-    useData = enabled
-    return jsonify({'success': True, 'useData': useData}) 
-
+     
 @app.route('/links', methods=['GET'])
 async def get_search_query():
     """Endpoint to get the search query from the user."""

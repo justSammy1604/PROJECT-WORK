@@ -34,7 +34,6 @@ def init_cache():
     encoder = SentenceTransformer("sentence-transformers/all-mpnet-base-v2", use_auth_token=hf_key)
     return index, encoder
 
-
 def retrieve_cache(json_file):
     try:
         with open(json_file, "r") as file:
@@ -48,12 +47,10 @@ def retrieve_cache(json_file):
         cache = {"questions": OrderedDict(), "response_text": [], "frequencies": {}}
     return cache
 
-
 def store_cache(json_file, cache):
     print(f"Saving to {json_file}")
     with open(json_file, "w") as file:
         json.dump(cache, file)
-
 
 class SemanticCache:
     def __init__(self, json_file="cache_file.json", threshold=0.35, max_response=100):
@@ -124,13 +121,11 @@ class SemanticCache:
         store_cache(self.json_file, self.cache)
         print("Cache cleaned up. Low-frequency questions (< 2) removed, frequencies preserved in cache_file.json.")
 
-
 # Original LangChain Functions
 def split_text(documents):
     text_split = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
     docs = text_split.split_documents(documents)
     return docs
-
 
 def vectordb_information(docs):
     vectorstore = Chroma.from_documents(
@@ -141,56 +136,68 @@ def vectordb_information(docs):
     vectorstore.persist()
     return vectorstore
 
-
 def rag_model(vectorstore):
-    enable = bool(re.search(r"\|\|\|TRUE\|\|\|", question, re.IGNORECASE))
-    # Remove "|||TRUE|||" from the prompt
-    question = re.sub(r"\|\|\|true\|\|\|", "", question, flags=re.IGNORECASE).strip()
-
-    if enable:
-        template = """You are a friendly and intelligent financial advisor. Based on the user's question, provide data-driven financial advice.
-        You are allowed to reference both the provided documents and search online to gather information.
-        If the user requests a chart (bar, pie, etc.), you may describe the chart in words or provide instructions for plotting.
-        Context:
-        {context}
-        Question:
-        {question}
-        Response:"""
-    else:
-        template = """You are a highly skilled and professional financial advisor. Your role is to provide accurate, clear, 
-        and concise financial advice solely based on the information provided in the given data source. 
-        Do not make assumptions or include any information not explicitly stated in the source.
-        If a question is beyond the scope of the data, politely respond with: "I'm sorry, but I can only provide information based on the given data source."
-        Always ensure that your responses are in a professional and respectful tone, and provide actionable insights where possible based on the user's query and the available data.
-        Context: {context} 
-        Question: {question}
-        Helpful Answer:"""
-
-    QA_CHAIN_PROMPT = PromptTemplate.from_template(template)
+    # Define both prompt templates
+    template_data_driven = """You are a friendly and intelligent financial advisor. Based on the user's question, provide data-driven financial advice.
+    You are allowed to reference both the provided documents and search online to gather information.
+    If the user requests a chart (bar, pie, etc.), you may describe the chart in words or provide instructions for plotting.
+    Context: {context}
+    Question: {question}
+    Response:"""
+    
+    template_strict = """You are a highly skilled and professional financial advisor. Your role is to provide accurate, clear, 
+    and concise financial advice solely based on the information provided in the given data source. 
+    Do not make assumptions or include any information not explicitly stated in the source.
+    If a question is beyond the scope of the data, politely respond with: "I'm sorry, but I can only provide information based on the given data source."
+    Always ensure that your responses are in a professional and respectful tone, and provide actionable insights where possible based on the user's query and the available data.
+    Context: {context} 
+    Question: {question}
+    Helpful Answer:"""
+    
+    # Create PromptTemplate objects
+    prompt_data_driven = PromptTemplate.from_template(template_data_driven)
+    prompt_strict = PromptTemplate.from_template(template_strict)
+    
     memory = ConversationBufferMemory(
         memory_key="chat_history",
         output_key='result',
         return_messages=True
     )
-    qa_chain = RetrievalQA.from_chain_type(
+    
+    # Create two RetrievalQA chains, one for each prompt
+    qa_chain_data_driven = RetrievalQA.from_chain_type(
         llm=model,
         chain_type="stuff",
         retriever=vectorstore.as_retriever(search_kwargs={"k": 2}),
         return_source_documents=True,
         memory=memory,
-        chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}
+        chain_type_kwargs={"prompt": prompt_data_driven}
     )
-    return qa_chain
-
+    
+    qa_chain_strict = RetrievalQA.from_chain_type(
+        llm=model,
+        chain_type="stuff",
+        retriever=vectorstore.as_retriever(search_kwargs={"k": 2}),
+        return_source_documents=True,
+        memory=memory,
+        chain_type_kwargs={"prompt": prompt_strict}
+    )
+    
+    return {"data_driven": qa_chain_data_driven, "strict": qa_chain_strict}
 
 def query_response(query, rag_chain):
     try:
-        result = rag_chain({"query": query})
+        # Check for |||TRUE||| in the query
+        enable = bool(re.search(r"\|\|\|TRUE\|\|\|", query, re.IGNORECASE))
+        # Remove |||TRUE||| from the query
+        cleaned_query = re.sub(r"\|\|\|true\|\|\|", "", query, flags=re.IGNORECASE).strip()
+        # Select the appropriate chain based on enable
+        selected_chain = rag_chain["data_driven"] if enable else rag_chain["strict"]
+        result = selected_chain({"query": cleaned_query})
         response = result['result']
         return response
     except Exception as e:
         return f"An error occurred: {str(e)}"
-
 
 def load_and_process(doc_source):
     all_docs = []
@@ -199,20 +206,17 @@ def load_and_process(doc_source):
     all_docs.extend(documents)
     return split_text(sw_rem_main(all_docs))
 
-
 def rag_pipeline(document_sources):
     processed_docs = load_and_process(document_sources)
     vector_store = vectordb_information(processed_docs)
     rag_chain = rag_model(vector_store)
     return rag_chain
 
-
 def conver(temp):
     temp2 = ''
     for text in temp:
         temp2 += text + ' '
     return temp2
-
 
 def sw_rem_main(all_docs):
     temp = []
@@ -224,7 +228,6 @@ def sw_rem_main(all_docs):
     for doc in all_docs:
         doc.page_content = conver(swrem.pop(0))
     return all_docs
-
 
 def stopword_removal(texts):
     documents = []
