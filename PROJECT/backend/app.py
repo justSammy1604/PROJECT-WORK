@@ -19,6 +19,7 @@ from pypdf import PdfReader
 import sys
 from unicodedata import category
 import spacy
+import re
 
 # Load environment variables
 load_dotenv()
@@ -142,24 +143,31 @@ def vectordb_information(docs):
 
 
 def rag_model(vectorstore):
-  if(True):
-    template = """You are a highly skilled and professional financial advisor. Your role is to provide accurate, clear, 
-  and concise financial advice solely based on the information provided in the given data source. 
-  Do not make assumptions or include any information not explicitly stated in the source.
-  If a question is beyond the scope of the data, politely respond with: "I'm sorry, but I can only provide information based on the given data source."
-  Always ensure that your responses are in a professional and respectful tone, and provide actionable insights where possible based on the user's query and the available data.
-    context: {context} 
-    Question: {question}
-    Helpful Answer:"""
-    
-    template = """You are a friendly and intelligent financial advisor. Based on the user's question, provide data-driven financial advice.
-    You are allowed to reference both the provided documents and search online to gather information.
-    If the user requests a chart (bar, pie, etc.), you may describe the chart in words or provide instructions for plotting.
-    Context:
-    {context}
-    Question:
-    {question}
-    Response:"""
+    def extract_true_from_prompt(question: str) -> bool:
+        return bool(re.search(r"\|\|\|TRUE\|\|\|", prompt, re.IGNORECASE))
+
+    enable = extract_true_from_prompt(question)
+    # Remove "|||TRUE|||" from the prompt
+    prompt = re.sub(r"\|\|\|true\|\|\|", "", question, flags=re.IGNORECASE).strip()
+
+  if enable:
+        template = """You are a friendly and intelligent financial advisor. Based on the user's question, provide data-driven financial advice.
+        You are allowed to reference both the provided documents and search online to gather information.
+        If the user requests a chart (bar, pie, etc.), you may describe the chart in words or provide instructions for plotting.
+        Context:
+        {context}
+        Question:
+        {question}
+        Response:"""
+    else:
+        template = """You are a highly skilled and professional financial advisor. Your role is to provide accurate, clear, 
+        and concise financial advice solely based on the information provided in the given data source. 
+        Do not make assumptions or include any information not explicitly stated in the source.
+        If a question is beyond the scope of the data, politely respond with: "I'm sorry, but I can only provide information based on the given data source."
+        Always ensure that your responses are in a professional and respectful tone, and provide actionable insights where possible based on the user's query and the available data.
+        Context: {context} 
+        Question: {question}
+        Helpful Answer:"""
 
     QA_CHAIN_PROMPT = PromptTemplate.from_template(template)
     memory = ConversationBufferMemory(
