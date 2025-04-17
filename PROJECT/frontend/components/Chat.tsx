@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, memo } from 'react';
 import { Send, ChevronDown, Moon, Sun, Search } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import {
@@ -27,6 +27,7 @@ interface Message {
   content: string;
   graphData?: any[];
   graphType?: 'line' | 'bar' | 'pie' | null;
+  className?: string;
 }
 
 interface CustomTooltipProps {
@@ -65,7 +66,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 };
 
 // Graph Rendering Component
-const GraphRenderer: React.FC<{ message: Message }> = ({ message }) => {
+const GraphRenderer = memo<{ message: Message }>(({ message }) => {
   if (!message.graphData || !message.graphData.length || !message.graphType) return null;
 
   const hasRequiredKeys = message.graphData.every(item => typeof item.name !== 'undefined' && typeof item.value !== 'undefined');
@@ -158,7 +159,7 @@ const GraphRenderer: React.FC<{ message: Message }> = ({ message }) => {
       console.warn(`Unsupported graph type: ${message.graphType}`);
       return null;
   }
-};
+});
 
 // Main Chat Component
 export default function Chat() {
@@ -168,9 +169,9 @@ export default function Chat() {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const [searchClicked, setSearchClicked] = useState(false);  // new state for search button
-
+  const [searchClicked, setSearchClicked] = useState(false);
 
   // Toggle theme function
   const toggleTheme = () => {
@@ -181,7 +182,6 @@ export default function Chat() {
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
   }, [theme]);
-
 
   // Scroll to bottom
   const scrollToBottom = () => {
@@ -207,6 +207,15 @@ export default function Chat() {
     return () => container.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Focus input after input, isLoading, or messages change
+  useEffect(() => {
+    if (inputRef.current && !isLoading) {
+      requestAnimationFrame(() => {
+        inputRef.current?.focus();
+      });
+    }
+  }, [input, isLoading, messages]);
+
   // Parse graph data
   const parseGraphData = (response: any): Message => {
     try {
@@ -228,18 +237,17 @@ export default function Chat() {
     e.preventDefault();
     if (!input.trim()) return;
 
+    // Create final input for backend with |||TRUE||| if search is active
     let finalInput = input;
     if (searchClicked) {
       finalInput += ' |||TRUE||| ';
     }
 
-
-    const userMessage: Message = { role: 'user', content: finalInput };
+    // Create user message with original input for display
+    const userMessage: Message = { role: 'user', content: input };
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
-
-
 
     try {
       const response = await fetch('http://localhost:4200/query', {
@@ -264,17 +272,15 @@ export default function Chat() {
     } catch (error) {
       console.error('Error fetching or processing response:', error);
       const errorContent = error instanceof Error ? error.message : 'Sorry, something went wrong.';
-      setMessages(prev => [...prev, { role: 'assistant', content: `Error: ${errorContent}` }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: `Error: ${errorContent}`, className: 'text-red-500' }]);
     } finally {
       setIsLoading(false);
-      setSearchClicked(false); // Reset searchClicked after handleSubmit completes
     }
   };
 
   const handleSearchClick = () => {
-    setSearchClicked(!searchClicked); // Toggle the searchClicked state
+    setSearchClicked(!searchClicked);
   };
-
 
   return (
     <div className="flex flex-col h-[500px] max-w-6xl mx-auto border rounded-lg shadow-2xl bg-white dark:bg-gray-800 dark:border-gray-700">
@@ -291,7 +297,7 @@ export default function Chat() {
             <div
               className={`max-w-[85%] p-3 rounded-2xl shadow-sm ${
                 message.role === 'user' ? 'bg-blue-500 text-white' : 'bg-white dark:bg-gray-600 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-500'
-              }`}
+              } ${message.className || ''}`}
             >
               <div className="prose prose-sm max-w-none dark:prose-invert">
                 <ReactMarkdown>{message.content}</ReactMarkdown>
@@ -327,14 +333,30 @@ export default function Chat() {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask about data or request a graph..."
+          placeholder="Ask about data ..."
           className="flex-1 mr-2 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           disabled={isLoading}
+          ref={inputRef}
+          key="chat-input"
         />
-        <Button type="button" onClick={handleSearchClick} disabled={isLoading} aria-label="Search" className="mr-2 rounded-md">
+        <Button
+          type="button"
+          onClick={handleSearchClick}
+          disabled={isLoading}
+          aria-label="Search"
+          variant={searchClicked ? 'default' : 'outline'}
+          className="mr-2 rounded-md"
+          title={searchClicked ? 'Search mode on' : 'Search mode off'}
+        >
           <Search className="h-4 w-4" />
         </Button>
-        <Button type="submit" disabled={isLoading || !input.trim()} aria-label="Send message" className="rounded-md">
+        <Button
+          type="submit"
+          disabled={isLoading || !input.trim()}
+          aria-label="Send message"
+          className="rounded-md"
+          onMouseDown={(e) => e.preventDefault()}
+        >
           {isLoading ? (
             <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" />
           ) : (
