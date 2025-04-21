@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, memo } from 'react';
-import { Send, ChevronDown, Moon, Sun, Search } from 'lucide-react';
+import { Send, ChevronDown, Moon, Sun, Search, List } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -12,6 +12,22 @@ import {
 } from 'recharts';
 import { Button } from '@/components/ui/button';
 import { Input } from './ui/input';
+
+// Finance Topics
+const financeTopics = [
+  {name: 'Stock Market'},
+  {name: 'Savings Plans'},
+  {name: 'Invoices'},
+  {name: 'Cryptocurrency'},
+  {name: 'Investments'},
+  {name: 'Credit Score'},
+  {name: 'Market Trends'},
+  {name: 'Banking'},
+  {name: 'Currency Exchange'},
+  {name: 'Budgeting'},
+  {name: 'Cash Flow'},
+  {name: 'Projections'},
+];
 
 // Constants
 const PIE_COLORS = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'];
@@ -62,6 +78,59 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
     <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central" fontSize={12}>
       {`${(percent * 100).toFixed(0)}%`}
     </text>
+  );
+};
+
+// Modal Component for Topic Selection
+const TopicModal: React.FC<{
+  isOpen: boolean;
+  onClose: () => void;
+  onSubmit: (topic: string) => void;
+}> = ({ isOpen, onClose, onSubmit }) => {
+  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
+
+  if (!isOpen) return null;
+
+  const handleSubmit = () => {
+    if (selectedTopic) {
+      onSubmit(selectedTopic);
+      onClose();
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl max-w-md w-full border border-gray-200 dark:border-gray-700">
+        <h2 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">Select a Finance Topic</h2>
+        <div className="grid grid-cols-2 gap-2 max-h-64 overflow-y-auto">
+          {financeTopics.map((topic, index) => (
+            <button
+              key={index}
+              onClick={() => setSelectedTopic(topic.name)}
+              className={`p-2 rounded-md text-sm font-medium transition ${
+                selectedTopic === topic.name
+                  ? 'bg-blue-500 text-white'
+                  : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600'
+              }`}
+            >
+              {topic.name}
+            </button>
+          ))}
+        </div>
+        <div className="mt-6 flex justify-end gap-2">
+          <Button variant="outline" onClick={onClose} className="rounded-md">
+            Cancel
+          </Button>
+          <Button
+            disabled={!selectedTopic}
+            className="rounded-md"
+            onClick={handleSubmit}
+          >
+            Submit
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -167,6 +236,7 @@ export default function Chat() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [isTopicModalOpen, setIsTopicModalOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -232,6 +302,28 @@ export default function Chat() {
     }
   };
 
+  // Handle topic selection and submission to /links endpoint
+  const handleTopicSubmit = async (topic: string) => {
+    try {
+      const response = await fetch(`http://localhost:4200/links?search=${encodeURIComponent(topic)}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      if (!response.ok) {
+        const errorBody = await response.text().catch(() => 'Unknown error');
+        throw new Error(`HTTP Error: ${response.status} - ${response.statusText}. Body: ${errorBody}`);
+      }
+
+      const data = await response.json();
+      setMessages(prev => [...prev, { role: 'assistant', content: data.message }]);
+    } catch (error) {
+      console.error('Error submitting topic:', error);
+      const errorContent = error instanceof Error ? error.message : 'Sorry, something went wrong.';
+      setMessages(prev => [...prev, { role: 'assistant', content: `Error: ${errorContent}`, className: 'text-red-500' }]);
+    }
+  };
+
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -284,12 +376,32 @@ export default function Chat() {
 
   return (
     <div className="flex flex-col h-[500px] max-w-6xl mx-auto border rounded-lg shadow-2xl bg-white dark:bg-gray-800 dark:border-gray-700">
-      {/* Theme toggle button */}
-      <div className="absolute top-4 right-4 z-10">
-        <Button variant="outline" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
+      {/* Top buttons */}
+      <div className="absolute top-4 left-4 right-4 flex justify-between z-10">
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={() => setIsTopicModalOpen(true)}
+          aria-label="Select finance topic"
+        >
+          <List className="h-4 w-4" />
+        </Button>
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+        >
           {theme === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
         </Button>
       </div>
+
+      {/* Topic Selection Modal */}
+      <TopicModal
+        isOpen={isTopicModalOpen}
+        onClose={() => setIsTopicModalOpen(false)}
+        onSubmit={handleTopicSubmit}
+      />
 
       <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50/50 dark:bg-gray-700/50">
         {messages.map((message, index) => (
