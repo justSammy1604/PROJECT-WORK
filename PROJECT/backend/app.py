@@ -4,7 +4,7 @@ import time
 import faiss
 import numpy as np
 from datetime import datetime
-from dotenv import load_dotenv
+from dotenv import load_dotenv 
 from sentence_transformers import SentenceTransformer
 from collections import OrderedDict
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
