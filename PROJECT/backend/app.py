@@ -4,16 +4,17 @@ import time
 import faiss
 import numpy as np
 from datetime import datetime
-from dotenv import load_dotenv
+from dotenv import load_dotenv 
 from sentence_transformers import SentenceTransformer
 from collections import OrderedDict
+from langchain.chains.conversational_retrieval.base import ConversationalRetrievalChain
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_core.prompts import PromptTemplate
 from langchain.chains.question_answering import load_qa_chain
 from langchain_community.document_loaders import DirectoryLoader, JSONLoader, TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
-from langchain.chains import RetrievalQA
+from langchain.chains.retrieval_qa.base import RetrievalQA
 from langchain.memory import ConversationBufferMemory
 from pypdf import PdfReader
 import sys
@@ -138,49 +139,64 @@ def vectordb_information(docs):
 
 def rag_model(vectorstore):
     # Define both prompt templates
-    template_data_driven = """You are a friendly and intelligent financial advisor. Based on the user's question, provide data-driven financial advice.
-    You are allowed to reference both the provided documents and search online to gather information.
-    If the user requests a chart (bar, pie, etc.), you may describe the chart in words or provide instructions for plotting.
-    Context: {context}
-    Question: {question}
-    Response:"""
+    template_data_driven = """
+    You are a professional financial advisor assistant specializing in the United States financial markets, including stocks, cryptocurrency, bonds, and economic news.
+
+    Tone: Use a formal and professional tone in your responses.
+
+    Memory: Use {chat_history} to maintain continuity and incorporate relevant previous discussion points.
+
+    Sources: Use only the provided context and any relevant web-retrieved financial data. Do not hallucinate or invent information not present in these sources.
+
+    Task: Answer user queries by summarizing, analyzing, or explaining based on the available financial data (including real-time market data) and news.
+
+    If not available: If the needed information is not found in the provided sources, respond formally indicating that it is not available.
+
+    User Question: {question}"""
     
-    template_strict = """You are a highly skilled and professional financial advisor. Your role is to provide accurate, clear, 
-    and concise financial advice solely based on the information provided in the given data source. 
-    Do not make assumptions or include any information not explicitly stated in the source.
-    If a question is beyond the scope of the data, politely respond with: "I'm sorry, but I can only provide information based on the given data source."
-    Always ensure that your responses are in a professional and respectful tone, and provide actionable insights where possible based on the user's query and the available data.
-    Context: {context} 
-    Question: {question}
-    Helpful Answer:"""
+    template_strict = """
+    You are a professional financial advisor assistant focused on providing accurate and insightful answers based solely on the provided document context.
+
+    Tone: Maintain a formal, respectful, and professional tone at all times.
+
+    Memory: Use {chat_history} to retain continuity across interactions and reference earlier discussions where appropriate.
+
+    Source: Only utilize information contained within the provided documents. Do not fabricate or infer information that is not explicitly stated.
+
+    Task: Based on the user’s question, offer well-structured, data-backed advice or summaries related to financial markets in the United States, including but not limited to stock markets, cryptocurrencies, bonds, personal finance, investment strategies, and economic policies.
+
+    Limitation: If the documents do not contain sufficient information to answer the user's query, politely inform the user that the requested information is unavailable based on the current data.
+
+    User Question: {question}"""
     
     # Create PromptTemplate objects
-    prompt_data_driven = PromptTemplate.from_template(template_data_driven)
-    prompt_strict = PromptTemplate.from_template(template_strict)
+    prompt_data_driven = PromptTemplate(template=template_data_driven, input_variables=['question', 'chat_history'])
+    prompt_strict = PromptTemplate(template=template_strict, input_variables=['question', 'chat_history', 'context'])
     
     memory = ConversationBufferMemory(
         memory_key="chat_history",
-        output_key='result',
+        input_key='question',
+        output_key='answer',
         return_messages=True
     )
     
     # Create two RetrievalQA chains, one for each prompt
-    qa_chain_data_driven = RetrievalQA.from_chain_type(
+    qa_chain_data_driven = ConversationalRetrievalChain.from_llm(
         llm=model,
-        chain_type="stuff",
         retriever=vectorstore.as_retriever(search_kwargs={"k": 2}),
-        return_source_documents=True,
         memory=memory,
-        chain_type_kwargs={"prompt": prompt_data_driven}
+        return_source_documents=True,
+        condense_question_prompt=prompt_data_driven,
+        verbose=True
     )
     
-    qa_chain_strict = RetrievalQA.from_chain_type(
+    qa_chain_strict = ConversationalRetrievalChain.from_llm(
         llm=model,
-        chain_type="stuff",
         retriever=vectorstore.as_retriever(search_kwargs={"k": 2}),
-        return_source_documents=True,
         memory=memory,
-        chain_type_kwargs={"prompt": prompt_strict}
+        condense_question_prompt=prompt_strict,
+        return_source_documents=True,
+        verbose=True
     )
     
     return {"data_driven": qa_chain_data_driven, "strict": qa_chain_strict}
@@ -193,8 +209,8 @@ def query_response(query, rag_chain):
         cleaned_query = re.sub(r"\|\|\|true\|\|\|", "", query, flags=re.IGNORECASE).strip()
         # Select the appropriate chain based on enable
         selected_chain = rag_chain["data_driven"] if enable else rag_chain["strict"]
-        result = selected_chain({"query": cleaned_query})
-        response = result['result']
+        result = selected_chain({"question": cleaned_query})
+        response = result['answer']
         return response
     except Exception as e:
         return f"An error occurred: {str(e)}"
