@@ -143,57 +143,128 @@ def vectordb_information(docs):
 
 
 def rag_model(vectorstore):
-    def extract_true_from_prompt(question: str) -> bool:
-        return bool(re.search(r"\|\|\|TRUE\|\|\|", prompt, re.IGNORECASE))
+    # 1. Standard Condense Question Prompt (for history handling)
+    _template = """Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
 
-    enable = extract_true_from_prompt(question)
-    # Remove "|||TRUE|||" from the prompt
-    question = re.sub(r"\|\|\|true\|\|\|", "", question, flags=re.IGNORECASE).strip()
+    Chat History:
+    {chat_history}
+    Follow Up Input: {question}
+    Standalone question:"""
+    CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(_template)
 
-   if enable:
-        template = """You are a friendly and intelligent financial advisor. Based on the user's question, provide data-driven financial advice.
-        You are allowed to reference both the provided documents and search online to gather information.
-        If the user requests a chart (bar, pie, etc.), you may describe the chart in words or provide instructions for plotting.
-        Context:
-        {context}
-        Question:
-        {question}
-        Response:"""
-    else:
-        template = """You are a highly skilled and professional financial advisor. Your role is to provide accurate, clear, 
-        and concise financial advice solely based on the information provided in the given data source. 
-        Do not make assumptions or include any information not explicitly stated in the source.
-        If a question is beyond the scope of the data, politely respond with: "I'm sorry, but I can only provide information based on the given data source."
-        Always ensure that your responses are in a professional and respectful tone, and provide actionable insights where possible based on the user's query and the available data.
-        Context: {context} 
-        Question: {question}
-        Helpful Answer:"""
+    # 2. Define QA Prompts (accepting context and question)
+    template_data_driven_qa = """
+    You are a professional financial advisor assistant specializing in the United States financial markets, including stocks, cryptocurrency, bonds, and economic news.
 
-    QA_CHAIN_PROMPT = PromptTemplate.from_template(template)
+    Tone: Use a formal and professional tone in your responses.
+
+    Sources: Use only the provided context and any relevant web-retrieved financial data. Do not hallucinate or invent information not present in these sources.
+    Provided Context:
+    {context}
+
+    Task: Answer the user's question by summarizing, analyzing, or explaining based on the available financial data (including real-time market data), news, and the provided context.
+
+    If not available: If the needed information is not found in the provided sources, respond formally indicating that it is not available.
+
+    User Question: {question}
+    Answer:"""
+    PROMPT_DATA_DRIVEN = PromptTemplate(template=template_data_driven_qa, input_variables=["context", "question"])
+
+    template_strict_qa = """
+    You are a professional financial advisor assistant focused on providing accurate and insightful answers based solely on the provided document context.
+
+    Tone: Maintain a formal, respectful, and professional tone at all times.
+
+    Source: Only utilize information contained within the provided documents (context). Do not fabricate or infer information that is not explicitly stated.
+    Provided Context:
+    {context}
+
+    Task: Based on the user’s question, offer well-structured, data-backed advice or summaries related to financial markets in the United States, including but not limited to stock markets, cryptocurrencies, bonds, personal finance, investment strategies, and economic policies, using *only* the provided context.
+
+    Limitation: If the documents do not contain sufficient information to answer the user's query, politely inform the user that the requested information is unavailable based on the current data.
+
+    User Question: {question}
+    Answer:"""
+    PROMPT_STRICT = PromptTemplate(template=template_strict_qa, input_variables=["context", "question"])
+
+    # 3. Create two separate QA chains (combine_docs_chain)
+    qa_chain_data_driven_instance = load_qa_chain(
+        model, # Use your LLM model here
+        chain_type="stuff", # Or "map_reduce", "refine", etc.
+        prompt=PROMPT_DATA_DRIVEN
+    )
+
+    qa_chain_strict_instance = load_qa_chain(
+        model, # Use your LLM model here
+        chain_type="stuff",
+        prompt=PROMPT_STRICT
+    )
+
+    # 4. Create Memory (shared or separate, depending on desired behavior)
+    # If you want history shared between modes:
     memory = ConversationBufferMemory(
         memory_key="chat_history",
-        output_key='result',
+        input_key='question',
+        output_key='answer',
         return_messages=True
     )
-    qa_chain = RetrievalQA.from_chain_type(
-        llm=model,
-        chain_type="stuff",
+    # If you want separate history for each mode, create two memory instances:
+    # memory_data_driven = ConversationBufferMemory(...)
+    # memory_strict = ConversationBufferMemory(...)
+
+
+    # 5. Create the ConversationalRetrievalChains, passing the correct components
+    conv_chain_data_driven = ConversationalRetrievalChain(
         retriever=vectorstore.as_retriever(search_kwargs={"k": 2}),
+        question_generator=LLMChain(llm=model, prompt=CONDENSE_QUESTION_PROMPT), # Handles history
+        combine_docs_chain=qa_chain_data_driven_instance, # Handles QA with context
+        memory=memory, # Use shared or specific memory
         return_source_documents=True,
-        memory=memory,
-        chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}
+        verbose=True
     )
-    return qa_chain
 
+    conv_chain_strict = ConversationalRetrievalChain(
+        retriever=vectorstore.as_retriever(search_kwargs={"k": 2}),
+        question_generator=LLMChain(llm=model, prompt=CONDENSE_QUESTION_PROMPT), # Handles history
+        combine_docs_chain=qa_chain_strict_instance, # Handles QA with context
+        memory=memory, # Use shared or specific memory
+        return_source_documents=True,
+        verbose=True
+    )
 
-def query_response(query, rag_chain):
+    # Return the dictionary of chains
+    return {"data_driven": conv_chain_data_driven, "strict": conv_chain_strict}
+
+# --- You might need to import LLMChain ---
+from langchain.chains import LLMChain
+# --- Rest of your code ---
+
+# Modify query_response slightly for clarity (though original logic was okay)
+def query_response(query, rag_chain_dict): # Renamed rag_chain to rag_chain_dict
     try:
-        result = rag_chain({"query": query})
-        response = result['result']
+        # Check for |||TRUE||| in the query
+        enable_data_driven = bool(re.search(r"\|\|\|TRUE\|\|\|", query, re.IGNORECASE))
+
+        # Remove |||TRUE||| from the query
+        cleaned_query = re.sub(r"\|\|\|true\|\|\|", "", query, flags=re.IGNORECASE).strip()
+
+        # Select the appropriate chain based on the flag
+        if enable_data_driven:
+            print("Using Data Driven Chain")
+            selected_chain = rag_chain_dict["data_driven"]
+        else:
+            print("Using Strict Chain")
+            selected_chain = rag_chain_dict["strict"]
+
+        # Execute the selected chain
+        # Note: ConversationalRetrievalChain expects 'question' input key
+        result = selected_chain({"question": cleaned_query})
+        response = result['answer']
         return response
     except Exception as e:
         return f"An error occurred: {str(e)}"
 
+# --- Rest of your code remains the same ---
 
 def load_and_process(doc_source):
     all_docs = []
