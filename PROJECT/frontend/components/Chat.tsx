@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
-import { Send, ChevronDown, Moon, Sun, Search } from 'lucide-react';
+import { useState, useRef, useEffect, memo } from 'react';
+import { Send, ChevronDown, Moon, Sun, Search, List } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -12,6 +12,22 @@ import {
 } from 'recharts';
 import { Button } from '@/components/ui/button';
 import { Input } from './ui/input';
+
+// Finance Topics
+const financeTopics = [
+  {name: 'Stock Market'},
+  {name: 'Savings Plans'},
+  {name: 'Invoices'},
+  {name: 'Cryptocurrency'},
+  {name: 'Investments'},
+  {name: 'Credit Score'},
+  {name: 'Market Trends'},
+  {name: 'Banking'},
+  {name: 'Currency Exchange'},
+  {name: 'Budgeting'},
+  {name: 'Cash Flow'},
+  {name: 'Projections'},
+];
 
 // Constants
 const PIE_COLORS = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'];
@@ -27,6 +43,7 @@ interface Message {
   content: string;
   graphData?: any[];
   graphType?: 'line' | 'bar' | 'pie' | null;
+  className?: string;
 }
 
 interface CustomTooltipProps {
@@ -64,8 +81,61 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
   );
 };
 
+// Modal Component for Topic Selection
+const TopicModal: React.FC<{
+  isOpen: boolean;
+  onClose: () => void;
+  onSubmit: (topic: string) => void;
+}> = ({ isOpen, onClose, onSubmit }) => {
+  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
+
+  if (!isOpen) return null;
+
+  const handleSubmit = () => {
+    if (selectedTopic) {
+      onSubmit(selectedTopic);
+      onClose();
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl max-w-md w-full border border-gray-200 dark:border-gray-700">
+        <h2 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">Select a Finance Topic</h2>
+        <div className="grid grid-cols-2 gap-2 max-h-64 overflow-y-auto">
+          {financeTopics.map((topic, index) => (
+            <button
+              key={index}
+              onClick={() => setSelectedTopic(topic.name)}
+              className={`p-2 rounded-md text-sm font-medium transition ${
+                selectedTopic === topic.name
+                  ? 'bg-blue-500 text-white'
+                  : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600'
+              }`}
+            >
+              {topic.name}
+            </button>
+          ))}
+        </div>
+        <div className="mt-6 flex justify-end gap-2">
+          <Button variant="outline" onClick={onClose} className="rounded-md">
+            Cancel
+          </Button>
+          <Button
+            disabled={!selectedTopic}
+            className="rounded-md"
+            onClick={handleSubmit}
+          >
+            Submit
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Graph Rendering Component
-const GraphRenderer: React.FC<{ message: Message }> = ({ message }) => {
+const GraphRenderer = memo<{ message: Message }>(({ message }) => {
   if (!message.graphData || !message.graphData.length || !message.graphType) return null;
 
   const hasRequiredKeys = message.graphData.every(item => typeof item.name !== 'undefined' && typeof item.value !== 'undefined');
@@ -158,7 +228,7 @@ const GraphRenderer: React.FC<{ message: Message }> = ({ message }) => {
       console.warn(`Unsupported graph type: ${message.graphType}`);
       return null;
   }
-};
+});
 
 // Main Chat Component
 export default function Chat() {
@@ -166,11 +236,12 @@ export default function Chat() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [isTopicModalOpen, setIsTopicModalOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const [searchClicked, setSearchClicked] = useState(false);  // new state for search button
-
+  const [searchClicked, setSearchClicked] = useState(false);
 
   // Toggle theme function
   const toggleTheme = () => {
@@ -181,7 +252,6 @@ export default function Chat() {
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
   }, [theme]);
-
 
   // Scroll to bottom
   const scrollToBottom = () => {
@@ -207,6 +277,15 @@ export default function Chat() {
     return () => container.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Focus input after input, isLoading, or messages change
+  useEffect(() => {
+    if (inputRef.current && !isLoading) {
+      requestAnimationFrame(() => {
+        inputRef.current?.focus();
+      });
+    }
+  }, [input, isLoading, messages]);
+
   // Parse graph data
   const parseGraphData = (response: any): Message => {
     try {
@@ -223,23 +302,44 @@ export default function Chat() {
     }
   };
 
+  // Handle topic selection and submission to /links endpoint
+  const handleTopicSubmit = async (topic: string) => {
+    try {
+      const response = await fetch(`http://localhost:4200/links?search=${encodeURIComponent(topic)}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      if (!response.ok) {
+        const errorBody = await response.text().catch(() => 'Unknown error');
+        throw new Error(`HTTP Error: ${response.status} - ${response.statusText}. Body: ${errorBody}`);
+      }
+
+      const data = await response.json();
+      setMessages(prev => [...prev, { role: 'assistant', content: data.message }]);
+    } catch (error) {
+      console.error('Error submitting topic:', error);
+      const errorContent = error instanceof Error ? error.message : 'Sorry, something went wrong.';
+      setMessages(prev => [...prev, { role: 'assistant', content: `Error: ${errorContent}`, className: 'text-red-500' }]);
+    }
+  };
+
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
 
+    // Create final input for backend with |||TRUE||| if search is active
     let finalInput = input;
     if (searchClicked) {
       finalInput += ' |||TRUE||| ';
     }
 
-
-    const userMessage: Message = { role: 'user', content: finalInput };
+    // Create user message with original input for display
+    const userMessage: Message = { role: 'user', content: input };
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
-
-
 
     try {
       const response = await fetch('http://localhost:4200/query', {
@@ -264,26 +364,44 @@ export default function Chat() {
     } catch (error) {
       console.error('Error fetching or processing response:', error);
       const errorContent = error instanceof Error ? error.message : 'Sorry, something went wrong.';
-      setMessages(prev => [...prev, { role: 'assistant', content: `Error: ${errorContent}` }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: `Error: ${errorContent}`, className: 'text-red-500' }]);
     } finally {
       setIsLoading(false);
-      setSearchClicked(false); // Reset searchClicked after handleSubmit completes
     }
   };
 
   const handleSearchClick = () => {
-    setSearchClicked(!searchClicked); // Toggle the searchClicked state
+    setSearchClicked(!searchClicked);
   };
-
 
   return (
     <div className="flex flex-col h-[500px] max-w-6xl mx-auto border rounded-lg shadow-2xl bg-white dark:bg-gray-800 dark:border-gray-700">
-      {/* Theme toggle button */}
-      <div className="absolute top-4 right-4 z-10">
-        <Button variant="outline" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
+      {/* Top buttons */}
+      <div className="absolute top-4 left-4 right-4 flex justify-between z-10">
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={() => setIsTopicModalOpen(true)}
+          aria-label="Select finance topic"
+        >
+          <List className="h-4 w-4" />
+        </Button>
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+        >
           {theme === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
         </Button>
       </div>
+
+      {/* Topic Selection Modal */}
+      <TopicModal
+        isOpen={isTopicModalOpen}
+        onClose={() => setIsTopicModalOpen(false)}
+        onSubmit={handleTopicSubmit}
+      />
 
       <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50/50 dark:bg-gray-700/50">
         {messages.map((message, index) => (
@@ -291,7 +409,7 @@ export default function Chat() {
             <div
               className={`max-w-[85%] p-3 rounded-2xl shadow-sm ${
                 message.role === 'user' ? 'bg-blue-500 text-white' : 'bg-white dark:bg-gray-600 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-500'
-              }`}
+              } ${message.className || ''}`}
             >
               <div className="prose prose-sm max-w-none dark:prose-invert">
                 <ReactMarkdown>{message.content}</ReactMarkdown>
@@ -327,14 +445,30 @@ export default function Chat() {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask about data or request a graph..."
+          placeholder="Ask about data ..."
           className="flex-1 mr-2 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
           disabled={isLoading}
+          ref={inputRef}
+          key="chat-input"
         />
-        <Button type="button" onClick={handleSearchClick} disabled={isLoading} aria-label="Search" className="mr-2 rounded-md">
+        <Button
+          type="button"
+          onClick={handleSearchClick}
+          disabled={isLoading}
+          aria-label="Search"
+          variant={searchClicked ? 'default' : 'outline'}
+          className="mr-2 rounded-md"
+          title={searchClicked ? 'Search mode on' : 'Search mode off'}
+        >
           <Search className="h-4 w-4" />
         </Button>
-        <Button type="submit" disabled={isLoading || !input.trim()} aria-label="Send message" className="rounded-md">
+        <Button
+          type="submit"
+          disabled={isLoading || !input.trim()}
+          aria-label="Send message"
+          className="rounded-md"
+          onMouseDown={(e) => e.preventDefault()}
+        >
           {isLoading ? (
             <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" />
           ) : (
