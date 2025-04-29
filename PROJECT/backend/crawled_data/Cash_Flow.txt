@@ -1,0 +1,2276 @@
+[Skip to content]
+[]
+  * [ News ]
+    * [ Markets ]
+    * [ Companies ]
+    * [ Earnings ]
+    * [ CD Rates ]
+    * [ Mortgage Rates ]
+    * [ Economy ]
+    * [ Government ]
+    * [ Crypto ]
+    * [ Live Markets News ]
+    * [ Personal Finance ]
+    * [ View All ]
+  * [ Investing ]
+    * [ Best Online Brokers ]
+    * [ Best Stock Screeners ]
+    * [ Best Robo Advisors ]
+    * [ Best Investment Apps ]
+    * [ Best Brokers for ETFs ]
+    * [ Best Crypto Exchanges ]
+    * [ Best Gold IRAs ]
+    * [ Best IRAs ]
+    * [ Best Bitcoin IRAs ]
+    * [ View All ]
+  * [ Banking ]
+    * [ Best CD Rates ]
+    * [ Best High Yield Savings Accounts ]
+    * [ Best 1 Year CD Rates ]
+    * [ Best 6 Month CD Rates ]
+    * [ Best Jumbo CD Rates ]
+    * [ Best Money Market Accounts ]
+    * [ Best 3 Month CD Rates ]
+    * [ Best 18 Month CD Rates ]
+    * [ Best Savings Account for Kids ]
+    * [ View All ]
+  * [ Personal Finance ]
+    * [ Best Savings Account Bonuses ]
+    * [ Best Bank Account Bonuses ]
+    * [ Best High Yield Checking Accounts ]
+    * [ Best Tax Relief Companies ]
+    * [ Best Debt Relief Companies ]Jump to content
+Main menu
+Main menu
+move to sidebar hide
+Navigation 
+  * Main page
+  * Contents
+  * Current events
+  * Random article
+  * About Wikipedia
+  * Contact us
+
+
+Contribute 
+  * Help
+  * Learn to edit
+  * Community portal
+  * Recent changes
+  * Upload file
+  * Special pages
+
+
+[  ]
+[ Search ]
+Search
+Appearance
+  * Donate
+  * Create account
+  * Log in
+
+
+Personal tools
+  * Donate
+  *  Create account
+  *  Log in
+
+
+Pages for logged out editors learn more
+  * Contributions
+  * Talk
+
+
+## Contents
+move to sidebar hide
+  *  (Top) 
+  *  1 Cash flow analysis 
+  *  2 Business' financials 
+  *  3 Examples 
+  *  4 See also 
+  *  5 References 
+  *  6 Further reading 
+  *  7 External links 
+
+
+Toggle the table of contents
+# Cash flow
+39 languages
+  * العربية
+  * Azərbaycanca
+  * বাংলা
+  * Български
+  * Català
+  * Čeština
+  * Dansk
+  * DeutschCorporate Finance Institute 
+Menu
+  * Explore Courses
+    * Earn a Certification
+      * Certifications
+        * Certifications represent a broad body of knowledge that demonstrates competence in the skills required to work in a specific finance domain.
+          * Financial Modeling & Valuation Analyst (FMVA®)
+          * Commercial Banking & Credit Analyst (CBCA®)
+          * Capital Markets & Securities Analyst (CMSA®)
+          * Business Intelligence & Data Analyst (BIDA®)
+          * Financial Planning & Wealth Management Professional (FPWMP®)
+          * FinTech Industry Professional (FTIP®)
+      * Specializations
+        * Specializations are a highly focused body of knowledge, demonstrating advanced competence in one skill or subject area.
+          * Accounting for Financial Analysts
+          * FP&A
+          * Leadership Effectiveness
+          * ESG
+          * Data Analysis in Excel
+          * Business Intelligence
+          * Data Science
+          * Macabacus
+          * Real Estate Finance
+          * Crypto and Digital Assets
+          * Risk Management
+          * AI for Finance
+          * Investment Banking & Private Equity Modeling
+          * Finance for Non-Finance Managers[ Skip to main content ]
+## FINRA Utility Menu
+  * About Us
+  * Careers
+  * BrokerCheck
+  * Data
+  * Media Center
+  * For Firms
+
+
+For the Public
+FINRA DATA
+FINRA Data provides non-commercial use of data, specifically the ability to save data views and create and manage a Bond Watchlist.
+Login
+For Industry Professionals
+FINPRO
+Registered representatives can fulfill Continuing Education requirements, view their industry CRD record and perform other compliance tasks.
+Login
+For Member Firms
+FINRA GATEWAY
+Firm compliance professionals can access filings and requests, run reports and submit support tickets.
+Login
+For Case Participants
+DR PORTAL
+Arbitration and mediation case participants and FINRA neutrals can view case information and submit documents through this Dispute Resolution Portal.
+Login
+Need Help? | Check System Status
+Log In to other FINRA systems
+[ ![Home] ]
+  * Rules & Guidance
+    *       1. R&G Section 1
+        1. FINRA Manual
+          1. Updates
+        2. Interpreting the Rules
+          1. Notices
+          2. Guidance
+          3. Frequently Asked Questions
+          4. Key Topics
+          5. Interpretive Questions
+      2. R&G Section 2
+        1. The Rulemaking Process
+          1. Rule Filings
+          2. Rule Filing Status Report
+          3. Requests for Comments
+          4. Rulebook Consolidation
+      3. R&G Section 3
+        1. Adjudications & Decisions
+          1. National Adjudicatory Council (NAC)
+          2. Office of Hearing Officers (OHO)
+      4. R&G Section 4What is Cash Flow Forecasting? How to Build a Cash Flow Forecast | GTreasury
+[Skip to main content]
+[GTreasury Pioneers a new era for CFOs]
+  * Search
+Search
+Search
+Search
+  * [Client Login]
+  * [Help Center]
+  * English
+[English]
+[German]
+[Spanish]
+
+
+[]
+  * Who We Serve
+Roles
+    * [![](https://cdn.prod.website-files.com/67bca1bf8744a6a2d7811b35/67cb0caaeef657d1d3ea0f15_Business%20Idea%20Money.svg)CFOs]
+    * [![](https://cdn.prod.website-files.com/67bca1bf8744a6a2d7811b35/67cb0cb179d3acbb385110cf_Share%20Coin%20Dollar.svg)Treasurers]
+    * [![](https://cdn.prod.website-files.com/67bca1bf8744a6a2d7811b35/67cb0caae68204d756d20d83_Calculator.svg)Accounting]
+    * [![](https://cdn.prod.website-files.com/67bca1bf8744a6a2d7811b35/67d00a3f02bee4c6f84affc9_database-server-2--server-network-internet.svg)IT]
+  * Solutions
+    * [![](https://cdn.prod.website-files.com/67bca1bf8744a6a2d7811b35/67cef983516cb7ca88c59d15_TMS.svg)Adaptable TMS]
+    * ![](https://cdn.prod.website-files.com/67bca1bf8744a6a2d7811b35/67cb0cade7613b6242957ecf_eye-optic--health-medical-eye-optic.svg)
+Cash Visibility
+      * [Cash Visibility]
+      * [Banking]
+      * [Accounting & General Ledger]
+      * [Reconciliation]
+    * ![](https://cdn.prod.website-files.com/67bca1bf8744a6a2d7811b35/67cb0cb48b506ecb6cb88142_Telescope.svg)
+Cash Forecasting
+      * [Cash Forecasting]
+      * [Working Capital]
+      * [AR/AP]
+    * ![](https://cdn.prod.website-files.com/67bca1bf8744a6a2d7811b35/67cededdf701408968b36472_Connectivity.svg)
+Connectivity
+      * [Connectivity]
+      * [ERP Integration]
+      * [Connectivity Library]
+    * [![](https://cdn.prod.website-files.com/67bca1bf8744a6a2d7811b35/67cee18f9f5d46e367a33154_Human%20network%201.svg)Netting]
+    * ![](https://cdn.prod.website-files.com/67bca1bf8744a6a2d7811b35/67cb0cb1056f6e838b578c19_payment-10--deposit-payment-finance-atm-transfer-dollar.svg)
+Payments
+      * [Payments]
+      * [In-House Banking]
+    * ![](https://cdn.prod.website-files.com/67bca1bf8744a6a2d7811b35/67cb0cb1764b6626ba924921_security-umbrella--business-money-wealth-protection-umbrella-insurance-security.svg)
+Risk Management
+      * [Risk Management]
+      * [Financial Instruments]
+      * [Risk Exposure]
+      * [Foreign Exchange]
+      * [Interest Rate]
+      * [Debt & Investment Lifecycle Management]
+      * [Hedge Accounting]
+      * [Audit & Compliance]HBS Online
+  * [Courses]
+    * [Business Essentials]
+    * [Leadership & Management]
+    * [Credential of Leadership, Impact, and Management in Business (CLIMB)]
+    * [Credential of Digital Innovation and Strategy]
+    * [Entrepreneurship & Innovation]
+    * [Strategy]
+    * [Marketing]
+    * [Digital Transformation]
+    * [Finance & Accounting]
+    * [Business in Society]
+  * [For Organizations]
+  * [Insights]
+  * [More Info]
+
+
+  * [About]
+  * [Support Portal]
+  * [Media Coverage]
+  * [Founding Donors]
+  * [Leadership Team]
+  * [Careers]
+  * [My Courses]
+  * [My Account]
+  * [Enroll Now]
+
+
+[HBS Home]
+  * [About HBS]
+  * [Academic Programs]
+  * [Alumni]
+  * [Faculty & Research]
+
+
+  * [Baker Library]
+  * [Giving]
+  * [Harvard Business Review]
+  * [Initiatives]
+  * [News]
+  * [Recruit]
+
+
+  * [Map / Directions]
+
+
+Search
+[Skip to Main Content]
+[![HBS Online](https://webassets.hbs.edu/libs/framework/1.0/images/HBS-Online-Stacked.svg)]
+  * [Courses]
+[Open Courses Mega Menu]
+    * [Business Essentials]
+      * [Credential of Readiness (CORe)]
+      * [Business Analytics]
+      * [Economics for Managers]
+      * [Financial Accounting]
+    * [Leadership & Management]
+      * [Leadership Principles]
+      * [Management Essentials]
+      * [Negotiation Mastery]
+      * [Organizational Leadership]
+      * [Strategy Execution]
+      * [Power and Influence for Positive Impact]
+      * [Leadership, Ethics, and Corporate Accountability]
+      * [Leading Change and Organizational Renewal]
+      * [Dynamic Teaming]
+      * [Transformin[Skip to main content]
+  * iastate.edu
+  * College of Ag and Life Sciences
+  * Ag and Natural Resources
+
+
+  * Offices
+  * Farm Management Team
+  * About
+    * Authors
+    * Background
+    * Update Notification
+    * Related Web Sites
+    * Newsletter Archives
+
+
+[ Iowa State University AG DECISION MAKER ]
+Menu Toggle Search Toggle
+Search
+  * Outlook
+  * Resources
+  * Recent Updates
+
+
+  * Home Page
+  * Crops
+    * Costs & Returns
+    * Storage & Markets
+    * Outlook & Prices
+    * Machinery
+    * Other
+  * Livestock
+    * Costs & Returns
+    * Markets
+    * Outlook & Prices
+    * Other
+  * Whole Farm
+    * Costs & Returns
+    * Leasing
+    * Land Values
+    * Financial
+    * Human Resources
+    * Legal & Taxes
+    * Transition & Estate Planning
+    * Weight & Measurements
+    * Other
+  * Business Development
+    * Business Start-up
+    * Marketing
+    * Operations
+    * Analysis
+  * Cooperatives
+    * Basics
+    * Consolidation
+    * Financials & Capitalization
+    * Leadership, Governance & Strategy
+    * Outlook & Current Conditions
+    * Patronage & Taxation
+    * Other[![QuickBooks](data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 36 36'%3e%3cpath fill='%232CA01C' d='M18 36c9.9411 0 18-8.0589 18-18 0-9.94114-8.0589-18-18-18C8.05886 0 0 8.05886 0 18c0 9.9411 8.05886 18 18 18Z'/%3e%3cpath fill='white' d='M12.0002 11c-3.86797 0-6.99996 3.136-6.99996 7 0 3.868 3.13199 7 6.99996 7h1.0001v-2.6h-1.0001c-2.42798 0-4.39995-1.972-4.39995-4.4 0-2.428 1.97197-4.4 4.39995-4.4h2.4041v13.6c0 1.436 1.1639 2.6 2.5999 2.6V11h-5.004ZM24.0038 25c3.868 0 6.9999-3.1361 6.9999-7 0-3.868-3.1319-7-6.9999-7h-1.0001v2.5999h1.0001c2.428 0 4.3999 1.9721 4.3999 4.4001s-1.9719 4.3999-4.3999 4.3999h-2.4041V8.79997c0-1.43602-1.1639-2.60002-2.5999-2.60002V25h5.004Z'/%3e%3c/svg%3e)]
+  * Products & Services
+  * Plans & Pricing
+  * Top features
+  * Business types
+  * Resources
+
+
+  * Talk to Sales: 1-800-395-9007
+    * SALES HOURSMonday - Friday, 5 AM to 6 PM PT 
+    * SUPPORT
+    * Visit support page
+    * Get help signing in
+
+
+Sign in
+  * QuickBooks Online
+  * QuickBooks Solopreneur
+  * QuickBooks Self-Employed
+  * QuickBooks ProAdvisor Program
+  * QuickBooks Online Accountant
+  * QuickBooks Desktop account
+  * QuickBooks Online Payroll
+  * QuickBooks Money
+  * QuickBooks Payments
+  * QuickBooks Time
+  * Other Intuit services
+  * Need help signing in?
+
+
+Find a plan that fits youAnswer a few questions about what's important to your business and we'll recommend the right fit.
+Help me choose a plan
+##### 
+  * Manage your money
+
+
+Overview
+Get paid & pay bills
+Manage banking
+Access lending
+See plans
+#####Credit cards 
+  * Credit cards 
+  * [ Explore more credit card resources ]
+
+
+Best credit cards[Best credit cards][Best credit card bonus offers][Best balance transfer credit cards][Best travel credit cards][Best cash back credit cards][Best 0% APR credit cards][Best rewards credit cards][Best airline credit cards][Best college student credit cards][Best credit cards for groceries]
+[Compare credit cards]
+Get a card recommendation[Card recommendation quiz][Travel rewards and perks][Earn cash back][Pay down debt][Make a big purchase][Get your approval odds]
+[Credit card reviews]
+Credit card calculators[Balance transfer savings calculator][Credit card interest calculator]
+Guides and resources[Get your free credit score][Credit card basics][Applying for a credit card][Choosing a credit card][Managing credit card debt][Credit card resources]
+Banking 
+  * Banking 
+  * [ Explore more banking resources ]
+
+
+Savings accounts[Explore more savings accounts][Best high-yield savings accounts][Best savings accounts][Savings account alternatives][Savings calculator]
+CDs[Explore more CDs][Best CD rates][Best 3-month CD rates]business.gov.au 
+# Something has gone wrong
+Your attempt to access this site has been blocked. 
+This can occur for the following reasons:
+  * an unsupported cookie was attached to the request
+  * unsupported data was added to the request
+  * a browser extension attached an unsupported cookie or request header(s).
+
+
+Disabling (or removing) browser extensions, using a different browser, or clearing your cookies may help to resolve the issue.
+[ Live chat ] Live chat is closed90% off for 3 months when you purchase Xero.Buy now and save
+Dismiss
+You’re viewing plans and pricing for United States businesses. Change region
+Dismiss
+Xero homepage
+Menu
+Xero homepage
+  * Menu
+  * Get one month free
+  * Log in
+
+
+Xero homepage
+  * Pricing
+  * For small business
+  * For accountants & bookkeepers
+  * Support
+
+
+  * Get one month free
+  * Log in
+
+
+  1. Guides
+  2. Managing cash flow
+
+
+**Guide**
+# 5 rules for managing small business cash flow
+Cash flow management is vital for a growing business. Here are five rules to help you keep cash flow under control.
+![An invoice and some cash]
+## Get your invoicing right
+Invoicing is part of good cash flow management. Once you've delivered a product or service, don't wait to invoice. That can hurt your cash flow and your business. You should get into the habit of sending invoices for payment quickly.
+Consider sending invoices immediately, or on a daily basis, depending on the nature of your work. If you are providing a service, think about asking for a deposit upfront, or a payment part-way through. It’s a reasonable request.
+A product or service that has been delivered is the closest thing your business has to cold, hard cash. The sooner you invoice your client, the sooner you'll receive payment.
+## Five rules for managing your cash flow
+Invoicing is only the start. To maintain a healthy cash flow, you need more than just strong revenue. You need to be able to collect that revenue too. Here are five rules for managing your cash flow and getting your invoices paid faster:
+### 1. Keep your books accurate and up to date
+Your cash flow is only as good as your accounting and reporting. Don't let this get out of hand. Make sure your accounting information is updated regularly. Then you can see the financial state of your business at a glance. To help with this, try using a cash flow projection template to project your future cash position.
+### 2. Don't be too lenient with your customers
+Be direct and fair without being a pushover. A clever but polite invoicing strategy will usually get you a long way. But don’t be afraid to take more formal action if you need to.
+Keep a close watch on your accounts receivable turnover at all times. If it’s trending up, it might be time to step up your efforts at chasing payment. As receivables age, their quality goes down, so you should act sooner rather than later.
+### 3. Keep your accounting simple
+If you’re not confident with numbers, hire a professional accountant. Use accounting software analytics, so you always know your cash position. It will also help you forecast your cash flow for planning purposes.
+For example, maybe you’re expecting a big order next month. How will you know if you'll have the working capital needed to expand payroll? Or be able to buy the necessary inventory? Many small business owners get caught out when a large opportunity turns up. To avoid this, it’s important to account for the opportunity cost of all business decisions. They are unable to take advantage of it due to a lack of cash. Don’t let that happen to your business.
+What’s more, a reliable accounting system will help you track and report on key business metrics. These include accounts receivables aging, operating margins and inventory turnover. Using a cash flow statement template can help you keep a clear record of your[ Sign Up ] [ Login ]
+* [Forgot Password] [Sign Up]
+
+
+[Join a FREE game of CASHFLOW Classic now →]
+[Menu]
+  * About +
+    * [Rich Dad]
+    * [Rich Woman]
+    * [Robert Kiyosaki]
+    * [Kim Kiyosaki]
+    * [Hot News]
+    * [Rich Dad Events]
+    * [Experts and Specialists]
+  * Products +
+    * [PhysicalBooks, games, and more]
+    * [DigitalCourses, memberships, and more]
+  * Classes +
+    * [Investing classes]
+    * [Clases de Español]
+  * Coaching +
+    * [Rich Dad Coaching]
+    * [Coaching Español]
+  * [Shows]
+  * [Blog]
+  * [CASHFLOW+]
+
+
+  * [ About ]
+    * [Rich Dad]
+    * [Rich Woman]
+    * [Robert Kiyosaki]
+    * [Kim Kiyosaki]
+    * [Hot News]
+    * [Rich Dad Events]
+    * [Experts and Specialists]
+  * [Products]
+    * [PhysicalBooks, games, and more]
+    * [DigitalCourses, memberships, and more]
+  * [Classes]
+    * [Investing classes]
+    * [Clases de Español]
+  * [Coaching]
+    * [Rich Dad Coaching]
+    * [Coaching Español]
+  * [Shows]
+  * [Blog]
+  * [CASHFLOW+]
+
+
+[ ![Rich Dad logo] ]
+# How Fast Can You Become a Millionaire?
+## Play the _best_ online investing game — **CASHFLOW® Classic** — to begin your exit from the Rat Race… **for free!**
+[Start Playing Within Minutes. **Sign up for FREE →**]
+
+### CASHFLOW Classic is the free online investing game that makes learning to invest fun.
+We believe the best way to learn isn’t done reading textbooks or listening to lectures. We believe the best learning is accomplished by doing the real thing.
+For example, if you want to learn how to ride a bike, reading a book or listening to a lecture won’t help very much. Sure, you can learn some high-level theory about balance, stability, and the structural integrity of the bike… but it won’t help you overcome your fears of falling down.
+The only way to learn how to ride a bike is to go outside, hop on a bike and start to pedal.
+Investing works the same way.
+You can read books about investing or listen to podcasts from day traders or watch YouTube videos on how to use stock trading software...
+… but the only way to learChoose your region and language
+North America 
+  * [ Canada (ENG) ]
+  * [ Canada (FR) ]
+  * [ United States ]
+
+
+South America 
+  * [ Brasil ]
+
+
+Europe 
+  * [ België (NDL) ]
+  * [ Belgique (FR) ]
+  * [ Deutschland ]
+  * [ España ]
+  * [ France ]
+  * [ Ireland ]
+  * [ Österreich ]
+  * [ Polska ]
+  * [ Portugal ]
+  * [ United Kingdom ]
+
+
+Africa & Middle East 
+  * [ Africa ]
+  * [ Botswana ]
+  * [ Kenya ]
+  * [ Maroc ]
+  * [ Namibia ]
+  * [ Nigeria ]
+  * [ South Africa ]
+  * [ UAE & Middle East ]
+
+
+Asia Pacific 
+  * [ Australia ]
+  * [ Hong Kong ]
+  * [ India ]
+  * [ Indonesia ]
+  * [ Malaysia ]
+  * [ Singapore ]
+  * [ ประเทศไทย ]
+  * [ 中华人民共和国 ]
+
+
+![Playing now]
+Playing now
+Cash flow statement explained
+[Skip to Content]
+[ ]
+  * [![Sage Advice logo]
+  * [Products]
+Back
+Products
+    * Financials & ERP for midsize businesses
+      * [Sage IntacctGrow and scale your business with cloud financials, operations, HR, payroll and planning.]
+      * [Sage X3Get enterprise-class ERP software for manufacturing and distribution that’s highly customizable.]
+      * [Brightpearl by SageStreamline and automate your retail operations with a flexible, cloud solution.]
+      * [Sage 100Automate your financials, operations and payroll with a budget-friendly solution.]
+      * [Sage 300MaSearch
+[ ▲ S&P 500 **+ 160%** | ▲ Stock Advisor **+ 872%** Join The Motley Fool ]
+[Accessibility] [ Log In ] [ Help ]
+[Accessibility Menu]
+[ ![The Motley Fool] ]
+Our Services  angle-down
+Our Purpose: 
+To make the world smarter, happier, and richer. 
+Founded in 1993, The Motley Fool is a financial services company dedicated to making the world smarter, happier, and richer. The Motley Fool reaches millions of people every month through our premium investing solutions, free guidance and market analysis on Fool.com, top-rated podcasts, and non-profit The Motley Fool Foundation.
+Motley Fool Services
+  * [ All Services ]
+  * [ Stock Advisor ]
+  * [ Epic ]
+  * [ Epic Plus ]
+  * [ Fool Portfolios ]
+  * [ Fool One ]
+
+
+Fool Podcasts
+  * [ Podcasts Home ]
+  * [ Motley Fool Money ]
+  * [ Rule Breaker Investing ]
+
+
+Foolish Features
+  * [ Fool 24 ]
+  * [ The Motley Fool Foundation ]
+
+
+Stock Market News  angle-down
+Stock News
+  * [ Stock Market News ]
+  * [ Market Movers ]
+  * [ Tech Stock News ]
+  * [ Market Trends ]
+  * [ Consumer Stock News ]
+  * [ Crypto News ]
+  * [ Industrial Stock News ]
+
+
+Markets
+  * [ Stock Market Indexes Today ]
+  * [ Most Active Stocks Today ]
+  * [ Today's Biggest Stock Gainers ]
+  * [ Today's Biggest Stock Losers ]
+  * [ Largest Market Cap Companies ]
+  * [ Market Research ]
+  * [ 📨 Breakfast News ]
+
+
+Best Buys
+  * [ Top Stocks to Buy Now ]
+  * [ Best ETFs to Buy ]
+  * [ Best AI Stocks ]
+  * [ Best Growth Stocks ]
+  * [ Dividend Kings ]
+  * [ Best Index Funds ]
+  * [ Next Cryptos to Explode ]
+
+
+Industries to Invest In
+  * [ Technology ]
+  * [ Energy ]
+  * [ Real Estate ]
+  * [ Healthcare ]
+  * [ Consumer Goods ]
+  * [ Materials ]Corporate Finance Institute 
+Menu
+  * Explore Courses
+    * Earn a Certification
+      * Certifications
+        * Certifications represent a broad body of knowledge that demonstrates competence in the skills required to work in a specific finance domain.
+          * Financial Modeling & Valuation Analyst (FMVA®)
+          * Commercial Banking & Credit Analyst (CBCA®)
+          * Capital Markets & Securities Analyst (CMSA®)
+          * Business Intelligence & Data Analyst (BIDA®)
+          * Financial Planning & Wealth Management Professional (FPWMP®)
+          * FinTech Industry Professional (FTIP®)
+      * Specializations
+        * Specializations are a highly focused body of knowledge, demonstrating advanced competence in one skill or subject area.
+          * Accounting for Financial Analysts
+          * FP&A
+          * Leadership Effectiveness
+          * ESG
+          * Data Analysis in Excel
+          * Business Intelligence
+          * Data Science
+          * Macabacus
+          * Real Estate Finance
+          * Crypto and Digital Assets
+          * Risk Management
+          * AI for Finance
+          * Investment Banking & Private Equity ModelingHere is the cleaned text with all hyperlinks removed:
+
+```
+  * [Products]
+  * [Solutions]
+  * [Resources]
+  * [Pricing]
+  * [Company]
+  * [ Search ]
+  * [ Log In ]
+
+
+[ Get Started ]
+  * [ Accounts PayableEnd-to-end solution for a seamless payables process. ]
+    * [ AP Automation Overview Eliminate manual work and time-consuming reconciliation. ]
+    * [ Lightning-Fast Global Payments Quick, easy, and accurate global payments. ]
+    * [ Self-Service Supplier Management Multi-language supplier onboarding for complete visibility. ]
+    * [ Automated Tax Compliance Instantly capture accurate supplier tax information. ]
+    * [ Automated Invoice Management Hassle-free invoice processing with AI. ]
+    * [ Automated Payment Reconciliation Accurate spend data integrated with your ERP. ]
+    * [ PO Matching Ensure accuracy and prevent fraud with 2 and 3-way PO matching ]
+    * [ Corporate Cards Automatically reconcile all corporate card transactions. ]
+Integrations
+[Acumatica]
+[Intuit QuickBooks]
+[Microsoft Dynamics]
+[Oracle NetSuite]
+[Sage]
+[SAP Business One]
+[Xero]
+[See all integrations]
+  * [ Mass PaymentsScalable payout solutions tailored to global businesses. ]
+    * [ Mass Payments Overview Best-in-class, end-to-end payouts automation. ]
+    * [ Robust Global Payments Manage multiple currencies, entities, and languages. ]
+    * [ Proactive Fraud Prevention Enterprise-grade security and fraud protection. ]
+    * [ Advanced Currency Management Save on FX fees, reduce time and effort on conversions. ]
+    * [ Streamlined Payment Experience Self-service via a branded portal or embedded on the web. ]
+    * [ Powerful APIs REST APIs, tools, and documentation. ]
+    * [ Comprehensive Tax Compliance KPMG-approved, built-in tax engine. ]
+    * [ Self-Billing Invoices Automated invoice creation, submission, and approval. ]
+Integrations
+[Acumatica]
+[Intuit QuickBooks]
+[Microsoft Dynamics]
+[Oracle NetSuite]
+[Sage]
+[SAP Business One]
+```[Skip to content](#)
+[]()
+  * [ News ]
+    * [ Markets ]
+    * [ Companies ]
+    * [ Earnings ]
+    * [ CD Rates ]
+    * [ Mortgage Rates ]
+    * [ Economy ]
+    * [ Government ]
+    * [ Crypto ]
+    * [ Live Markets News ]
+    * [ Personal Finance ]
+    * [ View All ]
+  * [ Investing ]
+    * [ Best Online Brokers ]
+    * [ Best Stock Screeners ]
+    * [ Best Robo Advisors ]
+    * [ Best Investment Apps ]
+    * [ Best Brokers for ETFs ]
+    * [ Best Crypto Exchanges ]
+    * [ Best Gold IRAs ]
+    * [ Best IRAs ]
+    * [ Best Bitcoin IRAs ]
+    * [ View All ]
+  * [ Banking ]
+    * [ Best CD Rates ]
+    * [ Best High Yield Savings Accounts ]
+    * [ Best 1 Year CD Rates ]
+    * [ Best 6 Month CD Rates ]
+    * [ Best Jumbo CD Rates ]
+    * [ Best Money Market Accounts ]
+    * [ Best 3 Month CD Rates ]
+    * [ Best 18 Month CD Rates ][Skip to main content]
+Press `Alt/Option` + `S` to skip to the main content.
+![POV of a car driving on a illuminated blue bridge]
+# What is cash flow?
+Cash flow tracks money coming in and going out of a business—money received like fees, investment income, or sales revenue and money spent like bills, payroll, or purchases. More money coming in than going out is positive cash flow, and a key indicator of business strength and growth potential.
+## Why does cash flow matter to the health of a business?
+Cash flow makes or break a business. Positive cash flow has quickly turned struggling startups into market leaders, while negative cash flow (more money going out than coming in) has made long-established companies file for bankruptcy just as quickly.
+In fact, sustained, positive cash flow is so important to the operations, stability, and growth of a business, that it’s a more significant indicator of financial health than profitability. That’s because a business may show strong profits on an income statement but still struggle to manage cash effectively, making the business more prone to financial instability.
+Maintaining a positive cash flow is crucial for a variety of reasons:
+  * **Operational continuity** with the funds to keep the business running smoothly, maintaining supplier reliability, and meeting short and long-term financial obligations to operate without interruption
+  * **Creditworthiness** to lenders and investors who view sustained, positive cash flow as a strong indicator of financial stability, successful repayment, and future financing opportunities
+  * **Growth and expansion** by having the funds necessary for constant reinvestment in the business, including opening new locations, researching new innovations, or launching new products and services
+  * **Risk mitigation** by having sufficient cash reserves to overcome unexpected expenses or market downturns, while at the same time preventing debts from piling up towards bankruptcy
+  * **Financial decision making** by monitoring cash flow in real time to understand a constantly changing financial picture and make more informed choices about spending, financing, and investing
+
+
+## What are the basics of modern cash flow management?
+Cash flow management involves analyzing and optimizing the timely movement of cash into and out of a business, ensuring enough cash for daily operations as well as long-term needs and strategic objectives.
+Cash flow management involves different departments and business functions, along with established best practices:
+### Cash flow forecasting
+These forecasts incorporate historical data, market trends, and business projections to predict future cash inflows and outflows on a monthly, quarterly, or yearly basis. They help a company anticipate periods of cash surplus and deficit to inform strategic decisions and planning activities.
+### Liquidity management
+A company must maintain enough liquid assets—such as cash, money market accounts, securities, bonds, deposits, or accounts receivable—to cover daily expenses and unexpected costs. To prevent cash crunches, good liquidity management also requires an adequate cash reserve, as well as access to lines of credit and short-term loans as backup liquidity sources.
+### Budgeting
+The budgeting process incorporates revenue projections, expense estimates, capital expenditures, and other financial data into a detailed plan to help control costs and allocate resources efficiently. The process includes reporting on best-case and worst-case scenarios as an additional safeguard against unexpected cash shortfalls.
+### Receivables and payables management
+By focusing on efficient invoicing, prompt payment incentives, and robust follow-up of overdue accounts, companies speed the conversion of sales to cash. And by strategically adjusting payment terms and methods with suppliers and other creditors, companies ensure optimal cash outflows while maintaining good supplier relationships and discounts for timely payments.
+### Inventory management
+Excess stock ties up cash unnecessarily, while stock shortages limits cash inflows due to lost sales, so balancing inventory levels is a key cash flow management best practice. Keeping inventory levels balanced requires accurate demand forecasts, real-time inventory monitoring, and just-in-time inventory management to reduce holding costs.
+## What’s in a cash flow statement?
+A cash flow statement is like a detailed checkbook for a business, helping decision-makers quickly see what money is coming in and going out, so they manage money wisely and reduce financial risk. It summarizes the amount of cash and cash equivalents entering and leaving the business, so stakeholders have a clearer pictuHBS Online
+  * [Courses]
+    * [Business Essentials]
+    * [Leadership & Management]
+    * [Credential of Leadership, Impact, and Management in Business (CLIMB)]
+    * [Credential of Digital Innovation and Strategy]
+    * [Entrepreneurship & Innovation]
+    * [Strategy]
+    * [Marketing]
+    * [Digital Transformation]
+    * [Finance & Accounting]
+    * [Business in Society]
+  * [For Organizations]
+  * [Insights]
+  * [More Info]
+
+
+  * [About]
+  * [Support Portal]
+  * [Media Coverage]
+  * [Founding Donors]
+  * [Leadership Team]
+  * [Careers]
+  * [My Courses]
+  * [My Account]
+  * [Enroll Now]
+
+
+[HBS Home]
+  * [About HBS]
+  * [Academic Programs]
+  * [Alumni]
+  * [Faculty & Research]
+
+
+  * [Baker Library]
+  * [Giving]
+  * [Harvard Business Review]
+  * [Initiatives]
+  * [News]
+  * [Recruit]
+
+
+  * [Map / Directions]
+
+
+Search
+[Skip to Main Content]
+[![HBS Online](https://webassets.hbs.edu/libs/framework/1.0/images/HBS-Online-Stacked.svg)]
+  * [Courses]
+[Open Courses Mega Menu]
+    * [Business Essentials]
+      * [Credential of Readiness (CORe)]
+      * [Business Analytics]
+      * [Economics for Managers]
+      * [Financial Accounting]
+    * [Leadership & Management]
+      * [Leadership Principles]
+      * [Management Essentials]
+      * [Negotiation Mastery]
+      * [Organizational Leadership]
+      * [Strategy Execution]
+      * [Power and Influence for Positive Impact]
+      * [Leadership, Ethics, and Corporate Accountability]
+      * [Leading Change and Organizational Renewal]
+      * [Dynamic Teaming]
+      * [TransforminHere is the cleaned text with all hyperlinks removed:
+
+```
+                * [Calculators]( "Calculators")
+  * [Templates]( "Templates")
+  * [Videos]( "Videos")
+  * [Infographics]( "Infographics")
+  * [Business Insurance]( "Business Insurance")
+    * [Business Insurance]()
+    * [Small Business Insurance]()
+    * [General Liability Insurance]()
+    * [Workers' Compensation]()
+
+
+MENU ACCOUNT
+[ ![Business Owner's Playbook](https://ewcstatic.thehartford.com/thehartford/the_hartford/pubimgs/L/logo_bop.svg?v=2025-04-28_131713) ]()
+CLOSE ACCOUNT
+  * [ Startup Business ]( "Startup Business")
+Main Menu
+Startup Business
+[Benefits]()
+[Expansion]()
+[Marketing]()
+[Money]()
+[Safeguards]()
+[Talent]()
+  * [ Growing Business ]( "Growing Business")
+Main Menu
+Growing Business
+[Benefits]()
+[Expansion]()
+[Marketing]()
+[Money]()
+[Safeguards]()
+[Talent]()
+  * [ Mature Business ]( "Mature Business")
+Main Menu
+Mature Business
+[Benefits]()
+[Expansion]()
+[Marketing]()
+[Money]()
+[Safeguards]()
+[Talent]()
+
+
+  * [Calculators]( "Calculators")
+  * [Templates]( "Templates")
+  * [Videos]( "Videos")
+  * [Infographics]( 
+```
+
+Note: I preserved the image link `[ ![Business Owner's Playbook](https://ewcstatic.thehartford.com/thehartford/the_hartford/pubimgs/L/logo_bop.svg?v=2025-04-28_131713) ]` as it's not a typical hyperlink and seems to be an image reference. If you want me to remove it as well, please let me know.* [Subscribe To Newsletters]
+* [Trump Tracker]
+* [Billionaires]
+Billionaires
+[View All Billionaires]
+    * [World's Billionaires]
+    * [Forbes 400]
+    * [America's Richest Self-Made Women]
+    * [China's Richest]
+    * [India's Richest]
+    * [Indonesia's Richest]
+    * [Korea's Richest]
+    * [Thailand's Richest]
+    * [Japan's Richest]
+    * [Australia's Richest]
+    * [Taiwan's Richest]
+    * [Singapore's Richest]
+    * [Philippines' Richest]
+    * [Hong Kong's Richest]
+    * [Malaysia's Richest]
+    * [Money & Politics ]
+    * [2024 Election]
+* [Innovation]
+Innovation
+[View All Innovation]
+    * [AI]
+    * [Big Data]
+    * [Cloud]
+    * [Cloud 100]
+    * [Consumer Tech]
+    * [Creator Economy]Here is the cleaned text with all hyperlinks removed:
+
+```
+business.gov.au 
+# Something has gone wrong
+Your attempt to access this site has been blocked. 
+This can occur for the following reasons:
+  * an unsupported cookie was attached to the request
+  * unsupported data was added to the request
+  * a browser extension attached an unsupported cookie or request header(s).
+
+
+Disabling (or removing) browser extensions, using a different browser, or clearing your cookies may help to resolve the issue.
+ Live chat  Live chat is closed
+```[ Skip to Main content ]
+[![Elsevier logo](https://sdfestaticassets-eu-west-1.sciencedirectassets.com/shared-assets/24/images/elsevier-non-solus-new-grey.svg)ScienceDirect]
+  * Journals & Books
+
+
+  * Help
+  * Search
+
+
+My account
+Sign in
+# Cash Flow
+In subject area: Engineering
+The technical term “discounted cash flow” is a refined measure of cash that subtracts one-time capital expenses and dividend obligations from the projected cash position at some future date.
+From: Technology Entrepreneurship (Second Edition), 2015
+About this page
+Add to MendeleySet alert
+## Also in subject area:
+  * Economics, Econometrics and Finance
+
+Discover other topics
+  1. ## On this page
+
+
+## On this page
+  * Definition
+  * Chapters and Articles
+  * Related Terms
+  * Recommended Publications
+
+
+## On this page
+  * Definition
+  * Chapters and Articles
+  * Related Terms
+  * Recommended Publications
+
+
+## Chapters and Articles
+You might find these chapters and articles relevant to this topic.
+Chapter
+## Basic Engineering Design for Natural Gas Processing Projects
+2014, Natural Gas ProcessingAlireza Bahadori Ph.D.
+### 14.20.1 Definition and computation of cash flow
+Cash flow is basically either receipts of cash (cash inflow) or payments (cash outflow). For the purpose of financial planning and determination of the net cash returns of an investment, it is necessary to distinguish between the financial flow, which is related to financing of an investment, and cash flow (expenditures and revenues), representing the performance or operation of the project (operational cash flow).
+Operational cash flow are shown (as discounted cash flow) in Table 14.7:
+Table 14.7. Operational Cash Flow
+Operational Cash Flow In| Operational Cash Flow Out  
+---|---  
+Revenues from selling of fixed assets| Increase in fixed assets, (investment)  
+Recovery of salvage valves (end of project)| Increase in net working capital  
+Revenues from decrease of net working capital| Operating costs (see note)aMarketing expenses  
+Sales revenues| Production and distribution losses  
+Other income due to plant operations| Corporate (income) taxes  
+a
+    Note: It should be noted that depreciation charges (costs) and interest payments are not classified among the operational cash outflows, because inclusion of depreciation of assets would provoke a double-counting of the costs to the project, since they are already accounted for as investment costs when capitalized in the balance. However, for accounting purposes (including taxation), assets are to be depreciated over the project lifetime. This is why the depreciation of assets is a cost item in the net income statement only and must be deducted from the annual total costs of products sold (production and marketing costs) when determining the annual cash outflows. Interest and any other costs of financing are also included for the computation of the yield or return on the total capital investment, because they are part of this total yield. However, interest on loans (but not net profits distributed) is a cost item in the net income statement.
+Show more
+View chapterThere is no text provided to clean. If you provide the text, I will remove all hyperlinks (URLs) while keeping all other text unchanged.Here is the cleaned text with all hyperlinks removed:
+
+```
+                [ ![Oracle / NetSuite](https://www.netsuite.com/portal/assets/img/Oracle-NetSuite-Logo-white.svg) ]
+[1-877-638-7848] [Free  Product Tour (opens in new tab) ] [ ] [Log In (opens in new tab) ]
+  * [ Log In  (opens in new tab) ]
+  * [ Products ]
+    * [ Main Menu]
+    * [ Products ]
+    * [ERP ]
+      * [ Products ]
+      * [ERP ]
+      * [Financial Management]
+      * [Enterprise Performance Management]
+      * [Order Management]
+      * [Inventory Management]
+      * [Warehouse Management]
+      * [Supply Chain Management]
+      * [Procurement]
+    * [Accounting Software]
+      * [ Products ]
+      * [Accounting Software]
+      * [Accounts Receivable]
+      * [Accounts Payable]
+      * [Account Reconciliation]
+      * [Cash Management]
+      * [Close Management]
+      * [Fixed Assets Management]
+      * [General Ledger]
+      * [Payment Management]
+      * [Tax Management]
+```
+
+**Note:** I have removed all the hyperlinks while keeping the rest of the text intact.Skip to content  Skip to footer 
+[ ] ![Site Search] ![Site Search]
+Industries  Services  Issues  About us  Careers
+More
+Global  ![](https://www.pwc.com/etc.clientlibs/pwc/clientlibs/rebrand-clientlibs/components-colors/resources/images/slim-header-v2/Chevron.svg)  ![](https://www.pwc.com/etc.clientlibs/pwc/clientlibs/rebrand-clientlibs/components-colors/resources/images/slim-header-v2-bu/Chevron-bu.svg)  ![](https://www.pwc.com/etc.clientlibs/pwc/clientlibs/rebrand-clientlibs/components-colors/resources/images/slim-header-v2/close-icon-white.svg)  ![](https://www.pwc.com/etc.clientlibs/pwc/clientlibs/rebrand-clientlibs/components-colors/resources/images/slim-header-v2-bu/Cancel-bu.svg)
+Find a country or region 
+Global  Albania America Andorra Angola Argentina Armenia Australia Austria Azerbaijan Bahamas Bahrain Barbados Belgium Bermuda Bolivia Bosnia and Herzegovina Botswana Brasil British Virgin Islands Brunei Bulgaria Cambodia CanadaSkip to content
+![DON'T do business WITHOUT IT](https://icm.aexp-static.com/content/dam/contenthub/us/en/images/design-elements/open_logo_mobile.png)
+![DON'T do business WITHOUT IT](https://icm.aexp-static.com/content/dam/contenthub/us/en/images/design-elements/open_logo_desktop.png)
+### Business Cards
+#### Small to Medium
+  * View All Business Cards
+  * Basic Business Card
+  * Gold Business Card
+  * Platinum Business Card
+
+
+#### Large/Corporate
+  * View All Corporate Cards
+  * Green Corporate Card
+  * Gold Corporate Card
+  * Platinum Corporate Card
+  * BA Corporate Card
+  * BA Plus Corporate Card
+
+
+### Payment Solutions
+#### Supplier Payments
+  * Compare Solutions
+  * Business Travel Account
+  * Working Capital Solutions
+  * Buyer Initiated Payments
+  * Purchasing Card
+  * Meeting Card
+
+
+#### International Payments
+  * IP Homepage
+  * Money Transfer and FX
+  * American Express Vpayment
+
+
+### Business Class
+#### Business ClassAre you looking for the latest trends and insights to fuel your business strategy? From industry expertise to finance tips, we’ve got your back.
+#### Industry[Skip to main content] [Skip to main navigation]
+Take survey 
+At the end of your visit today, would you complete a short survey to help improve our services?
+Yes No
+Thanks! When you're ready, just click "Start survey".
+Start survey Ask me later
+It looks like you’re about to finish your visit. Are you ready to start the short survey now?
+Yes No
+[ qld.gov.au ![Queensland Government] ] [ Contact us ]
+[ ![Queensland Government] ![Business Queensland] ]
+Search this website
+Search
+Search Menu
+Search
+###### Menu
+Close
+  * [ Home ]
+  * [Starting a business] Starting a business
+[ Starting a business]
+    * [ Starting or buying a business ]
+    * [ Business Launchpad ]
+    * [ Business finance essentials ]
+    * [ Australian Business Licence and Information Service (ABLIS) ]
+    * [ Business premises and location ]
+    * [ Digital business and IT ]
+    * [ Finding and hiring staff ]
+    * [ Grants and business support services ]
+  * [Running a business] Running a business
+[ Running a business]
+    * [ Grants and business support services ]
+    * [ Finance, accounting and profit ]
+    * [ Employing and managing people ]
+    * [ Marketing and sales ]
+    * [ Digital business and IT ]
+    * [ Business planning ]
+    * [ Suppliers and stock management ]
+    * [ Legal obligations and consumer laws ]
+    * [ Energy in your business ]Exciting news! Bench has been acquired by Employer.com! [Learn More →]
+[]
+[]
+Services
+Back
+Services
+## Accounting Services
+Bench simplifies your small business accounting by combining intuitive software that automates the busywork with real, professional human support. Less stress for you, more time to grow your business.
+[Monthly BookkeepingOngoing online bookkeeping service for small business owners][Catch Up BookkeepingCatch up bookkeeping services for small businesses, no matter how far behind they are][Income Tax Filing and AdvisoryAll-in-one small business tax preparation, filing and year-round income tax advisory]
+Tax Resolution
+Expert support for small businesses to resolve IRS issues and reduce back tax liabilities
+[Back Taxes]
+·
+[Tax Penalties]
+·
+[Tax Lien]
+·
+[Tax Levy]
+[]
+[]
+Talk to an expert
+## Book a demo with our friendly team of experts
+Not sure where to start or which accounting service fits your needs? We’re just a call away. Our team is ready to learn about your business and guide you to the right solution.
+[Book a demo →]
+Platform
+Back
+Platform
+## Easy-To-Use Platform
+Our intuitive software automates the busywork with powerful tools and features designed to help you simplify your financial management and make informed business decisions.
+[CommunicationEffortless messaging with your Bench team for unlimited support or advice, anytime, anywhere][Document OrganizationUpload, manage and access your financial documents swiftly with just a few clicks][AutomationConnect all your financial accounts to automate data entry, speed up your books, reduce errors and save time][CategorizationAccurate transaction categorization, powered by smart automation with instant guidance][Financial ReportingReal-time reporting. Access or download your updated income statement or balance sheet at all times][Notification CenterGet timely reminders to stay on top of your financial tasks and deadlines]
+Talk to an expert
+## See Bench’s features in action
+The magic happens when our intuitive software and real, human support come together. Book a demo today to see what running your business is like with Bench.
+[Book a demo →]
+[Pricing]
+Resources
+Back
+Resources
+## Resources
+Get free guides, articles, tools and calculators to help you navigate the financial side of your business with ease. Empower yourself with knowledge and practical tips.
+Bench Blog
+Tips for understanding business finances [Accounting] · [Bookkeeping ‍][Operations] · [Tax Tips]
+[]
+[]
+[WebinarsLive and on-demand recordings of webinars covering everything from bookkeeping to taxes][Guides and TemplatesFree downloadable bookkeeping and tax guides, checklists, and expert-tested accounting templates][ToolsTools and calculators to help you stay on top of your small business taxes and evaluate your financials][Tax Resource HubInfo about small business tax deadlines, deductions, IRS forms and tax filing support - all in one, easy-to-access place][NewsSee what’s new at Bench and learn more about our company]
+resource
+## Free Course: Understanding Financial Statements
+Learn how to build, read, and use financial statements for your business so you can make more informed decisions. Easy-to-use templ**Trade uncertainty:** Explore [resources and tools] for your business.
+**Trade uncertainty:** Explore [resources and tools] for your business.
+[ ![Logo - Business Development Bank of Canada - BDC] ]
+[FR]
+Search 
+  * Financing 
+Close  Main menu 
+## Financing
+###  Loans  Loans 
+    * [ Small business loan Get up to $100K for small projects ]
+    * [ Working capital loan Protect business cash flow ]
+    * [ Equipment loan Upgrade machinery or equipment ]
+    * [ Commercial real estate loan Buy or renovate facilities ]
+    * [ Purchase order financing Fulfill large orders and pay suppliers ]
+    * [ Loan for tech companies Find financing adapted to your revenue model ]
+    * [ Business purchase or transfer loan Pave the way for a smooth acquisition ]
+    * [ Certified green building loan Enhance your business's sustainability ]
+[Learn about our products]
+###  Investments  Investments 
+    * [ Venture Capital Build a successful innovative tech company ]
+    * [ Growth & Transition Capital Keep vital cash flow in your growing company ]
+    * [ Growth Equity Partners A long-term partnership to accelerate growth ]
+    * [ Intellectual Property-Backed Financing See the potential in your intellectual property ]
+[Learn more about investments]
+### Featured
+    * [ Not sure which financing is right for your business? Discover our loans ]
+    * [Trade support: Pivot to grow loan]
+    * [ Financing for businesses in activity for 12-24 months]
+    * [Financing Partners]
+  * Consulting 
+Close  Main menu 
+## Consulting
+###  Consulting services  Consulting services 
+    * [ Business strategy Work on a solid strategic roadmap ]
+    * [ HR management Build a winning team ]
+    * [ Operational efficiency Apply changes to boost bottom line ]Jump to content
+Main menu
+Main menu
+move to sidebar hide
+Navigation 
+  * Main page
+  * Contents
+  * Current events
+  * Random article
+  * About Wikipedia
+  * Contact us
+
+
+Contribute 
+  * Help
+  * Learn to edit
+  * Community portal
+  * Recent changes
+  * Upload file
+  * Special pages
+
+
+[  ](https://en.wikipedia.org/static/images/icons/wikipedia.png) [Wikipedia](https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-wordmark-en.svg) [The Free Encyclopedia](https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-tagline-en.svg) 
+[ Search ]
+Search
+Appearance
+  * Donate
+  * Create account
+  * Log in
+
+
+Personal tools
+  * Donate
+  *  Create account
+  *  Log in
+
+
+Pages for logged out editors learn more
+  * Contributions
+  * Talk
+
+
+## Contents
+move to sidebar hide
+  *  (Top) 
+  *  1 Purpose 
+  *  2 History and variations 
+  *  3 Cash flow activities  Toggle Cash flow activities subsection
+    *  3.1 Operating activities 
+    *  3.2 Investing activities 
+    *  3.3 Financing activities 
+  *  4 Disclosure of non-cash activities 
+  *  5 Preparation methods  Toggle Preparation methods subsection
+    *  5.1 Direct method 
+    *  5.2 Indirect method 
+      *  5.2.1 Rules (operating activities) 
+      *  5.2.2 Rules (financing activities) 
+  *  6 See also 
+  *  7 Notes and references 
+
+
+Toggle the table of contents
+# Cash flow statement
+41 languages
+  * العربية "بي•
+NaN / NaN
+Back  [ ]  IN 
+Skip navigation
+Search 
+Search with your voice 
+[ ]  IN 
+Cash Flow Statement Basics Explained
+Search
+Watch later
+Share
+Copy link
+Info
+Shopping
+Tap to unmute
+2x
+If playback doesn't begin shortly, try restarting your device.
+•
+Up next
+LiveUpcoming
+CancelPlay Now
+You're signed out
+Videos you watch may be added to the TV's watch history and influence TV recommendations. To avoid this, cancel and sign in to YouTube on your computer.
+CancelConfirm
+Online Excel Courses From Leila
+xelplus.com
+[Learn more]
+[Leila Gharani]
+Subscribe
+Subscribed
+Excel. Copilot. ChatGPT. Power BI. PowerPoint. You use them every day - so why not actually master them? I’ll show you how to: ✔️Automate the stuff that drives you nuts ✔️ Spend less time on grunt work, more time on wow work ✔️ Build reports that look good AND actually make sense What You’ll Learn Here: ✔️ Excel, Power BI, PowerPoint, VBA, Google Sheets & more ✔️ AI-powered Excel & the future of work ✔️ Data & finance skills that give you an edge I don’t just teach this stuff - I use it daily. My goal? To help you think differently about the tools you already have, so you can work faster, and with confidence. 🎓 My background: MA in economics / Economist / Business Consultant / Accounting Systems Expert / Oracle & SAP implementations (for Finance) / Teacher & Microsoft MVP 💡 400,000+ professionals have taken my courses at XelPlus - because working smarter just makes sense. Join here 👉 https://www.xelplus.com/courses/ 
+[How to Use Debt to Build Wealth | Leverage Explained11:50]
+![](https://i.ytimg.com/an/JtUOos_MwJa_Ewii-R3cJA/featured_channel.jpg?v=5873a32e)
+Leila Gharani
+Subscribe
+Subscribed
+Share
+Include playlist
+An error occurred while retrieving sharing information. Please try again later.
+0:00
+[]
+0:00 / 13:26•Watch full videoLive
+•
+How to Read a Cash Flow Statement
+•
+Scroll for details
+#  Cash Flow Statement Basics Explained
+[![]]
+[Leila Gharani]
+Leila Gharani 
+2.83M subscribers
+Join
+<__slot-el>
+Subscribe
+<__slot-el>
+Subscribed
+27K
+Share
+Download
+Download 
+Save
+1M views5 years ago[#Accounting]
+1,095,989 views • Jan 28, 2020 • #Accounting 
+Show less 
+🔥 Learn Financial Analysis in 30 Minutes! Start our FREE course now and learn the basics fast. No strings attached! 👉 [https://link.xelplus.com/yt-free-fina...]…...more 
+...more 
+## 
+Chapters
+View all
+#### [How to Read a Cash Flow Statement How to Read a Cash Flow Statement 0:00 ]
+#### [How to Read a Cash Flow Statement ]
+0:00
+#### [Cash Flow Statement - Overview Cash Flow Statement - Overview 2:00 ]
+#### [Cash Flow Statement - Overview ]
+2:00
+#### [Cash Flow from Operating Activities Cash Flow from Operating Activities 3:57 ]
+#### [Cash Flow from Operating Activities ]
+3:57
+#### [Cash Flow from Investing Activities Cash Flow from Investing Activities 10:33 ]
+#### [Cash Flow from Investing Activities ]
+10:33
+Transcript
+Follow along using the transcript.
+Show transcript
+### [Leila Gharani 2.83M subscribers  ]
+[Videos]
+[About]
+[Videos][About][![Zoho Books](https://zdblogs.zohowebstatic.com/sites/books/academy/files/books-product-logo-black.svg)]()
+Academy
+Global
+  * Bahrain
+  * Canada
+  * Global
+  * India
+  * Kenya
+  * Oman
+  * Saudi Arabia
+  * South Africa
+  * United Arab Emirates
+  * United Kingdom
+  * United States
+
+
+![search-icon](https://zdblogs.zohowebstatic.com/sites/books/academy/files/in/search.svg)
+Product Blogs
+![](https://zdblogs.zohowebstatic.com/sites/books/academy/files/in/search.svg)![](https://zdblogs.zohowebstatic.com/sites/books/academy/files/in/close.svg)
+  * HOME
+  * Accounting Principles
+  * Cash Flow Statement – Definition and Importance
+
+
+# Cash Flow Statement – Definition and Importance
+Guide5 min read**|** Posted on April 5, 2024 **|** By Vidhya Krishnan
+![cash flow statement](https://zdblogs.zohowebstatic.com/sites/books/academy/files/cashflow_statement_1.png)
+## What is a cash flow statement?
+A cash flow statement is an important tool used to manage finances by tracking the cash flow for an organization. This statement is one of the three key reports (with the income statement and the balance sheet) that help in determining a company’s performance. It is usually helpful for making cash forecast to enable short term planning.
+The cash flow statement shows the source of cash and helps you monitor incoming and outgoing money. Incoming cash for a business comes from operating activities, investing activities and financial activities. The statement also informs about cash outflows, expenses paid for business activities and investment at a given point in time. The information that you get from the cash flow statement is beneficial for the management to take informed decisions for regulating business operations.
+Companies generally aim for a positive cash flow for their business operations without which the company may have to borrow money to keep the business going.
+## Importance of a cash flow statement
+For a business to be successful, it should always have sufficient cash. This enables it to pay back bank loans, buy commodities, or invest to get profitable returns. A business is declared bankrupt if it doesn’t have enough cash to pay its debts. Here are some of the benefits of a cash flow statement:
+  * **Gives details about spending:** A cash flow statement gives a clear understanding of the principal payments that the company makes to its creditors. It also shows transactions which are recorded in cash and not reflected in the other financial statements. These include purchases of items for inventory, extending credit to customers, and buying capital equipment.
+
+
+  * **Helps maintain optimum cash balance:** A cash flow statement helps in maintaining the optimum level of cash on hand. It is important for the company to determine if too much of its cash is lying idle, or if there’s a shortage or excess of funds. If there is excess cash lying idle, then the business can use it to invest in shares or buy inventory. If there is a shortage of funds, the company can look for sources from where they can borrow funds to keep the business going.
+  * **Helps you focus on generating cash:** Profit plays a key role in the growth of a company by generating cash. But there are several other ways to generate cash. For instance, when a company finds a way to pay less for equipment, it is actually generating cash. Every time it collects receivables from its customers quicker than usual, it is gaining cash.
+  * **Useful for short-term planning:** A cash flow statement is an important tool for controlling cash flow. A successful busines[Skip to main content](#main)
+##  ![Alert Message](ie_alert.png) Please update your browser.
+We don't support this browser version anymore. Using an updated version will help protect your accounts and provide a better experience. 
+[Update your browser](</digital/resources/privacy-security/security/system-requirements>)
+Please update your browser.
+We don't support this browser version anymore. Using an updated version will help protect your accounts and provide a better experience.
+[Update your browser](</digital/resources/privacy-security/security/system-requirements>)
+[ Close ](#)
+We’ve signed you out of your account.
+You’ve successfully signed out
+We’ve enhanced our platform for chase.com. For a better experience, download the Chase app for your iPhone or Android. Or, go to System Requirements from your laptop or desktop.
+Close this message
+[](#)
+Start of side menu
+  * [ Home ](https:/www.chase.com)
+  * [ Sign in ](https:/secure.chase.com)
+  * [ Free credit score ](https:/www.chase.com/personal/credit-cards/free-credit-score)
+  * [ Financial Education ](https:/www.chase.com/personal/education)
+
+
+## OPEN AN ACCOUNT
+  * [ Credit Cards ](https:/creditcards.chase.com/)
+  * [ Checking Accounts ](https:/personal.chase.com/personal/checking)
+  * [ Savings Accounts ](https:/personal.chase.com/personal/savings)
+  * [ CDs ](https:/www.chase.com/personal/savings/bank-cd)
+  * [ Auto ](https:/autofinance.chase.com/auto-finance/home?offercode=WDXDPXXX00)
+  * [ Mortgage ](https:/www.chase.com/personal/mortgage)
+  * [ Home Equity ](https:/www.chase.com/personal/home-equity/)
+  * [ Invest with a J.P. Morgan Advisor ](/personal/investments/advisor-services)
+  * [ Online Investing with J.P. Morgan ](https:/account.chase.com/investing/self-directedoffer)
+  * [ Chase for Business ](https:/www.chase.com/business)
+  * [ Commercial Banking ](https:/www.jpmorgan.com/commercial-banking)
+  * [ See all ](https:/www.chase.com/digital/resources/sitemap)
+
+
+## CONNECT WITH CHASE
+  * [ Customer Service ](/digital/customer-service)
+  * [ Give feedback ]()
+  * [ Schedule a meeting ](https:/www.chase.com/meeting-scheduler/getstarted)
+  * [ Find ATM & branch ](https:/locator.chase.com/?locale=en_US)
+
+
+  * [ About Chase](https:/www.chase.com/digital/resources/about-chase)
+  * [ J.P. Morgan](https:/www.jpmorgan.com/pages/jpmorgan)
+  * [ JPMorgan Chase & Co.](http:/www.jpmorganchase.com)
+  * [ Media Center](https:/media.chase.com)
+  * [ Careers](https:/www.careersatchase.com)
+  * [ Chase Canada](https:/www.chase.ca/en/card-services)
+  * [ SAFE Act: Chase Mortgage Loan Originators ]* [Home]
+  * []Small Businesses
+  * []Accountants
+  * []Resources
+  * []Try it for free
+  * []Customer Login
+
+
+  * [Small Businesses]
+  * [Take a Trial]
+  * [Bookkeeping Software]
+  * [Pricing]
+  * [Making Tax Digital]
+  * [Features]
+  * [VAT Returns]
+  * [Purchases & Expenses]
+  * [Invoicing]
+  * [Payments]
+  * [Payroll]
+  * [HR]
+  * [Support]
+  * [Contact]
+  * [Find an Accountant]
+
+
+  * [Accountants]
+  * [Open an Account]
+  * [Overview]
+  * [Partner Program]
+  * [Case Studies]
+  * [Payroll]
+  * [Support]
+  * [Contact]
+
+
+  * [Resources]
+  * [About the Company]
+  * [Training]
+  * [Case Study Videos]
+  * [Testimonials]
+  * [Press]
+  * [Blog]
+
+
+  * [Try it for free]
+  * [IRIS KashFlow Accounts]
+  * [Accountants KashFlow Connect]
+  * [KashFlow Payroll]
+
+
+  * [Customer Login]
+  * [IRIS KashFlow Accounts]
+  * [Accountants KashFlow Connect]
+  * [KashFlow Payroll]
+
+
+# Cash Flow
+## Your guide to cash flow
+No business can afford to ignore its cash flow. Monitoring this is like monitoring your pulse – it’s a crucial health check for your business. Indeed, [more than a third of SMEs] cite issues with cash flow as a barrier to their growth.
+It’s crucial to understand what your cash flow is, how to calculate it and how to use a statement to keep on top of things.
+## What is cash flow?
+Cash flow refers to the movement of money in and out of your business in terms of income and expenditure. Ideally, you want to have a positive cash flow – meaning that more money is coming in to the business than goes out. If you have a positive cash flow, your business will be able to settle its bills and invest in growth. A negative cash flow means you’ll need to find an alternative source of income to be able to pay off debts.
+If youWe use cookies to make your experience better. By using xero.com, you accept our cookie notice terms.
+OK
+Get 90% off for 3 months when you buy Xero before 30 April.*Sign up now 
+Dismiss
+Xero homepage
+Menu
+Xero homepage
+  * Menu
+  * Try Xero for free
+  * Log in
+
+
+Xero homepage
+  * Features
+  * Pricing 
+  * For small business
+  * For accountants & bookkeepers
+  * Support
+
+
+  * Try Xero for free
+  * Log in
+
+
+# What is cash flow?
+## Cash flow (definition)
+**Cash flow determines the ability of a business to pay its suppliers, employees, lenders and owners on time.**
+Timing is very important to cash flow. The business must have sufficient cash when payments come due or else they risk defaulting. Even profitable businesses can have cash flow issues when faced with badly timed expenses.
+A small business with cash flow issues will struggle to make regular payments to its owners. This can, in turn, put their personal finances at risk.
+### What affects cash flow
+The amount of cash in the business is driven by three things:
+  1. Operations – money from selling products and services, minus the expense of delivering those products and services 
+  2. Investments – money spent on big assets like real estate or equipment, offset by money received when reselling similar big ticket items
+  3. Finance – money received as loans, offset by money repaid to banks. Shareholder investments are also captured here, and these are offset by dividend payments. 
+
+
+Ideally, cash flow most commonly comes from operations. It isn’t sustainable to keep taking loans or selling chunks of the business.
+### How to measure cash flow
+When assessing cash flow, a business can look forward by doing a cash flow forecast, or backward by doing a cash flow statement.
+### Cash flow forecasts or projections
+A cash flow forecast plots upcoming income and expenses on a timeline to predict how much money a business will have in the future.
+![A dashboard shows how a business’s cash flow projection changes in response to income and expenses.](https://www.xero.com/content/dam/xero/pilot-images/features/analytics/analytics-video-placeholder.1646877481108.jpg)
+Small businesses can get a picture of future cash flow by accounting for upcoming bills and payments (example from Xero dashboard).
+### Cash flow statements 
+A cash flow statement reviews the past month, quarter, or year to show how cash was generated and how it was spent. At the highest level, it will show which proportion of cash came from:
+  * selling goods and services (operations)
+  * taking loans or selling shares in the business (finance)
+  * selling assets like machinery or real estate (investing)
+
+
+This can help you check that cash flows are sustainable and not overly reliant on borrowing.
+### Importance of cash flow
+A business needs good cash flow to pay bills and keep trading. Having spare cash also gives a business the opportunity to pursue new opportunities, in line with the adage that you have to spend money to make money. Equally importantly, good cash flow alleviates a lot of financial stress for business owners and managers. 
+### A quick note on the meaning of ‘cash’
+Cash is not just money in the till or bank. It includes ‘cash equivalents,’ which is anything that can be sold for a known price, at short notice (usually within about 3 months).
+### How cash flow differs from free cash flow, working capital, and liquidity
+Cash flow is a measure of spending power, similar to free cash flow, working capital, and liquidity. Each of these terms has its own complexities, but here’s roughly how they compare:
+  * Cash flow refers to the general availability of cash 
+  * Liquidity shows how easily a business can cover upcoming costs (expressed as a ratio)
+  * Working capital shows how much money will be left after covering those upcoming costs 
+  * Free cash flow is the amount of cash left after making capital investments
+
+
+**See related terms**
+ Liquidity
+Cash flow statement
+More terms
+## Handy resources
+## Advisor directory
+You can search for experts in our advisor directory
+Find an aSkip to main content Skip to page navigation
+Create a **business.govt.nz account** and save your progress across our tools
+Log in / Sign up
+## Main Menu
+Menu
+Close
+Home Getting started
+Back
+### Getting started
+Taking the first steps
+Back
+#### Taking the first steps
+Questions to ask yourself before you start  10-step guide to starting a business How to research your market and competitors  Buying a business or franchise Registering with government agencies 
+Need a hand?
+Searchform Search  ![Get geared up for a successful launch] Create a business plan Get geared up for a successful launch 
+Choosing the right business structure
+Back
+#### Choosing the right business structure
+Business structure overview Starting a company Starting a partnership Other business structures
+Need a hand?
+Searchform Search
+Sole trader guide
+Back
+#### Sole trader guide
+Becoming a sole trader Sole trader checklist Tax 101 for sole traders Funding and other government help
+Need a hand?
+Searchform Search
+Business planning tools and tips
+Back
+#### Business planning tools and tips
+Introduction to business planning  Business planning e-learning  How to w**Trade uncertainty:** Explore resources and tools for your business.
+**Trade uncertainty:** Explore resources and tools for your business.
+[ ![Logo - Business Development Bank of Canada - BDC](https://www.bdc.ca/assets/icons/bdc_logo.svg) ]
+[FR]
+Search 
+  * Financing 
+Close  Main menu 
+## Financing
+###  Loans  Loans 
+    *  Small business loan Get up to $100K for small projects 
+    *  Working capital loan Protect business cash flow 
+    *  Equipment loan Upgrade machinery or equipment 
+    *  Commercial real estate loan Buy or renovate facilities 
+    *  Purchase order financing Fulfill large orders and pay suppliers 
+    *  Loan for tech companies Find financing adapted to your revenue model 
+    *  Business purchase or transfer loan Pave the way for a smooth acquisition 
+    *  Certified green building loan Enhance your business's sustainability 
+[Learn about our products]
+###  Investments  Investments 
+    *  Venture Capital Build a successful innovative tech company 
+    *  Growth & Transition Capital Keep vital cash flow in your growing company 
+    *  Growth Equity Partners A long-term partnership to accelerate growth 
+    *  Intellectual Property-Backed Financing See the potential in your intellectual property 
+[Learn more about investments]
+### Featured
+    *  Not sure which financing is right for your business? Discover our loans 
+    * Trade support: Pivot to grow loan
+    *  Financing for businesses in activity for 12-24 months
+    * Financing Partners
+  * Consulting 
+Close  Main menu 
+## Consulting
+###  Consulting services  Consulting services 
+    *  Business strategy Work on a solid strategic roadmap 
+    *  HR management Build a winning team 
+    *  Operational efficiency Apply changes to boost bottom line 
+    *  Sales and marketing Grow sales with targeted activities 
+    *  Financial management Master all aspects of your finances 
+    *  Leadership and management Hone effective management skills 
+    *  Digital technology Make the digital shift confidently[ Skip to main content ]
+Confirm opening of the external link 
+You are now leaving the official SCORE website. You will be redirected to a website beyond our control. This content will open in a new tab. Please review their terms, privacy policies, and relevant information before engaging or providing personal details. SCORE does not endorse or take responsibility for the content, accuracy, privacy policies, or practices of these third-party websites.
+Cancel  Continue 
+[Use my current location ]
+12 Month Cash Flow Statement
+>
+March 22, 2020
+Rating
+Select ratingGive it 1/5Give it 2/5Give it 3/5Give it 4/5Give it 5/5
+Give it 1/5
+Give it 2/5
+Give it 3/5
+Give it 4/5
+Give it 5/5
+![Young male entrepreneur reviewing finance reports in home space]
+Download Template 
+The 12-month cash flow statement is one of the three fundamental financial statements for a business. (The other two are the balance statement and the profit and loss statement.)
+Like a checking account statement, the cash flow statement shows the money going into and out of your business. You'll include a cash flow statement in the financial section of your business plan. 
+## What is in a Cash Flow Statement?
+The cash flow statement includes:
+  * **Cash received**. This might include income from sales, loan proceeds or interest income. You can estimate when you will get paid if you’ve already made sales or received orders.
+  * **Cash paid out**. This includes inventory, other purchases, payroll, rent, utilities, taxes, and loan payments. (This cash flow statement template consists of a “pre-startup” column for cash paid out before the cash flow statement period begins.)
+
+
+Subtract cash paid out from cash received, and you have your **cash position** for the end of the month.
+## How to Use a Cash Flow Statement
+For new and growing business owners, every dollar counts. Cash flow problems are a common cause of small business failure. Reviewing the company's cash flow statement regularly can help entrepreneurs avoid this fate. New and established business owners can use a cash flow projection to anticipate working capital needs and plan for upcoming expenses. 
+Do you need help with your cash flow statement? Connect with a SCORE mentor online or in your community for free, personalized advice.
+SHARE THIS ARTICLE
+Small Business Cash Flow – Understanding Money Management
+Understanding cash flow and money management is critical to tracking profits and reinvesting for business growth. 
+7 Ways to Survive a Cash Flow Crunch
+A common challenge for small business owners is keeping their cash flow on an even keel. These 7 ideas can help you navigate a temporary cash shortfall. 
+3-Year Cash Flow Statement
+Use this 3-year cash flow statement template to create long-term cash flow projections and test different business scenarios. 
+CONNECT
+712 H St NE PMB 98848 
+Washington, DC 20002 
+1-800-634-0245 
+Sign up for SCORE's Newsletter
+Copyright © 2025 SCORE Association, SCORE.org
+Funded, in part, through a Cooperative Agreement with the U.S. Small Business Administration. All opinions, and/or recommendations expressed herein are those of the author(s) and do not necessarily reflect the views of the SBA.
+Chat generously provided by:[![LiveChat] ] [![HelpDesk] ]
+In partnership with
+[ ] [ ]
+[ Jump back to top ]•
+NaN / NaN
+Back  [ ]()
+Search 
+[ ]() IN 
+What is Cash Flow Analysis? The Basics Explained
+Search
+Watch later
+Share
+Copy link
+Info
+Shopping
+Tap to unmute
+2x
+If playback doesn't begin shortly, try restarting your device.
+•
+Up next
+LiveUpcoming
+CancelPlay Now
+You're signed out
+Videos you watch may be added to the TV's watch history and influence TV recommendations. To avoid this, cancel and sign in to YouTube on your computer.
+CancelConfirm
+Share
+Include playlist
+An error occurred while retrieving sharing information. Please try again later.
+0:00
+0:00 / 0:55•Live
+•
+•
+Scroll for details
+#  What is Cash Flow Analysis? The Basics Explained
+[]()
+NetSuite 
+46.5K subscribers
+<__slot-el>
+Subscribe
+<__slot-el>
+Subscribed
+99
+Share
+Download
+Download 
+Save
+30K views4 years ago
+30,134 views • Jan 29, 2021 • #CashFlowStatement #CashFlow #CashFlowAnalysis 
+Show less 
+A cash flow analysis correlates line items across operating, investing and financing activities to create a cash flow statement that records how cash is coming in and how cash is going out. Organizations use this to review and analyze the current state of business, spotting trends …...more 
+...more 
+Transcript
+Follow along using the transcript.
+Show transcript
+### NetSuite 46.5K subscribers  
+Videos
+About
+VideosAbout
+[ NetSuite Cloud Accounting Software Click to learn more! ]()
+Show less 
+[]()
+# What is Cash Flow Analysis? The Basics Explained
+30,134 views30K views
+Jan 29, 2021
+99
+Share
+Download
+Download 
+Save
+##  Comments
+Top comments  Newest first 
+##  Description
+What is Cash Flow Analysis? The Basics Explained
+99Likes
+30,134Views
+2021Jan 29
+A cash flow analysis correlates line items across operating, investing and financing activities to create a cash flow statement that records how cash is coming in and how cash is going out. Organizations use this to review and analyze the current state of business, spotting trends and making adjustments where necessary. Associated Article:  Liked this video? Check out these! ○ [ • Accounts Payable (AP) vs Accounts Rec... ]() ○ [ • What is ABC Inventory Analysis? ]() ○ [ • What is Financial Modeling? Basics & ... ]() Don’t forget to like, comment, and subscribe! ○ Subscribe:  Follow Us Here: Oracle NetSuite ○ LinkedIn:  ○ Facebook:BDC Hamburger Icon
+Menu
+Close
+#### Business Planning
+Arrow
+### Our Top Picks
+  * Best Small Business Loans
+  * Best Business Internet Service
+  * Best Online Payroll Service
+  * Best Business Phone Systems
+
+
+### Our In-Depth Reviews
+  * OnPay Payroll Review
+  * ADP Payroll Review
+  * Ooma Office Review
+  * RingCentral Review
+
+
+### Explore More
+  * Business Tools
+  * Entrepreneurship
+  * Legal
+  * Start a Business
+  * Strategy
+  * Small Business Resources
+  * Business Insurance
+
+
+#### Business Finances
+Arrow
+### Our Top Picks
+  * Best Accounting Software
+  * Best Merchant Services Providers
+  * Best Credit Card Processors
+  * Best Mobile Credit Card Processors
+
+
+### Our In-Depth Reviews
+  * Clover Review
+  * Merchant One Review
+  * QuickBooks Online Review
+  * Xero Accounting Review
+
+
+### Explore More
+  * Accounting
+  * Business Funding
+  * Finance Tools
+  * Taxes
+  * Credit Cards
+  * Business Payments
+
+
+#### Human Resources Management
+Arrow
+### Our Top Picks
+  * Best Human Resources Outsourcing Services
+  * Best Time and Attendance Software
+  * Best PEO Services
+  * Best Business Employee Retirement Plans
+
+
+### Our In-Depth Reviews
+  * Bambee Review
+  * Rippling HR Software Review
+  * TriNet Review
+  * Gusto Payroll Review
+
+
+### Explore More
+  * Professional DevelopmentWhat is a Cash flow statement? Walk me through the CFS of your company | FP&A Interview Question #19
+Search
+Watch later
+Share
+Copy link
+Info
+Shopping
+Tap to unmute
+2x
+If playback doesn't begin shortly, try restarting your device.
+•
+Up next
+LiveUpcoming
+CancelPlay Now
+CA Asif Masani
+Subscribe
+Subscribed
+Collabs: asif@fpnaprofessionals.com Ever wanted to learn the basics of financial planning and analysis (FP&A) , but don't know where to start? Are you looking for a better way to manage and analyze your company's financial and operational data? Welcome to the FP&A Journey! My name is Asif and I create these videos to help young finance professionals like you get started on their FP&A Journey. If you are a young finance professional looking to make the leap to FP&A, this is the place for you. Getting started in FP&A, is tough. I’ve created these videos to help you avoid the mistakes I made in my own career. I provide tips, tricks, and study guides to help you get your career in FP&A off to the right start with confidence. Join me as I provide FP&A relevant content, career advice, and answer your questions about FP&A. Subscribe to my channel and join the hundreds of finance professionals who are taking their career to the next level by learning from my experiences. Best, Asif 
+What is a Balance Sheet? Walk me through the BS of your company's FP&A Interview Question #186:10
+CA Asif Masani
+Subscribe
+Subscribed
+You're signed out
+Videos you watch may be added to the TV's watch history and influence TV recommendations. To avoid this, cancel and sign in to YouTube on your computer.
+CancelConfirm
+Share
+Include playlist
+An error occurred while retrieving sharing information. Please try again later.
+0:00
+0:00 / 8:32•Live
+•
+•
+Scroll for details
+•
+NaN / NaN
+Back   
+Search    IN 
+#  What is a Cash flow statement? Walk me through the CFS of your company | FP&A Interview Question #19
+
+CA Asif Masani
+CA Asif Masani 
+10.9K subscribers
+Join
+Subscribe
+Subscribed
+6
+Share
+Download
+Download 
+Save
+175 views5 days ago
+175 views • Apr 23, 2025 
+Show less 
+Link to my Amazon bestseller book, All About FP&A (PDF Version): …...more 
+...more 
+How this content was made
+Auto-dubbed
+Audio tracks for some languages were automatically generated. Learn more
+Transcript
+Follow along using the transcript.
+Show transcript
+### CA Asif Masani 10.9K subscribers  
+Videos
+About
+Videos About Linkedin
+ FP&A Professionals Institute Check FP&A Certifications 
+Show less 
+# What is a Cash flow statement? Walk me through the CFS of your company | FP&A Interview Question #19
+175 views175 views
+Apr 23, 2025
+6
+Share
+Download
+Download 
+Save
+##  Comments
+Top comments  Newest first 
+##  Description
+What is a Cash flow statement? Walk me through the CFS of your company | FP&A Interview Question #19
+6Likes
+175Views
+Apr 232025
+Link to my Amazon bestseller book, All About FP&A (PDF Version): …...more[Skip to main content]
+If you're seeing this message, it means we're having trouble loading external resources on our website.
+If you're behind a web filter, please make sure that the domains *.kastatic.org and *.kasandbox.org are unblocked.
+We've updated our Terms of Service. Please review it now.
+Explore
+  *     * Math (NCERT)
+    * Class 1
+    * Class 2
+    * Class 3
+    * Class 4
+    * Class 5
+    * Class 6 (2024)NEW
+    * Class 7
+    * Class 8
+    * Class 9
+    * Class 10
+    * Class 11
+    * Class 12
+  *     * Math (Bridge)
+    * Class 6
+    * Class 7
+    * Class 8
+    * Class 9
+    * Class 10
+    * Class 11
+    * Class 12
+  *     * Math (Telangana)
+    * Class 7
+    * Class 8
+    * Class 9## Cookies on GOV.UK
+We use some essential cookies to make this website work.
+We’d like to set additional cookies to understand how you use GOV.UK, remember your settings and improve government services.
+We also use cookies set by other sites to help us deliver content from their services.
+You have accepted additional cookies. You can change your cookie settings at any time.
+You have rejected additional cookies. You can change your cookie settings at any time.
+Accept additional cookies Reject additional cookies View cookies
+Hide this message 
+Skip to main content
+ GOV.UK 
+##  Navigation menu 
+Menu  Menu
+Search GOV.UK  ×  Search GOV.UK  
+###  Services and information 
+  * Benefits
+  * Births, death, marriages and care
+  * Business and self-employed
+  * Childcare and parenting
+  * Citizenship and living in the UK
+  * Crime, justice and the law
+  * Disabled people
+  * Driving and transport
+  * Education and learning
+  * Employing people
+  * Environment and countryside
+  * Housing and local services
+  * Money and tax
+  * Passports, travel and living abroad
+  * Visas and immigration
+  * Working, jobs and pensions
+
+
+###  Government activity 
+  * Departments
+Departments, agencies and public bodies
+  * News
+News stories, speeches, letters and notices
+  * Guidance and regulation
+Detailed guidance, regulations and rules
+  * Research and statistics
+Reports, analysis and official statistics
+  * Policy papers and consultations
+Consultations and strategy
+  * Transparency
+Data, Freedom of Information releases and corporate reports
+
+
+###  Search 
+Search GOV.UK
+When search suggestions are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.
+Search 
+  1. Home
+  2. Business and industry
+
+
+Guidance 
+#  Director information hub: Cashflow 
+Cashflow is an indicator of your company’s health. 
+From:
+     The Insolvency Service
+Published
+    7 July 2023
+Get emails about this page
+##  Contents 
+  1. Why is cashflow important?
+  2. When are you likely to experience cashflow problems?
+  3. Business growth
+  4. Managing your cashflow
+
+
+Print this page
+Help us to improve the director information hub by completing a short feedback survey.
+If you do not have enough money coming in to pay for goods, services and taxes your company has, you are at risk of insolvency.
+## Why is cashflow important?
+‘Cashflow’ is the term used for money coming in and going out of your company.
+Not having sufficientThe 3 ways you have cash flow ...
+Search
+Watch later
+Share
+Copy link
+Info
+Shopping
+Tap to unmute
+2x
+If playback doesn't begin shortly, try restarting your device.
+•
+Up next
+LiveUpcoming
+CancelPlay Now
+You're signed out
+Videos you watch may be added to the TV's watch history and influence TV recommendations. To avoid this, cancel and sign in to YouTube on your computer.
+CancelConfirm
+Share
+Include playlist
+An error occurred while retrieving sharing information. Please try again later.
+0:00
+0:00 / 0:52•Live
+•
+•
+Scroll for details
+•
+NaN / NaN
+Back  [ ]
+Search   IN 
+#  The 3 ways you have cash flow ...
+[]
+[Tai Lopez]
+Tai Lopez 
+2.48M subscribers
+<__slot-el>
+Subscribe
+<__slot-el>
+Subscribed
+542
+Share
+Download
+Download 
+Save
+7.6K views6 months ago
+7,687 views • Oct 7, 2024 
+Show less 
+@andrewimbesi and I discuss the cash flow strategies for businesses…...more 
+...more 
+Transcript
+Follow along using the transcript.
+Show transcript
+### [Tai Lopez 2.48M subscribers  ]
+[]
+[]
+[]
+Show less 
+# The 3 ways you have cash flow ...
+7,687 views7.6K views
+Oct 7, 2024
+542
+Share
+Download
+Download 
+Save
+##  Comments 1
+Top comments  Newest first 
+##  Description
+The 3 ways you have cash flow ...
+542Likes
+7,687Views
+Oct 72024
+@andrewimbesi and I discuss the cash flow strategies for businesses…...more 
+...more Show less 
+Transcript
+Follow along using the transcript.
+Show transcript
+### [Tai Lopez 2.48M subscribers  ]
+[]
+[]
+[]
+Show less[Skip to main content]
+[![Business Victoria logo]]()
+[![Business Victoria logo]]()
+  * Business information
+  * Learning & advice
+  * Tools & templates
+  * Grants & programs
+  * About us
+  * News & updates
+  * Contact us
+
+
+  * Business information
+**business stage**
+    *  Start a business
+    * Buy a business
+    * Grow your business
+    * Exit your business
+**skills**
+    *  Finance
+    * Marketing & sales
+    * eCommerce
+    * Staff & human resources
+    * Workplace wellbeing
+    * Protect your business
+    * Disaster resilience
+    * Sustainability
+**other**
+    *  Public holidays
+    * Daylight saving
+    * Aboriginal business support
+    * Construction industry regulation
+  * Learning & advice
+    * Workshops & Small Business Bus
+    * Courses & webinars
+    * Virtual advice sessions
+    * The Hub* [Skip to navigation](#header)
+* [Skip to content](#main)
+* [Skip to footer](#footer)
+
+
+![ntg-mono](__data/assets/image/0008/369890/ntg-mono.jpg)
+[ ![NT.GOV.AU logo](__data/assets/file/0004/517225/ntg-desert-rose-reverse.svg) NT.GOV.AU ]
+Search
+* [Find online services ]
+* [Contacts]
+* [Arts, sport and leisure]
+* [Boating, fishing and marine]
+* [Business and industry]
+* [Community support and care]
+* [Driving and transport]
+* [Education and learning]
+* [Emergency and safety]
+* [Employment, money and taxes]
+* [Environment]
+* [Health and wellbeing]
+* [Housing, property and land]
+* [Parks and reserves]
+* [Your rights, crime and the law]
+
+Search
+1. [Home]
+2. 404 Page can’t be found
+
+
+# Page can’t be found
+If you typed in a web address, please check it was correct.
+To find what you’re looking for, you could also:
+* use the search bar on this page
+* browse from the [homepage]
+* use the [sitemap].
+
+
+To help us improve, use the [online feedback form.]
+[Back to top](#header)
+### Information and services
+* [Arts, sport and leisure]
+* [Boating, fishing and marine]
+* [Business and industry]
+* [Community support and care]
+* [Driving and transport]
+* [Education and learning]
+* [Emergency and safety]
+* [Employment, money and taxes]
+* [Environment]
+* [Health and wellbeing]
+* [Housing, property and land]
+* [Your rights, crime and the law]
+
+
+### Find out more
+* [About government]There is no text provided to clean. If you provide the text, I will remove all hyperlinks (URLs) while keeping all other text unchanged.Statement of cash flows explained
+Search
+Watch later
+Share
+Copy link
+Info
+Shopping
+Tap to unmute
+2x
+If playback doesn't begin shortly, try restarting your device.
+•
+You're signed out
+Videos you watch may be added to the TV's watch history and influence TV recommendations. To avoid this, cancel and sign in to YouTube on your computer.
+CancelConfirm
+Magnaltus Consulting
+Subscribe
+Subscribed
+Magnaltus Consulting is a business management consulting company that helps people start, build, grow, and improve their businesses. From starting a new business, to expanding an existing business, the videos on this channel are designed to help you through all stages of business to help you manage it for success. The goal with the YouTube channel is to create a library of resources to help individuals start and improve their businesses. 
+Simple digital service business ideas4:47
+Up next
+LiveUpcoming
+CancelPlay Now
+Share
+Include playlist
+An error occurred while retrieving sharing information. Please try again later.
+0:00
+0:00 / 6:41•Live
+•
+•
+Scroll for details
+•
+NaN / NaN
+Back   
+Search  
+  IN 
+#  Statement of cash flows explained
+
+Magnaltus Consulting
+Magnaltus Consulting 
+535 subscribers
+<__slot-el>
+Subscribe
+<__slot-el>
+Subscribed
+12
+Share
+Download
+Download 
+Save
+450 views8 months ago#businessstartup#businessmanagement#business
+450 views • Aug 7, 2024 • #businessstartup #businessmanagement #business 
+Show less 
+What is a statement of cash flows and how is it useful for businesses? A cash flow statement or statement of cash flows a form of financial statement and it is one …...more 
+...more 
+Transcript
+Follow along using the transcript.
+Show transcript
+### Magnaltus Consulting 535 subscribers  
+Videos
+About
+VideosAbout
+Show less 
+#businessstartup#businessmanagement#business
+# Statement of cash flows explained
+450 views450 views
+Aug 7, 2024
+12
+Share
+Download
+Download 
+Save
+##  Comments
+Top comments  Newest first 
+##  In this video
+Transcript
+##  Description
+Statement of cash flows explained
+12Likes
+450Views
+Aug 72024
+What is a statement of cash flows and how is it useful for businesses? A cash flow statement or statement of cash flows a form of financial statement and it is one of the most important used for businesses. The statement of cash flows reports incoming cash and outgoing cash for business over a given period of time. This statement is useful to observe how cash is flowing in and out of the business and also gain foresight to see if there may be cash shortcomings in the future. Book a free 1-on-1 consultation with Josh:  Free Business Startup Checklist:  Magnaltus Instagram:  / magnaltus

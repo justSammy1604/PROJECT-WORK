@@ -1,0 +1,2505 @@
+[]()
+[Personal][][Business][]
+[]()
+[Personal][][Business][]
+  * [Send money][]
+  * Money transfers
+  * [Converter][]
+  * Tools
+  * Resources
+
+
+[Help][][Login][][Register][]
+Toggle menu
+### [Send money][]
+### Money transfers
+### [Converter][]
+### Tools
+### Resources
+LoginRegister
+# Xe Currency Converter
+Check live foreign currency exchange rates
+[Convert][][Send][][Charts][][Alerts][]
+Amount
+1.00$
+From
+![usd]()
+USD - US Dollar
+To
+![eur]()
+EUR - Euro
+Convert
+We use the mid-market rate for our Converter. This is for informational purposes only. You won’t receive this rate when sending money. [Login to view send rates][][]()
+## 
+Live exchange rates
+### 
+Compare 100+ currencies in real time & find the right moment to transfer funds
+Inverse
+Amount
+Change (24h)
+Chart (24h)
+Edit
+![usd]()
+US Dollar
+1
+![eur]()
+Euro
+Click to change base currency to EUR
+0.87627
+-0.35%
+[]()
+[Send][]
+![gbp]()
+British Pound
+Click to change base currency to GBP
+0.74539
+-0.75%
+[]()
+[Send][]
+![jpy]()
+Japanese Yen
+Click to change base currency to JPY
+142.26
+-0.91%
+[]()
+[Send][]
+![cad]()
+Canadian Dollar
+Click to change base currency to CAD
+1.3851
+-0.068%
+[]()
+[Send][]
+Add currency
+59
+Last updated Apr 28, 2025, 17:17 UTC
+### 
+Manage your currencies on the go with the Xe app
+It has everything you need for international money transfers — easy, secure, and low fees starting at $0.
+[Download the app ]()
+![](https://www.xe.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fizij9rskv5y1%2F1Ib5dMI9g8fuveujpaFGUF%2F1ac5a3df56620968d1b41b2bc79ea03a%2Fdownload-app-qr-code.png&w=640&q=75)
+![](https://www.xe.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fizij9rskv5y1%2FEiSp5YHxcYnsXDJOi3Gck%2F8cb25e3642641d09ea97fcb9fb6dc793%2Fxe-app-mockup.png&w=1920&q=75)
+## 
+Xe currency tools
+### 
+FX insights, advanced indicators, live news feeds & customizable dashboards
+![](https://images.ctfassets.net/izij9rskv5y1/778NDdo3lfuOnYCEh4NxOw/6ce44d30192ffce72af979b473cc3c80/paper-plane.png?fm=webp)
+### 
+International transfers
+Send money to 190 countries across 130 currencies. Enjoy flexible ways to send and receive money.
+[Learn more ]()
+![](https://www.xe.com/international-transfers-mockup.svg)
+![](https://images.ctfassets.net/izij9rskv5y1/6sELUtbuxHwGcl6RF2xcvZ/b4def868e51d89bba7d6dcdc594caa17/bell-alert.png?fm=webp)
+### 
+Rate alerts
+Set free rate alerts for any currency pair. We’ll notify you at your desired rate.
+[Learn more ]()
+![](https://www.xe.com/rate-alerts-phone-mockup.svg)
+![](https://images.ctfassets.net/izij9rskv5y1/4dycC0WWgc9qZ7xVhvUfiz/2b69011e3716f7b9f4d72d4c106e9d1f/clock.png?fm=webp)
+### 
+Historical currency rates
+Analyze rate trends for any currency over a few days, weeks, months, or years. Get an automated currency feed through the Xe Currency Data API.
+[Learn more ]()[Data Services Login] [FAQs] [Partners]
+[ Oanda ![OANDA_CFXS_2_corporate RGB] ]
+Currency Converter 
+[ Currency Converter  ]
+[ Embeddable Currency Converter  ]
+[ Historical Currency Converter  ]
+Exchange Rates API 
+[ Exchange Rates API  ]
+[ Free Trial  ]
+[ API Plans  ]
+[ Data Accuracy  ]
+[ Integration Matrix  ]
+[ Developers Resources  ]
+FX Payments 
+[ FX Payments  ]
+[ Corporate Payments  ]
+[ Individual Payments  ]
+About 
+[ About  ]
+[ Become a Partner  ]
+[ Our Blog  ]
+[ Contact Us  ]
+[ FAQs  ]
+[Contact us ]
+Currency Converter 
+[ Currency Converter ] [ Embeddable Currency Converter ] [ Historical Currency Converter ] [ Currency Converter ]
+Exchange Rates API 
+[ Exchange Rates API ] [ Free Trial ] [ API Plans ] [ Data Accuracy ] [ Integration Matrix ] [ Developers Resources ] [ Exchange Rates API ]
+FX Payments 
+[ FX Payments ] [ Corporate Payments ] [ Individual Payments ] [ FX Payments ]
+About 
+[ About ] [ Become a Partner ] [ Our Blog ][]()
+[Personal][][Business][]
+[]()
+[Personal][][Business][]
+  * [Send money][]
+  * Money transfers
+  * [Converter][]
+  * Tools
+  * Resources
+
+
+[Help][][Login][][Register][]
+Toggle menu
+### [Send money][]
+### Money transfers
+### [Converter][]
+### Tools
+### Resources
+LoginRegister
+# Global currency conversions & money transfers
+Leading the world in currency information and global transfers for 30+ years
+[Convert][][Send][][Charts][][Alerts][]
+Amount
+1.00$
+From
+![usd]()
+USD - US Dollar
+To
+![eur]()
+EUR - Euro
+Convert
+We use the mid-market rate for our Converter. This is for informational purposes only. You won’t receive this rate when sending money. [Login to view send rates][][]
+![]()
+![]()
+Send money online
+### 
+International money transfers made easy
+At Xe, we make sending money fast, secure, and convenient. With just a few clicks, you can send money to over 190 countries worldwide. Join thousands who trust us daily for their money transfer needs. 
+[Send money now ][] [Compare rates ][]
+## 
+Live exchange rates
+### 
+Compare 100+ currencies in real time & find the right moment to transfer funds
+Inverse
+Amount
+Change (24h)
+Chart (24h)
+Edit
+![usd]()
+US Dollar
+1
+![eur]()
+Euro
+Click to change base currency to EUR
+0.87627
+-0.35%
+[]()
+[Send][]
+![gbp]()
+British Pound
+Click to change base currency to GBP
+0.74539
+-0.75%
+[]()
+[Send][]
+![jpy]()
+Japanese Yen
+Click to change base currency to JPY
+142.26
+-0.91%
+[]()
+[Send][]
+![cad]()
+Canadian Dollar
+Click to change base currency to CAD
+1.3851
+-0.068%
+[]()
+[Send][]
+Add currency
+59
+Last updated Apr 28, 2025, 17:17 UTC
+AD
+## 
+How to send money online with Xe
+1
+#### 
+Sign up for free
+It only takes a few minutes—all you need is an email address, and you're ready to get started!
+2
+#### 
+Get a quote
+Choose your destination country, send & recipient currency, and send amount to generate a quote.
+3
+#### 
+Add your recipient
+Provide your recipient's payment information (you'll need details like their name and address).
+4
+#### 
+Verify your identity
+For some transfers, we may need identifying documents to confirm it's really you and keep your money safe.
+5
+#### 
+Confirm the quote
+Confirm and fund your transfer with a bank account, credit card, or a debit card and you're done!
+6
+#### 
+Track your transfer
+See where your money is and when it arrives to your recipient. Get live chat, phone and email support. 
+### 
+Manage your currencies on the go with the Xe app
+It has everything you need for international money transfers — easy, secure, and low fees starting at $0.
+[Download the app ][]
+![]()
+![]()
+## 
+Xe currency tools
+### 
+FX insights, advanced indicators, live news feeds & custOops, something went wrong
+### 
+[News]
+  * [Today's news]
+  * [US]
+  * [Politics]
+  * [World]
+  * [Tech]
+    * [Reviews and deals ]
+    * [Audio ]
+    * [Computing ]
+    * [Gaming ]
+    * [Health ]
+    * [Home ]
+    * [Phones ]
+    * [Science ]
+    * [TVs ]
+  * [Climate change]
+  * [Health]
+  * [Science]
+  * [Originals]
+    * [The 360 ]
+  * [Newsletters]
+
+
+### 
+[Life]
+  * [Health]
+    * [COVID-19 ]
+    * [Fall allergies ]
+    * [Health news ]
+    * [Mental health ]
+    * [Relax ]
+    * [Sexual health ]
+    * [Studies ]
+    * [The Unwind ]
+  * [Parenting]
+    * [Family health ]
+    * [So mini ways ]
+  * [Style and beauty]
+    * [It Figures ]
+    * [Unapologetically ]
+  * [Horoscopes]
+  * [Shopping]
+    * [Buying guides ]
+  * [Food]
+  * [Travel]
+  * [Autos]
+  * [Gift ideas]
+  * [Buying guides]
+
+
+### 
+[Entertainment]
+  * [Celebrity]
+  * [TV][Skip to main content]
+[]
+  * [Personal]
+  * [Business]
+  * [Platform]
+
+
+  * Features
+    * ![](https://wise.com/web-art/assets/illustrations/house-small@2x.webp)
+Explore the features used by millions of people globally
+    * [**Multi-currency account**]
+    * [**Send money**]
+    * [**Send large amounts**]
+    * [**Receive money**]
+    * [**Interest**]
+  * [ Pricing]
+  * [Help]
+
+
+  * [Log in]
+  * [Register]
+
+
+  * [Currency Converter]
+  * [Browse all currencies]
+  * [Get rate alerts]
+  * [Compare bank rates]
+
+
+# Currency Converter
+Amount
+![](https://wise.com/web-art/assets/flags/usd.svg)
+USD
+[]
+Converted to
+![](https://wise.com/web-art/assets/flags/eur.svg)
+EUR
+### $1.000 USD = €0.8763 EUR
+Mid-market exchange rate at 22:46[]
+[Track the exchange rate][Send money]
+![](https://wise.com/static-assets/app/_next/static/media/6dea0ba9463f2806.6dea0ba9.jpg)
+![Wise](https://wise.com/public-resources/assets/logos/wise-personal/logo_white.svg)
+### Save when you send money abroad
+[Sign up today]
+### USD to EUR conversion chart
+### 1 USD = 0.87630 EUR
+## 1 USD = 0.8763 EUR
+Updated a few seconds ago
+**Time period**
+48 hours
+1 week
+1 month
+6 months
+12 months
+5 years
+March 29April 28
+Mid market rate 
+We use the real, mid-market rate with no sneaky mark-up to hide the fees.[Learn more]
+### Waiting on a better rate?
+Set an alert now, and we’ll tell you when it gets better. And with our daily summaries, you’ll never miss out on the latest news.
+Daily updates
+Receive daily email about the USD → EUR exchange rate
+##### Email me when
+1 USD goes above 0.8763
+EUR
+Your email address
+Get rate alerts
+## Live Exchange Rates
+Edit table
+Currency| Amount| Change (24h)| Chart (24h)| Send with Wise  
+---|---|---|---|---  
+**USD** US Dollar| 1  
+**KRW** South Korean Won| 1,436| 0.1863%| [Send KRW]  
+**INR** Indian Rupee| 85.19| 0.2236%| [Send INR]  
+**JPY** Japanese Yen| 142| 0.9779%| [Send JPY]  
+Add currency  
+**Beware of bad exchange rates.** Banks and traditional providers often have extra costs, which they pass to you by marking up the exchange rate. Our smart tech means we’re more efficient – which means you get a great rate. Every time.
+**Refresh rates in 60**
+Last updated today, 22:47
+[Live exchange rates]
+1 USD to EUR| Last 30 days| Last 90 days  
+---|---|---  
+High| 0.9264| 0.9762  
+Low| 0.8688| 0.8688  
+Average| 0.8942| 0.9279  
+Change| -5.09%| -8.62%  
+[View full history]  
+## 1 USD to EUR stats
+The performance of USD to EUR in the last 30 days saw a 30 day high of 0.9264 and a 30 day low of 0.8688. This means the 30 day average was 0.8942. The change for USD to EUR was -5.09.The performance of USD to EUR in the last 90 days saw a 90 day high of 0.9762 and a 90 day low of 0.8688. This means the 90 day average was 0.9279. The change for USD to EUR was -8.62.
+[Track market rates][View USD to EUR chart]
+## Are you overpaying your bank?
+Banks often advertise free or low-cost transfers, but add a hidden markup to the exchange rat[Skip to main content]
+Bank of America [![Bank of America Logo](https://www2.bac-assets.com/foreign-exchange/spa-assets/images/assets-images-global-logos-bac-logo-v2-CSX3648cbbb.svg)]
+Foreign Currency
+  * Sign in
+  * Log in
+  * Locations
+
+
+Show/Hide  Menu related links
+  * Bank of America Home
+  * Contact Us
+  * Locations
+  * Help
+  * Schedule an appointment
+
+
+Overview Overview 
+  * Overview
+
+
+  * Overview
+
+
+Order & Deposit Currency Order & Deposit Currency 
+  * Order Foreign Currency
+  * Exchange Foreign Currency for U.S. Dollars
+  * Tips for International Travel
+
+
+  * Order Foreign Currency
+  * Exchange Foreign Currency for U.S. Dollars
+  * Tips for International Travel
+
+
+International Wire Transfers International Wire Transfers 
+  * International Wire Transfers
+  * Your Guide to Foreign Currency Payments
+  * How to Make Wire Transfers through Online Banking
+
+
+  * International Wire Transfers
+  * Your Guide to Foreign Currency Payments
+  * How to Make Wire Transfers through Online Banking
+
+
+# Foreign Currency Exchange
+## Foreign Currency Ordering—Convenient and Secure
+Start now by choosing the currency you need:
+[![European Union Flag](https://www2.bac-assets.com/foreign-exchange/spa-assets/images/assets-images-site-foreign-exchange-foreign-currency-exchange-european_union_large-CSX953b39d1.gif)]
+European Union currency converter
+1EUR = $1.1945 USDHere is the cleaned text with all hyperlinks removed:
+
+```
+                [ ![Currency Exchange International](https://www.ceifx.com/ceifx/images/logo.png?version=2.7.2) ]
+  * [ ![](https://www.ceifx.com/ceifx/images/profile.svg?version=2.7.2)Profile]
+  * [ ![](https://www.ceifx.com/ceifx/images/locations.svg?version=2.7.2)Locations]
+  * [ ![](https://www.ceifx.com/ceifx/images/careers.svg?version=2.7.2)Careers]
+  * [ ![](https://www.ceifx.com/ceifx/images/user.svg?version=2.7.2 )User Login ]
+[**CEIFX** - Foreign Currency Exchange Software] [**CXI FX NOW** - International Payments Platform]
+
+
+  * [ ![](https://www.ceifx.com/ceifx/images/profile-blue.svg?version=2.7.2)Profile]
+  * [ ![](https://www.ceifx.com/ceifx/images/locations-blue.svg?version=2.7.2)Locations]
+  * [ ![](https://www.ceifx.com/ceifx/images/careers-blue.svg?version=2.7.2)Careers]
+  * [ ![](https://www.ceifx.com/ceifx/images/user-blue.svg?version=2.7.2 )User Login ]
+[**CEIFX** - Foreign Currency Exchange Software] [**CXI FX NOW** - International Payments Platform]
+
+
+  * [ About ]
+[Company Profile] [Board of Directors] [Management Team] [Compliance] [Life at CXI]
+About
+    * [Company Profile]
+    * [Board of Directors]
+    * [Management Team]
+    * [Compliance]
+    * [Life at CXI]
+  * [Solutions]
+    * Financial Institutions
+#### Solutions
+      * [Financial Institutions Solutions]
+      * [International Wire Payments]
+      * [Foreign Check Clearing]
+      * [Foreign Bank Note Exchange]
+    * Travelers
+#### Solutions
+      * [International Travelers Solutions]
+      * [Foreign Currency Exchange]
+      * [Gold Bullion Coins and Bars]
+      * [Affiliate E-Commerce Program]
+#### Services
+      * [Currency Price Protection]
+      * [Currency Travel Guide]
+      * [School Group Rates]
+Solutions
+    * Financial Institutions
+#### Solutions
+      * [Financial Institutions Solutions]
+      * [International Wire Payments]
+      * [Foreign Check Clearing]
+      * [Foreign Bank Note Exchange]
+    * Travelers
+#### Solutions
+      * [International Travelers Solutions]
+      * [Foreign Currency Exchange]
+      * [Gold Bullion Coins and Bars]
+      * [Affiliate E-Commerce Program]
+#### Services
+      * [Currency Price Protection]
+      * [Currency Travel Guide]
+      * [School Group Rates]
+  * [Investor Relations]
+  * [Our Technology]
+  * [News]
+  * [Contact Us]
+
+
+  * Financial Institutions
+  * Corporations
+  * Travelers
+
+
+  * SOLUTIONS
+  * Foreign Bank Note Exchange
+  * Inte
+```
+
+All hyperlinks have been removed while preserving the rest of the content.[Skip to content]
+[ Home ]
+Search the site
+Search
+[FR]
+Change theme
+Change theme 
+Change theme
+Change theme 
+  * [About us ]
+## [About us]
+    * [What we do]
+    * [Our offices]
+    * [Our vision]
+    * [History]
+    * [Contact us]
+### Corporate governance
+    * [Board of Directors]
+    * [Our leadership]
+    * [Governance documents]
+![](https://www.bankofcanada.ca/wp-content/uploads/2025/03/Accessibility_callout-2x1-1-500x250.jpg)
+## [ Accessibility  ]
+A plan that shares how the Bank strives to be accessible to everyone
+![](https://www.bankofcanada.ca/wp-content/uploads/2024/09/rap-carousel-500x250.jpg)
+## [ Reconciliation Action Plan  ]
+A plan to guide the Bank along its Reconciliation journey
+  * [The Bank and you ]
+## [The Bank and you]
+    * [Engaging with Canadians]
+    * [Promoting economic literacy and education]
+### [Educational resources]
+    * [The Economy, Plain and Simple]
+    * [Explainers]
+    * [Financial education resources]
+    * [Background materials]
+![](https://www.bankofcanada.ca/wp-content/uploads/2025/03/museum-feature-500x250.jpg)
+## [ Bank of Canada Museum  ]
+Expand your understanding of spending and saving, discover your place in the economy and explore a world-class currency collection.
+![](https://www.bankofcanada.ca/wp-content/uploads/2025/03/Central-bank_callout-2x1-1-500x250.jpg)
+## [ What is a central bank?  ]
+A central bank works to promote a country’s economic stability and its citizens’ financial well-being.
+  * [Careers ]
+## [Careers]
+    * [Work at the Bank][Skip to Content]
+[![Visa Home](https://cdn.visa.com/v2/assets/images/logos/visa/blue/logo.png)]
+Search visa.com Close Search Search Visa
+  * [Individuals]
+## Choose Visa
+    * [Find a Visa Card]
+    * [Visa Credit Cards]
+    * [Visa Debit Cards]
+    * [Visa Prepaid Cards]
+    * [Visa Gift Cards]
+## Experience More
+    * [Experiences + Perks]
+    * [Card Benefits]
+    * [Travel with Visa]
+    * [Support Local Businesses]
+    * [ATM Services]
+## Smarter Technology
+    * [Click to Pay]
+    * [Tap to Pay]
+    * [Visa Installments]
+## Protection + Security
+    * [Security + Fraud Prevention]
+    * [Zero Liability]
+## Support + Resources
+    * [Exchange Rate Calculator]
+    * [Lost or Stolen Visa]
+    * [Gift Card Support]
+    * [Support Center]
+    * [Contact Us]
+  * [Businesses]
+## Ways to Accept Visa
+    * [Click to Pay]
+    * [Tap to Phone]
+    * [Contactless Payments]
+    * [Visa Installments]
+    * [Start Accepting Visa]
+## Next-Generation Commerce
+    * [Visa Direct]
+    * [Visa B2B Connect]
+    * [Visa RTP (Real-Time Payments) ]
+    * [Visa Crypto Solutions]
+    * [Visa Open Banking Solutions]
+    * [Visa Acceptance Solutions][Skip to content]
+[![Wells Fargo Home Page](https://www17.wellsfargomedia.com/assets/images/css/template/homepage/homepage-horz-logo.svg)]
+  * [ ![Secure](https://www17.wellsfargomedia.com/assets/images/css/template/homepage/homepage-lock.svg) Sign On ]
+  * Customer Service
+  * ATMs/Locations
+  * Español
+
+
+Search Opens a dialog.
+  * [ selected Personal ]
+  * Investing & Wealth Management
+  * Small Business
+  * Commercial Banking
+  * Corporate & Investment Banking
+
+
+  * Personal
+  * Foreign Exchange
+  * Order Foreign Currency Cash
+
+
+# Order Foreign Currency Cash
+  * [ Print ]
+  * Share
+Share this page on Facebook, opens a dialogShare this page on Twitter, opens a dialogShare this page 
+
+
+## Share this page
+  * Share this page on LinkedIn, opens in a new window
+  * Share this page on Email, opens in a new window
+
+
+Choose a link above. You will enter a website that Wells Fargo does not control. Wells Fargo has provided this link for your convenience, but does not endorse and is not responsible for the products, services, content, links, privacy policy, or security policy of this website.
+End of popup
+![](https://www17.wellsfargomedia.com/assets/images/photography/lifestyle/730x245/foreign-exchange_paper-currency_730x245.jpg)
+## Currency Calculator
+Select Currency
+AUSTRALIA (DOLLAR)CANADA (DOLLAR)CHINA (YUAN)DENMARK (KRONE)EUROZONE (EURO)GREAT BRITAIN (POUND)HONG KONG (DOLLAR)JAPAN (YEN)MEXICO (PESO)NEW ZEALAND (DOLLAR)NORWAY (KRONE)SINGAPORE (DOLLAR)SWEDEN (KRONA)SWITZERLAND (FRANC)THAILAND (BAHT) BARBADOS (DOLLAR)BRAZIL (REAL)BULGARIA (NEW LEV)CAYMAN ISLANDS (DOLLAR)CHILE (PESO)COLOMBIA (PESO)COSTA RICA (COLON)CZECH REPUBLIC (KORUNA)DOMINICAN REPUBLIC (PESO)FIJI (DOLLAR)GUATEMALA (QUETZAL)HUNGARY (FORINT)ICELAND (KRONA)ISRAEL (SHEQEL)JAMAICA (DOLLAR)JORDAN (DINAR)KENYA (SHILLING)KUWAIT (DINAR)MALAYSIA (RINGGIT)NORTH IRELAND (POUND)OMAN (RIAL)PAKISTAN (RUPEE)PERU (NUEVO SOL)PHILIPPINES (PISO)POLAND (ZLOTY)ROMANIA (NEW LEU)SAUDI ARABIA (RIYAL)SCOTLAND (POUND)SOUTH AFRICA (RAND)SOUTH KOREA (WON)TAHITI (FRANC)TAIWAN (DOLLAR)TURKEY (NEW LIRA)UNITED ARAB EMIRATES (DIRHAM)URUGUAY (PESO URUGUAYO)
+1 EURO (EUR) = 1.1945 U.S. dollar (USD)
+Countries that use the EuroOpens Dialog
+![Error](https://www17.wellsfargomedia.com/assets/images/css/template/icon-exclamation-red.gif)
+Foreign Amount
+EUR
+![Error](https://www17.wellsfargomedia.com/assets/images/css/template/icon-exclamation-red.gif)
+USD Amount
+USD
+## Currency Calculator for ordering foreign currency cash
+Use the exchange rates listed below or the convenient Currency Calculator tool to determine how much foreign currency cash you want to order. Rates are updated daily. The exchange rates listed below and the Currency Calculator are meant to assist customers who intend to order foreign currency from our website to be delivered in the form of physical cash. **They are not intended to be used as a reference for exchange rates applied to incoming and outgoing wires or checks denominated in a foreign currency.**
+View FAQs
+## Exchange rates for ordering foreign currency cash
+Ready to Order? Sign OnSkip to: [Skip to navigation](#) [Skip to content](#) [Skip to footer](#)
+[ ![European Central Bank - eurosystem] ]
+[ ![European Central Bank - eurosystem] ]
+EN
+[Български]("Български")[Čeština]("Čeština")[Dansk]("Dansk")[Deutsch]("Deutsch")[Eλληνικά]("Eλληνικά")[English]("English")[Español]("Español")[Eesti keel]("Eesti keel")[Suomi]("Suomi")[Français]("Français")[Gaeilge]("Gaeilge")[Hrvatski]("Hrvatski")[Magyar]("Magyar")[Italiano]("Italiano")[Lietuvių]("Lietuvių")[Latviešu]("Latviešu")[Malti]("Malti")[Nederlands]("Nederlands")[Polski]("Polski")[Português]("Português")[Română]("Română")[Slovenčina]("Slovenčina")[Slovenščina]("Slovenščina")[Svenska]("Svenska")
+Menu 
+[ ![our logo, a yellow Euro sign surrounded by yellow stars centered in a dark blue circle resting on a dark blue base] ]
+  * [Monetary policy & markets]
+Monetary policy & markets
+Our monetary policy strategy, the tools we use and the impact they have
+[Overview of monetary policy and markets]
+Quick links
+    * [What is monetary policy?]Here is the cleaned text with all hyperlinks removed:
+
+```
+[Skip to Content]
+DXP - Currency Convertor
+# Mastercard® Currency Converter Calculator
+Every day, everywhere, we use our technology and expertise to make payments safe, simple and smart. This currency converter tool provides foreign exchange rates by Mastercard to convert from the transaction currency to your card's currency for cross border purchases and ATM transactions.
+  * From *
+Transaction Currency 
+    * No results found 
+Please select transaction currency 
+
+
+Amount *
+Please provide transaction amount greater than zero.
+  * To *
+Your Card Currency 
+    * No results found 
+Please select card currency
+
+
+Bank Fee *
+Please provide bank fee
+%
+  * Select date of transaction
+
+
+Manage Cookies
+```# Bloomberg
+[Need help? Contact us]
+## We've detected unusual activity from your computer network
+To continue, please click the box below to let us know you're not a robot.
+### Why did this happen?
+Please make sure your browser supports JavaScript and cookies and that you are not blocking them from loading. For more information you can review our [Terms of Service] and [Cookie Policy].
+### Need Help?
+For inquiries related to this message please [contact our support team] and provide the reference ID below.
+Block reference ID:e243ea57-2454-11f0-8d76-9c3f448264cb
+Get the most important global markets news at your fingertips with a [Bloomberg.com] subscription.
+[SUBSCRIBE NOW][Skip to main content]
+  * [Personal]
+  * [Small Business]
+  * [Commercial]
+  * [Investing]
+  * [About TD]
+
+
+  * Select Country ![Canada]
+    * ![Canada Selected]
+    * [ ![US] ]
+  * Select Language English
+    * [English Selected ]
+    * [Français]
+    * [简体中文]
+    * [繁體中文]
+
+
+[ ![TD Canada Trust] ]
+  * [My Accounts]
+  * [ Products ]
+    * [Bank Accounts]
+    * [Credit Cards]
+    * [Mortgages]
+    * [Borrowing]
+    * [Personal Investing]
+    * [Insurance]
+    * [Promotions & Offers]
+  * [ Ways to Bank Selected]
+    * [TD App]
+    * [Online Banking]
+    * [Ways to Pay]
+    * [Ways to Send Money]
+    * [Phone, Branch & ATM]
+    * [Cross Border Banking]
+    * [Foreign Exchange Services]
+    * [Green Banking]
+  * [ Learn ]
+    * [Advice Hub]
+    * [TD Calculators and Tools]
+    * [Youth and Parent]
+    * [Students]
+    * [Post Grads]
+    * [New to Canada][Skip to content]
+[ Home ]
+Search the site
+Search
+[FR]
+Change theme
+Change theme 
+Change theme
+Change theme 
+  * [About us ]
+## [About us]
+    * [What we do]
+    * [Our offices]
+    * [Our vision]
+    * [History]
+    * [Contact us]
+### Corporate governance
+    * [Board of Directors]
+    * [Our leadership]
+    * [Governance documents]
+![](https://www.bankofcanada.ca/wp-content/uploads/2025/03/Accessibility_callout-2x1-1-500x250.jpg)
+## [ Accessibility  ]
+A plan that shares how the Bank strives to be accessible to everyone
+![](https://www.bankofcanada.ca/wp-content/uploads/2024/09/rap-carousel-500x250.jpg)
+## [ Reconciliation Action Plan  ]
+A plan to guide the Bank along its Reconciliation journey
+  * [The Bank and you ]
+## [The Bank and you]
+    * [Engaging with Canadians]
+    * [Promoting economic literacy and education]
+### [Educational resources]
+    * [The Economy, Plain and Simple]
+    * [Explainers]
+    * [Financial education resources]
+    * [Background materials]
+![](https://www.bankofcanada.ca/wp-content/uploads/2025/03/museum-feature-500x250.jpg)
+## [ Bank of Canada Museum  ]
+Expand your understanding of spending and saving, discover your place in the economy and explore a world-class currency collection.
+![](https://www.bankofcanada.ca/wp-content/uploads/2025/03/Central-bank_callout-2x1-1-500x250.jpg)
+## [ What is a central bank?  ]
+A central bank works to promote a country’s economic stability and its citizens’ financial well-being.
+  * [Careers ]
+## [Careers]
+    * [Work at the Bank]
+    * [Scholarship awards]
+    * [Students and recent grads]
+![](https://www.bankofcanada.ca/wp-content/uploads/2025/03/Work-at-the-bank_Callout-500x250.jpg)
+## [ Careers  ]
+Take a central role at the Bank of Canada with our current opportunities and schol```
+                ![](https://www.bankofchina.com/sourcedb/whpj/images/boc08_line2.jpg) |  | [![](https://www.bankofchina.com/sourcedb/whpj/images/bankofchina_LOGO.gif)]()  
+---  
+| Corporate Banking | Personal Banking | Bank Card | Information | About Us | Investor Relations |   
+| 简体中文 | 繁体中文 | ENGLISH  
+---  
+###  Online Banking  
+![](https://www.bankofchina.com/sourcedb/whpj/images/dot.gif)  
+![](https://www.bankofchina.com/sourcedb/whpj/images/boc08_line2.jpg)  
+| 
+#### BOC Exchange Rate  
+---  
+You are here: Home >> Information >> BOC Exchange Rate  
+| Currency Name | Buying Rate | Cash Buying Rate | Selling Rate | Cash Selling Rate | Middle Rate | Pub Time  
+---|---|---|---|---|---|---  
+AED | 197.05 | 197.05 | 199.83 | 199.83 | 197.04 | 2025.04.29 01:13:29   
+AUD | 466.04 | 466.04 | 469.74 | 469.74 | 462.42 | 2025.04.29 01:13:29   
+BRL | 121.99 | 135.98 | 128.17 | 2025.04.29 01:13:29   
+CAD | 524.47 | 524.47 | 528.59 | 528.59 | 522.39 | 2025.04.29 01:13:29   
+CHF | 884.64 | 884.64 | 891.48 | 891.48 | 873.33 | 2025.04.29 01:13:29   
+DKK | 110.96 | 110.96 | 111.86 | 111.86 | 109.91 | 2025.04.29 01:13:29   
+EUR | 828.76 | 828.76 | 834.83 | 834.83 | 821.25 | 2025.04.29 01:13:29   
+GBP | 974.55 | 974.55 | 981.78 | 981.78 | 961.9 | 2025.04.29 01:13:29   
+HKD | 93.78 | 93.78 | 94.16 | 94.16 | 92.88 | 2025.04.29 01:13:29   
+IDR | 0.0428 | 0.0428 | 0.0436 | 0.0436 | 0.0433 | 2025.04.29 01:13:29   
+INR | 8.1138 | 9.0468 | 8.5385 | 2025.04.29 01:13:29   
+JPY | 5.1028 | 5.1028 | 5.1423 | 5.1423 | 5.0434 | 2025.04.29 01:13:29   
+KRW | 0.504 | 0.504 | 0.5127 | 0.5127 | 0.5051 | 2025.04.29 01:13:29   
+MOP | 91.04 | 91.04 | 91.46 | 91.46 | 90.12 | 2025.04.29 01:13:29   
+MYR | 166.48 | 167.98 | 165.4 | 2025.04.29 01:13:29   
+NOK | 70.07 | 70.07 | 70.63 | 70.63 | 69.36 | 2025.04.29 01:13:29   
+NZD | 433.36 | 433.36 | 436.63 | 436.63 | 431.76 | 2025.04.29 01:13:29   
+PHP | 12.8 | 12.8 | 13.06 | 13.06 | 12.96 | 2025.04.29 01:13:29   
+RSD | 7.0243 | 7.1663 | 7.0671 | 2025.04.29 01:13:29   
+RUB | 8.55 | 8.55 | 8.99 | 8.99 | 8.82 | 2025.04.29 01:13:29   
+SAR | 192.95 | 192.95 | 195.67 | 195.67 | 192.95 | 2025.04.29 01:13:29   
+SEK | 75.64 | 75.64 | 76.24 | 76.24 | 74.68 | 2025.04.29 01:13:29   
+SGD | 554.67 | 554.67 | 558.85 | 558.85 | 550.01 | 2025.04.29 01:13:29   
+THB | 21.76 | 21.76 | 21.94 | 21.94 | 21.65 | 2025.04.29 01:13:29   
+TRY | 17.65 | 17.65 | 20.31 | 20.31 | 18.85 | 2025.04.29 01:13:29   
+TWD | 21.54 | 23.6 | 22.41 | 2025.04.29 01:13:29   
+USD | 727.52 | 727.52 | 730.58 | 730.58 | 720.43 | 2025.04.29 01:13:29   
+ZAR | 39.11 | 39.11 | 39.56 | 39.56 | 38.69 | 2025.04.29 01:13:29   
+Total: 5 [First Page] [Previous] 1 2 3 4 5 [Next] [Last Page]  
+---  
+|  **Search for more BOC Exchange Rates**  
+---  
+[ [Close Window] ]  
+---  
+| [![](https://www.bankofchina.com/sourcedb/whpj/images/boc08_item_bocnetgr.gif)]()  
+---  
+![](https://www.bankofchina.com/sourcedb/whpj/images/dot.gif)  
+[![](https://www.bankofchina.com/sourcedb/whpj/images/boc08_item_bocnetqy.gif)]()  
+![](https://www.bankofchina.com/sourcedb/whpj/images/boc08_dotb.gif) BOC News  
+---  
+![](https://www.bankofchina.com/sourcedb/whpj/images/boc08_line5.gif)  
+![](https://www.bankofchina.com/sourcedb/whpj/images/boc08_dotb.gif) BOC Exchange Rate  
+![](https://www.ba
+```Whatsapp: +1(646)9378300
+[Skip to content]
+[ ![AS Foreign Exchange](https://asforeignexchange.com/wp-content/uploads/2023/03/AS-logo-for-website1.png)![AS Foreign Exchange](https://asforeignexchange.com/wp-content/uploads/2023/03/AS-logo-for-website1.png)]
+  * mumer@msn.com 
+
+
+  * ![](https://asforeignexchange.com/wp-content/uploads/2023/03/icons8-ringer-volume.png)
+**CONTACT US** +1(646)473 1222
+![](https://asforeignexchange.com/wp-content/uploads/2023/03/icons8-location-pin.png)
+**OUR ADDRESS** 357 7th Ave, New York, NY 10001
+![](https://asforeignexchange.com/wp-content/uploads/2023/03/icons8-clock.png)
+**WORKING HOURS** Mon-Fri: 10am-6pmSat: 11am-6pm
+
+
+  * [ ]
+
+
+  * [Home]
+  * [About us]
+  * [Exchange rates]
+  * [Our service]
+    * [Currency exchange]
+    * [Travellers checks buying]
+  * [Contact us]
+
+
+## Currency Exchange rates
+### We only accept paper currency
+BEST CURRENCY RATES IN THE CITY
+We only accept bills/paper currency only. Thank you!
+WE BUY | We SELL  
+---|---  
+![AUSTRALIA](http://asforeignexchange.com/wp-content/uploads/2023/03/Australia.png) |  AUSTRALIA  |  AUD  |  Australian Dollars  |  0.60  |  0.64   
+![CANADA](http://asforeignexchange.com/wp-content/uploads/2023/03/Canada.png) |  CANADA  |  CAD  |  Canadian Dollars  |  1.44  |  1.37   
+![DENMARK](http://asforeignexchange.com/wp-content/uploads/2023/03/Denmark.png) |  DENMARK  |  DKK  |  Danish Kroner  |  0.00  |  6.30   
+![EURO](http://asforeignexchange.com/wp-content/uploads/2023/03/European-union.png) |  EURO  |  EUR  |  Euro  |  1.07  |  1.14   
+![GREAT BRITAIN](http://asforeignexchange.com/wp-content/uploads/2023/03/United-kingdom.png) |  GREAT BRITAIN  |  GBP  |  United Kingdom Pounds  |  1.30  |  1.37   
+![HONG KONG](http://asforeignexchange.com/wp-content/uploads/2023/03/Hongkong.png) |  HONG KONG  |  HKD  |  Hong Kong Dollars  |  8.35  |  7.30   
+![JAPAN](http://asforeignexchange.com/wp-content/uploads/2023/03/Japan.png) |  JAPAN  |  JPY  |  Japanese Yen  |  146.00  |  138.00   
+![MEXICO](http://asforeignexchange.com/wp-content/uploads/2023/03/Mexico.png) |  MEXICO  |  MXP  |  Mexican Pesos  |  20.40  |  19.20   
+![NORWAY](http://asforeignexchange.com/wp-content/uploads/2023/03/Norway.png) |  NORWAY  |  NOK  |  Norway Kroner  |  0.00  |  10.00   
+![SINGAPORE](http://asforeignexchange.com/wp-content/uploads/2023/03/Singapore.png) |  SINGAPORE  |  SGD  |  Singapore Dollars  |  1.38  |  1.32   
+![SWEDEN](http://asforeignexchange.com/wp-content/uploads/2023/03/Sweden.png) |  SWEDEN  |  SEK  |  Swedish Krona  |  0.00  |  9.40   
+![SWITZERLAND](http://asforeignexchange.com/wp-content/uploads/2023/03/Switzerland.png) |  SWITZERLAND  |  CHF  |  Swiss Francs  |  0.86  |  0.79   
+## **About us**
+For over 27 years, A&S Foreign Exchange has been the go-to destination for foreign currency exchange. Our commitment to offering the best rates in the market has earned us our customers’ loyalty – the most valuable asset any business can have. If you’re looking for a reliable and trustworthy foreign currency exchange service in the capital of the world, look no further than A&S Foreign Exchange. Stop by today and try any of our services, and rest assured that you’ll leave satisfied with having done good business. 
+[ Read more ]
+![](https://asforeignexchange.com/wp-content/uploads/2023/03/about-us2.jpg)
+## **Our Services**
+![](https://asforeignexchange.com/wp-content/uploads/2023/03/services11-1024x614.jpg)
+### Currency exchange
+A&S Foreign Exchange Inc. offers the best rates in NYC for a wide range of currencies. Our exceptional customer service sets us apart. Come visit us today for a stress-free exchange experience. 
+[ Read more ]
+![](https://asforeignexchange.com/wp-content/uploads/2023/03/services2-1024x614.jpg)
+### Travellers’ Checks Buying
+A&S Foreign Exchange Inc. offers travelers’ checks in foreign currencies and USD for secure and convenient travel. With 24/7 customer support and quick replacement options, enjoy a worry-free trip. 
+[ Read more ]
+## **WHy choose A &S foreign exchange?**
+![](https://asforeignexchange.com/wp-content/up[Skip to main content]
+  * [Personal]
+  * [Small Business]
+  * [Commercial]
+  * [ Investing & Wealth]
+  * [About Us]
+
+
+  * Select Country ![US]
+    * [ ![](https://www.td.com/content/dam/tdb/images/small-business/rate-country-ca-en.png)Canada ]
+    * ![](https://www.td.com/content/dam/tdb/images/small-business/country-us-en.png)US Selected
+
+
+[ ![TD Bank America's most convenient bank](https://www.td.com/content/dam/tdb/images/small-business/tdb-tag-white-en.png) ]
+  * [ Products ]
+    * [Checking]
+    * [Savings]
+    * [CDs]
+    * [Credit Cards]
+    * [Home Lending]
+    * [Personal Loans]
+    * [IRAs]
+    * [Debit Cards]
+    * [Special Offers]
+  * [ Services Selected]
+    * [Online Banking]
+    * [Mobile Banking]
+    * [Student Banking]
+    * [Cross Border]
+    * [Travel Tips]
+    * [Foreign Exchange Services]
+    * [Overdraft Services]
+    * [New to TD Checking]
+    * [Manage Your TD Credit Card ]
+  * [Learning]
+
+
+  * [ Find Us ]
+  * [ Help ]
+  * [ Search ]
+  * [ Log In  ]
+Log in to your other accounts
+Banking and Investing
+    * [ Online Banking ]
+    * [ EasyWeb ]
+    * [ TD Wealth ]
+    * [ TD Private Client Wealth ]
+    * [ TD Investment Services (US) ]
+    * [ TD Automated Investing ]
+    * [ TD Wealth Securities-Based Lending ]
+Cards
+    * [ Credit Card ]
+    * [ Gift Card ]
+    * [ TD Commercial Plus Card ]
+Lending
+    * [ TD Fit Loan ]## The request is blocked.
+20250428T172012Z-155d6647456fm7hkhC1BOMtz2g0000000zfg0000000006d8[ ]
+[Calendar] [News]
+[Markets]
+  * [Commodities]
+  * [Indexes]
+  * [Shares]
+  * [Currencies]
+  * [Crypto]
+  * [Bonds]
+  * [Earnings]
+
+
+[Indicators] [Countries]
+[Forecasts]
+  * [Commodities]
+  * [Indexes]
+  * [Currencies]
+  * [Crypto]
+  * [Bonds]
+  * [Countries]
+  * [Indicators]
+
+
+[]
+##### **Members**
+[ **DATA PLANS** Download historical data for 20 million indicators using your browser. ]
+[Subscription Plans] | [Features]
+[ **API GATEWAY** Direct access to our data from your apps using any programing language. ]
+[Docs] | [Features] | [Developer]
+[ Already a user? **Login**]
+[Calendar]
+[News]
+Markets 
+  * [Commodities]
+  * [Indexes]
+  * [Shares]
+  * [Currencies]
+  * [Crypto]
+  * [Bonds]
+  * [Earnings]
+  * [Holidays]
+
+
+Countries 
+  * [United States]
+  * [United Kingdom]
+  * [Euro Area]
+  * [Australia]
+  * [Canada]
+  * [Japan]
+  * [China]
+  * [Brazil]
+  * [Russia]
+  * [India]
+  * [More Countries]
+
+
+Indicators 
+  * [Interest Rate]
+  * [Inflation Rate]
+  * [Unemployment Rate]
+  * [GDP Growth]
+  * [GDP per Capita]
+  * [Current Account]
+  * [Gold Reserves]
+  * [Government Debt]
+  * [Crude Oil Production]
+  * [Gasoline Prices]
+  * [Credit Rating]
+  * [More Indicators]
+
+
+Forecasts 
+  * [Markets & Indicators]
+  * [Countries]
+  * [Countries]
+  * [Indicators]
+  * [Commodities]
+  * [Indexes]
+  * [Currencies]
+  * [Crypto]
+  * [Bonds][Skip to content]
+[]
+  * [ News ]
+    * [ Markets ]
+    * [ Companies ]
+    * [ Earnings ]
+    * [ CD Rates ]
+    * [ Mortgage Rates ]
+    * [ Economy ]
+    * [ Government ]
+    * [ Crypto ]
+    * [ Live Markets News ]
+    * [ Personal Finance ]
+    * [ View All ]
+  * [ Investing ]
+    * [ Best Online Brokers ]
+    * [ Best Stock Screeners ]
+    * [ Best Robo Advisors ]
+    * [ Best Investment Apps ]
+    * [ Best Brokers for ETFs ]
+    * [ Best Crypto Exchanges ]
+    * [ Best Gold IRAs ]
+    * [ Best IRAs ]
+    * [ Best Bitcoin IRAs ]
+    * [ View All ]
+  * [ Banking ]
+    * [ Best CD Rates ]
+    * [ Best High Yield Savings Accounts ]
+    * [ Best 1 Year CD Rates ]
+    * [ Best 6 Month CD Rates ]
+    * [ Best Jumbo CD Rates ]
+    * [ Best Money Market Accounts ]
+    * [ Best 3 Month CD Rates ]
+    * [ Best 18 Month CD Rates ]
+    * [ Best Savings Account for Kids ]
+    * [ View All ]
+  * [ Personal Finance ]
+    * [ Best Savings Account Bonuses ]
+    * [ Best Bank Account Bonuses ]
+    * [ Best High Yield Checking Accounts ]
+    * [ Best Tax Relief Companies ]
+    * [ Best Debt Relief Companies ][Skip to main content]
+[ ![U.S. Bank] ] [ Log in ]
+[About us] [Financial education]
+[Support] [Locations] How can we help you?Apply for a new account.U.S. Bank Smart AssistantToday’s CD Rates.
+[ Log in ]
+  * [ ![U.S. Bank] ]
+  * How can we help you?Apply for a new account.U.S. Bank Smart AssistantToday’s CD Rates.
+  * [ Locations  ]
+  * [ Support  ]
+  * [ Financial Education  ]
+  * [ About us  ]
+  * Personal
+    * Return to Main Menu 
+    * ###  Personal 
+    * Bank accounts 
+      * Return to Bank accounts 
+      * ###  Bank accounts
+      * [Bank Smartly® Checking account]
+      * [Safe Debit account]
+      * [Savings accounts]
+      * [Money market accounts]
+      * [CDs]
+      * [Debit Cards]
+      * [Visa gift cards]
+      * [Mobile & online features]
+      * [Explore checking accounts]
+      * [Explore bank accounts]
+    * Credit cards 
+      * Return to Credit cards 
+      * ###  Credit cards
+      * [View all credit cards]
+      * [Cash+ Visa Signature Card]
+      * [Altitude Go Visa Signature Card]
+      * [Shield Visa Card]
+      * [Smartly Visa Signature Card]
+      * [Altitude Connect Visa Signature Card]
+      * [Shopper Cash Rewards Visa Signature Card]
+      * [Altitude Go Secured Visa Card]
+      * [Cash+ Secured Visa Card]
+      * [Secured Visa Card]
+      * [Small Business credit cards]
+      * [ExtendPay Plan]
+      * [ExtendPay Loan]
+    * Investing and retirement 
+      * Return to Investing and retirement 
+      * ###  Investing and retirement
+      * [Automated Investor]
+      * [Online investing]
+      * [Investment management]
+      * [Retirement planning]GamesAppsBooksKidsnone
+ _search_
+ _help_outline_
+![](https://fonts.gstatic.com/s/i/productlogos/avatar_anonymous/v4/web-32dp/logo_avatar_anonymous_color_1x_web_32dp.png)
+  * Sign in with Google
+  *  _play_apps_ Library & devices
+  *  _payment_ Payments & subscriptions
+  *  _reviews_ My Play activity
+  *  _redeem_ Offers
+  * Play Pass
+  * Personalization in Play
+  *  _settings_ Settings
+Privacy Policy • Terms of Service
+
+
+GamesAppsBooksKidsnone
+![](https://i.ytimg.com/vi/u_CLWcsEzLs/hqdefault.jpg)
+ _play_arrow_ Trailer
+![Icon image](https://play-lh.googleusercontent.com/n8TFyhfSuvStQ-uzyGfsbhtuvBA3-BCzohHCm9D7HkXmvgkRigU3dyznJ55ySKaFmP8=w240-h480-rw)
+# Xe Money Transfer & Converter
+XE.com Inc.
+Contains ads
+![Icon image](https://play-lh.googleusercontent.com/n8TFyhfSuvStQ-uzyGfsbhtuvBA3-BCzohHCm9D7HkXmvgkRigU3dyznJ55ySKaFmP8=s48-rw)
+4.7 _star_
+303K reviews
+10M+
+Downloads
+![Content rating](https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w48-h16-rw)
+Rated for 3+
+_info_
+Install
+Share
+Add to wishlist
+ _play_arrow_ Trailer
+![Screenshot image](https://play-lh.googleusercontent.com/tT_yYM08_F3T6npy8zOhds28XepC26sq84v-esLdfj3ofCq1VX3ImcY9f0iJ8bdwQwI=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/l4LCqSipH4iSn0HO51SJLEajZM2STgdZ8yBKjFbgknnCZlmm869rl6xeT3DkouL1DfM=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/WveQLbz_G1B_Gr6-t6q69whVZaEISTimbM40X0ewyMHcvvUKRKybLMJr4parC4CfPy0=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/oL9iWt0lO6RGjTxDGLcSCrfXqw8ZB7aVuqlMYl34xqfene0LV5eqR5-QxxlSn-hEkzVH=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/7i3DXPbbOZjBNzTF8qVet4kScNmNTJAYszuc5HT0Pmi5WRQzxOa8j1tMWQqVRjdAeuCj=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/i55yj4Pc6Qz8wJu7EF9fWjAu0S35iMNqWB10uxgzhWUsWiKppUUDZiWvubGrLdG4lp_n=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/kKBx72IRZiADGNCzSDIUpIEQdkxHktIuJ9caaBF5Eaw8mU7-7nOK1-RgjGJghCIsDF4=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/P2T8eIr8J6u3p2SBelqkfXWUfaKFHyTbhdaAQWlwbYfCI-S3D-GdsHAJyjEHdD4HJQ=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/VS4wEi1V4aeDr0SE4goNnDsNJiAe_GMS85sRE2fUTc6n4NWMd_MWNI6fVpTvjtXsECjH=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/ONDMmZ5ZK-1UgqBH8cZgUkQKCF5Wq0e5LRhttmFmcFiVIzWVoElWjDCZyULbFU59wv0z=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/7zChAqEJjFj1y4l56fElZOVuB7UMffE5C40MoOkmF82OCUL3Nr2qw2aR-0uElNFJXfKA=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/_M4EMsZYVqKcgt6vcjvvmvPb_EnNMCk_UtyE_wyvFstNrz74N-iHrF4y9qtESfBAHQ=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/1K3rSArpP8z0f0ONU9ed1lNwtaTeKX_-UiMx0ULYYsJH7wFqGF4D6ncDBKGG5VGIVxo=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/TvNRFdBaSWJS2nF4NHCqHyiY_UblmzduKwAKIaVLj4R42sOfxqi5CAuDqiIGkyQtrnc=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/5ksBSogjEiE6FV3MEHUkBFfXsjPclukd4aL2F0VL1VKHMo1r77qNrT_GzZRjAt83jw=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/mvDus1FDMvADhwBTFL4XUtTiGgFglmA2Tm9TvNJ7QsViEbP1nRM7liSQUkhlvum0mu4=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/SExuubGvn4pXhC7VGPtpNL5XiDwUoGT8JBviYoJBcOEMz1iQpjwT6qKusbbvb31bUSc=w526-h296-rw)
+![Screenshot image](https://play-lh.googleusercontent.com/eqB7AnZIFS9HTmTsSKrnAcw5yrK5Epwa2BU1l6omjrSnMrd4xENS94G_TmjumUnLbNM=w526-h296-rw)
+## About this app
+ _arrow_forward_
+Welcome to the Xe money transfer & currency converter app, your trusted, one-stop destination for foreign currency exchange, wire services, conversion, international money transfers, and secure banking transactions. Research foreign exchange rates using our real-time currency converter and send money and receive internationally in minutes to over 200 countries. Get competitive exchange rates and send money securely and faster than traditional wire transfers, making Xe your trusted solution for international money transfer, wire services and digital banking sHere is the cleaned text with all hyperlinks removed:
+
+```
+  * Personal
+  * Business
+
+
+  * Bank
+back
+Bank
+Accounts 
+    * [ Checking ]
+    * [ Savings ]
+    * [ Certificates of Deposit (CDs) ]
+    * [ Money Market ]
+    * [ IRAs ]
+Banking With Us 
+    * [ Online & Mobile Banking ]
+    * [ Digital Payments ]
+    * [ Security ]
+    * [ Zelle ]
+  * Borrow
+back
+Borrow
+Loans & Credit Cards 
+    * [ Mortgages ]
+    * [ Home Equity Loans ]
+    * [ Auto Loans ]
+    * [ Motorcycle Loans ]
+    * [ Boat, RV & Leisure Loans ]
+    * [ Personal Loans ]
+    * [ Credit Cards ]
+    * [ Student Loans & Refinancing ]
+Resources 
+    * [ Mortgage Calculators ]
+    * [ Loan Rates ]
+    * [ Loan Calculators ]
+  * Invest
+back
+Invest
+Financial Planning 
+    * [ Starting Your Plan ]
+    * [ Retirement Planning ]
+    * [ College Planning ]
+    * [ Special Needs Planning ]
+    * [ Estate Planning ]
+    * [ Trust Services ]
+    * [ Insurance Planning ]
+Invest With Us 
+    * [ Financial Advisors ]
+    * [ Guided Investing ]
+Resources 
+    * [ About Wealth Management by CommunityAmerica ]
+    * [ Guided Investing FAQ ]
+    * [ Investment Education ]
+    * [ Wealth Management FAQ ]
+  * Insure
+back
+Insure
+Insurance 
+    * [ Auto ]
+    * [ Homeowners ]
+    * [ Life ]
+    * [ Other Options ]
+Loan Protection 
+    * [ Gap Coverage ]
+    * [ Vehicle Service Contract ]
+```Here is the cleaned text with all hyperlinks removed:
+
+```
+[ ![Western Union Logo](data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22296%22%20height%3D%22168%22%20viewBox%3D%220%200%20296%20168%22%3E%3Cg%20fill%3D%22%23000%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M85.763%20147.763c15.297%2026.43%2040.325%2026.43%2055.622%200l8.556-14.785L73.364.366H.678zM247.026%2091.113c-5.588%209.635-18.746%209.625-24.322-.019L170.248.366H97.584l85.167%20147.446c15.297%2026.43%2040.269%2026.43%2055.567%200l57.004-98.75L267.272.366h-72.631z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E) ] [ ![Western Union Logo](data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22300%22%20height%3D%2271%22%20viewBox%3D%220%200%20300%2071%22%3E%3Cdefs%3E%3Cpath%20id%3D%22a%22%20d%3D%22M0%200h123.265v69.975H0z%22%2F%3E%3Cpath%20id%3D%22c%22%20d%3D%22M0%200h162.086v61.839H0z%22%2F%3E%3Cpath%20id%3D%22e%22%20d%3D%22M0%200h34.047v33.264H0z%22%2F%3E%3C%2Fdefs%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20transform%3D%22translate\(.018%20.164\)%22%3E%3Cmask%20id%3D%22b%22%20fill%3D%22%23fff%22%3E%3Cuse%20xlink%3Ahref%3D%22%23a%22%2F%3E%3C%2Fmask%3E%3Cpath%20fill%3D%22%230A0B09%22%20d%3D%22M35.583%2061.673c6.4%2011.059%2016.872%2011.059%2023.273%200l3.58-6.186L30.396%200H-.019zM103.057%2037.97c-2.338%204.031-7.843%204.027-10.176-.008L70.932%200H40.53l35.635%2061.693c6.4%2011.06%2016.85%2011.06%2023.25%200l23.851-41.318L111.528%200h-30.39z%22%20mask%3D%22url\(%23b\)%22%2F%3E%3C%2Fg%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M143.887%2032.786h6.235l.053-.195c3.846-14.27%205.424-20.364%206.065-24.14.624%203.765%202.122%209.946%205.8%2024.137l.051.198h6.37L177.33.164h-5.802l-.051.197c-3.855%2014.81-5.325%2020.809-5.99%2024.628-.774-4.106-2.445-10.88-6.053-24.629l-.052-.196h-6.061l-.05.198c-3.753%2014.665-5.325%2020.944-5.997%2025.022-.735-3.973-2.388-10.56-6.135-25.023l-.052-.197h-6.023l8.77%2032.427zM186.827%2013.032c3.433%200%206.041%202.195%206.307%205.259h-12.737c.39-3.065%203.047-5.26%206.43-5.26m.356%2020.206c4.712%200%209.173-2.57%2010.956-6.395l-4.302-2.188-.092-.01-.08.169c-.522%201.083-2.432%203.602-6.438%203.602-3.638%200-6.406-2.315-6.83-5.665h18.528l.006-.257c.114-4.572-1.128-8.323-3.59-10.848-2.136-2.189-5.08-3.346-8.514-3.346-3.39%200-6.48%201.277-8.699%203.596-2.196%202.296-3.406%205.463-3.406%208.918%200%207.315%205.124%2012.424%2012.46%2012.424M210.644%2033.238c6.066%200%209.835-2.82%209.835-7.36%200-5.383-4.894-6.654-8.826-7.674-2.717-.705-5.063-1.315-5.063-3.04%200-1.389%201.466-2.359%203.565-2.359%202.295%200%203.884%201.212%204.145%203.162l.162.987.108-.018%204.823-.89c0-4.523-4.002-7.7-9.194-7.7-5.344%200-9.077%202.952-9.077%207.18%200%205.107%204.748%206.378%208.564%207.4%202.761.74%205.146%201.378%205.146%203.177%200%201.567-1.536%202.54-4.01%202.54-2.972%200-4.97-1.383-5.213-3.608l-.044-.365-5.11.97c0%204.951%205.545%207.598%2010.19%207.598M224.795%2028.346c0%202.7%201.71%204.891%204.54%204.891%203.51%200%204.542-.451%204.542-.451v-4.548s-1.053.173-2.334.173c-.828%200-1.41-.499-1.41-1.255V13.393h3.706l-.052-4.595h-3.654V1.972l-5.338%201.337v5.489h-2.786l-.015%204.595h2.801zM266.636%2011.832V8.798h-4.699v23.988h5.648l-.046-14.67c.073-1.476.568-2.607%201.472-3.36%201.186-.99%203.033-1.328%205.486-1.003l.295.039.05-5.006-.23-.031c-3.384-.462-6.446.572-7.976%203.077%22%2F%3E%3Cg%20transform%3D%22translate\(137.638%208.3\)%22%3E%3Cmask%20id%3D%22d%22%20fill%3D%22%23fff%22%3E%3Cuse%20xlink%3Ahref%3D%22%23c%22%2F%3E%3C%2Fmask%3E%3Cpath%20fill%3D%22%230A0B09%22%20d%3D%22M152.52%200c-3.395%200-6.576%201.353-8.151%203.924V.498h-4.888v23.988h5.69V11.61c0-4.137%202.165-6.607%205.79-6.607%202.48%200%205.436%201.083%205.436%206.246v13.237h5.69V10.48c0-7.727-4.941-10.48-9.567-10.48M20.477%2047.896c0%205.544-2.626%208.596-7.393%208.596-4.739%200-7.348-3.052-7.348-8.596V28.782H0V47.76c0%208.827%204.891%2014.096%2013.084%2014.096s13.084-5.27%2013.084-14.096V28.782h-5.691z%22%20mask%3D%22url\(%23d\)%22%2F%3E%3C%2Fg%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M180.238%2045.219c-3.395%200-6.576%201.353-8.151%203.923v-3.426h-4.889v23.989h5.692V56.829c0-4.137%202.164-6.607%205.79-6.607%202.479%200%205.434%201.083%205.434%206.245v13.238h5.69V55.699c0-7.727-4.941-10.48-9.566-10.48M193.331%2069.705h5.647V45.716h-5.647z%22%2F%3E%3Cg%20transform%3D%22translate\(192.886%2036.875\)%22%3E%3Cmask%20id%3D%22f%22%20fill%3D%22%23fff%22%3E%3Cuse%20xlink%3Ahref%3D%22%23e%22%2F%3E%3C%2Fmask%3E%3Cpath%20fill%3D%22%230A0B09%22%20d%3D%22M3.29%200C1.446%200%200%201.422%200%203.237%200%204.997%201.476%206.43%203.29%206.43c1.79%200%203.247-1.432%203.247-3.193A3.245%203.245%200%200%200%203.29%200M21.364%2028.098c-4.062%200-7.126-3.132-7.126-7.285s3.064-7.286%207.126-7.286c4.113%200%207.215%203.132%207.215%207.286%200%204.153-3.102%207.285-7.215%207.285m0-19.754c-3.513%200-6.724%201.261-9.043%203.5
+``` 
+
+All hyperlinks have been removed while preserving the rest of the content.[Skip to Main Content]
+[![xrates logo]()](<https:/www.x-rates.com/>)
+  * [Home](<https:/www.x-rates.com/>)
+  * [Currency Calculator](<https:/www.x-rates.com/calculator/>)
+  * [Graphs](<https:/www.x-rates.com/graph/>)
+  * [Rates Table](<https:/www.x-rates.com/table/>)
+  * [Monthly Average](<https:/www.x-rates.com/average/>)
+  * [Historic Lookup](<https:/www.x-rates.com/historical/>)
+
+
+[![xrates logo]()](<https:/www.x-rates.com/>)
+Home 
+1. Configure Converter
+amount [ ►](<https:/www.x-rates.com/calculator/>)
+[↔](<https:/www.x-rates.com/#>)
+2. Select Action 
+  * ►[Currency Calculator►](<https:/www.x-rates.com/calculator/>)
+  * ►[Graphs►](<https:/www.x-rates.com/graph/>)
+  * ►[Rates Table►](<https:/www.x-rates.com/table/>)
+  * ►[Monthly Average](<https:/www.x-rates.com/average/>)
+averageYear 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015
+  * ►[Historic Lookup](<https:/www.x-rates.com/historical/>)
+historical date
+
+
+![](https://www.x-rates.com/themes/x-rates/images/flags/usd.png)USD| ![](https://www.x-rates.com/themes/x-rates/images/flags/gbp.png)GBP| ![](https://www.x-rates.com/themes/x-rates/images/flags/cad.png)CAD| ![](https://www.x-rates.com/themes/x-rates/images/flags/eur.png)EUR| ![](https://www.x-rates.com/themes/x-rates/images/flags/aud.png)AUD  
+---|---|---|---|---  
+![](https://www.x-rates.com/themes/x-rates/images/flags/usd.png)| 1| [0.74531](<https:/www.x-rates.com/graph/?from=USD&to=GBP>)| [1.38519](<https:/www.x-rates.com/graph/?from=USD&to=CAD>)| [0.87613](<https:/www.x-rates.com/graph/?from=USD&to=EUR>)| [1.55823](<https:/www.x-rates.com/graph/?from=USD&to=AUD>)  
+![](https://www.x-rates.com/themes/x-rates/images/flags/gbp.png)| [1.34172](<https:/www.x-rates.com/graph/?from=GBP&to=USD>)| 1| [1.85855](<https:/www.x-rates.com/graph/?from=GBP&to=CAD>)| [1.17552](<https:/www.x-rates.com/graph/?from=GBP&to=EUR>)| [2.09071](<https:/www.x-rates.com/graph/?from=GBP&to=AUD>)  
+![](https://www.x-rates.com/themes/x-rates/images/flags/cad.png)| [0.72192](<https:/www.x-rates.com/graph/?from=CAD&to=USD>)| [0.53805](<https:/www.x-rates.com/graph/?from=CAD&to=GBP>)| 1| [0.63249](<https:/www.x-rates.com/graph/?from=CAD&to=EUR>)| [1.12492](<https:/www.x-rates.com/graph/?from=CAD&to=AUD>)  
+![](https://www.x-rates.com/themes/x-rates/images/flags/eur.png)| [1.14139](<https:/www.x-rates.com/graph/?from=EUR&to=USD>)| [0.85069](<https:/www.x-rates.com/graph/?from=EUR&to=GBP>)| [1.58104](<https:/www.x-rates.com/graph/?from=EUR&to=CAD>)| 1| [1.77854](<https:/www.x-rates.com/graph/?from=EUR&to=AUD>)  
+![](https://www.x-rates.com/themes/x-rates/images/flags/aud.png)| [0.64175](<https:/www.x-rates.com/graph/?from=AUD&to=USD>)| [0.47831](<https:/www.x-rates.com/graph/?from=AUD&to=GBP>)| [0.88895](<https:/www.x-rates.com/graph/?from=AUD&to=CAD>)| [0.56226](<https:/www.x-rates.com/graph/?from=AUD&to=EUR>)| 1  
+Refresh in 0:60 | Apr 28, 2025 17:22 UTC
+## Currency List
+  * [Argentine Peso](<https:/www.x-rates.com/table/?from=ARS>)
+  * [Australian Dollar](<https:/www.x-rates.com/table/?from=AUD>)
+  * [Bahraini Dinar](<https:/www.x-rates.com/table/?from=BHD>)
+  * [Botswana Pula](<https:/www.x-rates.com/table/?from=BWP>)
+  * [Brazilian Real](<https:/www.x-rates.com/table/?from=BRL>)
+  * [Bruneian Dollar](<https:/www.x-rates.com/table/?from=BND>)
+  * [Bulgarian Lev](<https:/www.x-rates.com/table/?from=BGN>)
+  * [Canadian Dollar](<https:/www.x-rates.com/table/?from=CAD>)
+  * [Chilean Peso](<https:/www.x-rates.com/table/?from=CLP>)
+  * [Chinese Yuan Renminbi](<https:/www.x-rates.com/table/?from=CNY>)
+  * [Colombian Peso](<https:/www.x-rates.com/table/?from=COP>)
+  * [Croatian Kuna](<https:/www.x-rates.com/table/?from=HRK>)
+  * [Czech Koruna](<https:/www.x-rates.com/table/?from=CZK>)[Skip to main content]
+[Promotions]
+[ ![RBC] RBC Bank ]
+![](https://www.rbcbank.com/dvl/v1.0/assets/images/icons/icon-search-inverse.svg)Search RBC Bank...
+[Contact Us]
+  * [Contact Customer Service]
+  * Call 1-800-769-2553
+  * [Locate a No-Fee2 U.S. ATM]
+
+
+![Canada](https://www.rbcbank.com/dvl/v1.0/assets/images/icons/icon-flag-US.svg)(EN)
+[Sign In]
+  * [RBC Bank (U.S.) Online Banking]
+  * [RBC Royal Bank Online Banking]
+
+
+[ ![RBC] RBC Bank ]
+SIGN IN MENU
+  * [RBC Bank (U.S.) Online Banking]
+  * [RBC Royal Bank Online Banking]
+
+
+Close
+![RBC](https://www.rbcbank.com/dvl/v1.0/assets/images/logos/rbc-logo-shield-blue.svg)
+Ask your question ![Close search](https://www.rbcbank.com/dvl/v1.0/assets/images/ui/ui-close-blue.svg)
+  * [Accounts]
+Accounts
+    * [Accounts Overview]
+    * [Checking Accounts]
+    * [Savings Accounts]
+Popular Accounts
+    * [Direct Checking ]
+    * [Premium Checking ]
+    * [Money Market Savings ]
+    * [Certficates of Deposit ]
+Popular Cross-Border Bundles
+    * [Bundle Builder]
+    * [Travel & Shop]
+    * [Moving to the U.S. ]
+    * [Studying in the U.S.]
+    * [Golfing in the U.S.]
+Tools & Resources
+    * [No-Fee2 ATM Locator]
+    * [Foreign Exchange Calculator]
+    * [Compare Accounts][Skip to content](#content)
+[ ![](https://www.rba.gov.au/assets/images/logos/logo-rba-black.svg?v=2024) Reserve Bank of Australia ] Menu
+What are you looking for? Search
+  * Monetary Policy
+  * Market Operations
+  * Payments & Infrastructure
+  * Financial Stability
+  * Banknotes
+  * Financial Services
+  * About Us
+
+
+  * Media Releases
+  * Speeches
+  * Publications
+  * Statistics
+  * Chart Pack
+  * Research
+  * Archives
+  * Education
+  * Careers
+  * Q&A
+  * Contact Us
+
+
+You are here: Home Statistics Statistical Releases Exchange Rates 
+Expand Statistics navigationIn Statistics
+  * Statistical Releases
+    * Financial Aggregates
+      * 2025
+      * 2024
+      * 2023
+      * 2022
+      * 2021
+      * 2011–2020
+        * 2020
+        * 2019
+        * 2018
+        * 2017
+        * 2016
+        * 2015
+        * 2014
+        * 2013
+        * 2012
+        * 2011
+      * 2001–2010
+        * 2010
+        * 2009
+        * 2008
+        * 2007
+        * 2006
+        * 2005
+        * 2004
+        * 2003
+        * 2002
+        * 2001
+    * Index of Commodity PricesJump to content
+Main menu
+Main menu
+move to sidebar hide
+Navigation 
+  * Main page
+  * Contents
+  * Current events
+  * Random article
+  * About Wikipedia
+  * Contact us
+
+
+Contribute 
+  * Help
+  * Learn to edit
+  * Community portal
+  * Recent changes
+  * Upload file
+  * Special pages
+
+
+[ ![](https://en.wikipedia.org/static/images/icons/wikipedia.png) ![Wikipedia](https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-wordmark-en.svg) ![The Free Encyclopedia](https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-tagline-en.svg) ]
+[ Search ]
+Search
+Appearance
+  * Donate
+  * Create account
+  * Log in
+
+
+Personal tools
+  * Donate
+  *  Create account
+  *  Log in
+
+
+Pages for logged out editors [learn more]
+  * Contributions
+  * Talk
+
+
+## Contents
+move to sidebar hide
+  * (Top)
+  * 1 The retail exchange market
+  * 2 Retail foreign exchange trading
+  * 3 Quotations
+  * 4 Exchange rate regime
+  * 5 Exchange rate classification Toggle Exchange rate classification subsection
+    * 5.1 Other classifications
+  * 6 Factors affecting the change of exchange rate Toggle Factors affecting the change of exchange rate subsection
+    * 6.1 Emerging markets
+  * 7 Fluctuations in exchange rates
+  * 8 Purchasing power of currency
+  * 9 Real exchange rate equilibrium and misalignment
+  * 10 Bilateral vs. effective exchange rate
+  * 11 Parallel exchange rate
+  * 12 Economic models Toggle Economic models subsection
+    * 12.1 Uncovered interest rate parHere is the cleaned text with all hyperlinks removed:
+
+```
+[Skip to Content]
+DXP - Currency Convertor
+# Mastercard® Currency Converter Calculator
+Every day, everywhere, we use our technology and expertise to make payments safe, simple and smart. This currency converter tool provides foreign exchange rates by Mastercard to convert from the transaction currency to your card's currency for cross border purchases and ATM transactions.
+  * From *
+Transaction Currency 
+    * No results found 
+Please select transaction currency 
+
+
+Amount *
+Please provide transaction amount greater than zero.
+  * To *
+Your Card Currency 
+    * No results found 
+Please select card currency
+
+
+Bank Fee *
+Please provide bank fee
+%
+  * Select date of transaction
+
+
+Manage Cookies
+```[]()[](https://www.wsj.com/market-data/<https:/www.wsj.com/market-data/quotes/index/US/DJIA?mod=hp_mds>)[]()[](https://www.wsj.com/market-data/<https:/www.wsj.com/market-data/quotes/index/US/SPX?mod=hp_mds>)[]()[](https://www.wsj.com/market-data/<https:/www.wsj.com/market-data/quotes/index/US/COMP?mod=hp_mds>)[]()[](https://www.wsj.com/market-data/<https:/www.wsj.com/market-data/quotes/index/US/RUT?mod=hp_mds>)[]()[](https://www.wsj.com/market-data/<https:/www.wsj.com/market-data/quotes/bond/BX/TMUBMUSD10Y?mod=hp_mds>)[]()[](https://www.wsj.com/market-data/<https:/www.wsj.com/market-data/quotes/index/US/VIX?mod=hp_mds>)[]()[](https://www.wsj.com/market-data/<https:/www.wsj.com/market-data/quotes/futures/GC00?mod=hp_mds>)[]()[](https://www.wsj.com/market-data/<https:/www.wsj.com/market-data/quotes/crypto/BTCUSD?mod=hp_mds>)[]()[](https://www.wsj.com/market-data/<https:/www.wsj.com/market-data/quotes/futures/CRUDE%20OIL%20-%20ELECTRONIC?mod=hp_mds>)[]()[](https://www.wsj.com/market-data/<https:/www.wsj.com/market-data/quotes/index/XX/BUXX?mod=hp_mds>)[]()[](https://www.wsj.com/market-data/<https:/www.wsj.com/market-data/quotes/index/BKX?mod=hp_mds>)[]()[](https://www.wsj.com/market-data/<https:/www.wsj.com/market-data/quotes/index/XX/S&P%20GSCI/SPGSCI?mod=hp_mds>)
+[The Wall Street Journal]( "The Wall Street Journal")# [Markets]
+[Subscribe][Sign In]
+English Edition
+  * [English]
+  * [中文 (Chinese)]
+  * [日本語 (Japanese)]
+
+
+[Print Edition]
+[Video]
+[Audio]
+[Latest Headlines]
+More 
+Other Products from WSJ
+  * [Buy Side from WSJ]
+  * [The Journal Collection]
+  * [WSJ Shop]
+  * [WSJ Wine]
+
+
+[The Wall Street Journal]( "The Wall Street Journal")# [Markets]
+[Subscribe][Sign In]
+  * [Latest]
+  * [World]
+#### Topics
+    * [Africa]
+    * [Americas]
+    * [Asia]
+    * [China]
+    * [Europe]
+    * [Middle East]
+    * [India]
+    * [Oceania]
+    * [Russia]
+    * [U.K.]
+#### More
+    * [Science]
+    * [Anthropology]
+    * [Biology]
+    * [Environment]
+    * [Physics]
+    * [Space & Astronomy]
+    * [World
+                ```
+                
+                **Return the text with only the links removed. Do not modify any other text.**
+                 
+
+Here is the cleaned text with all hyperlinks removed:
+
+```
+[][][][][][][][][][][][][]
+[The Wall Street Journal]# [Markets]
+[Subscribe][Sign In]
+English Edition
+  * [English]
+  * [中文 (Chinese)]
+  * [日本語 (Japanese)]
+
+[Print Edition]
+[Video]
+[Audio]
+[Latest Headlines]
+More 
+Other Products from WSJ
+  * [Buy Side from WSJ]
+  * [The Journal Collection]
+  * [WSJ Shop]
+  * [WSJ Wine]
+
+[The Wall Street Journal]# [Markets]
+[Subscribe][Sign In]
+  * [Latest]
+  * [World]
+#### Topics
+    * [Africa]
+    * [Americas]
+    * [Asia]
+    * [China]
+    * [Europe]
+    * [Middle East]
+    * [India]
+    * [Oceania]
+    * [Russia]
+    * [U.K.]
+#### More
+    * [Science]
+    * [Anthropology]
+    * [Biology]
+    * [Environment]
+    * [Physics]
+    * [Space & Astronomy]
+    * [World]
+``` 
+
+**Note:** I removed all hyperlinks while preserving the rest of the text, including the structure and formatting.[Skip to content]
+[![Wells Fargo Home Page](https://www17.wellsfargomedia.com/assets/images/css/template/homepage/homepage-horz-logo.svg)]
+  * [ ![Secure](https://www17.wellsfargomedia.com/assets/images/css/template/homepage/homepage-lock.svg) Sign On ]
+  * [Customer Service]
+  * [ATMs/Locations]
+  * [Español]
+
+
+Search Opens a dialog.
+  * [ selected Personal ]
+  * [Investing & Wealth Management]
+  * [Small Business]
+  * [Commercial Banking]
+  * [Corporate & Investment Banking]
+
+
+  * [Personal]
+  * Foreign Exchange
+
+
+#  Foreign Exchange 
+  * [ Print ]
+  * Share
+[Share this page on Facebook, opens a dialog][Share this page on Twitter, opens a dialog][Share this page ]
+
+
+## Share this page
+  * [Share this page on LinkedIn, opens in a new window]
+  * Share this page on Email, opens in a new window
+
+
+Choose a link above. You will enter a website that Wells Fargo does not control. Wells Fargo has provided this link for your convenience, but does not endorse and is not responsible for the products, services, content, links, privacy policy, or security policy of this website.
+End of popup
+## Make the world a smaller place
+From foreign currency exchange to international wire transfers, we can help
+![](https://www17.wellsfargomedia.com/assets/images/photography/lifestyle/970x462/fx-marquee-D-970x462-v2.jpg)
+##  Traveling internationally or need to send an international wire transfer? Wells Fargo’s foreign exchange has got you covered. 
+![](https://www17.wellsfargomedia.com/assets/images/photography/lifestyle/462x263-fx-cash.jpg)
+## Foreign currency cash
+As you start your trip, having local currency on hand lets you easily cover immediate expenses without needing to hunt down a currency exchange office. On your return, we can often buy back unused foreign currency cash at a Wells Fargo branch.
+We offer more than 70 currencies available for use in over 100 countries.
+**Note:** Our branches no longer have foreign currency cash on-hand available for over-the-counter same-day purchase, and we no longer can take foreign currency cash orders over the phone. 
+Wells Fargo account holders can order foreign currency cash online, or at a branch, and have delivery within 2-7 business days.
+We do not buy back all currencies, and buy-back rates differ from rates for ordering cash. We do not buy back coins. Foreign currency cash is intended for travel-related purposes only. Wells Fargo does not recommend foreign currency cash as an investment product.
+[Order currency cash]
+[View foreign currency FAQs]
+[See our travel tips]
+![](https://www17.wellsfargomedia.com/assets/images/photography/lifestyle/462x263-fx-wires.jpg)
+## International wire services
+Use our international wire transfer services to send and receive overseas payments.
+Whether online, via the mobile app, or in-person [at a branch], Wells Fargo offers a number of ways to send international wire transfers.
+Sending an international wire transfer in foreign currency lets you lock in an exchange rate up front and know the exact amount of foreign currency being sent to the beneficiary.
+In addition to assisting you with sending foreign currency wires, Wells Fargo can also receive wires denominated in many foreign currencies.
+[Sign on to get started]
+[Learn more about Wells FaInforEuro, the exchange rate of the Euro currency [Skip to main content]
+[ ![European Commission logo] ]
+[enen]
+Select your language
+Close
+  * [bgбългарски]
+  * [esespañol]
+  * [csčeština]
+  * [dadansk]
+  * [deDeutsch]
+  * [eteesti]
+  * [elελληνικά]
+  * [enEnglish]
+  * [frfrançais]
+  * [gaGaeilge]
+  * [hrhrvatski]
+  * [ititaliano]
+  * [lvlatviešu]
+  * [ltlietuvių]
+  * [humagyar]
+  * [mtMalti][Skip to content]
+[ ![](https://www.nrb.org.np/contents/uploads/2020/01/logo.jpg) Nepal Rastra Bank नेपाल राष्ट्र बैंक ]
+  * [About]
+    * Introduction
+      * [About NRB]
+      * [Board of Directors]
+      * [Principal Officers]
+      * [Information Officers]
+      * [Organogram]
+    * About Us
+      * [Departments, Offices, Divisions and Units]
+      * [Provincial Offices]
+      * [Financial Statements]
+      * [Contact]
+      * [Feedback]
+      * [Sitemap]
+  * [Laws, Policies & Guidelines]
+    * Laws and Legislation
+      * [Acts]
+      * [Rules and Bylaws]
+    * Policies and Guidelines
+      * [Notices]
+      * [Guidelines and Manuals]
+      * [Other Policies]
+      * [Monetary Policy]
+  * [Regulations & Supervisions]
+    * Regulations
+      * [Banks & Financial Institutions]
+        * [Notices]
+        * [Financial Stability Report]
+        * [Circulars]
+        * [Financial Consumer Protection]
+      * [Foreign Exchange Management]
+        * [Notices]
+        * [Circulars]
+      * [Payment Systems]
+        * [Notices]
+        * [Circulars]
+        * [Policies, Guidelines]
+      * [Banking Department]
+        * [Notices]
+        * [ECC Notices]
+    * Supervisions
+      * [Bank Supervision]
+        * [Enforcement Action]
+        * [Key Financial Indicators]
+        * [Annual Reports]
+      * [Financial Institutions Supervision Department]
+        * [Enforcement Action]
+        * [Key Financial Highlights]
+        * [Annual Reports]
+      * [Microfinance Institutions Supervision Department]
+        * [Current Microfinance Activities][ ]
+  * [Business]
+    * Move money
+[Check transfer rates]
+[Send money]
+[Fix a future rate]
+[Multi-currency account]
+[Small businesses]
+[Enterprise]
+[Register now]
+I'm looking to…
+[Pay overseas staff]
+[Pay overseas suppliers]
+[Receive international business payments]
+[Manage currency risk]
+[Send mass payments]
+[Send regular payments]
+[See all global payment solutions]
+Online sellers & ecommerce
+[OFX Global Currency Account]
+[Receive marketplace payments]
+[Xero integration]
+Partner with us
+[Partner referrals]
+[API integrations]
+[OFX Partners and Events]
+  * [Personal]
+    * Move money
+[Check transfer rates]
+[Send money]
+[Register now]
+I'm looking to…
+[Pay friends and family overseas]
+[Relocate overseas]
+[Pay taxes and bills overseas]
+[Purchase goods from overseas]
+[Sell international shares]
+  * [FX Rates & tools]
+    * Check rates
+[Check transfer rates]
+[Interbank exchange rates]
+[Historical exchange rates]
+[Currency charts]
+Currency tools
+[Rate alerts]
+[The OFX app]
+Resources
+[Monthly Currency Outlook]
+[Blog]
+[Forex news]There is no text provided to clean. If you provide the text, I will remove all hyperlinks (URLs) while keeping the rest of the content unchanged.[![CCEA](https://mycurrencyexchange.com/wp-content/uploads/2019/04/CCEA-final-logo-on-white-side.svg)]()
+Close Menu
+Menu
+  * Locations
+  * []Services
+  * About
+  * []Community
+  * []News
+  * Careers
+  * Contact Us
+  * Member Login
+
+
+[]Services
+  * []Money Services
+  * []Transportation Services
+  * []Payment Services
+  * []Document Services
+
+
+[]Money Services
+  * ATM Service
+  * #37 (no title)
+  * Business Check Cashing
+  * Check Cashing
+  * Coin Into Cash/Coin Counting
+  * Credit Card Cash Advance
+  * Debit Card Unload
+  * Foreign Currency Exchange
+  * Gift Card Redemption
+  * Prepaid Debit Cards
+  * Prepaid Phone Products
+  * Rolled Coin/Cash
+
+
+[]Transportation Services
+  * Auto Title & Registration
+  * Boat Title Registration, Transfer & Renewal
+  * City Vehicle Stickers
+  * License Plate Renewals
+  * Ventra Cards
+
+
+[]Payment Services
+  * Electronic Bill Pay
+  * Money Orders
+  * Money Transfers
+  * SecureCheck™ Direct Deposit
+
+
+[]Document Services
+  * Cook County Birth / Marriage / Death Certificates
+  * Fax Services
+  * Income Tax Preparation
+  * Notary Public[Skip to main content]
+![RBC Royal Bank]
+Need assistance?
+[Chat now!]
+[Sign In]
+![RBC Royal Bank]
+[SIGN IN]
+Search RBC ![Search]
+Personal Banking
+  * [Contact Us]
+  * [Location]
+
+
+![Close]
+# Foreign Exchange Currency Converter
+Our Foreign Exchange Currency Converter allows you to quickly convert over 30 foreign currencies.
+  * [Foreign Exchange]
+  * [FAQs]
+
+
+Error
+  * [This conversion is not offered by RBC.]
+  * [Please enter a lower currency amount] or [visit an RBC branch] for conversions over CAD $10,000.
+  * [The currencies could not be switched, the conversion is not offered by RBC.]
+  * [Rates not available at this time.]
+
+
+## Currency I Have: 
+To get a rate for conversions over CAD$10,000, please contact your local RBC Branch. 
+Close
+Conversion not offered. Currency switch not available. Currency I Have
+CAD Currency limit exceeded.
+###  Currency I Have
+Rate: 
+![switch currencies]
+## Currency I Want:
+Conversion not offered. Currency switch not available. Currency I Want 
+CAD Currency limit exceeded.
+###  Currency I Want
+Rate: 
+Non-Cash Rates as of 
+Non-Cash Rates apply to the conversion of paper and electronic instruments such as cheques, drafts, wire transfers, etc. 
+Close
+Foreign Exchange cash transactions are available to RBC clients only.
+### FAQs
+Why are RBC rates different from those quoted in the media and online? 
+Exchange rates quoted in the media are the exchange rates, used by banks and other market participants to buy and sell currencies in the wholesale market. Client transactions require additional processing and are usually for much smaller amounts, and as a result, are priced using a retail rate.
+Why are RBC rates for cash conversion different than non-cash rates? 
+Exchange rates applied to cash transactions include shipping and handling charges, making the exchange rate for cash less favorable than the non-cash rate. Non-cash rates are applied to paper instruments such as cheques and drafts. Non-cash rates are also applied to incoming and outgoing wire payments and other electronic transactions. These instruments do not require physical storage or movement, and incur less time and cost for processing than cash transactions. Therefore a more favorable rate is applied to non-cash instruments.
+Why should I convert my Canadian dollars to a foreign currency in Canada, before travelling to other countries? 
+It is often more beneficial to convert your Canadian dollars to the local currency of your travel destination before you leave Canada. Many banks, foreign exchange kiosks and hotels in other countries charge commission or service charges in addition to exchange rates that are often higher than those in Canada when converting your Canadian dollars to their local currency.
+Ready to Get Your Foreign Currency?
+  * [Learn how to purchase it] through RBC Online Banking and pick it up at a branch of your choice.
+  * [Sign in to purchase]
+
+
+View Legal DisclaimersHide Legal Disclaimers
+The rates provided are for information purposes only, and may not be reflective of rates in the market at the time of inquiry. Foreign exchange rates are subject to change at a moment's notice. Although timely rates may be obtained by contacting a local RBC Royal Bank branch, rates can only be guaranteed at the time the purchase or sale is conducted. Advance notice may be required to obtain some currencies.
+#### Locate a Branch for Foreign Currency or U.S. Cash ATM
+What are you looking for? Branch US Cash ATM
+Postal C[Skip to content]
+  * [ Personal ]
+  * [ Business ]
+  * [ Commercial ]
+  * [ Global Markets ]
+  * [ Global Wealth ]
+  * [ About Us ]
+  * [ Investors ]
+
+
+[ More Sites ]
+English 
+  * [ English selected ]
+  * [ Français ]
+
+
+[ ![Scotiabank desktop logo]( ![Scotiabank mobile logo]( ![Scotiabank mobile logo]( )]
+Begin Your Search
+Trending Search is available and can be access through arrow keys
+![Search]
+  * [ Location ]
+  * [ Contact Us ]
+  * [ Bank Your Way ]
+
+
+[ ![](Sign In ] [ ![](Sign In ]
+New to Scotia OnLine? [Activate Now]
+  * [ Advice+ ]
+    * Advice+ planning
+      * [ Start a financial plan ]
+      * [ Start investing ]
+      * [ Start building a budget ]
+      * [ Start your life in Canada ]
+      * [ Buy a home ]
+      * [ Start getting out of debt ]
+      * [ Planning for life ]
+      * [ Banking 101 ]
+    * Advice+ Resources
+      * [ Trending articles ]
+      * [ Interest rates and inflation ]
+      * [ Protect yourself from fraud ]
+      * [ Scene+ ]
+      * [ Book an Advice+ appointment ]
+      * [ Stay informed ]
+    * Advice+ Tools```
+  *  
+  *  "Follow The IMF on X"
+  *  "Follow IMF Facebook"
+  *  "Follow IMF LinkedIn"
+  *  "Follow IMF Instagram"
+  *  "Follow the IMF on Threads"
+  *  "Follow IMF Youtube"
+  *  "IMF Podcasts"
+  *  "Subscribe to IMF Emails"
+  *  "IMF Integrity Hotline"
+  * [![IMF Live](https://www.imf.org/~/media/Images/IMF/Live-Page/imf-live-rgb-h.ashx?la=en)] "IMF Live"
+
+
+[ ![International Monetary Fund](https://www.imf.org/-/media/Images/IMF/Data/imf-seal-shadow-sep2019-update.ashx) ] [ ![International Monetary Fund](https://www.imf.org/-/media/Images/IMF/Data/imf-logo-eng-sep2019-update.ashx) ]
+
+  * [ About ] "About the IMF"
+    *       * #### FACTSHEETS
+      * #### RESOURCES
+      * #### TOPICS
+      * [IMF at a Glance]
+      * [Surveillance]
+      * [Lending]
+      * [Capacity Development]
+      * [IMF Factsheets List]
+      * [IMF Members]
+      * [IMF Finances]
+      * [IMF Financial Statements]
+      * [IMF Senior Officials]
+      * [IMF in History]
+      * [Archives of the IMF]
+      * [Job Opportunities]
+      * [Artificial Intelligence]
+      * [Fintech]
+      * [Fiscal Policies]
+      * [Governance and Anti-Corruption]
+      * [All Topics]
+  * [ Research ] "Research"
+    *       * #### Flagship Publications
+      * #### Other Publications
+      * [World Economic Outlook]
+      * [Global Financial Stability Report]
+      * [Fiscal Monitor]
+      * [External Sector Report]
+      * [Staff Discussion Notes]
+      * [Working Papers]
+      * [IMF Research Perspectives]
+      * [Economic Review]
+      * [Global Housing Watch]
+      * [Commodity Prices]
+      * [Commodities Data Portal]
+      * [IMF Researchers]
+      * [Annual Research Conference]
+      * [Other IMF Events]
+  * [ Countries ] "Countries"
+    *       * #### IMF reports and publications by country
+      * #### Regional Offices
+      * [A]
+      * [B]
+      * [C]
+      * [D]
+      * [E]
+      * [F]
+```* [Subscribe]
+  * [Sign In]
+
+
+[ Menu ] [ Search ]
+[ Financial Times ] ("Go to Financial Times homepage")
+[ myFT ]
+Search the FT Search 
+Search the FT Search  Close
+  * [Home]
+  * [World]
+  * [US]
+  * [Companies]
+  * [Tech]
+  * [Markets]
+  * [Climate]
+  * [Opinion]
+  * [Lex]
+  * [Work & Careers]
+  * [Life & Arts]
+  * [HTSI]
+
+
+  * [Sign In]
+  * [Subscribe]
+
+
+  1. [Markets]
+  2. [Markets Data]
+  3. [Currencies]
+
+
+[Financial Times]Close
+[International Edition][UK Edition]
+Search theFTSearch
+  * Top sections
+  * [Home]
+  * Show more World link[World]
+    * [Middle East war]
+    * [Global Economy]
+    * [UK]
+    * [US]
+    * [China]
+    * [Africa]
+    * [Asia Pacific]
+    * [Emerging Markets]
+    * [Europe]
+    * [War in Ukraine]
+    * [Americas]
+    * [Middle East & North Africa]
+  * Show more US link[US]
+    * [US Economy]
+    * [US Companies]
+    * [US Politics & Policy]
+  * Show more Companies link[Companies]
+    * [Energy]
+    * [Financials]
+    * [Health]
+    * [Industrials]
+    * [Media]
+    * [Professional Services]
+    * [Retail & Consumer]
+    * [Tech Sector]
+    * [Telecoms]
+    * [Transport]
+  * Show more Tech link[Tech]
+    * [Artificial intelligence]
+    * [Semiconductors]
+    * [Cyber Security]
+    * [Social Media]
+  * Show more Markets link[Markets]
+    * [Alphaville]
+    * [Markets Data]
+    * [Crypto]
+    * [Capital Markets]
+    * [Commodities]PersonalBusiness
+
+PersonalBusiness
+  * Send money
+  * Money transfers
+  * Converter
+  * Tools
+  * Resources
+
+
+HelpLoginRegister
+Toggle menu
+### Send money
+### Money transfers
+### Converter
+### Tools
+### Resources
+LoginRegister
+# 1 USD to EUR - Convert US Dollars to Euros
+Xe Currency Converter
+ConvertSendChartsAlerts
+Amount
+1.00$
+From
+![usd](https://www.xe.com/svgs/flags/usd.static.svg)
+USD - US Dollar
+To
+![eur](https://www.xe.com/svgs/flags/eur.static.svg)
+EUR - Euro
+1.00 US Dollar =
+0.87633166 Euros
+1 EUR = 1.14112 USD
+US Dollar to Euro conversion — Last updated Apr 28, 2025, 17:24 UTC
+Explore Xe InsightsView transfer quote
+We use the mid-market rate for our Converter. This is for informational purposes only. You won’t receive this rate when sending money. Login to view send rates
+#### Convert US Dollar to Euro
+![usd](https://www.xe.com/svgs/flags/usd.static.svg)
+US Dollar
+![eur](https://www.xe.com/svgs/flags/eur.static.svg)
+Euro
+1 USD
+0.876332 EUR
+5 USD
+4.38166 EUR
+10 USD
+8.76332 EUR
+25 USD
+21.9083 EUR
+50 USD
+43.8166 EUR
+100 USD
+87.6332 EUR
+500 USD
+438.166 EUR
+1,000 USD
+876.332 EUR
+5,000 USD
+4,381.66 EUR
+10,000 USD
+8,763.32 EUR
+#### Convert Euro to US Dollar
+![eur](https://www.xe.com/svgs/flags/eur.static.svg)
+Euro
+![usd](https://www.xe.com/svgs/flags/usd.static.svg)
+US Dollar
+1 EUR
+1.14112 USD
+5 EUR
+5.7056 USD
+10 EUR
+11.4112 USD
+25 EUR
+28.528 USD
+50 EUR
+57.056 USD
+100 EUR
+114.112 USD
+500 EUR
+570.56 USD
+1,000 EUR* [Skip navigation](#main)
+* [Find a branch](#branch-finder)
+
+
+* [Search](#search-results)
+* [Help and support](#help-support)
+* [Log in](#banking-and-bills/login)
+
+
+* Menu
+* [ ![Home](#) Home](#)
+
+
+* Search
+* Login
+
+
+* [ ![Home](#) Home](#)
+* [ Find a branch](#branch-finder) [ Help and support](#help-support)
+* [Posting](#mail)
+Back
+## Posting
+We offer a range of postal services to send, collect and return items, including regular sender services.
+* [All parcels and letters](#mail)
+* ![](#local-post-office-black-24dp.svg) [Branch postage services](#mail/branch-postage-services)
+* ![](#fixed-black-24dp.svg) [Track an item](#track-trace)
+* ![](#icn_24_Document.svg) [Customs forms](#mail/customs-forms)
+### Online services
+* [Buy postage online](#mail/parcelsonline)
+* [Drop & Go](#dropandgo)
+### Branch services
+* [Royal Mail UK services](#mail/uk-services)
+* [Royal Mail International services](#mail/international-services)
+* [DPD services](#mail/in-branch-dpd)
+* [Evri services](#mail/in-branch-evri)
+* [Collections](#mail/collection-services)
+* [Drop-off and returns](#mail/dropoff)
+* ![](#local-post-office-black-24dp.svg) [Branch postage services](#mail/branch-postage-services)
+* ![](#fixed-black-24dp.svg) [Track an item](#track-trace)
+* ![](#icn_24_Document.svg) [Customs forms](#mail/customs-forms)
+Close
+* [Banking and bills](#banking-and-bills)
+Back
+## Banking and bills
+We provide a range essential financial services, from savings, borrowing to money transfers.
+* [All banking and bills services](#banking-and-bills)
+* [Managing your money](#articles-guides/managing-your-money)
+### Banking and personal finance
+* [Banking Hubs](#bankinghubs)
+* [Credit card](#credit-card)
+* [Everyday banking](#everydaybanking)
+* [Personal loans](#help-support/personal-loans)
+* [Savings](#savings-accounts)
+### Bills and payments
+* [Bill payments and top-ups](#bill-payments)
+* [Payment Exception Service](#payment-exception-service)
+* [Post Office Payout](#post-office-payout)
+* [Postal orders](#postal-orders)
+* [Western Union international money transfer](#international-money-transfer/western-union)
+* [Managing your money](#articles-guides/managing-your-money)
+Close
+* [Travel](#travel)
+Back
+## Travel
+Plan your getaway with travel essentials including travel money, insurance and handy travel extras.
+* [All travel services](#travel)
+* [Travel and adventure](#articles-guiYearly average currency exchange rates | Internal Revenue Service [ Skip to main content ]
+An official website of the United States Government
+[ ![Home](https://www.irs.gov/themes/custom/pup_base/IRS-Logo.svg) ![Home](https://www.irs.gov/themes/custom/pup_irs/images/logo-print.svg) ]
+## Information Menu
+  * Help
+  * News
+  * English 
+    * Español
+    * 中文 (简体)
+    * 中文 (繁體)
+    * 한국어
+    * Русский
+    * Tiếng Việt
+    * Kreyòl ayisyen
+  * Tax Pros
+  * Sign in
+
+
+  * Search 
+Search
+Include Historical Content
+- Any -No
+Include Historical Content
+- Any -No
+Search
+  * Sign in
+  * Menu 
+
+
+## Main navigation
+[ ![Home](https://www.irs.gov/themes/custom/pup_base/IRS-Logo.svg) ]
+  * File
+    * Overview
+    * INFORMATION FOR…
+    * Individuals
+    * Business and self-employed
+    * Charities and nonprofits
+    * International filers
+    * Retirement
+    * Governments and tax-exempt bonds
+    * Indian Tribal Governments
+    * FILING FOR INDIVIDUALS
+    * How to file
+    * When to file
+    * Where to file
+    * Update your information
+    * POPULAR
+    * Tax record (transcript)
+    * Apply for an Employer ID Number (EIN)
+    * Amend return
+    * Identity Protection PIN (IP PIN)
+    * File your taxes for free
+  * Pay
+    * Overview
+    * PAY BY
+    * Bank Account (Direct Pay)
+    * Payment Plan (Installment Agreement)
+    * Electronic Federal Tax* [ ![]( )Profile]
+  * [ ![]( )Locations]
+  * [ ![]( )Careers]
+  * [ ![]( )User Login ]
+[**CEIFX** - Foreign Currency Exchange Software] [**CXI FX NOW** - International Payments Platform]
+
+[ !( ) ]
+  * [ ![]( )Profile]
+  * [ ![]( )Locations]
+  * [ ![]( )Careers]
+  * [ ![]( )User Login ]
+[**CEIFX** - Foreign Currency Exchange Software] [**CXI FX NOW** - International Payments Platform]
+
+
+  * [ About ]
+[Company Profile] [Board of Directors] [Management Team] [Compliance] [Life at CXI]
+About
+    * [Company Profile]
+    * [Board of Directors]
+    * [Management Team]
+    * [Compliance]
+    * [Life at CXI]
+  * [Solutions]
+    * Financial Institutions
+#### Solutions
+      * [Financial Institutions Solutions]
+      * [International Wire Payments]
+      * [Foreign Check Clearing]
+      * [Foreign Bank Note Exchange]
+    * Travelers
+#### Solutions
+      * [International Travelers Solutions]
+      * [Foreign Currency Exchange]
+      * [Gold Bullion Coins and Bars]
+      * [Affiliate E-Commerce Program]
+#### Services
+      * [Currency Price Protection]
+      * [Currency Travel Guide]
+      * [School Group Rates]
+Solutions
+    * Financial Institutions
+#### Solutions
+      * [Financial Institutions Solutions]
+      * [International Wire Payments]
+      * [Foreign Check Clearing]
+      * [Foreign Bank Note Exchange]
+    * Travelers
+#### Solutions
+      * [International Travelers Solutions]
+      * [Foreign Currency Exchange]
+      * [Gold Bullion Coins and Bars]
+      * [Affiliate E-Commerce Program]Loading... Please Be Patient
+Customer Service 7 Days A Week - 9am to 9pm EST | Toll-Free: (888) 796-2962 | Local: (772) 600-3688 
+  * []
+  * []
+  * []
+
+
+[ ![Xchange of America](https://xchangeofamerica.com/img/xchange-of-america.png) ]
+  * []
+  * []
+  * [Currencies]("Currencies")
+  * []
+  * []
+  * []
+  * [ Cart _0_ ]
+  * [] []
+
+
+## Foreign cash for international travel, delivered!
+**Buy foreign currency** - before you travel **Sell foreign currency** - free return shipping for leftover cash 
+# Exchange Your Currency
+Buy  Sell 
+Quantity
+Currency Argentine Peso - ARS (Out of Stock)Australian Dollar - AUDBahamian Dollar - BSDBahraini Dinar - BHDBelize Dollar - BZDBermuda Dollar - BMDBrazilian Real - BRLCanadian Dollar - CADChilean Peso - CLPChinese Yuan - CNYColombian Peso - COPCosta Rican Colon - CRC (Out of Stock)Czech Koruna - CZKDanish Krone - DKKDominican Peso - DOP (Out of Stock)Egyptian Pound - EGPEuro - EURGuatemalan Quetzal - GTQ (Out of Stock)Haitian Gourde - HTG (Out of Stock)Honduran Lempira - HNLHong Kong Dollar - HKDIndian Rupee - INRIndonesian Rupiah (Circulated) - IDRIndonesian Rupiah (Uncirculated) - IDR (Out of Stock)Iraqi Dinar 50k (Uncirculated) - IQDIraqi Dinar 25k (Uncirculated) - IQDIraqi Dinar (Circulated-denominations may vary) - IQDIraqi Dinar 10k (Uncirculated) - IQDIraqi Dinar 5k (Uncirculated) - IQDIraqi Dinar 1k (Uncirculated) - IQDIraqi Dinar 500 (Uncirculated) - IQDIraqi Dinar 250 (Uncirculated) - IQD (Out of Stock)Israeli New Shekel - ILSJamaican Dollar - JMD (Out of Stock)Japanese Yen - JPY (In Transit)Jordanian Dinar - JODKuwaiti Dinar - KWD (Out of Stock)Lebanese Pound - LBP (Out of Stock)Malaysian Ringgit - MYRMexican Peso - MXNNew Zealand Dollar - NZDNicaraguan Cordoba - NIO (Out of Stock)Norwegian Krone - NOKOmani Rial - OMRPeruvian Nuevo Sol - PENPhilippine Peso - PHPPolish Zloty - PLNPound Sterling - GBPQatari Riyal - QARRussian Ruble - RUBSaudi Riyal - SARSingapore Dollar - SGDSouth African Rand - ZARSouth Korean Won - KRWSri Lanken Rupee - LKRSwedish Krona - SEKSwiss Franc - CHFTaiwan Dollar - TWDThailand Baht - THBTrinidad and Tobago Dollar - TTDTurkish Lira - TRYTunisian Dinar - TNDUnited Arab Emirates Dirham - AEDVietnamese Dong - VND
+XXXX
+XXXX
+Total
+00.00
+US Dollars
+Conversion EUR to Dollar Last update 28 April 2025, 01:25:09 PM UTC
+Start Buying
+Quantity
+Currency Argentine Peso - ARSAustralian Dollar - AUDBahraini Dinar - BHDBelize Dollar - BZDBermuda Dollar - BMDBrazilian Real - BRLCanadian Dollar - CADChilean Peso - CLPChinese Yuan - CNYColombian Peso - COPCosta Rican Colon - CRCCzech Koruna - CZKDanish Krone - DKKDominican Peso - DOPEgyptian Pound - EGPEuro - EURGuatemalan Quetzal - GTQHaitian Gourde - HTGHonduran Lempira - HNLHong Kong Dollar - HKDIcelandic Krona - ISKIndian Rupee - INRIndonesian Rupiah (Circulated) - IDRIndonesian Rupiah (Uncirculated) - IDRIraqi Dinar 50k (Uncirculated) - IQDIraqi Dinar 25k (Uncirculated) - IQDIraqi Dinar (Circulated-denominations may vary) - IQDIraqi Dinar 10k (Uncirculated) - IQDIraqi Dinar 5k (Uncirculated) - IQDIraqi Dinar 1k (Uncirculated) - IQDIraqi Dinar 500 (Uncirculated) - IQDIraqi Dinar 250 (Uncirculated) - IQDIsraeli New Shekel - ILSJamaican Dollar - JMDJapanese Yen - JPYJordanian Dinar - JODKuwaiti Dinar - KWDMalaysian Ringgit - MYRMexican Peso - MXNNew Zealand Dollar - NZDNicaraguan Cordoba - NIONorwegian Krone - NOKOmani Rial - OMRPeruvian Nuevo Sol - PENPhilippine Peso - PHPPolish Zloty - PLNPound Sterling - GBPQatari Riyal - QARRussian Ruble - RUBSaudi Riyal - SARSingapore Dollar - SGDSouth African Rand - ZARSouth Korean Won - KRWSri Lanken Rupee - LKRSwedish Krona - SEKSwiss Franc - CHFTaiwan Dollar - TWDThailand Baht - THBTrinidad and Tobago Dollar - TTDTurkish Lira - TRYTunisian Dinar - TNDUnited Arab Emirates Dirham - AEDVietnamese Dong - VND
+XXXX
+XXXX
+Total
+00.00
+US Dollars
+Conversion EUR to Dollar Last update 28 April 2025, 01:25:09 PM UTC
+Start Selling
+![Digicert](https://xchangeofamerica.com/img/digicert_white.svg)
+![Forbes](hThere is no text provided to clean. If you provide the text, I will remove all hyperlinks (URLs) while keeping all other text unchanged.This website uses cookies
+We place some essential cookies on your device to make this website work. We'd like to use additional cookies to remember your settings and understand how you use our services. This information will help us make improvements to the website. 
+Accept cookiesReject cookies[Set cookie preferences]
+[ Skip to main content ]
+[ The National Archives ]
+Menu 
+  * [Visit]
+  * [What’s on]
+  * [Explore the collection]
+  * [Help using the archive]
+  * [Education]
+  * [Professional guidance and services]
+
+
+  * [ Search ]
+  * [ Shop ]
+
+
+  * [Search our website]
+  * [Search Discovery, our catalogue]
+
+
+[Home] > [Help with your research] > [Reading old documents] > Currency Converter: 1270 – 2017
+# Currency converter: 1270–2017
+## Calculate purchasing power
+Try our online currency converter and find out how many animals, stones of wool and quarters of wheat you can buy, and how much you could earn.
+Sorry, there was a problem
+Please check the highlighted fields to proceed.
+Enter currency to show its purchasing power
+Year of currency Please select a year1270128012901300131013201330134013501360137013801390140014101420143014401450146014701480149015001510152015301540155015601570158015901600161016201630164016501660167016801690170017101720173017401750176017701780179018001810182018301840185018601870188018901900 190519101915192019251930193519401945195019551960196519701975198019851990199520002005 2017
+Pounds
+Shillings (s) 012345678910111213141516171819
+Pence (d) 01234567891011
+Today’s pence (p)
+The result of the calculation is intended to be a general guide to historical values, rather than a categorical statement of fact. 
+Sorry, you do not have JavaScript enabled which is required for the currency converter at the moment.
+## Disclaimer
+The data used in this currency converter comes from our historical records such as those of the royal household and Exchequer. These documents may record large purchases by government institutions rather than ordinary retail prices, and wages of skilled craftsmen rather than the general level of earnings. Our calculations are intended as a general guide to historical values, not a statement of fact. There are no plans to update the calculator for values beyond 2017.
+You can find an inflation calculator at [www.bankofengland.co.uk], and comparators (for the UK and various other countries) at [measuringworth.com].
+Calculations based on the retail price index may not always be appropriate: comparisons based on average earnings or gross domestic product per head may be more suitable. You can find comparators of both kinds at [measuringworth.com], along with explanations of each type of calculation and of the sources on which they are based. 
+Icons made by Freepik from [www.flaticon.com]
+##  [ Also in Currency converter ]
+  * [ Living in the 13th century ]# 
+  * Media
+  * Career 
+  * Contact
+  * ქარ
+
+
+# 
+  * About
+About
+What We Do
+Bank History
+Personal Data Protection
+Mission of the National Bank
+International Relations
+Board Members
+Awards
+Structure
+Public Information
+  * Monetary Policy
+Monetary Policy
+Monetary Policy Objective
+Macroeconomic Forecasting
+    * Forecasting and policy analysis system
+Inflation Targeting
+    * Inflation Target
+    * The main principles of monetary policy
+    * Monetary Policy Transmission Mechanism 
+    * Optimal Exchange Rate Policy
+    * Larization Measures
+Monetary Policy Documents 
+    * Main Directions of Monetary Policy
+    * Monetary Policy Strategy
+    * Monetary Policy Operations Manual 
+Monetary Policy Committee
+    * Committee Meetings Calendar
+    * Committee Decisions
+Financial Market
+    * Money Market
+    * Tbilisi Interbank Interest Rate - TIBR Index
+    * Gold Bars Certificates
+    * Foreign Exchange Rate
+    * Government Securities
+    * Average Yields of The Certificate of Deposit
+Monetary Policy Instruments
+    * Monetary policy rate 
+    * Liquidity Management
+    * Open market operations
+    * Minimum Reserve Requirements
+    * Overnight loans and overnight deposits
+    * Foreign exchange auctions
+    * Additional liquidity instruments
+    * Types of collateral
+Lari Yield Curve Methodolo## Our use of cookies
+We use necessary cookies to make our site work (for example, to manage your session). We’d also like to use some non-essential cookies (including third-party cookies) to help us improve the site. By clicking ‘Accept recommended settings’ on this banner, you accept our use of optional cookies.
+Necessary cookies | Analytics cookies  
+---|---  
+Yes | Yes |  Accept recommended cookies  
+Yes | No | Proceed with necessary cookies only  
+### Necessary cookies
+Necessary cookies enable core functionality on our website such as security, network management, and accessibility. You may disable these by changing your browser settings, but this may affect how the website functions. 
+### Analytics cookies
+We use analytics cookies so we can keep track of the number of visitors to various parts of the site and understand how our website is used. For more information on how these cookies work please see our Cookie policy.
+Skip to main content
+[ ![Bank of England home] ]
+Main menu Close main menu
+  * Topics  Open Topics sub menu 
+    * Back to main menu 
+    * Banknotes  Open Banknotes sub menu
+      * Back to main menu 
+      * Choosing banknote characters 
+      * Counterfeit banknotes 
+      * Current banknotes 
+      * Damaged and contaminated banknotes 
+      * Exchanging old banknotes 
+      * Note Circulation Scheme 
+      * Advice for retailers and businesses 
+      * Scottish and Northern Ireland banknotes 
+      * Using images of banknotes 
+      * Wholesale cash distribution in the future 
+      * Withdrawn banknotes 
+    * Careers  Open Careers sub menu
+      * Back to main menu 
+      * Application tips 
+      * Career Returner Programme 
+      * Future talent 
+      * Our locations 
+      * Research careers 
+      * We value diversity and inclusion 
+      * What we offer you 
+      * Why you should join us 
+    * Climate change 
+    * Digital pound 
+    * Education  Open Education sub menu
+      * Back to main menu 
+      * Competitions 
+      * Education resources 
+      * Research support programme 
+      * Request a speaker for your school 
+    * Financial stability  Open Financial stability sub menu
+      * Back to main menu
