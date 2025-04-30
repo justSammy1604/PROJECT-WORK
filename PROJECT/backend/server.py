@@ -14,14 +14,14 @@ data_from_files = 'crawled_data'  # We can also add crawled_data file as input h
 rag_chain = rag_pipeline(data_from_files)
 cache = SemanticCache()
 
-def get_top_links(search):
-    """ Get the top links from Google search results using ScrapingDog API."""
-    """Function to get the top links from Google search results using ScrapingDog API."""
+def get_top_links(search,result=50):
+    """ Get the top links from Google search results using ScrapingDog API.
+    Function to get the top links from Google search results using ScrapingDog API."""
     url = "https://api.scrapingdog.com/google"
     params = {
     "api_key": os.getenv("SCRAP_KEY"),
     "query": search,
-    "results": 50,
+    "results": result,
     "country": "us",
     "page": 0,
     "advance_search": "false"
@@ -42,9 +42,10 @@ async def get_search_query():
     """Endpoint to get the search query from the user."""
     try:
         search = request.args.get('search')
-        if not search:
+        result = request.args.get('result')  # Default to 50 results if not provided
+        if not search and not result:
             return jsonify({'error': 'Search Term Not Provided'}), 400
-        links = get_top_links(search)
+        links = get_top_links(search,result)
         await crawl_parallel(links,search)
         return jsonify({'message':'Search Query was entered successfully'}) , 200
     except Exception as e:

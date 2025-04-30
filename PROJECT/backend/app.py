@@ -202,11 +202,6 @@ def rag_model(vectorstore):
         return_messages=True
     )
 
-    # If you want separate history for each mode, create two memory instances:
-    # memory_data_driven = ConversationBufferMemory(...)
-    # memory_strict = ConversationBufferMemory(...)
-
-
     # 5. Create the ConversationalRetrievalChains, passing the correct components
     conv_chain_data_driven = ConversationalRetrievalChain(
         retriever=vectorstore.as_retriever(search_kwargs={"k": 2}),
