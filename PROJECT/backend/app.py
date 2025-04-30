@@ -138,11 +138,38 @@ def vectordb_information(docs):
     return vectorstore
 
 def rag_model(vectorstore):
+    # 1. Standard Condense Question Prompt (for history handling)
+    _template = """Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
+    Chat History:
+    {chat_history}
+    Follow Up Input: {question}
+    Standalone question:"""
+    CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(_template)
+
+    # 2. Define QA Prompts (accepting context and question)
+    template_data_driven_qa = """
+
     # Define both prompt templates
     template_data_driven = """
+
     You are a professional financial advisor assistant specializing in the United States financial markets, including stocks, cryptocurrency, bonds, and economic news.
 
     Tone: Use a formal and professional tone in your responses.
+
+
+    Sources: Use only the provided context and any relevant web-retrieved financial data. Do not hallucinate or invent information not present in these sources.
+    Provided Context:
+    {context}
+
+    Task: Answer the user's question by summarizing, analyzing, or explaining based on the available financial data (including real-time market data), news, and the provided context.
+
+    If not available: If the needed information is not found in the provided sources, respond formally indicating that it is not available.
+
+    User Question: {question}
+    Answer:"""
+    PROMPT_DATA_DRIVEN = PromptTemplate(template=template_data_driven_qa, input_variables=["context", "question"])
+
+    template_strict_qa = """
 
     Memory: Use {chat_history} to maintain continuity and incorporate relevant previous discussion points.
 
@@ -155,10 +182,39 @@ def rag_model(vectorstore):
     User Question: {question}"""
     
     template_strict = """
+
     You are a professional financial advisor assistant focused on providing accurate and insightful answers based solely on the provided document context.
 
     Tone: Maintain a formal, respectful, and professional tone at all times.
 
+
+    Source: Only utilize information contained within the provided documents (context). Do not fabricate or infer information that is not explicitly stated.
+    Provided Context:
+    {context}
+
+    Task: Based on the user’s question, offer well-structured, data-backed advice or summaries related to financial markets in the United States, including but not limited to stock markets, cryptocurrencies, bonds, personal finance, investment strategies, and economic policies, using *only* the provided context.
+
+    Limitation: If the documents do not contain sufficient information to answer the user's query, politely inform the user that the requested information is unavailable based on the current data.
+
+    User Question: {question}
+    Answer:"""
+    PROMPT_STRICT = PromptTemplate(template=template_strict_qa, input_variables=["context", "question"])
+
+    # 3. Create two separate QA chains (combine_docs_chain)
+    qa_chain_data_driven_instance = load_qa_chain(
+        model, # Use your LLM model here
+        chain_type="stuff", # Or "map_reduce", "refine", etc.
+        prompt=PROMPT_DATA_DRIVEN
+    )
+
+    qa_chain_strict_instance = load_qa_chain(
+        model, # Use your LLM model here
+        chain_type="stuff",
+        prompt=PROMPT_STRICT
+    )
+
+    # 4. Create Memory (shared or separate, depending on desired behavior)
+    # If you want history shared between modes:
     Memory: Use {chat_history} to retain continuity across interactions and reference earlier discussions where appropriate.
 
     Source: Only utilize information contained within the provided documents. Do not fabricate or infer information that is not explicitly stated.
@@ -173,12 +229,40 @@ def rag_model(vectorstore):
     prompt_data_driven = PromptTemplate(template=template_data_driven, input_variables=['question', 'chat_history'])
     prompt_strict = PromptTemplate(template=template_strict, input_variables=['question', 'chat_history', 'context'])
     
+
     memory = ConversationBufferMemory(
         memory_key="chat_history",
         input_key='question',
         output_key='answer',
         return_messages=True
     )
+
+    # If you want separate history for each mode, create two memory instances:
+    # memory_data_driven = ConversationBufferMemory(...)
+    # memory_strict = ConversationBufferMemory(...)
+
+
+    # 5. Create the ConversationalRetrievalChains, passing the correct components
+    conv_chain_data_driven = ConversationalRetrievalChain(
+        retriever=vectorstore.as_retriever(search_kwargs={"k": 2}),
+        question_generator=LLMChain(llm=model, prompt=CONDENSE_QUESTION_PROMPT), # Handles history
+        combine_docs_chain=qa_chain_data_driven_instance, # Handles QA with context
+        memory=memory, # Use shared or specific memory
+        return_source_documents=True,
+        verbose=True
+    )
+
+    conv_chain_strict = ConversationalRetrievalChain(
+        retriever=vectorstore.as_retriever(search_kwargs={"k": 2}),
+        question_generator=LLMChain(llm=model, prompt=CONDENSE_QUESTION_PROMPT), # Handles history
+        combine_docs_chain=qa_chain_strict_instance, # Handles QA with context
+        memory=memory, # Use shared or specific memory
+        return_source_documents=True,
+        verbose=True
+    )
+
+    # Return the dictionary of chains
+    return {"data_driven": conv_chain_data_driven, "strict": conv_chain_strict}
     
     # Create two RetrievalQA chains, one for each prompt
     qa_chain_data_driven = ConversationalRetrievalChain.from_llm(
@@ -201,9 +285,31 @@ def rag_model(vectorstore):
     
     return {"data_driven": qa_chain_data_driven, "strict": qa_chain_strict}
 
-def query_response(query, rag_chain):
+
+# --- You might need to import LLMChain ---
+from langchain.chains import LLMChain
+# --- Rest of your code ---
+
+# Modify query_response slightly for clarity (though original logic was okay)
+def query_response(query, rag_chain_dict): # Renamed rag_chain to rag_chain_dict
     try:
         # Check for |||TRUE||| in the query
+        enable_data_driven = bool(re.search(r"\|\|\|TRUE\|\|\|", query, re.IGNORECASE))
+
+        # Remove |||TRUE||| from the query
+        cleaned_query = re.sub(r"\|\|\|true\|\|\|", "", query, flags=re.IGNORECASE).strip()
+
+        # Select the appropriate chain based on the flag
+        if enable_data_driven:
+            print("Using Data Driven Chain")
+            selected_chain = rag_chain_dict["data_driven"]
+        else:
+            print("Using Strict Chain")
+            selected_chain = rag_chain_dict["strict"]
+
+        # Execute the selected chain
+        # Note: ConversationalRetrievalChain expects 'question' input key
+
         enable = bool(re.search(r"\|\|\|TRUE\|\|\|", query, re.IGNORECASE))
         # Remove |||TRUE||| from the query
         cleaned_query = re.sub(r"\|\|\|true\|\|\|", "", query, flags=re.IGNORECASE).strip()
@@ -214,6 +320,9 @@ def query_response(query, rag_chain):
         return response
     except Exception as e:
         return f"An error occurred: {str(e)}"
+
+
+# --- Rest of your code remains the same ---
 
 def load_and_process(doc_source):
     all_docs = []
