@@ -16,6 +16,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain.chains.retrieval_qa.base import RetrievalQA
 from langchain.memory import ConversationBufferMemory
+from langchain.chains import LLMChain
 from pypdf import PdfReader
 import sys
 from unicodedata import category
@@ -148,54 +149,34 @@ def rag_model(vectorstore):
 
     # 2. Define QA Prompts (accepting context and question)
     template_data_driven_qa = """
-
-    # Define both prompt templates
-    template_data_driven = """
-
     You are a professional financial advisor assistant specializing in the United States financial markets, including stocks, cryptocurrency, bonds, and economic news.
-
     Tone: Use a formal and professional tone in your responses.
-
-
     Sources: Use only the provided context and any relevant web-retrieved financial data. Do not hallucinate or invent information not present in these sources.
     Provided Context:
     {context}
-
     Task: Answer the user's question by summarizing, analyzing, or explaining based on the available financial data (including real-time market data), news, and the provided context.
-
     If not available: If the needed information is not found in the provided sources, respond formally indicating that it is not available.
 
     User Question: {question}
-    Answer:"""
+    Answer: """
     PROMPT_DATA_DRIVEN = PromptTemplate(template=template_data_driven_qa, input_variables=["context", "question"])
 
     template_strict_qa = """
-
     Memory: Use {chat_history} to maintain continuity and incorporate relevant previous discussion points.
-
     Sources: Use only the provided context and any relevant web-retrieved financial data. Do not hallucinate or invent information not present in these sources.
-
     Task: Answer user queries by summarizing, analyzing, or explaining based on the available financial data (including real-time market data) and news.
-
     If not available: If the needed information is not found in the provided sources, respond formally indicating that it is not available.
-
     User Question: {question}"""
     
     template_strict = """
 
     You are a professional financial advisor assistant focused on providing accurate and insightful answers based solely on the provided document context.
-
     Tone: Maintain a formal, respectful, and professional tone at all times.
-
-
     Source: Only utilize information contained within the provided documents (context). Do not fabricate or infer information that is not explicitly stated.
     Provided Context:
     {context}
-
     Task: Based on the user’s question, offer well-structured, data-backed advice or summaries related to financial markets in the United States, including but not limited to stock markets, cryptocurrencies, bonds, personal finance, investment strategies, and economic policies, using *only* the provided context.
-
     Limitation: If the documents do not contain sufficient information to answer the user's query, politely inform the user that the requested information is unavailable based on the current data.
-
     User Question: {question}
     Answer:"""
     PROMPT_STRICT = PromptTemplate(template=template_strict_qa, input_variables=["context", "question"])
@@ -213,23 +194,7 @@ def rag_model(vectorstore):
         prompt=PROMPT_STRICT
     )
 
-    # 4. Create Memory (shared or separate, depending on desired behavior)
-    # If you want history shared between modes:
-    Memory: Use {chat_history} to retain continuity across interactions and reference earlier discussions where appropriate.
-
-    Source: Only utilize information contained within the provided documents. Do not fabricate or infer information that is not explicitly stated.
-
-    Task: Based on the user’s question, offer well-structured, data-backed advice or summaries related to financial markets in the United States, including but not limited to stock markets, cryptocurrencies, bonds, personal finance, investment strategies, and economic policies.
-
-    Limitation: If the documents do not contain sufficient information to answer the user's query, politely inform the user that the requested information is unavailable based on the current data.
-
-    User Question: {question}"""
-    
     # Create PromptTemplate objects
-    prompt_data_driven = PromptTemplate(template=template_data_driven, input_variables=['question', 'chat_history'])
-    prompt_strict = PromptTemplate(template=template_strict, input_variables=['question', 'chat_history', 'context'])
-    
-
     memory = ConversationBufferMemory(
         memory_key="chat_history",
         input_key='question',
@@ -260,35 +225,9 @@ def rag_model(vectorstore):
         return_source_documents=True,
         verbose=True
     )
-
-    # Return the dictionary of chains
+    
     return {"data_driven": conv_chain_data_driven, "strict": conv_chain_strict}
-    
-    # Create two RetrievalQA chains, one for each prompt
-    qa_chain_data_driven = ConversationalRetrievalChain.from_llm(
-        llm=model,
-        retriever=vectorstore.as_retriever(search_kwargs={"k": 2}),
-        memory=memory,
-        return_source_documents=True,
-        condense_question_prompt=prompt_data_driven,
-        verbose=True
-    )
-    
-    qa_chain_strict = ConversationalRetrievalChain.from_llm(
-        llm=model,
-        retriever=vectorstore.as_retriever(search_kwargs={"k": 2}),
-        memory=memory,
-        condense_question_prompt=prompt_strict,
-        return_source_documents=True,
-        verbose=True
-    )
-    
-    return {"data_driven": qa_chain_data_driven, "strict": qa_chain_strict}
 
-
-# --- You might need to import LLMChain ---
-from langchain.chains import LLMChain
-# --- Rest of your code ---
 
 # Modify query_response slightly for clarity (though original logic was okay)
 def query_response(query, rag_chain_dict): # Renamed rag_chain to rag_chain_dict
@@ -307,14 +246,6 @@ def query_response(query, rag_chain_dict): # Renamed rag_chain to rag_chain_dict
             print("Using Strict Chain")
             selected_chain = rag_chain_dict["strict"]
 
-        # Execute the selected chain
-        # Note: ConversationalRetrievalChain expects 'question' input key
-
-        enable = bool(re.search(r"\|\|\|TRUE\|\|\|", query, re.IGNORECASE))
-        # Remove |||TRUE||| from the query
-        cleaned_query = re.sub(r"\|\|\|true\|\|\|", "", query, flags=re.IGNORECASE).strip()
-        # Select the appropriate chain based on enable
-        selected_chain = rag_chain["data_driven"] if enable else rag_chain["strict"]
         result = selected_chain({"question": cleaned_query})
         response = result['answer']
         return response
