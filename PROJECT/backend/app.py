@@ -16,7 +16,8 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain.chains.retrieval_qa.base import RetrievalQA
 from langchain.memory import ConversationBufferMemory
-from langchain.chains import LLMChain
+from langchain.chains.llm import LLMChain
+from tools import agent_response
 from pypdf import PdfReader
 import sys
 from unicodedata import category
