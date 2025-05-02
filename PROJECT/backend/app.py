@@ -237,7 +237,8 @@ def query_response(query, rag_chain_dict): # Renamed rag_chain to rag_chain_dict
         # Select the appropriate chain based on the flag
         if enable_data_driven:
             print("Using Data Driven Chain")
-            selected_chain = rag_chain_dict["data_driven"]
+            # selected_chain = rag_chain_dict["data_driven"]
+            return agent_response(cleaned_query)  # Use the agent_response function directly
         else:
             print("Using Strict Chain")
             selected_chain = rag_chain_dict["strict"]
