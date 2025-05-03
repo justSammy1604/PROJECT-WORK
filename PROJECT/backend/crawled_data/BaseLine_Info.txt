@@ -1,4 +1,3 @@
-
 FINANCIAL MARKETS, STOCK MARKETS, CRYPTOCURRENCY MARKETS - THEORY, FORMULAS, ALGORITHMS
 
 =======================================================================================
@@ -254,5 +253,88 @@ Technical analysis combines multiple indicators for signals, though outcomes are
 
 Quantitative finance models link risk factors to expected returns and simulate outcomes.  
 
-- **CAPM (Capital Asset Pricing Model):** E[R_i] = R_f + β_i (E[R_m] - R_f), where β_i is asset beta.  
+- **CAPM (Capital Asset Pricing Model):** E[R_i] = R_f + β_i (E[R_m] - R_f), where β_i is asset beta.
 
+---
+
+## Financial Regulation & Compliance
+
+### 1. Regulatory Bodies
+- **SEC (U.S. Securities and Exchange Commission)**: Oversees securities markets and protects investors.
+- **FINRA (Financial Industry Regulatory Authority)**: Regulates broker-dealers and enforces compliance.
+- **Basel Committee**: Sets global banking regulations like Basel III, focusing on capital adequacy and risk management.
+
+### 2. Key Regulations
+- **MiFID II (EU)**: Enhances transparency and investor protection in financial markets.
+- **Dodd-Frank Act (US)**: Introduced after 2008 to reduce systemic risk via tighter oversight of derivatives and large banks.
+- **AML (Anti-Money Laundering)** and **KYC (Know Your Customer)** are critical for fraud prevention and compliance.
+
+---
+
+##  Corporate Finance Concepts
+
+### 1. Cost of Capital
+- **WACC (Weighted Average Cost of Capital)** = (E/V × Re) + (D/V × Rd × (1−Tc))  
+  Used to evaluate investment opportunities; lower WACC means cheaper financing.
+
+### 2. Capital Budgeting Techniques
+- **Net Present Value (NPV)**: Present value of future cash flows minus initial investment.
+- **Internal Rate of Return (IRR)**: Discount rate at which NPV = 0.
+- **Payback Period**: Time it takes to recover the initial investment.
+
+---
+
+##  Alternative Investments
+
+### 1. Hedge Funds
+- Use complex strategies like long/short equity, arbitrage, and derivatives to seek alpha.
+
+### 2. Private Equity (PE)
+- Investment in non-public companies through buyouts or venture capital.
+
+### 3. Real Estate Investment Trusts (REITs)
+- Publicly traded companies that invest in income-producing real estate.
+
+---
+
+##  Risk Management
+
+### 1. Types of Risk
+- **Market Risk**: Risk from market fluctuations.
+- **Credit Risk**: Counterparty may default.
+- **Liquidity Risk**: Inability to quickly convert assets to cash.
+- **Operational Risk**: Failures in systems or processes.
+
+### 2. Value-at-Risk (VaR)
+> A statistical technique to quantify the potential loss in value of a portfolio over a defined period for a given confidence interval.
+
+---
+
+## Explainable AI in Finance (XAI)
+
+- Importance: Compliance with regulations and trust-building with stakeholders.
+- Techniques: SHAP, LIME, Decision Trees (interpretable models).
+- Applications: Credit scoring, fraud detection, portfolio explanations.
+
+---
+
+## Derivatives and Hedging Instruments
+
+### 1. Options
+- **Call Option**: Right to buy at a specific price.
+- **Put Option**: Right to sell at a specific price.
+- **Greeks**: Delta, Gamma, Theta, Vega, Rho — sensitivity metrics.
+
+### 2. Futures & Forwards
+- Standardized (futures) and customized (forwards) contracts to buy/sell at a future date at a fixed price.
+
+### 3. Swaps
+- Agreements to exchange cash flows, like interest rate swaps or currency swaps.
+
+---
+
+## Data Types Useful for RAG Finance Bots
+
+- **Unstructured**: News articles, earnings call transcripts, analyst reports.
+- **Semi-structured**: SEC filings, financial tables, CSVs, Excel sheets.
+- **Structured**: Price data, financial ratios, API feeds.
