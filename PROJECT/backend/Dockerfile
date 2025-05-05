@@ -3,12 +3,15 @@
 FROM python:3.10-slim-bookworm AS builder
 WORKDIR /app
 
+# Install CA certificates (needed for SSL/TLS connections, e.g., Groq API)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
 # Copy only requirements first to leverage Docker cache
 COPY requirements.txt .
 
 # Install dependencies
-# Using --prefix=/install ensures packages are installed in a predictable location
-# that we can easily copy later.
 RUN pip install --no-cache-dir --prefix="/install" -r requirements.txt
 
 # Now copy the rest of the application code
@@ -18,14 +21,15 @@ COPY . .
 FROM python:3.10-slim-bookworm
 WORKDIR /app
 
-# Copy installed packages from the specific location in the builder stage
-# Adjust the python version path (3.10) if your base image changes significantly
-COPY --from=builder /install /usr/local/
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates curl && \
+    update-ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
 
-# Copy application code from the builder stage
+COPY --from=builder /install /usr/local/
 COPY --from=builder /app /app
 
-EXPOSE 4200
+ENV REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
-# Set the command to run the application
+EXPOSE 4200
 CMD ["python", "server.py"]
