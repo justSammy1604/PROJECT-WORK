@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 load_dotenv()
 
 # Verify environment variables
-if not os.getenv("GEMINI_API_KEY"):
+if not os.getenv("GEMINI_API_KEY"): 
     raise ValueError("GEMINI_API_KEY not found in .env")
 if not os.getenv("SERPAPI_API_KEY"):
     raise ValueError("SERPAPI_API_KEY not found in .env")
