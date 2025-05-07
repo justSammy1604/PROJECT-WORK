@@ -21,13 +21,12 @@ Flask-SocketIO>=5.4.1
 # crawl4ai==0.4.247
 # cohere==5.8.1
 # yfinance==0.2.58
-requests==2.32.3
 
+requests==2.32.3
 fastapi==0.115.0
 uvicorn==0.30.6
 google-generativeai==0.8.2
 serpapi==0.1.5
-=======
 Flask==3.0.3
 Flask-Cors>=4.0.1
 Werkzeug>=2.3.7  
@@ -55,4 +54,4 @@ fastapi==0.115.0
 uvicorn==0.30.6
 google-generativeai==0.8.2
 serpapi==0.1.5
->>>>>>> 01a0603ee06a6420f6eb3677691319e74d3fa1f8
+
