@@ -250,7 +250,11 @@ export default function Chat() {
 
   // Apply theme to document body
   useEffect(() => {
-    document.body.setAttribute('data-theme', theme);
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }, [theme]);
 
   // Scroll to bottom
@@ -451,17 +455,18 @@ export default function Chat() {
           ref={inputRef}
           key="chat-input"
         />
-        <Button
-          type="button"
-          onClick={handleSearchClick}
-          disabled={isLoading}
-          aria-label="Search"
-          variant={searchClicked ? 'default' : 'outline'}
-          className="mr-2 rounded-md"
-          title={searchClicked ? 'Search mode on' : 'Search mode off'}
-        >
-          <Search className="h-4 w-4" />
-        </Button>
+       <Button
+        type="button"
+        onClick={handleSearchClick}
+        disabled={isLoading}
+        aria-label="Search"
+        variant={searchClicked ? 'default' : 'outline'}
+        className={`mr-2 rounded-md ${searchClicked ? 'bg-black text-white' : ''}`}
+        title={searchClicked ? 'Search mode on' : 'Search mode off'}
+      >
+        <Search className={`h-4 w-4 ${searchClicked ? 'text-white' : ''}`} />
+      </Button>
+
         <Button
           type="submit"
           disabled={isLoading || !input.trim()}
