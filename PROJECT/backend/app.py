@@ -44,7 +44,7 @@ def retrieve_cache(json_file):
         cache = {
             "questions": OrderedDict(cache_data.get("questions", {})),
             "response_text": cache_data.get("response_text", []),
-            "frequencies": cache_data.get("frequencies", {})
+            "frequencies": cache_data.get("frequencies", {}),
             "reports": cache_data.get("reports", {})
         }
     except FileNotFoundError:
@@ -107,9 +107,10 @@ class SemanticCache:
     def cleanup_cache(self):
         low_freq_questions = [(q, self.cache["frequencies"].get(q, 0)) for q in self.cache["questions"].keys() if self.cache["frequencies"].get(q, 0) < 2]
         high_freq_questions = [(q, self.cache["frequencies"].get(q, 0)) for q in self.cache["questions"].keys() if self.cache["frequencies"].get(q, 0) >= 2]
-        high_reptd_questions = [(q, self.cache["reports"].get(q, 0)) for q in self.cache["questions"].keys() if self.cache["reports"].get(q, 0) >= 100]
+        low_reptd_questions = [(q, self.cache["reports"].get(q, 0)) for q in self.cache["questions"].keys() if self.cache["reports"].get(q, 0) < 100]
         low_freq_questions.sort(key=lambda x: list(self.cache["questions"].keys()).index(x[0]))
-        kept_questions = [q for q, freq in high_freq_questions and not q, reptd in high_reptd_questions] #questionable
+        kept_questions = [q for q, freq in high_freq_questions]
+        kept_questions = [q for q in kept_questions and [q for q, reptd in low_reptd_questions]]#questionable
 
         if not kept_questions:
             self.cache["questions"] = OrderedDict()
@@ -173,14 +174,6 @@ def rag_model(vectorstore):
     PROMPT_DATA_DRIVEN = PromptTemplate(template=template_data_driven_qa, input_variables=["context", "question"])
 
     template_strict_qa = """
-    Memory: Use {chat_history} to maintain continuity and incorporate relevant previous discussion points.
-    Sources: Use only the provided context and any relevant web-retrieved financial data. Do not hallucinate or invent information not present in these sources.
-    Task: Answer user queries by summarizing, analyzing, or explaining based on the available financial data (including real-time market data) and news.
-    If not available: If the needed information is not found in the provided sources, respond formally indicating that it is not available.
-    User Question: {question}"""
-
-    template_strict = """
-
     You are a professional financial advisor assistant focused on providing accurate and insightful answers based solely on the provided document context.
     Tone: Maintain a formal, respectful, and professional tone at all times.
     Source: Only utilize information contained within the provided documents (context). Do not fabricate or infer information that is not explicitly stated.

@@ -3,6 +3,7 @@ from langchain.prompts import ChatPromptTemplate
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.prompts import MessagesPlaceholder
 from langchain_core.messages import HumanMessage
+from langchain_core.chat_history import InMemoryChatMessageHistory
 from langchain_core.tools import tool
 from langchain.agents import AgentExecutor, create_tool_calling_agent, create_react_agent
 from datetime import date
@@ -12,6 +13,13 @@ import os
 
 load_dotenv()
 llm = ChatGroq(api_key=os.getenv("GROQ_KEY"), model='meta-llama/llama-4-scout-17b-16e-instruct')
+
+chat_histories = {}
+
+def get_memory(session_id: str):
+    if session_id not in chat_histories:
+        chat_histories[session_id] = InMemoryChatMessageHistory()
+    return chat_histories[session_id]
 
 @tool
 def company_information(ticker: str)-> dict:
@@ -162,9 +170,16 @@ prompt = ChatPromptTemplate.from_messages(
 finance_agent = create_tool_calling_agent(llm, tools, prompt)
 finance_agent_executor = AgentExecutor(agent=finance_agent, tools=tools, verbose=True)
 
+finance_agent_executor_history = RunnableWithMessageHistory(
+    finance_agent_executor,
+    get_memory,
+    input_messages_key='messages',
+    history_messages_key='chat_history',
+)
+
 def agent_response(query):
-    ag_response = finance_agent_executor.invoke({'messages':[HumanMessage(content=query)]}, 
-                                        config={"configurable": {"session_id": "test-session1"}})
+    ag_response = finance_agent_executor_history.invoke({'messages':[HumanMessage(content=query)]}, 
+                                        config={"configurable": {"session_id": "test-session-1"}})
     
     return ag_response['output']
     
