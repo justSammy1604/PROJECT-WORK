@@ -64,5 +64,14 @@ def query():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/report', methods=['POST'])
+def report():
+    """Endpoint to handle a cache-response report from the user."""
+    try:
+        #response_text fetch here
+        cache.report_update(response_text)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4200, debug=True)
