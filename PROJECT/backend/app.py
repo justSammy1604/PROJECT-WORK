@@ -173,14 +173,6 @@ def rag_model(vectorstore):
     PROMPT_DATA_DRIVEN = PromptTemplate(template=template_data_driven_qa, input_variables=["context", "question"])
 
     template_strict_qa = """
-    Memory: Use {chat_history} to maintain continuity and incorporate relevant previous discussion points.
-    Sources: Use only the provided context and any relevant web-retrieved financial data. Do not hallucinate or invent information not present in these sources.
-    Task: Answer user queries by summarizing, analyzing, or explaining based on the available financial data (including real-time market data) and news.
-    If not available: If the needed information is not found in the provided sources, respond formally indicating that it is not available.
-    User Question: {question}"""
-
-    template_strict = """
-
     You are a professional financial advisor assistant focused on providing accurate and insightful answers based solely on the provided document context.
     Tone: Maintain a formal, respectful, and professional tone at all times.
     Source: Only utilize information contained within the provided documents (context). Do not fabricate or infer information that is not explicitly stated.
