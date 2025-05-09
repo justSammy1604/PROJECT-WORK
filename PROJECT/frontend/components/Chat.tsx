@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, memo } from 'react';
-import { Send, ChevronDown, Moon, Sun, Search, List } from 'lucide-react';
+import { Send, ChevronDown, Moon, Sun, Search, List, MoreHorizontal, AlertCircle } from 'lucide-react'; // Added MoreHorizontal, AlertCircle
 import ReactMarkdown from 'react-markdown';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -12,6 +12,7 @@ import {
 } from 'recharts';
 import { Button } from '@/components/ui/button';
 import { Input } from './ui/input';
+import Link from 'next/link';
 
 // Finance Topics
 const financeTopics = [
@@ -229,6 +230,76 @@ const GraphRenderer = memo<{ message: Message }>(({ message }) => {
       return null;
   }
 });
+GraphRenderer.displayName = "GraphRenderer"; // Added for memoized component
+
+// START OF /report BUTTON FUNCTIONALITY
+const AssistantMessageOptions: React.FC<{ responseText: string }> = ({ responseText }) => {
+  const [showReportButton, setShowReportButton] = useState(false);
+
+  const handleReport = async () => {
+    if (!responseText) {
+      console.error("No response text to report.");
+      alert("Cannot report an empty response.");
+      return;
+    }
+
+    const reportApiUrl = process.env.NEXT_PUBLIC_API_URL ? `${process.env.NEXT_PUBLIC_API_URL}/report` : 'http://localhost:4200/report';
+
+    try {
+      const response = await fetch(reportApiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ response_text: responseText }),
+      });
+
+      setShowReportButton(false); // Hide menu after action
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Report successful:', data.message);
+        alert('Thank you! This response has been reported.');
+      } else {
+        const errorData = await response.json().catch(() => ({error: "Failed to parse error from server"}));
+        console.error('Failed to report response:', errorData.error);
+        alert(`Error reporting response: ${errorData.error || 'Unknown error'}`);
+      }
+    } catch (error) {
+      setShowReportButton(false); // Hide menu on error
+      console.error('Network error or other issue reporting response:', error);
+      alert('An error occurred while trying to report the response. Please check your connection.');
+    }
+  };
+
+  return (
+    <div className="relative ml-2 self-start"> {/* self-start to align with the top of the message bubble */}
+      <Button
+        variant="ghost" // Using ghost for a less intrusive button
+        size="icon"
+        onClick={() => setShowReportButton(!showReportButton)}
+        className="h-6 w-6 p-0 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+        aria-label="More options"
+      >
+        <MoreHorizontal className="h-4 w-4" />
+      </Button>
+      {showReportButton && (
+        <div className="absolute right-0 mt-1 w-40 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-md shadow-lg z-20 py-1">
+          <Button
+            variant="ghost" // Using ghost for menu item as well
+            onClick={handleReport}
+            className="w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 flex items-center"
+          >
+            <AlertCircle className="h-4 w-4 mr-2 text-red-500" /> {/* Icon for report */}
+            Report inaccurate
+          </Button>
+        </div>
+      )}
+    </div>
+  );
+};
+AssistantMessageOptions.displayName = "AssistantMessageOptions"; // Added for memoized component
+// END OF /report BUTTON FUNCTIONALITY
 
 // Main Chat Component
 export default function Chat() {
@@ -308,8 +379,9 @@ export default function Chat() {
 
   // Handle topic selection and submission to /links endpoint
   const handleTopicSubmit = async (topic: string) => {
+    const linksApiUrl = process.env.NEXT_PUBLIC_API_URL ? `${process.env.NEXT_PUBLIC_API_URL}/links` : 'http://localhost:4200/links';
     try {
-      const response = await fetch(`http://localhost:4200/links?search=${encodeURIComponent(topic)}`, {
+      const response = await fetch(`${linksApiUrl}?search=${encodeURIComponent(topic)}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -333,20 +405,19 @@ export default function Chat() {
     e.preventDefault();
     if (!input.trim()) return;
 
-    // Create final input for backend with |||TRUE||| if search is active
     let finalInput = input;
     if (searchClicked) {
       finalInput += ' |||TRUE||| ';
     }
 
-    // Create user message with original input for display
     const userMessage: Message = { role: 'user', content: input };
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
 
+    const queryApiUrl = process.env.NEXT_PUBLIC_API_URL ? `${process.env.NEXT_PUBLIC_API_URL}/query` : 'http://localhost:4200/query';
     try {
-      const response = await fetch('http://localhost:4200/query', {
+      const response = await fetch(queryApiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: finalInput, extractGraphData: true }),
@@ -390,6 +461,17 @@ export default function Chat() {
         >
           <List className="h-4 w-4" />
         </Button>
+        <Link href="/deepsearch" passHref legacyBehavior>
+            <Button
+              variant="link"
+              size="sm" // Using sm for a slightly smaller button if preferred
+              className="rounded-md"
+              aria-label="Go to Deep Search"
+            >
+              <Search className="h-4 w-4 mr-1 sm:mr-2" /> {/* Added margin for icon */}
+              <span className="hidden sm:inline">Deep Search</span> {/* Hide text on very small screens */}
+            </Button>
+          </Link>
         <Button
           variant="outline"
           size="icon"
@@ -410,15 +492,30 @@ export default function Chat() {
       <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50/50 dark:bg-gray-700/50">
         {messages.map((message, index) => (
           <div key={index} className={`flex flex-col mb-3 ${message.role === 'user' ? 'items-end' : 'items-start'}`}>
-            <div
-              className={`max-w-[85%] p-3 rounded-2xl shadow-sm ${
-                message.role === 'user' ? 'bg-blue-500 text-white' : 'bg-white dark:bg-gray-600 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-500'
-              } ${message.className || ''}`}
-            >
-              <div className="prose prose-sm max-w-none dark:prose-invert">
-                <ReactMarkdown>{message.content}</ReactMarkdown>
+            {/* START: Modified rendering for assistant message to include options button */}
+            {message.role === 'assistant' ? (
+              <div className="flex items-start max-w-[85%]"> {/* Wrapper for message bubble and options */}
+                <div
+                  className={`p-3 rounded-2xl shadow-sm bg-white dark:bg-gray-600 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-500 ${message.className || ''}`}
+                >
+                  <div className="prose prose-sm max-w-none dark:prose-invert">
+                    <ReactMarkdown>{message.content}</ReactMarkdown>
+                  </div>
+                </div>
+                <AssistantMessageOptions responseText={message.content} />
               </div>
-            </div>
+            ) : (
+              // Original user message rendering
+              <div
+                className={`max-w-[85%] p-3 rounded-2xl shadow-sm bg-blue-500 text-white ${message.className || ''}`}
+              >
+                <div className="prose prose-sm max-w-none dark:prose-invert">
+                  <ReactMarkdown>{message.content}</ReactMarkdown>
+                </div>
+              </div>
+            )}
+            {/* END: Modified rendering for assistant message */}
+
             {message.graphData && message.graphType && (
               <div className="mt-3 p-3 bg-white dark:bg-gray-600 border border-gray-200 dark:border-gray-500 rounded-lg shadow-sm w-full max-w-[95%] self-start overflow-hidden">
                 <GraphRenderer message={message} />
