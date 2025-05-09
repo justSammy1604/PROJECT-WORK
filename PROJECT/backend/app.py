@@ -74,7 +74,7 @@ class SemanticCache:
     #         self.cache["response_text"].pop(0)
 
     def report_update(self, response_text):
-      self.cache["report"][response_text] = self.cache["report"][response_text] + 1
+      self.cache["reports"][response_text] = self.cache["reports"][response_text] + 1
 
 
     def ask(self, question: str, rag_chain) -> str:
