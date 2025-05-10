@@ -8,7 +8,7 @@ export default function DeepSearchPage() {
   const [messages, setMessages] = useState<Message[]>([])
 
   return (
-    <main className="deepsearch-container max-w-3xl mx-auto  h-screen flex flex-col ">
+    <main className="min-h-screen bg-black text-gray-100 flex flex-col items-center justify-center p-0 m-0">
       <DeepSearchChat messages={messages} setMessages={setMessages} />
     </main>
   )
