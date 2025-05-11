@@ -69,12 +69,12 @@ def report():
     """Endpoint to handle a cache-response report from the user."""
     try:
         data_request = request.json
-        if not data_request or 'response_text' not in data_request:
-            return jsonify({'error': 'response_text not provided in request body'}), 400
+        if not data_request or 'user_query' not in data_request:
+            return jsonify({'error': 'user_query not provided in request body'}), 400
 
-        reported_text = data_request.get('response_text')
-        cache.report_update(reported_text) 
-        return jsonify({'message': 'Response reported successfully'}), 200
+        question = data_request.get('user_query')
+        cache.report_update(question)        
+        return jsonify({'message': 'User query reported successfully'}), 200
     except Exception as e:
         app.logger.error(f"Error in /report: {str(e)}")
         return jsonify({"error": str(e)}), 500
