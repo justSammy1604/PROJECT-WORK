@@ -73,8 +73,15 @@ class SemanticCache:
     #         self.cache["questions"].popitem(last=False)
     #         self.cache["response_text"].pop(0)
 
-    def report_update(self, response_text):
-      self.cache["reports"][response_text] = self.cache["reports"][response_text] + 1
+    def report_update(self, question: str) ->str:
+      embedding = self.encoder.encode([question])
+
+      D, I = self.index.search(embedding, 1)
+      if len(I[0]) > 0 and I[0][0] >= 0 and D[0][0] <= self.threshold:
+        row_id = int(I[0][0])
+        matched_question = list(self.cache["questions"].keys())[row_id]
+        self.cache["reports"][matched_question] = self.cache["reports"].get(matched_question, 0) + 1
+        print("report updated")
 
 
     def ask(self, question: str, rag_chain) -> str:
