@@ -72,8 +72,8 @@ def report():
         if not data_request or 'user_query' not in data_request:
             return jsonify({'error': 'user_query not provided in request body'}), 400
 
-        reported_query = data_request.get('user_query')
-        cache.report_update(reported_query)        
+        question = data_request.get('user_query')
+        cache.report_update(question)        
         return jsonify({'message': 'User query reported successfully'}), 200
     except Exception as e:
         app.logger.error(f"Error in /report: {str(e)}")

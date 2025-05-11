@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, memo } from 'react';
-import { Send, ChevronDown, Moon, Sun, Search, List, MoreHorizontal, AlertCircle } from 'lucide-react'; // Added MoreHorizontal, AlertCircle
+import { Send, ChevronDown, Moon, Sun, Search, List, MoreHorizontal, AlertCircle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -230,16 +230,22 @@ const GraphRenderer = memo<{ message: Message }>(({ message }) => {
       return null;
   }
 });
-GraphRenderer.displayName = "GraphRenderer"; // Added for memoized component
+GraphRenderer.displayName = "GraphRenderer";
 
 // START OF /report BUTTON FUNCTIONALITY
-const AssistantMessageOptions: React.FC<{ responseText: string }> = ({ responseText }) => {
+// Changed props to accept userQuery instead of responseText
+interface AssistantMessageOptionsProps {
+  userQuery: string | null; // User's query that led to this response
+}
+
+const AssistantMessageOptions: React.FC<AssistantMessageOptionsProps> = ({ userQuery }) => {
   const [showReportButton, setShowReportButton] = useState(false);
 
   const handleReport = async () => {
-    if (!responseText) {
-      console.error("No response text to report.");
-      alert("Cannot report an empty response.");
+    if (!userQuery) { // Check if userQuery is null or empty
+      console.error("No user query available to report or query is empty.");
+      alert("Cannot report: The original user query is not available or is empty.");
+      setShowReportButton(false);
       return;
     }
 
@@ -251,7 +257,8 @@ const AssistantMessageOptions: React.FC<{ responseText: string }> = ({ responseT
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ response_text: responseText }),
+        // Send user_query instead of response_text
+        body: JSON.stringify({ user_query: userQuery }),
       });
 
       setShowReportButton(false); // Hide menu after action
@@ -259,23 +266,23 @@ const AssistantMessageOptions: React.FC<{ responseText: string }> = ({ responseT
       if (response.ok) {
         const data = await response.json();
         console.log('Report successful:', data.message);
-        alert('Thank you! This response has been reported.');
+        alert('Thank you! This response has been reported.'); // Updated alert
       } else {
         const errorData = await response.json().catch(() => ({error: "Failed to parse error from server"}));
-        console.error('Failed to report response:', errorData.error);
-        alert(`Error reporting response: ${errorData.error || 'Unknown error'}`);
+        console.error('Failed to report query:', errorData.error); // Updated log
+        alert(`Error reporting interaction: ${errorData.error || 'Unknown error'}`); // Updated alert
       }
     } catch (error) {
       setShowReportButton(false); // Hide menu on error
-      console.error('Network error or other issue reporting response:', error);
-      alert('An error occurred while trying to report the response. Please check your connection.');
+      console.error('Network error or other issue reporting query:', error); // Updated log
+      alert('An error occurred while trying to report the interaction. Please check your connection.'); // Updated alert
     }
   };
 
   return (
-    <div className="relative ml-2 self-start"> {/* self-start to align with the top of the message bubble */}
+    <div className="relative ml-2 self-start">
       <Button
-        variant="ghost" // Using ghost for a less intrusive button
+        variant="ghost"
         size="icon"
         onClick={() => setShowReportButton(!showReportButton)}
         className="h-6 w-6 p-0 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
@@ -286,11 +293,13 @@ const AssistantMessageOptions: React.FC<{ responseText: string }> = ({ responseT
       {showReportButton && (
         <div className="absolute right-0 mt-1 w-40 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-md shadow-lg z-20 py-1">
           <Button
-            variant="ghost" // Using ghost for menu item as well
+            variant="ghost"
             onClick={handleReport}
             className="w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 flex items-center"
+            // Disable button if userQuery is not available
+            disabled={!userQuery}
           >
-            <AlertCircle className="h-4 w-4 mr-2 text-red-500" /> {/* Icon for report */}
+            <AlertCircle className="h-4 w-4 mr-2 text-red-500" />
             Report inaccurate
           </Button>
         </div>
@@ -298,7 +307,7 @@ const AssistantMessageOptions: React.FC<{ responseText: string }> = ({ responseT
     </div>
   );
 };
-AssistantMessageOptions.displayName = "AssistantMessageOptions"; // Added for memoized component
+AssistantMessageOptions.displayName = "AssistantMessageOptions";
 // END OF /report BUTTON FUNCTIONALITY
 
 // Main Chat Component
@@ -314,12 +323,10 @@ export default function Chat() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [searchClicked, setSearchClicked] = useState(false);
 
-  // Toggle theme function
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
-  // Apply theme to document body
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -328,7 +335,6 @@ export default function Chat() {
     }
   }, [theme]);
 
-  // Scroll to bottom
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -337,7 +343,6 @@ export default function Chat() {
     scrollToBottom();
   }, [messages]);
 
-  // Scroll button visibility
   useEffect(() => {
     const container = chatContainerRef.current;
     if (!container) return;
@@ -352,7 +357,6 @@ export default function Chat() {
     return () => container.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Focus input after input, isLoading, or messages change
   useEffect(() => {
     if (inputRef.current && !isLoading) {
       requestAnimationFrame(() => {
@@ -361,7 +365,6 @@ export default function Chat() {
     }
   }, [input, isLoading, messages]);
 
-  // Parse graph data
   const parseGraphData = (response: any): Message => {
     try {
       const graphInfo = response.graphData;
@@ -377,7 +380,6 @@ export default function Chat() {
     }
   };
 
-  // Handle topic selection and submission to /links endpoint
   const handleTopicSubmit = async (topic: string) => {
     const linksApiUrl = process.env.NEXT_PUBLIC_API_URL ? `${process.env.NEXT_PUBLIC_API_URL}/links` : 'http://localhost:4200/links';
     try {
@@ -400,7 +402,6 @@ export default function Chat() {
     }
   };
 
-  // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
@@ -410,8 +411,8 @@ export default function Chat() {
       finalInput += ' |||TRUE||| ';
     }
 
-    const userMessage: Message = { role: 'user', content: input };
-    setMessages(prev => [...prev, userMessage]);
+    const userMessage: Message = { role: 'user', content: input }; // Store the original input before adding search marker
+    setMessages(prev => [...prev, { role: 'user', content: finalInput }]); // Send finalInput with marker
     setInput('');
     setIsLoading(true);
 
@@ -451,7 +452,6 @@ export default function Chat() {
 
   return (
     <div className="flex flex-col h-[500px] max-w-6xl mx-auto border rounded-lg shadow-2xl bg-white dark:bg-gray-800 dark:border-gray-700">
-      {/* Top buttons */}
       <div className="absolute top-4 left-4 right-4 flex justify-between z-10">
         <Button
           variant="outline"
@@ -464,12 +464,12 @@ export default function Chat() {
         <Link href="/deepsearch" passHref legacyBehavior>
             <Button
               variant="link"
-              size="sm" // Using sm for a slightly smaller button if preferred
+              size="sm"
               className="rounded-md"
               aria-label="Go to Deep Search"
             >
-              <Search className="h-4 w-4 mr-1 sm:mr-2" /> {/* Added margin for icon */}
-              <span className="hidden sm:inline">Deep Search</span> {/* Hide text on very small screens */}
+              <Search className="h-4 w-4 mr-1 sm:mr-2" />
+              <span className="hidden sm:inline">Deep Search</span>
             </Button>
           </Link>
         <Button
@@ -482,7 +482,6 @@ export default function Chat() {
         </Button>
       </div>
 
-      {/* Topic Selection Modal */}
       <TopicModal
         isOpen={isTopicModalOpen}
         onClose={() => setIsTopicModalOpen(false)}
@@ -490,39 +489,63 @@ export default function Chat() {
       />
 
       <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50/50 dark:bg-gray-700/50">
-        {messages.map((message, index) => (
-          <div key={index} className={`flex flex-col mb-3 ${message.role === 'user' ? 'items-end' : 'items-start'}`}>
-            {/* START: Modified rendering for assistant message to include options button */}
-            {message.role === 'assistant' ? (
-              <div className="flex items-start max-w-[85%]"> {/* Wrapper for message bubble and options */}
+        {messages.map((message, index) => {
+          // Determine userQuery if current message is assistant and previous is user
+          let userQueryForAssistant: string | null = null;
+          if (message.role === 'assistant' && index > 0 && messages[index - 1]?.role === 'user') {
+            // We need the original user query, before any ' |||TRUE||| ' was appended
+            // The `messages` state for user already stores the raw input if handleSubmit is adjusted
+            // Let's assume `messages[index-1].content` is the query sent to the backend.
+            // If `finalInput` was added to messages, we need to strip the marker.
+            // For simplicity, let's assume messages[index-1].content is what we want to report.
+            // If `userMessage: Message = { role: 'user', content: input };` was added to messages,
+            // then `messages[index-1].content` is the original input. This seems to be the case.
+
+            // The code `setMessages(prev => [...prev, { role: 'user', content: finalInput }]);`
+            // adds `finalInput` to messages. So we need to strip it if present.
+            const prevUserMessageContent = messages[index-1].content;
+            const searchMarker = ' |||TRUE||| ';
+            if (prevUserMessageContent.endsWith(searchMarker)) {
+                userQueryForAssistant = prevUserMessageContent.substring(0, prevUserMessageContent.length - searchMarker.length);
+            } else {
+                userQueryForAssistant = prevUserMessageContent;
+            }
+          }
+
+          return (
+            <div key={index} className={`flex flex-col mb-3 ${message.role === 'user' ? 'items-end' : 'items-start'}`}>
+              {message.role === 'assistant' ? (
+                <div className="flex items-start max-w-[85%]">
+                  <div
+                    className={`p-3 rounded-2xl shadow-sm bg-white dark:bg-gray-600 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-500 ${message.className || ''}`}
+                  >
+                    <div className="prose prose-sm max-w-none dark:prose-invert">
+                      <ReactMarkdown>{message.content}</ReactMarkdown>
+                    </div>
+                  </div>
+                  {/* Pass the identified user query (original, without marker) */}
+                  <AssistantMessageOptions userQuery={userQueryForAssistant} />
+                </div>
+              ) : (
                 <div
-                  className={`p-3 rounded-2xl shadow-sm bg-white dark:bg-gray-600 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-500 ${message.className || ''}`}
+                  className={`max-w-[85%] p-3 rounded-2xl shadow-sm bg-blue-500 text-white ${message.className || ''}`}
                 >
                   <div className="prose prose-sm max-w-none dark:prose-invert">
-                    <ReactMarkdown>{message.content}</ReactMarkdown>
+                    {/* Display user message (could be with marker, but that's internal) */}
+                    {/* For display, you might want to strip the marker here too, or ensure it's stripped before adding to messages if it shouldn't be seen */}
+                    <ReactMarkdown>{message.content.replace(' |||TRUE||| ', '')}</ReactMarkdown>
                   </div>
                 </div>
-                <AssistantMessageOptions responseText={message.content} />
-              </div>
-            ) : (
-              // Original user message rendering
-              <div
-                className={`max-w-[85%] p-3 rounded-2xl shadow-sm bg-blue-500 text-white ${message.className || ''}`}
-              >
-                <div className="prose prose-sm max-w-none dark:prose-invert">
-                  <ReactMarkdown>{message.content}</ReactMarkdown>
-                </div>
-              </div>
-            )}
-            {/* END: Modified rendering for assistant message */}
+              )}
 
-            {message.graphData && message.graphType && (
-              <div className="mt-3 p-3 bg-white dark:bg-gray-600 border border-gray-200 dark:border-gray-500 rounded-lg shadow-sm w-full max-w-[95%] self-start overflow-hidden">
-                <GraphRenderer message={message} />
-              </div>
-            )}
-          </div>
-        ))}
+              {message.graphData && message.graphType && (
+                <div className="mt-3 p-3 bg-white dark:bg-gray-600 border border-gray-200 dark:border-gray-500 rounded-lg shadow-sm w-full max-w-[95%] self-start overflow-hidden">
+                  <GraphRenderer message={message} />
+                </div>
+              )}
+            </div>
+          );
+        })}
         {isLoading && (
           <div className="flex justify-start">
             <div className="p-3 rounded-xl bg-gray-200 dark:bg-gray-500 text-gray-600 dark:text-gray-300 italic text-sm">Thinking...</div>
