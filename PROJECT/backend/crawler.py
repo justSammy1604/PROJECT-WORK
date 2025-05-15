@@ -59,11 +59,13 @@ async def crawl_parallel(urls: List[str], searchText, max_concurrent: int = 3):
 
     # Minimal browser config
     browser_config = BrowserConfig(
+        #browser_type="chrome",
         headless=True,
         verbose=False,   # corrected from 'verbos=False'
         extra_args=["--disable-gpu", 
                     "--disable-dev-shm-usage", 
                     "--no-sandbox",
+                    "--disable-extensions",
         ]
     )
     crawl_config = CrawlerRunConfig(cache_mode=CacheMode.BYPASS)

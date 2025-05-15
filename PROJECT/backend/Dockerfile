@@ -22,12 +22,17 @@ FROM python:3.10-slim-bookworm
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates curl && \
+    ca-certificates curl \
+    libnss3 libatk-bridge2.0-0 libxcomposite1 libxrandr2 libgbm1 \
+    libgtk-3-0 libxdamage1 libxfixes3 libxshmfence1 libasound2 libx11-xcb1 \
+    fonts-liberation libappindicator3-1 xdg-utils && \
     update-ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /install /usr/local/
 COPY --from=builder /app /app
+
+RUN playwright install --with-deps
 
 ENV REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
