@@ -23,7 +23,7 @@ export function DeepSearchMessage({ message }: DeepSearchMessageProps) {
     'p-3 px-4 rounded-2xl shadow-md max-w-[85%] md:max-w-[75%] backdrop-blur-md border text-base font-sans leading-relaxed break-words' // Added px-4, text-base, leading-relaxed, break-words
 
   const userBubbleClasses = `${bubbleBaseClasses} bg-blue-500 text-white border-transparent`
-  const botBubbleClasses = `${bubbleBaseClasses} bg-white/70 dark:bg-gray-700/70 text-gray-900 dark:text-gray-100 border-gray-200/50 dark:border-gray-600/50`
+  const botBubbleClasses = `${bubbleBaseClasses} bg-black dark:bg-gray-700/70 text-white dark:text-gray-100 border-none dark:border-gray-600/50`
   const errorBubbleClasses = `${bubbleBaseClasses} bg-red-100/80 dark:bg-red-900/60 text-red-800 dark:text-red-100 border-red-300/50 dark:border-red-700/50` // Adjusted error text color slightly
 
   const bubbleClasses = isUser
