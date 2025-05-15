@@ -5,7 +5,20 @@ FROM node:20-alpine
 WORKDIR /app
 
 # Install Chromium dependencies (required for Playwright) [[3]][[6]]
-RUN apk add --no-cache chromium firefox
+#RUN apk add --no-cache chromium firefox
+RUN apk add --no-cache \
+    chromium \
+    firefox \
+    nss \
+    freetype \
+    harfbuzz \
+    ca-certificates \
+    ttf-freefont \
+    nodejs \
+    yarn \
+    udev \
+    bash \
+    && rm -rf /var/cache/*
 
 # Copy package.json and install dependencies
 COPY package.json ./
