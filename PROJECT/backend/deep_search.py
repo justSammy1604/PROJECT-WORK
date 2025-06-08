@@ -5,7 +5,7 @@ import google.generativeai as genai
 from serpapi.google_search import GoogleSearch
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
-from typing import List  # Added for history typing
+from typing import List 
 from datetime import datetime
 
 # Load environment variables
@@ -23,17 +23,6 @@ try:
 except Exception as e:
     print(f"Error configuring Gemini API: {str(e)}")
     raise
-
-app = FastAPI()
-
-# Enable CORS
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 # Pydantic model for messages (NEW)
 class Message(BaseModel):
@@ -154,88 +143,3 @@ Ensure the response is engaging, informative, and suitable for users seeking a d
 
 # Ensure the response is engaging, informative, evidence-based where possible, and suitable for users seeking a deep understanding of medical subjects, while always maintaining ethical considerations.
 # """
-
-@app.post("/deepsearch")
-async def deep_search(request: SearchRequest):
-    try:
-        print(f"Received query: {request.query}")
-        
-        # Convert history to Gemini-compatible format
-        history = [
-            {"role": "user" if msg.role == "user" else "model", "parts": [{"text": msg.content}]}
-            for msg in request.history
-        ]
-
-        # Start a chat session with history
-        chat = model.start_chat(history=history)
-
-        # Preprocess query for finance intent
-        query = request.query.lower()
-        refined_query = query
-        if "market" in query or "stocks" in query:
-            if "outperforming" in query or "best" in query:
-                refined_query = "top performing stocks today"
-            elif "stock" in query:
-                refined_query = "stock market today"
-            elif "moving average" in query or "prediction algorithms" in query:
-                refined_query = "moving average financial markets prediction algorithms recent results"
-            else:
-                refined_query = "financial market news today"
-        print(f"Refined query: {refined_query}")
-
-        # Perform initial web search
-        search_results = web_search(refined_query)
-        print(f"Search results for {refined_query}: {search_results}")
-
-        # Track thinking process
-        thinking_steps = [
-            f"Initial query: {request.query}",
-            f"Refined query: {refined_query}",
-            f"Initial search results: {search_results}"
-        ]
-
-        # Combine system prompt, history, query, and search results
-        prompt = f"{FINANCE_PROMPT}\nConversation history: {request.history}\nUser query: {request.query}\nWeb search results: {search_results}"
-
-        # Initial response with function calling
-        response = chat.send_message(
-            prompt,
-            tools=[{"function_declarations": [web_search_declaration]}]
-        )
-        print(f"Initial response: {response}")
-
-        iteration_count = 0
-        max_iterations = 3
-        while iteration_count < max_iterations:
-            if hasattr(response.parts[0], "function_call") and response.parts[0].function_call:
-                function_call = response.parts[0].function_call
-                if function_call.name == "web_search":
-                    query = function_call.args["query"]
-                    print(f"Performing follow-up search for: {query}")
-                    search_results = web_search(query)
-                    print(f"Follow-up search results: {search_results}")
-                    thinking_steps.append(f"Follow-up search for '{query}': {search_results}")
-                    prompt = f"{FINANCE_PROMPT}\nConversation history: {request.history}\nUser query: {request.query}\nWeb search results: {search_results}"
-                    response = chat.send_message(
-                        prompt,
-                        tools=[{"function_declarations": [web_search_declaration]}]
-                    )
-                    print(f"Follow-up response: {response}")
-                    iteration_count += 1
-                else:
-                    raise HTTPException(status_code=400, detail="Unknown function call")
-            else:
-                final_response = response.text
-                thinking_process = "\n".join(thinking_steps)
-                print(f"Thinking process: {thinking_process}")
-                print(f"Final response: {final_response}")
-                # Update history with new query and response
-                updated_history = request.history + [
-                    Message(role="user", content=request.query),
-                    Message(role="bot", content=final_response)
-                ]
-                return {"response": final_response, "thinking": thinking_process, "history": updated_history}
-        raise HTTPException(status_code=500, detail="Max iterations reached without final response")
-    except Exception as e:
-        print(f"Error in deep_search: {str(e)}")
-        raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
