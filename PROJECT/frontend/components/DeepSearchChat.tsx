@@ -68,8 +68,9 @@ export function DeepSearchChat({ messages, setMessages }: DeepSearchChatProps) {
       }
 
       const data = await response.json()
+      console.log("Response data:", data);
       // Basic validation, adjust as needed for your actual API response structure
-      if (typeof data.thinking !== 'string' || !Array.isArray(data.history)) {
+      if ( !Array.isArray(data.history)) {
         throw new Error('Invalid response format from server')
       }
 

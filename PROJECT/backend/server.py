@@ -2,31 +2,30 @@ import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS 
 import requests
-from app import rag_pipeline, SemanticCache, deep_search_pipeline
+from app import rag_pipeline, SemanticCache
 from dotenv import load_dotenv
 from crawler import crawl_parallel
-import time
-
 load_dotenv()
 app = Flask(__name__)
 CORS(app)  # This enables CORS for all routes
+
 
 data_from_files = 'crawled_data'  # We can also add crawled_data file as input here. 
 rag_chain = rag_pipeline(data_from_files)
 cache = SemanticCache()
 
-def get_top_links(search, result=50):
+def get_top_links(search,result=50):
     """ Get the top links from Google search results using ScrapingDog API.
     Function to get the top links from Google search results using ScrapingDog API."""
     url = "https://api.scrapingdog.com/google"
     params = {
-        "api_key": os.getenv("SCRAP_KEY"),
-        "query": search,
-        "results": result,
-        "country": "us",
-        "page": 0,
-        "advance_search": "false"
-    }
+    "api_key": os.getenv("SCRAP_KEY"),
+    "query": search,
+    "results": result,
+    "country": "us",
+    "page": 0,
+    "advance_search": "false"
+}
     response = requests.get(url, params=params)
     if response.status_code == 200:
         data = response.json()
@@ -46,9 +45,9 @@ async def get_search_query():
         result = request.args.get('result')  # Default to 50 results if not provided
         if not search and not result:
             return jsonify({'error': 'Search Term Not Provided'}), 400
-        links = get_top_links(search, result)
-        await crawl_parallel(links, search)
-        return jsonify({'message': 'Search Query was entered successfully'}), 200
+        links = get_top_links(search,result)
+        await crawl_parallel(links,search)
+        return jsonify({'message':'Search Query was entered successfully'}) , 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -72,50 +71,13 @@ def report():
         data_request = request.json
         if not data_request or 'user_query' not in data_request:
             return jsonify({'error': 'user_query not provided in request body'}), 400
+
         question = data_request.get('user_query')
         cache.report_update(question)        
         return jsonify({'message': 'User query reported successfully'}), 200
     except Exception as e:
         app.logger.error(f"Error in /report: {str(e)}")
         return jsonify({"error": str(e)}), 500
-
-@app.route('/deep_search', methods=['POST'])
-def deep_search():
-    """Endpoint for deep search functionality using SerpAPI and Gemini."""
-    try:
-        data_request = request.json
-        
-        if not data_request or 'query' not in data_request:
-            return jsonify({
-                "success": False,
-                "error": "Query parameter is required"
-            }), 400
-        
-        query = data_request['query'].strip()
-        if not query:
-            return jsonify({
-                "success": False,
-                "error": "Query cannot be empty"
-            }), 400
-        
-        # Optional parameters
-        max_searches = data_request.get('max_searches', 5)
-        confidence_threshold = data_request.get('confidence_threshold', 85)
-        
-        # Perform deep search using the function from app.py
-        result = deep_search_pipeline(query, max_searches, confidence_threshold)
-        
-        if result["success"]:
-            return jsonify(result), 200
-        else:
-            return jsonify(result), 500
-            
-    except Exception as e:
-        app.logger.error(f"Error in /deep-search: {str(e)}")
-        return jsonify({
-            "success": False,
-            "error": f"Server error: {str(e)}"
-        }), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4200, debug=True)

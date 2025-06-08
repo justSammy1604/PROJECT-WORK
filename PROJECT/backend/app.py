@@ -23,8 +23,6 @@ import sys
 from unicodedata import category
 import spacy
 import re
-import requests
-from typing import List, Dict, Any
 
 # Load environment variables
 load_dotenv()
@@ -32,10 +30,6 @@ api_key = os.getenv('GOOGLE_API_MODEL')
 model = ChatGoogleGenerativeAI(model="gemini-2.0-flash", google_api_key=api_key, temperature=0.4, convert_system_message_to_human=True)
 embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=api_key)
 hf_key = os.getenv('HF_TOKEN')
-
-# Deep Search Configuration
-SERPAPI_KEY = os.getenv('SERPAPI_KEY')
-GEMINI_API_KEY = os.getenv('GOOGLE_API_MODEL')  # Using same key as your existing setup
 
 # Semantic Cache Implementation
 def init_cache():
@@ -80,14 +74,15 @@ class SemanticCache:
     #         self.cache["response_text"].pop(0)
 
     def report_update(self, question: str) ->str:
-        embedding = self.encoder.encode([question])
+      embedding = self.encoder.encode([question])
 
-        D, I = self.index.search(embedding, 1)
-        if len(I[0]) > 0 and I[0][0] >= 0 and D[0][0] <= self.threshold:
-            row_id = int(I[0][0])
-            matched_question = list(self.cache["questions"].keys())[row_id]
-            self.cache["reports"][matched_question] = self.cache["reports"].get(matched_question, 0) + 1
-            print("report updated")
+      D, I = self.index.search(embedding, 1)
+      if len(I[0]) > 0 and I[0][0] >= 0 and D[0][0] <= self.threshold:
+        row_id = int(I[0][0])
+        matched_question = list(self.cache["questions"].keys())[row_id]
+        self.cache["reports"][matched_question] = self.cache["reports"].get(matched_question, 0) + 1
+        print("report updated")
+
 
     def ask(self, question: str, rag_chain) -> str:
         start_time = time.time()
@@ -147,258 +142,7 @@ class SemanticCache:
         store_cache(self.json_file, self.cache)
         print("Cache cleaned up. Low-frequency questions (< 2) removed, frequencies preserved in cache_file.json.")
 
-# Deep Search Engine Class
-class DeepSearchEngine:
-    def __init__(self, max_searches=5):
-        self.max_searches = max_searches
-        self.search_results = []
-        self.search_queries = []
-        
-    def search_web(self, query: str) -> Dict[str, Any]:
-        """Perform a web search using SerpAPI"""
-        try:
-            url = "https://serpapi.com/search"
-            params = {
-                "q": query,
-                "api_key": SERPAPI_KEY,
-                "engine": "google",
-                "num": 10,
-                "gl": "in",
-                "hl": "en"
-            }
-            
-            response = requests.get(url, params=params)
-            response.raise_for_status()
-            return response.json()
-            
-        except Exception as e:
-            print(f"Search error: {str(e)}")
-            return {"error": str(e)}
-    
-    def extract_relevant_info(self, search_data: Dict[str, Any]) -> List[Dict[str, str]]:
-        """Extract relevant information from search results"""
-        relevant_info = []
-        
-        # Extract organic results
-        if "organic_results" in search_data:
-            for result in search_data["organic_results"][:5]:  # Top 5 results
-                info = {
-                    "title": result.get("title", ""),
-                    "snippet": result.get("snippet", ""),
-                    "link": result.get("link", ""),
-                    "source": result.get("source", "")
-                }
-                relevant_info.append(info)
-        
-        # Extract knowledge graph if available
-        if "knowledge_graph" in search_data:
-            kg = search_data["knowledge_graph"]
-            info = {
-                "title": kg.get("title", ""),
-                "snippet": kg.get("description", ""),
-                "link": "",
-                "source": "Knowledge Graph"
-            }
-            relevant_info.append(info)
-        
-        # Extract answer box if available
-        if "answer_box" in search_data:
-            ab = search_data["answer_box"]
-            info = {
-                "title": ab.get("title", ""),
-                "snippet": ab.get("snippet", "") or ab.get("answer", ""),
-                "link": ab.get("link", ""),
-                "source": "Answer Box"
-            }
-            relevant_info.append(info)
-            
-        return relevant_info
-    
-    def analyze_with_gemini(self, query: str, search_results: List[Dict], search_count: int, confidence_threshold: int = 85) -> Dict[str, Any]:
-        """Use Gemini to analyze search results and determine next steps"""
-        try:
-            # Prepare context
-            context = f"""
-            Original Query: {query}
-            Search Count: {search_count}/{self.max_searches}
-            
-            Search Results:
-            """
-            
-            for i, result_set in enumerate(search_results):
-                context += f"\n--- Search {i+1} Results ---\n"
-                for result in result_set:
-                    context += f"Title: {result['title']}\n"
-                    context += f"Snippet: {result['snippet']}\n"
-                    context += f"Source: {result['source']}\n\n"
-            
-            prompt = f"""
-            {context}
-            
-            Based on the search results above, please analyze:
-            
-            1. Do we have enough information to provide a comprehensive answer to the original query?
-            2. If not, what specific aspect should we search for next?
-            3. Provide a confidence score (0-100) for how well the current information answers the query.
-            
-            Respond in JSON format:
-            {{
-                "sufficient_info": boolean,
-                "confidence_score": number,
-                "next_search_query": "string or null",
-                "reasoning": "string explaining your analysis"
-            }}
-            """
-            
-            # Use your existing model instance
-            response = model.invoke(prompt)
-            
-            # Parse JSON response
-            try:
-                result = json.loads(response.content)
-                return result
-            except json.JSONDecodeError:
-                # Fallback if JSON parsing fails
-                return {
-                    "sufficient_info": search_count >= 3,
-                    "confidence_score": 70,
-                    "next_search_query": None,
-                    "reasoning": "Analysis completed with available data"
-                }
-                
-        except Exception as e:
-            print(f"Gemini analysis error: {str(e)}")
-            return {
-                "sufficient_info": True,
-                "confidence_score": 60,
-                "next_search_query": None,
-                "reasoning": f"Error in analysis: {str(e)}"
-            }
-    
-    def generate_final_report(self, query: str, all_results: List[List[Dict]], search_queries: List[str]) -> str:
-        """Generate comprehensive report using Gemini"""
-        try:
-            # Prepare comprehensive context
-            context = f"Original Query: {query}\n\n"
-            
-            for i, (search_query, results) in enumerate(zip(search_queries, all_results)):
-                context += f"=== Search {i+1}: '{search_query}' ===\n"
-                for result in results:
-                    context += f"• {result['title']}\n"
-                    context += f"  {result['snippet']}\n"
-                    context += f"  Source: {result['source']}\n\n"
-            
-            prompt = f"""
-            {context}
-            
-            Based on all the search results above, please generate a comprehensive, well-structured report that answers the original query: "{query}"
-            
-            Requirements:
-            1. Provide a clear, detailed answer focused on financial markets and investment insights
-            2. Include relevant facts and data points
-            3. Cite sources where appropriate
-            4. Structure the information logically with sections and subsections
-            5. Highlight key insights and actionable information
-            6. If there are conflicting information, mention it
-            7. Make it informative and easy to read for financial analysis
-            8. Focus on US financial markets when applicable
-            
-            Format the response as a structured report with clear headings and bullet points where appropriate.
-            """
-            
-            response = model.invoke(prompt)
-            return response.content
-            
-        except Exception as e:
-            return f"Error generating report: {str(e)}"
-    
-    def deep_search(self, query: str, confidence_threshold: int = 85) -> Dict[str, Any]:
-        """Perform deep search with iterative refinement"""
-        self.search_results = []
-        self.search_queries = []
-        
-        current_query = query
-        search_count = 0
-        
-        try:
-            while search_count < self.max_searches:
-                search_count += 1
-                print(f"Performing search {search_count}: {current_query}")
-                
-                # Perform search
-                search_data = self.search_web(current_query)
-                if "error" in search_data:
-                    break
-                
-                # Extract relevant information
-                relevant_info = self.extract_relevant_info(search_data)
-                self.search_results.append(relevant_info)
-                self.search_queries.append(current_query)
-                
-                # Analyze with Gemini (except on last iteration)
-                if search_count < self.max_searches:
-                    analysis = self.analyze_with_gemini(query, self.search_results, search_count, confidence_threshold)
-                    
-                    if analysis["sufficient_info"] or analysis["confidence_score"] >= confidence_threshold:
-                        print(f"Sufficient information found after {search_count} searches")
-                        break
-                    
-                    if analysis["next_search_query"]:
-                        current_query = analysis["next_search_query"]
-                    else:
-                        break
-                
-                # Small delay to avoid rate limiting
-                time.sleep(1)
-            
-            # Generate final report
-            final_report = self.generate_final_report(query, self.search_results, self.search_queries)
-            
-            return {
-                "success": True,
-                "query": query,
-                "searches_performed": search_count,
-                "search_queries": self.search_queries,
-                "report": final_report,
-                "raw_results": self.search_results
-            }
-            
-        except Exception as e:
-            return {
-                "success": False,
-                "error": str(e),
-                "query": query,
-                "searches_performed": search_count
-            }
-
-# Deep Search Pipeline Function
-def deep_search_pipeline(query: str, max_searches: int = 5, confidence_threshold: int = 85) -> Dict[str, Any]:
-    """
-    Main function to perform deep search - called by the Flask endpoint
-    """
-    try:
-        # Check for required environment variables
-        if not SERPAPI_KEY:
-            return {
-                "success": False,
-                "error": "SERPAPI_KEY environment variable not set"
-            }
-        
-        # Initialize search engine
-        search_engine = DeepSearchEngine(max_searches=max_searches)
-        
-        # Perform deep search
-        result = search_engine.deep_search(query, confidence_threshold)
-        
-        return result
-        
-    except Exception as e:
-        return {
-            "success": False,
-            "error": f"Deep search pipeline error: {str(e)}"
-        }
-
-# Original LangChain Functions (unchanged)
+# Original LangChain Functions
 def split_text(documents):
     text_split = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
     docs = text_split.split_documents(documents)
@@ -442,7 +186,7 @@ def rag_model(vectorstore):
     Source: Only utilize information contained within the provided documents (context). Do not fabricate or infer information that is not explicitly stated.
     Provided Context:
     {context}
-    Task: Based on the user's question, offer well-structured, data-backed advice or summaries related to financial markets in the United States, including but not limited to stock markets, cryptocurrencies, bonds, personal finance, investment strategies, and economic policies, using *only* the provided context.
+    Task: Based on the user’s question, offer well-structured, data-backed advice or summaries related to financial markets in the United States, including but not limited to stock markets, cryptocurrencies, bonds, personal finance, investment strategies, and economic policies, using *only* the provided context.
     Limitation: If the documents do not contain sufficient information to answer the user's query, politely inform the user that the requested information is unavailable based on the current data.
     User Question: {question}
     Answer:"""
@@ -490,6 +234,7 @@ def rag_model(vectorstore):
 
     return {"data_driven": conv_chain_data_driven, "strict": conv_chain_strict}
 
+
 # Modify query_response slightly for clarity (though original logic was okay)
 def query_response(query, rag_chain_dict): # Renamed rag_chain to rag_chain_dict
     try:
@@ -513,6 +258,7 @@ def query_response(query, rag_chain_dict): # Renamed rag_chain to rag_chain_dict
         return response
     except Exception as e:
         return f"An error occurred: {str(e)}"
+
 
 # --- Rest of your code remains the same ---
 

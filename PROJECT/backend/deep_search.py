@@ -5,7 +5,7 @@ import google.generativeai as genai
 from serpapi.google_search import GoogleSearch
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
-from typing import List
+from typing import List  # Added for history typing
 from datetime import datetime
 
 # Load environment variables
@@ -35,14 +35,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Pydantic model for messages (NEW)
 class Message(BaseModel):
     role: str
     content: str
 
+# Updated Pydantic model for request to include history
 class SearchRequest(BaseModel):
     query: str
-    history: List[Message] = []
+    history: List[Message] = []  # Added to store conversation history
 
+# Web search function (unchanged)
 def web_search(query: str) -> str:
     try:
         search = GoogleSearch({
@@ -57,6 +60,7 @@ def web_search(query: str) -> str:
         print(f"SerpAPI error: {str(e)}")
         return f"Search failed: {str(e)}"
 
+# Function declaration for Gemini (unchanged)
 web_search_declaration = {
     "name": "web_search",
     "description": "Perform a web search and return snippets from top results",
@@ -69,6 +73,7 @@ web_search_declaration = {
     },
 }
 
+# Initialize Gemini model 
 try:
     model = genai.GenerativeModel("gemini-2.0-flash")
 except Exception as e:
@@ -76,59 +81,58 @@ except Exception as e:
     raise
 
 todays_date = datetime.today().strftime("%d-%m-%Y")
-print("todays date is :  ",todays_date)
 
-FINANCE_PROMPT = """
-You are a financial research assistant specializing in stock markets, cryptocurrencies, and economic trends. When a user asks about 'the market,' 'stocks,' or similar terms, assume they mean financial markets unless specified otherwise. 
-Your task is to provide a detailed, narrative response using the provided web search results, If user asks about certain stocks, provide numbers data if possible. Follow these steps:
-[Todays Date: {todays_date} ]
-
-1. **Analyze the Query**: Understand the user's core intent. Determine if the query falls within financial domain or another subject area. 
-If the query involves technical concepts like moving averages or prediction algorithms, provide a thorough explanation of the concepts, their applications in financial markets, and comparisons with other methods.
-2. **Extract Relevant Information**: From the search results, pull out key details such as:
-   - Definitions and explanations of financial concepts (e.g., moving averages, prediction algorithms).
-   - Examples of how these concepts are applied in trading or forecasting.
-   - Comparisons between different methods or tools (e.g., moving averages vs. machine learning models).
-   - Any limitations or challenges associated with these methods.
-3. **Expand with Context**: If the search results are limited, use general knowledge to provide a comprehensive overview. Include:
-   - Practical examples of how the concepts are used in financial markets.
-   - Comparisons between traditional methods (e.g., moving averages) and modern approaches (e.g., machine learning).
-   - Insights into their effectiveness, reliability, and limitations.
-4. **Structure the Response**: Write a detailed, narrative response in markdown format (using headings, bullet points, and bold text for clarity). 
-    Do NOT return a JSON response. The response should be at least 500 words, resembling a DeepSearch reply, with the following sections:
-   - **Introduction**: Briefly introduce the topic and its relevance to financial markets.
-   - **Detailed Explanation**: Explain the main concept (e.g., moving averages) in depth, including how it works and its applications.
-   - **Comparison with Other Methods**: Compare the main concept with other prediction algorithms (e.g., machine learning models like LSTM).
-   - **Limitations and Challenges**: Discuss any drawbacks or limitations of the methods.
-   - **Conclusion**: Summarize the key points and provide a final thought or recommendation.
-5. **Handle Missing Data**: If specific data (e.g., current market performance) is unavailable, note it explicitly and focus on explaining the concepts and their applications.Donot hallucinate or fabricate data.
-
-Ensure the response is engaging, informative, and suitable for someone looking to understand financial prediction methods.
-"""
 # FINANCE_PROMPT = """
-# You are an AI Research Assistant specializing in financial markets (stocks, cryptocurrencies, economic trends), but capable of researching any topic. 
-# Assume queries about 'the market,' 'stocks,' etc., refer to financial markets unless specified. 
-# Your task is to provide a detailed, narrative report using max up to 3 targeted web searches, embodying a DeepSearch approach.
+# You are a financial research assistant specializing in stock markets, cryptocurrencies, and economic trends. When a user asks about 'the market,' 'stocks,' or similar terms, assume they mean financial markets unless specified otherwise. 
+# Your task is to provide a detailed, narrative response using the provided web search results, If user asks about certain stocks, provide numbers data if possible. Follow these steps:
+# [Todays Date: {todays_date} ]
 
-# [Todays Date is {todays_date}]
+# 1. **Analyze the Query**: Understand the user's core intent. Determine if the query falls within financial domain or another subject area. 
+# If the query involves technical concepts like moving averages or prediction algorithms, provide a thorough explanation of the concepts, their applications in financial markets, and comparisons with other methods.
+# 2. **Extract Relevant Information**: From the search results, pull out key details such as:
+#    - Definitions and explanations of financial concepts (e.g., moving averages, prediction algorithms).
+#    - Examples of how these concepts are applied in trading or forecasting.
+#    - Comparisons between different methods or tools (e.g., moving averages vs. machine learning models).
+#    - Any limitations or challenges associated with these methods.
+# 3. **Expand with Context**: If the search results are limited, use general knowledge to provide a comprehensive overview. Include:
+#    - Practical examples of how the concepts are used in financial markets.
+#    - Comparisons between traditional methods (e.g., moving averages) and modern approaches (e.g., machine learning).
+#    - Insights into their effectiveness, reliability, and limitations.
+# 4. **Structure the Response**: Write a detailed, narrative response in markdown format (using headings, bullet points, and bold text for clarity). 
+#     Do NOT return a JSON response. The response should be at least 500 words, resembling a DeepSearch reply, with the following sections:
+#    - **Introduction**: Briefly introduce the topic and its relevance to financial markets.
+#    - **Detailed Explanation**: Explain the main concept (e.g., moving averages) in depth, including how it works and its applications.
+#    - **Comparison with Other Methods**: Compare the main concept with other prediction algorithms (e.g., machine learning models like LSTM).
+#    - **Limitations and Challenges**: Discuss any drawbacks or limitations of the methods.
+#    - **Conclusion**: Summarize the key points and provide a final thought or recommendation.
+# 5. **Handle Missing Data**: If specific data (e.g., current market performance) is unavailable, note it explicitly and focus on explaining the concepts and their applications.Donot hallucinate or fabricate data.
 
-# 1.  **Analyze Query & Strategize Search:** Understand user intent. If technical concepts (e.g., moving averages, algorithms) are involved, prepare to explain them thoroughly. 
-#     Critically plan your 3 web searches to maximize relevant information extraction for the report.
-# 2.  **Extract & Synthesize Information:** From search results, pull key details: definitions, explanations, examples of applications (especially in finance), comparisons between methods/tools, and any limitations. Synthesize findings from all searches.
-# 3.  **Expand with Context & Knowledge:** If search results are limited, use your general knowledge to provide a comprehensive overview. 
-#     Include practical examples, compare traditional vs. modern approaches (e.g., moving averages vs. machine learning), and discuss effectiveness, reliability, and limitations.
-# 4.  **Structure the Report (Markdown, ~500+ words):**
-#     *   Write a detailed, narrative response in markdown format (headings, bullets, bold). **Do NOT return JSON.**
-#     *   **Introduction:** Briefly introduce the topic and its relevance.
-#     *   **Detailed Explanation:** Explain the core concept(s) in depth, including mechanics and applications.
-#     *   **Comparative Analysis / Further Applications:** (As applicable) Compare with other methods or provide more examples.
-#     *   **Limitations and Challenges:** Discuss drawbacks.
-#     *   **Conclusion:** Summarize key points.
-#     *   *Adapt section titles and content for non-financial topics as appropriate.*
-# 5.  **Handle Missing Data:** If specific data is unavailable from searches, note it explicitly and focus on explaining concepts and their applications.
-
-# Ensure the response is engaging, informative, and suitable for users seeking a deep understanding of the subject.
+# Ensure the response is engaging, informative, and suitable for someone looking to understand financial prediction methods.
 # """
+FINANCE_PROMPT = """
+You are an AI Research Assistant specializing in financial markets (stocks, cryptocurrencies, economic trends), but capable of researching any topic. 
+Assume queries about 'the market,' 'stocks,' etc., refer to financial markets unless specified. 
+Your task is to provide a detailed, narrative report using max up to 3 targeted web searches, embodying a DeepSearch approach.
+
+[Todays Date is {todays_date}]
+give results based on the todays dateby default unless specified otherwise.
+1.  **Analyze Query & Strategize Search:** Understand user intent. If technical concepts (e.g., moving averages, algorithms) are involved, prepare to explain them thoroughly. 
+    Critically plan your 3 web searches to maximize relevant information extraction for the report.
+2.  **Extract & Synthesize Information:** From search results, pull key details: definitions, explanations, examples of applications (especially in finance), comparisons between methods/tools, and any limitations. Synthesize findings from all searches.
+3.  **Expand with Context & Knowledge:** If search results are limited, use your general knowledge to provide a comprehensive overview. 
+    Include practical examples, compare traditional vs. modern approaches (e.g., moving averages vs. machine learning), and discuss effectiveness, reliability, and limitations.
+4.  **Structure the Report (Markdown, ~100+ words) unless explicitly stated otherwise:**
+    *   Write a detailed, narrative response in markdown format (headings, bullets, bold). **Do NOT return JSON.**
+    *   **Leave *TWO* lines after each paragraph**.
+    *   **show comparisons using a table:** If the user asks you for differences or comparisons then use a table to show your response.
+    *   **Introduction:** Briefly introduce the topic and its relevance.
+    *   **Detailed Explanation:** Explain the core concept(s) in depth, including mechanics and applications.
+    *   **Comparative Analysis / Further Applications:** (As applicable) Compare with other methods or provide more examples.
+    *   **Limitations and Challenges:** Discuss drawbacks.
+    *   **Conclusion:** Summarize key points.
+    *   *Adapt section titles and content for non-financial topics as appropriate.*
+5.  **Handle Missing Data:** If specific data is unavailable from searches, note it explicitly and focus on explaining concepts and their applications.
+"""
 # MEDICAL_PROMPT = """
 # You are an AI Medical Research Assistant specializing in diseases, treatments, human anatomy & physiology, pharmaceutical research, and public health trends. You are capable of researching any topic. When a user asks about 'conditions,' 'symptoms,' 'treatment,' or similar terms, assume they refer to medical or health-related topics unless specified otherwise. Your task is to provide a detailed, narrative report using up to 3 targeted web searches, embodying a DeepSearch approach.
 
@@ -154,111 +158,301 @@ Ensure the response is engaging, informative, and suitable for someone looking t
 @app.post("/deep_search")
 async def deep_search(request: SearchRequest):
     try:
+        print(f"=== STEP 1: Query Reception ===")
         print(f"Received query: {request.query}")
+        print(f"History length: {len(request.history)}")
         
+        # Convert history to Gemini-compatible format
         history = [
             {"role": "user" if msg.role == "user" else "model", "parts": [{"text": msg.content}]}
             for msg in request.history
         ]
 
+        # Start a chat session with history
         chat = model.start_chat(history=history)
 
-        query = request.query.lower()
-        refined_query = query
-        if "market" in query or "stocks" in query:
-            if "outperforming" in query or "best" in query:
-                refined_query = "top performing stocks today"
-            elif "stock" in query:
-                refined_query = "stock market today"
-            elif "moving average" in query or "prediction algorithms" in query:
-                refined_query = "moving average financial markets prediction algorithms recent results"
-            else:
-                refined_query = "financial market news today"
-        print(f"Refined query: {refined_query}")
-
-        search_results = web_search(refined_query)
-        print(f"Search results for {refined_query}: {search_results}")
-
+        # Track thinking process and sources
         thinking_steps = [
-            f"Initial query: {request.query}",
-            f"Refined query: {refined_query}",
-            f"Initial search results: {search_results}"
+            f"Step 1 - User query received: {request.query}",
+            f"Step 2 - Starting Gemini-driven search strategy"
         ]
+        all_sources = []  # Track all sources from searches
 
-        prompt = f"{FINANCE_PROMPT}\nConversation history: {request.history}\nUser query: {request.query}\nWeb search results: {search_results}"
+        print(f"=== STEP 2: Send Query to Gemini for Analysis ===")
+        # Let Gemini analyze the query and decide on search strategy
+        initial_prompt = f"""{FINANCE_PROMPT.format(todays_date=todays_date)}
 
+User Query: {request.query}
+
+You are tasked with providing a comprehensive analysis of this query. Since you have access to the web_search function, please:
+
+1. Analyze the user's query and determine what specific information you need.
+2. Plan your search strategy (you can perform up to 3 targeted searches).
+3. Use the web_search function to gather relevant, current information.
+4. Synthesize the search results into a detailed, narrative report.
+5. Leave *Two* lines after each paragraph.
+
+IMPORTANT: Your main response should be a narrative report to the User. Synthesize the information from web searches into this report. 
+A separate 'Sources' section, listing the URLs and titles of the web pages used, will be automatically generated and appended to your response by the system after your narrative. 
+**Therefore, do not attempt to list or format the sources yourself within the main body of your report.** You can, however, mention that information was retrieved from web searches if it flows naturally within your narrative.
+
+Start by performing your first search with the most relevant query terms for this topic."""
+
+        # Send initial message with tools
         response = chat.send_message(
-            prompt,
+            initial_prompt,
             tools=[{"function_declarations": [web_search_declaration]}]
         )
-        print(f"Initial response: {response}")
+        print(f"Initial Gemini response received")
 
+        print(f"=== STEP 3: Response Processing Loop ===")
         iteration_count = 0
-        max_iterations = 3
+        max_iterations = 3  
+        
         while iteration_count < max_iterations:
-            # Check if the first part of the response content is a function call
-            # This assumes response.parts is always populated and has at least one element
-            # A more robust check would be:
-            # fc_available = False
-            # if response.candidates and response.candidates[0].content and response.candidates[0].content.parts:
-            #    first_part = response.candidates[0].content.parts[0]
-            #    if hasattr(first_part, "function_call") and first_part.function_call:
-            #        fc_available = True
-            #        function_call = first_part.function_call
-            #
-            # For now, sticking to the original structure:
-            if hasattr(response, 'parts') and response.parts and hasattr(response.parts[0], "function_call") and response.parts[0].function_call:
-                function_call = response.parts[0].function_call
+            print(f"--- Iteration {iteration_count + 1} ---")
+            
+            # Check all parts for function calls
+            function_calls_found = []
+            text_parts = []
+            
+            for i, part in enumerate(response.parts):
+                print(f"Part {i}: {type(part).__name__}")
+                
+                if hasattr(part, 'function_call') and part.function_call:
+                    function_calls_found.append(part.function_call)
+                    print(f"Function call found: {part.function_call.name}")
+                
+                if hasattr(part, 'text') and part.text:
+                    text_parts.append(part.text)
+                    print(f"Text part found: {part.text[:100]}...")
+
+            # Process function calls
+            if function_calls_found:
+                print(f"Processing {len(function_calls_found)} function calls")
+                
+                # Handle the first function call
+                function_call = function_calls_found[0]
+                
                 if function_call.name == "web_search":
-                    query_arg = function_call.args["query"] # Changed variable name from 'query' to 'query_arg' to avoid conflict
-                    print(f"Performing follow-up search for: {query_arg}")
-                    search_results = web_search(query_arg)
-                    print(f"Follow-up search results: {search_results}")
-                    thinking_steps.append(f"Follow-up search for '{query_arg}': {search_results}")
-                    # Reconstruct prompt for follow-up, ensuring 'query' in prompt refers to original user query
-                    prompt = f"{FINANCE_PROMPT}\nConversation history: {request.history}\nUser query: {request.query}\nWeb search results: {search_results}"
+                    search_query = function_call.args["query"]
+                    print(f"Executing Gemini-requested search: {search_query}")
+                    
+                    # Perform the search (now returns dict with content and sources)
+                    search_result = web_search(search_query)
+                    search_content = search_result["content"]
+                    search_sources = search_result["sources"]
+                    
+                    print(f"Search results: {search_content}")
+                    print(f"Sources found: {len(search_sources)}")
+                    
+                    # Add sources to the collection
+                    all_sources.extend(search_sources)
+                    
+                    thinking_steps.append(f"Step {3 + iteration_count} - Gemini searched '{search_query}': {search_content}")
+                    
+                    # Send function response back to Gemini
+                    function_response_parts = [
+                        {
+                            "function_response": {
+                                "name": "web_search",
+                                "response": {
+                                    "content": search_content
+                                }
+                            }
+                        }
+                    ]
+                    
+                    print("Sending function response back to Gemini")
                     response = chat.send_message(
-                        prompt, # Use the reconstructed prompt
+                        function_response_parts,
                         tools=[{"function_declarations": [web_search_declaration]}]
                     )
-                    print(f"Follow-up response: {response}")
+                    print("Received response after function call")
                     iteration_count += 1
                 else:
-                    raise HTTPException(status_code=400, detail="Unknown function call")
+                    raise HTTPException(status_code=400, detail=f"Unknown function call: {function_call.name}")
+            
             else:
-                final_response_text = response.text
+                # No function calls found - this should be the final response
+                print("No function calls found - processing final response")
                 
-                # --- BEGIN CITATION EXTRACTION ---
-                citations_markdown = "" # Initialize an empty string for citation markdown
-                if hasattr(response, 'candidates') and response.candidates:
-                    candidate = response.candidates[0]
-                    if hasattr(candidate, 'citation_metadata') and candidate.citation_metadata:
-                        citation_sources = candidate.citation_metadata.citation_sources
-                        if citation_sources:
-                            unique_uris = set() # Use a set to store unique URIs
-                            for source in citation_sources:
-                                if hasattr(source, 'uri') and source.uri and (source.uri.startswith("http://") or source.uri.startswith("https://")):
-                                    unique_uris.add(source.uri)
-                            
-                            if unique_uris:
-                                citations_markdown += "\n\n---\n**Sources:**\n" # Add a separator and title
-                                for i, uri_val in enumerate(sorted(list(unique_uris))): # Sort for consistent order
-                                    citations_markdown += f"{i+1}. [{uri_val}]({uri_val})\n" # Format as a markdown numbered list item
+                if text_parts:
+                    final_response = "\n".join(text_parts)
+                    print(f"Final response assembled: {len(final_response)} characters")
+                else:
+                    # Try to get response.text directly
+                    try:
+                        final_response = response.text if hasattr(response, 'text') else 'No response generated'
+                    except:
+                        final_response = 'Response processing error'
+                    print(f"Using direct response.text: {len(final_response)} characters")
                 
-                final_response_with_citations = final_response_text + citations_markdown # Append citations to the main text response
-                # --- END CITATION EXTRACTION ---
-
+                # Add sources section to the final response
+                if all_sources:
+                    sources_section = "\n\n\n## Sources\n\n"
+                    for i, source in enumerate(all_sources, 1):
+                        title = source.get('title', 'Unknown Title')
+                        url = source.get('url', '')
+                        
+                        if url:
+                            sources_section += f"{i}.  [{title}]({url})\n"
+                        else:
+                            sources_section += f"{i}.  {title}\n"
+                    
+                    final_response += sources_section
+                    print(f"Added {len(all_sources)} sources to response")
+                else:
+                    print("No sources found to add")
+                
                 thinking_process = "\n".join(thinking_steps)
-                print(f"Thinking process: {thinking_process}")
-                print(f"Final response (with citations if any): {final_response_with_citations}")
                 
+                print(f"=== STEP 4: Response Assembly ===")
+                print(f"Thinking process steps: {len(thinking_steps)}")
+                print(f"Final response length: {len(final_response)}")
+                
+                # Update history with new query and response
                 updated_history = request.history + [
                     Message(role="user", content=request.query),
-                    Message(role="bot", content=final_response_with_citations) # Use the response with citations
+                    Message(role="bot", content=final_response)
                 ]
-                return {"response": final_response_with_citations, "thinking": thinking_process, "history": updated_history} # Return response with citations
+                
+                print(f"=== STEP 5: Return Results ===")
+                return {
+                    "response": final_response, 
+                    "thinking": thinking_process, 
+                    "history": updated_history
+                }
         
-        raise HTTPException(status_code=500, detail="Max iterations reached without final response")
+        # If we reach here, max iterations were reached
+        print(f"=== ERROR: Max iterations reached ===")
+        print(f"Last response parts: {[type(part).__name__ for part in response.parts]}")
+        
+        # Try to extract any text from the last response
+        final_text_parts = []
+        for part in response.parts:
+            if hasattr(part, 'text') and part.text:
+                final_text_parts.append(part.text)
+        
+        if final_text_parts:
+            fallback_response = "\n".join(final_text_parts)
+            
+            # Add sources section to fallback response
+            if all_sources:
+                sources_section = "\n\n\n## **Sources**\n\n"
+                for i, source in enumerate(all_sources, 1):
+                    source_type = source.get('type', 'Web')
+                    title = source.get('title', 'Unknown Title')
+                    url = source.get('url', '')
+                    
+                    if url:
+                        sources_section += f"{i}. **{source_type}**\t [{title}]({url})\n"
+                    else:
+                        sources_section += f"{i}. **{source_type}**\t {title}\n"
+                
+                fallback_response += sources_section
+            
+            thinking_process = "\n".join(thinking_steps + ["Note: Max iterations reached, returning partial response"])
+            
+            updated_history = request.history + [
+                Message(role="user", content=request.query),
+                Message(role="bot", content=fallback_response)
+            ]
+            
+            return {
+                "response": fallback_response, 
+                "thinking": thinking_process, 
+                "history": updated_history
+            }
+        
+        raise HTTPException(status_code=500, detail="Max iterations reached without usable response")
+        
     except Exception as e:
-        print(f"Error in deep_search: {str(e)}")
+        print(f"=== ERROR in deep_search ===")
+        print(f"Error: {str(e)}")
+        import traceback
+        traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
+
+
+# Enhanced web search function with source tracking
+def web_search(query: str) -> dict:
+    try:
+        print(f"Executing SerpAPI search for: {query}")
+        search = GoogleSearch({
+            "q": query,
+            "api_key": os.getenv("SERPAPI_API_KEY"),
+            "num": 5,  # Explicitly request 5 results
+            "location": "India",  # Add location for better results
+        })
+        result = search.get_dict()
+        
+        # Debug: Print what SerpAPI returns
+        print(f"SerpAPI response keys: {list(result.keys())}")
+        
+        # Check for errors in the response
+        if 'error' in result:
+            print(f"SerpAPI Error: {result['error']}")
+            return {
+                "content": f"Search API Error: {result['error']}",
+                "sources": []
+            }
+        
+        # Try different result types
+        organic_results = result.get('organic_results', [])
+        news_results = result.get('news_results', [])
+        answer_box = result.get('answer_box', {})
+        
+        print(f"Organic results: {len(organic_results)}")
+        print(f"News results: {len(news_results)}")
+        print(f"Answer box: {'Yes' if answer_box else 'No'}")
+        
+        # Collect snippets and sources
+        snippets = []
+        sources = []
+        
+        # Get answer box if available
+        if answer_box and answer_box.get('answer'):
+            snippets.append(f"• [Featured] {answer_box['answer']}")
+            if answer_box.get('link'):
+                sources.append({
+                    "title": answer_box.get('title', 'Featured Answer'),
+                    "url": answer_box['link'],
+                })
+        
+        # Get organic results
+        for item in organic_results[:3]:
+            if item.get('snippet'):
+                snippets.append(f"• {item['snippet']}")
+                sources.append({
+                    "title": item.get('title', 'Unknown Title'),
+                    "url": item.get('link', ''),
+                })
+        
+        # Get news results
+        for item in news_results[:2]:
+            if item.get('snippet'):
+                snippets.append(f"• [News] {item['snippet']}")
+                sources.append({
+                    "title": item.get('title', 'Unknown News Title'),
+                    "url": item.get('link', ''),
+                })
+        
+        if snippets:
+            return {
+                "content": "\n".join(snippets),
+                "sources": sources
+            }
+        else:
+            # If still no results, return debug information
+            return {
+                "content": f"No results found. API returned {len(result)} keys: {list(result.keys())[:5]}",
+                "sources": []
+            }
+            
+    except Exception as e:
+        print(f"SerpAPI Exception: {str(e)}")
+        return {
+            "content": f"Search failed with error: {str(e)}",
+            "sources": []
+        }
