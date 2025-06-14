@@ -30,7 +30,7 @@ data_from_files = 'crawled_data'
 rag_chain = rag_pipeline(data_from_files)
 cache = SemanticCache()
 
-@app.route('/deep_search', methods=['POST'])
+@app.post('/deepsearch')
 def deep_search():
     """Endpoint for deep search functionality using SerpAPI and Gemini."""
     try:
