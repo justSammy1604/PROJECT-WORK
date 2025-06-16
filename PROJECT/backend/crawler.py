@@ -81,7 +81,7 @@ async def crawl_parallel(urls: List[str], searchText, max_concurrent: int = 3):
                     # Save the crawled content to a file
                     file_name = f"crawled_data/{searchText.replace(' ', '_')}.txt"
                     with open(file_name, "a", encoding="utf-8") as file:
-                        file.write(result.markdown_v2.raw_markdown)
+                        file.write(result.markdown.raw_markdown)
                     print(f"Saved content to: {file_name}")
                 else:
                     fail_count += 1

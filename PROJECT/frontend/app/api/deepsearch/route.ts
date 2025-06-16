@@ -4,7 +4,7 @@ export async function POST(request: Request) {
   try {
     const { query, history } = await request.json()
     console.log('Sending to backend:', { query })
-    const response = await fetch('http://localhost:4200/deepsearch', {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/deepsearch`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query, history }),

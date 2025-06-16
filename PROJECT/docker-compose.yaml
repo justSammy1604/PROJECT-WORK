@@ -23,9 +23,7 @@ services:
             - .git/
 
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile 
+    image: samuelmesquita1604/backend:v3 
     ports:
       - "4200:4200"
     environment:
