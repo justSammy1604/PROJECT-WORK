@@ -90,7 +90,7 @@ To set up and run this project, follow these steps:
         cd PROJECT
         docker-compose up --build
         ```
-    *   This will build and run both the frontend and backend containers. The frontend will be accessible at `http://localhost:3000` and the backend at `http://localhost:5000`.
+    *   This will build and run both the frontend and backend containers. The frontend will be accessible at `http://localhost:3000` and the backend at `http://localhost:4200`.
 
 **Note:** The `Experiement_code/` directory has its own `requirements.txt` and `Dockerfile`. If you want to run the experimental code, navigate to that directory and follow similar steps for installing dependencies and building the Docker container.
 
