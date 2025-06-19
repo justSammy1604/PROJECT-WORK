@@ -178,15 +178,6 @@ Once a license is chosen, you can update this section to reflect it, for example
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
 
-## Other Relevant Information
-
-### Diagrams
-
-The repository includes the following diagrams that illustrate the project's architecture and flow:
-
-*   **`diagram-export-4-12-2024-11_57_55-pm.png`**: A system flowchart providing a visual overview of the components and their interactions.
-*   **`project-flowchart.jpg`**: Another flowchart detailing project workflows.
-
 ### Future Plans (from original README)
 
 The initial project notes mentioned several areas for future development:
