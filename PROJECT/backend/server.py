@@ -1,20 +1,102 @@
 import os
+import warnings
 from flask import Flask, request, jsonify
 from flask_cors import CORS 
 import requests
 from app import rag_pipeline, SemanticCache
 from dotenv import load_dotenv
 from crawler import crawl_parallel
+from deep_search import web_search, web_search_declaration,FINANCE_PROMPT,SearchRequest, Message, model, ValidationError
 load_dotenv()
 app = Flask(__name__)
 CORS(app)  # This enables CORS for all routes
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
 data_from_files = 'crawled_data'  # We can also add crawled_data file as input here. 
 rag_chain = rag_pipeline(data_from_files)
 cache = SemanticCache()
 
-def get_top_links(search,result=50):
+
+@app.route("/deepsearch", methods=["POST"])
+def deep_search():
+    try:
+        body = request.get_json()
+        search_request = SearchRequest(**body)
+
+        print(f"Received query: {search_request.query}")
+
+        history = [
+            {"role": "user" if msg.role == "user" else "model", "parts": [{"text": msg.content}]}
+            for msg in search_request.history
+        ]
+
+        chat = model.start_chat(history=history)
+        query = search_request.query.lower()
+        refined_query = query
+
+        if "market" in query or "stocks" in query:
+            if "outperforming" in query or "best" in query:
+                refined_query = "top performing stocks today"
+            elif "stock" in query:
+                refined_query = "stock market today"
+            elif "moving average" in query or "prediction algorithms" in query:
+                refined_query = "moving average financial markets prediction algorithms recent results"
+            else:
+                refined_query = "financial market news today"
+
+        print(f"Refined query: {refined_query}")
+
+        search_results = web_search(refined_query)
+        thinking_steps = [
+            f"Initial query: {search_request.query}",
+            f"Refined query: {refined_query}",
+            f"Initial search results: {search_results}"
+        ]
+
+        prompt = f"{FINANCE_PROMPT}\nConversation history: {search_request.history}\nUser query: {search_request.query}\nWeb search results: {search_results}"
+
+        response = chat.send_message(
+            prompt,
+            tools=[{"function_declarations": [web_search_declaration]}]
+        )
+
+        iteration_count = 0
+        max_iterations = 3
+
+        while iteration_count < max_iterations:
+            if hasattr(response.parts[0], "function_call") and response.parts[0].function_call:
+                function_call = response.parts[0].function_call
+                if function_call.name == "web_search":
+                    query = function_call.args["query"]
+                    search_results = web_search(query)
+                    thinking_steps.append(f"Follow-up search for '{query}': {search_results}")
+                    prompt = f"{FINANCE_PROMPT}\nConversation history: {search_request.history}\nUser query: {search_request.query}\nWeb search results: {search_results}"
+                    response = chat.send_message(
+                        prompt,
+                        tools=[{"function_declarations": [web_search_declaration]}]
+                    )
+                    iteration_count += 1
+                else:
+                    return jsonify({"error": "Unknown function call"}), 400
+            else:
+                final_response = response.text
+                thinking_process = "\n".join(thinking_steps)
+                updated_history = search_request.history + [
+                    Message(role="user", content=search_request.query),
+                    Message(role="bot", content=final_response)
+                ]
+                return jsonify({"response": final_response, "thinking": thinking_process, "history": [msg.dict() for msg in updated_history]})
+
+        return jsonify({"error": "Max iterations reached without final response"}), 500
+
+    except ValidationError as e:
+        return jsonify({"error": e.errors()}), 422
+    except Exception as e:
+        print(f"Error in deep_search: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+def get_top_links(search,result=5):
     """ Get the top links from Google search results using ScrapingDog API.
     Function to get the top links from Google search results using ScrapingDog API."""
     url = "https://api.scrapingdog.com/google"

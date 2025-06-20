@@ -23,10 +23,12 @@ import sys
 from unicodedata import category
 import spacy
 import re
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # Load environment variables
 load_dotenv()
-api_key = os.getenv('GOOGLE_API_MODEL')
+api_key = os.getenv('GEMINI_API_KEY')
 model = ChatGoogleGenerativeAI(model="gemini-2.0-flash", google_api_key=api_key, temperature=0.4, convert_system_message_to_human=True)
 embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=api_key)
 hf_key = os.getenv('HF_TOKEN')
