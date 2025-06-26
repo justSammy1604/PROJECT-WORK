@@ -31,11 +31,10 @@ rag_chain = rag_pipeline(data_from_files)
 cache = SemanticCache()
 
 @app.post('/deepsearch')
-async def deepsearch():
+async def deepsearch(requests: Request):
     """Endpoint for deep search functionality using SerpAPI and Gemini."""
     try:
         data_request = await requests.json()
-
         if not data_request or 'query' not in data_request:
             return JSONResponse(content={
                 "success": False,
@@ -62,7 +61,7 @@ async def deepsearch():
             return JSONResponse(content=result, status_code=500)
 
     except Exception as e:
-        app.logger.error(f"Error in /deep-search: {str(e)}")
+        app.logger.error(f"Error in /deepsearch: {str(e)}")
         return JSONResponse(content={
             "success": False,
             "error": f"Server error: {str(e)}"

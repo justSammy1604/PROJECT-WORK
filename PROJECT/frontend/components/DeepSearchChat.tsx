@@ -54,7 +54,7 @@ export function DeepSearchChat({ messages, setMessages }: DeepSearchChatProps) {
     setIsLoading(true)
 
     try {
-      const response = await fetch('/api/deepsearch', {
+      const response = await fetch('http://localhost:4200/deepsearch', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: trimmedInput, history: messages }),
