@@ -5,7 +5,7 @@ import google.generativeai as genai
 from serpapi.google_search import GoogleSearch
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
-from typing import List  # Added for history typing
+from typing import List 
 from datetime import datetime
 
 # Load environment variables
@@ -23,17 +23,6 @@ try:
 except Exception as e:
     print(f"Error configuring Gemini API: {str(e)}")
     raise
-
-app = FastAPI()
-
-# Enable CORS
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 # Pydantic model for messages (NEW)
 class Message(BaseModel):
@@ -126,6 +115,7 @@ give results based on the todays dateby default unless specified otherwise.
 # 5.  **Handle Missing Data:** If specific data (e.g., prevalence in a very specific sub-population not found in searches, cutting-edge unpublished research) is unavailable, note it explicitly and focus on explaining established concepts and their applications.
 
 # Ensure the response is engaging, informative, evidence-based where possible, and suitable for users seeking a deep understanding of medical subjects, while always maintaining ethical considerations.
+
 # """
 
 @app.post("/deep_search")
@@ -429,3 +419,6 @@ def web_search(query: str) -> dict:
             "content": f"Search failed with error: {str(e)}",
             "sources": []
         }
+
+# """
+

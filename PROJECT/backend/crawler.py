@@ -4,7 +4,6 @@ import psutil
 import asyncio
 import requests
 from xml.etree import ElementTree
-import cohere
 from pathlib import Path
 
 __location__ = os.path.dirname(os.path.abspath(__file__))
@@ -16,32 +15,6 @@ sys.path.append(parent_dir)
 
 from typing import List
 from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
-
-cohere_client = cohere.Client("wWwu0mw2feW52WWfvWDXVAQZV5LkuDzFB8cIsJYX")
-
-def clean_text_with_ai(text):
-    """Uses Cohere API to remove links while preserving all other content."""
-    if not text or not isinstance(text, str):
-        return text  # Skip non-string content
-
-    response = cohere_client.chat(
-        message=f"""
-        You are an AI that cleans text by **removing all hyperlinks (URLs)** while keeping all other text unchanged.
-        Ensure that the content remains fully intact except for any links.
-
-        Here is the extracted website content:
-        ```
-        {text}
-        ```
-        
-        **Return the text with only the links removed. Do not modify any other text.**
-        """,
-        model="command-a-03-2025",
-        preamble="You are a text cleaner that removes links while preserving all other content.",
-        temperature=0.1,  # Ensures consistency
-    )
-
-    return response.text  # Return cleaned text without links
 
 async def crawl_parallel(urls: List[str], searchText, max_concurrent: int = 3):
     print("\n=== Parallel Crawling with Browser Reuse + Memory Check ===")
@@ -108,7 +81,7 @@ async def crawl_parallel(urls: List[str], searchText, max_concurrent: int = 3):
                     # Save the crawled content to a file
                     file_name = f"crawled_data/{searchText.replace(' ', '_')}.txt"
                     with open(file_name, "a", encoding="utf-8") as file:
-                        file.write(result.markdown_v2.raw_markdown)
+                        file.write(result.markdown.raw_markdown)
                     print(f"Saved content to: {file_name}")
                 else:
                     fail_count += 1
