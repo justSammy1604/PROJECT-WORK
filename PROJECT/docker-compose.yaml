@@ -1,15 +1,15 @@
 version: '3.9'
 
 services:
-  frontend: 
+  frontend:
     build:
-      context: ./frontend 
-      dockerfile: Dockerfile 
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
       - "4000:3000"
     environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:4200  # Backend URL
-      - CHOKIDAR_USEPOLLING=1  # Enables file watching in Dockerw
+      - NEXT_PUBLIC_API_URL=http://localhost:4200          # Backend URL
+      - CHOKIDAR_USEPOLLING=1         # Enables file watching in Docker
     depends_on:
       - backend
     develop:
@@ -23,11 +23,13 @@ services:
             - .git/
 
   backend:
-    image: samuelmesquita1604/backend:v3 
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
       - "4200:4200"
     environment:
-      - FLASK_ENV=development 
+      - PYTHONUNBUFFERED=1
     develop:
       watch:
         - action: sync

@@ -9,23 +9,23 @@ from typing import List
 from datetime import datetime
 
 # app = FastAPI()
-
+GEMINI_API_KEY='AIzaSyCap1bieXVEiqZ-XhKmUXgUqxFl3H0tIOw'
+SERPAPI_API_KEY='f7b3915ebb0c5a2ff53363e25ba4b4e65cbb89ebcc772552bde913da909b9876'
 # Load environment variables
 load_dotenv()
 
 # Verify environment variables
-if not os.getenv("GEMINI_API_KEY"): 
+""" if not os.getenv("GEMINI_API_KEY"): 
     raise ValueError("GEMINI_API_KEY not found in .env")
 if not os.getenv("SERPAPI_API_KEY"):
-    raise ValueError("SERPAPI_API_KEY not found in .env")
+    raise ValueError("SERPAPI_API_KEY not found in .env") """
 
 # Configure Gemini API
 try:
-    genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+    genai.configure(api_key=GEMINI_API_KEY)
 except Exception as e:
     print(f"Error configuring Gemini API: {str(e)}")
     raise
-
 router = APIRouter()
 
 # Pydantic model for messages (NEW)
@@ -48,8 +48,10 @@ web_search_declaration = {
             "query": {"type": "string", "description": "The search query"}
         },
         "required": ["query"]
-    },
+    }
+    # ✅ REMOVE the "returns" key entirely
 }
+
 
 # Initialize Gemini model 
 try:
@@ -86,8 +88,8 @@ give results based on the todays dateby default unless specified otherwise.
 """
 
 
-@router.post("/deep_search")
-async def deep_search(request: SearchRequest):
+@router.post("/deepsearch")
+async def deepsearch(request: SearchRequest):
     try:
         print(f"=== STEP 1: Query Reception ===")
         print(f"Received query: {request.query}")
@@ -184,15 +186,17 @@ Start by performing your first search with the most relevant query terms for thi
                     
                     # Send function response back to Gemini
                     function_response_parts = [
-                        {
-                            "function_response": {
-                                "name": "web_search",
-                                "response": {
-                                    "content": search_content
-                                }
-                            }
-                        }
-                    ]
+    {
+        "function_response": {
+            "name": "web_search",
+            "response": {
+                "result": search_content
+            }
+        }
+    }
+]
+
+
                     
                     print("Sending function response back to Gemini")
                     response = chat.send_message(
@@ -312,7 +316,7 @@ def web_search(query: str) -> dict:
         print(f"Executing SerpAPI search for: {query}")
         search = GoogleSearch({
             "q": query,
-            "api_key": os.getenv("SERPAPI_API_KEY"),
+            "api_key": SERPAPI_API_KEY,
             "num": 5,  # Explicitly request 5 results
             "location": "India",  # Add location for better results
         })
@@ -387,3 +391,12 @@ def web_search(query: str) -> dict:
             "content": f"Search failed with error: {str(e)}",
             "sources": []
         }
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        "deep_search:app",
+        host="0.0.0.0",
+        port=8000,
+        reload=True,   # remove in production
+    )

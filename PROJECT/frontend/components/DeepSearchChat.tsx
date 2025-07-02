@@ -53,8 +53,9 @@ export function DeepSearchChat({ messages, setMessages }: DeepSearchChatProps) {
     setInput('')
     setIsLoading(true)
 
+    const deepApi = process.env.NEXT_PUBLIC_API_URL ? `${process.env.NEXT_PUBLIC_API_URL}/deepsearch` : 'http://localhost:8000/deepsearch';
     try {
-      const response = await fetch('http://localhost:4200/deepsearch', {
+      const response = await fetch(deepApi, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: trimmedInput, history: messages }),

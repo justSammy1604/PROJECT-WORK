@@ -37,4 +37,4 @@ RUN playwright install --with-deps
 ENV REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
 EXPOSE 4200
-CMD ["python", "server.py"]
+CMD ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "4200"]
