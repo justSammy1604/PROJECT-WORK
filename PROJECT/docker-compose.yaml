@@ -9,7 +9,7 @@ services:
       - "4000:3000"
     environment:
       - NEXT_PUBLIC_API_URL=http://backend:4200   # Backend URL
-      - CHOKIDAR_USEPOLLING=1  # Enables file watching in Dockerw
+      - CHOKIDAR_USEPOLLING=1  # Enables file watching in Dockerw 
     depends_on:
       - backend
     develop:
