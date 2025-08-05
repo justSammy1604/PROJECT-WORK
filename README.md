@@ -1,7 +1,7 @@
 # AI-Powered Financial Research Assistant
 
 This project is an AI-powered research assistant designed to help users with financial research. It utilizes a Retrieval-Augmented Generation (RAG) pipeline, web crawling, and natural language processing to provide accurate and context-aware answers to user queries. The application features a user-friendly chat interface for interacting with the AI assistant.
-
+ 
 ## Features 
 
 This project offers a range of features to assist users with financial research:
